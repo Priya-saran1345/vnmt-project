@@ -43,11 +43,11 @@ export function Testimonials() {
                 transform: `translateX(-${(currentSlide + 1) * 33.33}%)`,
               }}
             >
-              {testimonials.map((testimonial: any, index: number) => {
+              {testimonials.map((testimonial: {liked:boolean,text:string,rating:number,avatar:string,role:string,author:string,id:number}, index: number) => {
                 const isCenter = index === currentSlide;
-                const isNext = index === (currentSlide + 1) % testimonials.length;
-                const isPrev =
-                  index === (currentSlide - 1 + testimonials.length) % testimonials.length;
+                // const isNext = index === (currentSlide + 1) % testimonials.length;
+                // const isPrev =
+                //   index === (currentSlide - 1 + testimonials.length) % testimonials.length;
 
                 const scaleClass = isCenter ? "scale-110" : "scale-90";
                 const blurClass = isCenter ? "blur-none" : "blur-sm";

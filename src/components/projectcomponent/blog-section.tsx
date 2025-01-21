@@ -38,7 +38,7 @@ export function BlogSection() {
               className="flex transition-transform duration-300 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
-              {blogPosts.map((post:any) => (
+              {blogPosts.map((post: { id: number; title: string; image: string; date: string; author: string }) => (
                 <Card key={post.id} className="flex-none w-full md:w-1/3 p-2">
                   <CardContent className="p-0">
                     <div className="relative h-48 mb-4">

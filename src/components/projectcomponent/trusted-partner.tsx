@@ -9,7 +9,7 @@ export function TruestedPartner() {
         <h2 className="text-3xl font-bold text-center text-white mb-12">Trusted by Industry Leaders Worldwide</h2>
 
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-8">
-          {partners.map((partner:any) => (
+          {partners.map((partner:{logo:string,name:string,id:number}) => (
             <div key={partner.id} className="bg-white/10 p-4 rounded-lg flex items-center justify-center">
               <Image
                 src={partner.logo || "/placeholder.svg"}

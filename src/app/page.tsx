@@ -11,24 +11,28 @@ import { Services } from '@/components/projectcomponent/services'
 import { Partners } from '@/components/projectcomponent/partners'
 import { BlogSection } from '@/components/projectcomponent/blog-section'
 import { IntegrationSection } from '@/components/projectcomponent/integration-section'
-import {TruestedPartner} from '@/components/projectcomponent/trusted-partner'
+import { TruestedPartner } from '@/components/projectcomponent/trusted-partner'
 export default function FAQPage() {
   return (
     <div className=" text-black">
       <div className=" w-full">
         <Header />
-        <Hero />
-        <Services />
-        <Partners/>
+        <div className='bg_banner'>
+          <Hero />
+          <Services />
+        </div>
+        <Partners />
         <IndustriesSection />
         <ImpactSection />
         <NetsuiteSection />
-        <IntegrationSection/>
-        <BlogSection/>
-        <TruestedPartner/>
+        <IntegrationSection />
+        <BlogSection />
+        <TruestedPartner />
         <CaseStudy />
-        <Testimonials />
-        <Faq />
+        <div className="w-full px-0 bg-[url('/images/faq-bg.svg')] ">
+          <Testimonials />
+          <Faq />
+        </div>
         <Footer />
       </div>
     </div>
