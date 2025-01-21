@@ -3,7 +3,7 @@ export const blogPosts = [
       id: 1,
       title:
         "NetSuite has advanced filtering feature, making ERP systems that tie to its versatility, extensive customization options, ef...",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/images/blog-img.svg",
       date: "January 10,2024",
       author: "Chelsy",
     },
@@ -11,7 +11,7 @@ export const blogPosts = [
       id: 2,
       title:
         "NetSuite has advanced filtering feature, making ERP systems that tie to its versatility, extensive customization options, ef...",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/images/blog-img.svg",
       date: "January 10,2024",
       author: "Chelsy",
     },
@@ -19,7 +19,23 @@ export const blogPosts = [
       id: 3,
       title:
         "NetSuite has advanced filtering feature, making ERP systems that tie to its versatility, extensive customization options, ef...",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/images/blog-img.svg",
+      date: "January 10,2024",
+      author: "Chelsy",
+    },
+    {
+      id: 4,
+      title:
+        "NetSuite has advanced filtering feature, making ERP systems that tie to its versatility, extensive customization options, ef...",
+      image: "/images/blog-img.svg",
+      date: "January 10,2024",
+      author: "Chelsy",
+    },
+    {
+      id: 5,
+      title:
+        "NetSuite has advanced filtering feature, making ERP systems that tie to its versatility, extensive customization options, ef...",
+      image: "/images/blog-img.svg",
       date: "January 10,2024",
       author: "Chelsy",
     },

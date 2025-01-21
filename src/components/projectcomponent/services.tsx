@@ -52,7 +52,7 @@ export function Services() {
               <p className="text-gray-600 parahraph mb-6">Your Trusted Partner for NetSuite Success</p>
             </div>
             <div className="flex justify-end mb-4">
-              <Button variant="ghost" className="text-blue-600 border-2 border-blue-600 font-semibold">
+              <Button variant="ghost" className="text-blue border-2 border-blue font-semibold">
                 View All
               </Button>
             </div>

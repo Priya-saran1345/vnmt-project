@@ -4,7 +4,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 const faq = () => {
   return (
     <div className=' mx-auto '>
-      <h1 className="text-4xl font-bold text-center mb-12">FAQs</h1>
+      <h1 className="
+      heading font-bold text-center mb-12">FAQs</h1>
       <div className="grid w-full mx-auto lg:w-[85%] xl:w-[70%] 2xl:w-[55%] md:grid-cols-2 gap-16 mb-4">
         <div className="space-y-4">
           <Accordion type="single" collapsible>
@@ -32,7 +33,7 @@ const faq = () => {
         </div>
       </div>
       <div className="bg-[url('/images/footer-banner.svg')]  max-w-[1246px]  items-end pb-12 flex justify-start px-12
-     z-50 relative bg-no-repeat  mx-auto h-[350px]   rounded-3xl text-white py-4 ">
+     z-50 relative bg-no-repeat  mx-auto h-[350px] gap-12   rounded-3xl text-white py-4 ">
         <div className='w-[45%]  '>
 
           <h2 className="heading font-bold ">Ready to Get Started ?</h2>
