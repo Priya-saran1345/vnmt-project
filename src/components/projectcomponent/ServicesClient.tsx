@@ -50,7 +50,7 @@ export function ServicesClient() {
                         alt="NetSuite Services"
                         width={410}
                         height={410}
-                        className="object-cover"
+                        className="object-cover shadow-lg rounded-2xl "
                     />
                 </div>
             </div>
@@ -67,8 +67,8 @@ export function ServicesClient() {
                             className={`service-item flex gap-4 p-4 transition-all duration-300`}
                         >
                             <div
-                                className={`flex-shrink-0 rounded-tl-[60%] rounded-[5%] h-[90px] ${activeService === service.id
-                                        ? "border-orange/50 border-[1px]"
+                                className={`flex-shrink-0 rounded-tl-[45%] rounded-[5%] h-[90px] ${activeService === service.id
+                                        ? "border-orange/50 border-[2px]"
                                         : "bg-blue"
                                     } w-[90px] flex items-center justify-center`}
                             >
@@ -83,7 +83,7 @@ export function ServicesClient() {
                             </div>
                             <div>
                                 <h3 className="bulletheading font-semibold mb-2">{service.title}</h3>
-                                <p className="parahraph">{service.description}</p>
+                                <p className="parahraph text-[#818181]">{service.description}</p>
                             </div>
                         </div>
                     ))}

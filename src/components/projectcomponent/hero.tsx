@@ -1,11 +1,8 @@
 "use client"
-import Link from "next/link"
-import Image from "next/image"
-import { navigationItems } from "@/components/data/navigation"
 import { useState } from "react"
 // import { Play } from "lucide-react"
 import { FaPlay } from "react-icons/fa"
-import { FiMenu } from "react-icons/fi"
+import AnimatedHeader from "./animated-header"
 
 export function Hero() {
   const [hoveredItem, setHoveredItem] = useState<string | null | number>(null)
@@ -16,7 +13,8 @@ export function Hero() {
         className=" h-[642px] w-full flex flex-col justify-between lg:w-[95%] 2xl:w-[77%] mx-auto bg-[url('/images/banner.svg')] min-h-[68vh] bg-no-repeat pt-4"
       >
         <div className="px-7  ">
-          <div className=" bg-white w-[80%] rounded-full text-black px-8 py-2 border border-orange ">
+
+          {/* <div className=" bg-white w-[80%] rounded-full text-black px-8 py-2 border border-orange ">
 
 
 
@@ -36,9 +34,9 @@ export function Hero() {
                   <Link
                     key={item.id}
                     href={item.href}
-                    className="relative font-semibold text-sm text-black overflow-hidden group navitem"
+                    className="relative font-semibold text-md text-black overflow-hidden group navitem"
                     onMouseEnter={() => setHoveredItem(item.id)}
-                    onMouseLeave={() => setHoveredItem(null)}
+
                   >
                     <span
                       className={`inline-block transition-transform duration-200 ease-in-out ${hoveredItem === item.id ? "-translate-y-full" : "translate-y-0"
@@ -61,7 +59,16 @@ export function Hero() {
               </div>
             </div>
 
-          </div>
+          </div> */}
+           <AnimatedHeader />
+{hoveredItem &&
+<div 
+                      onMouseLeave={() => setHoveredItem(null)}
+  className='absolute bg-white text-black h-[30vh] w-1/2 '>
+
+</div>
+}
+          
 
 
           <div className="max-w-2xl mt-20 mx-20 relative z-10  flex flex-col gap-2">
@@ -82,10 +89,10 @@ export function Hero() {
         <div className="flex mr-8 justify-between items-center w-full ">
           <div className="flex gap-[80px]">
 
-            <button className="text-white w-[90%] text-[30px] flex justify-around font-semibold mt-3 h-[90px] rounded-3xl  bg-[#FF8352] border-white hover:bg-blue-700">
+            <button className="text-white w-[90%] text-[30px] flex items-center text-left justify-around font-semibold mt-3 h-[90px] rounded-3xl  bg-[#FF8352] border-white hover:bg-blue-700 leading-8 ">
               <div className="bg-white flex justify-center items-center p-5 rounded-full h-[70px] w-[70px]">
 
-                <FaPlay className="mr-2 text-[#FF8352] text-[44px] " />
+                <FaPlay className=" pl-1 animate text-[#FF8352] text-[44px] " />
               </div>
               How It <br /> Work&apos;s
             </button>
@@ -98,7 +105,7 @@ export function Hero() {
           <div className='relative '>
             <button className="mr-16 border-[#FF8352] border bg-white text-blue rounded-xl font-semibold text-lg px-4 py-1 relative">FREE CONSULTATION
             </button>
-            <div className='absolute h-5 w-5 rounded-full -top-2 right-14 bg-orange opacity-50'> </div>
+            <div className='absolute h-5 w-5 rounded-full -top-2 right-14 bg-orange opacity-50 '> </div>
             <div className='absolute h-2.5 w-2.5 rounded-full -top-[3px] right-[60px] bg-orange animate-pulse'> </div>
           </div>
         </div>

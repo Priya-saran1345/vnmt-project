@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 body {
 	font-family: Arial, Helvetica, sans-serif;
 }
@@ -87,11 +89,8 @@ a {
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
 	background-color: white;
-	/* White thumb color */
 	border: 2px solid #ff8352;
-	/* Orange border around the thumb */
 	border-radius: 20px;
-	/* Fully rounded thumb */
 }
 
 .bg_banner {
@@ -119,9 +118,6 @@ a {
   .navitem {
     position: relative;
     display: inline-block;
-}
-.navitem:hover{
-	color: var(--orange);
 }
 
 .navitem::after {

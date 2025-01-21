@@ -1,5 +1,4 @@
 
-import { Button } from "@/components/ui/button";
 import { ServicesClient } from "./ServicesClient";
 
 export function Services() {
@@ -11,13 +10,13 @@ export function Services() {
         <div className="gap-12">
           <div className="flex justify-between w-[83%] items-end">
             <div >
-              <h2 className="font-bold  heading">NetSuite Services</h2>
-              <p className="text-gray-600 parahraph mb-6">Your Trusted Partner for NetSuite Success</p>
+              <h2 className="font-bold  heading-calisto heading">NetSuite Services</h2>
+              <p className="font-medium parahraph mb-6 text-[#818181]">Your Trusted Partner for NetSuite Success</p>
             </div>
             <div className="flex justify-end mb-4">
-              <Button variant="ghost" className="text-blue-600 border-2 border-blue-600 font-semibold">
+              <button  className="text-blue border-2 border-blue px-4 py-1 rounded-[8px] font-semibold">
                 View All
-              </Button>
+              </button>
             </div>
           </div>
           <ServicesClient />
