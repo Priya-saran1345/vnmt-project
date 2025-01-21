@@ -14,7 +14,7 @@ import { IntegrationSection } from '@/components/projectcomponent/integration-se
 import { TruestedPartner } from '@/components/projectcomponent/trusted-partner'
 export default function FAQPage() {
   return (
-    <div className=" text-black">
+    <div className="text-black">
       <div className=" w-full">
         <Header />
         <div className='bg_banner'>
@@ -38,4 +38,3 @@ export default function FAQPage() {
     </div>
   )
 }
-

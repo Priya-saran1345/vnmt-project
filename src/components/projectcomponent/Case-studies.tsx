@@ -1,56 +1,102 @@
+"use client"
 
-'use client'
-import Image from "next/image";
-import { caseStudies } from "@/components/data/case-studies";
+import { useState } from "react"
+import Image from "next/image"
+import { ArrowUpRight } from "lucide-react"
+import { caseStudies } from "@/components/data/case-studies"
 
 export function CaseStudy() {
+  const [isPaused, setIsPaused] = useState(false)
+
   return (
     <section className="py-16 overflow-hidden">
       <div>
+        {/* Header Section */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">Case Studies</h2>
+          <h2 className="heading font-bold mb-4">Case Studies</h2>
           <p className="text-xl text-gray-600">How We Make transformative Impact Through Client Experiences</p>
         </div>
+        {/* Upper Cards Scrolling Section */}
         <div className="relative">
-          <div className="infinite-scroll flex gap-6 items-end">
+          <div className={`cards-scroll flex gap-6 items-end ${isPaused ? "paused" : ""}`}>
             {caseStudies.concat(caseStudies).map((study, index) => (
-              <div key={index} className="flex-none rounded-t-3xl w-[280px]">
-                <div className="rounded-t-3xl bg-blue-300 overflow-hidden shadow-lg transform origin-bottom">
-                  <div className="relative h-[250px]">
-                    <Image src={study.image || "/placeholder.svg"} alt={study.title} fill className="object-cover" />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-semibold text-lg">{study.title}</h3>
-                    <p className="text-gray-600 mt-2">{study.description}</p>
+              <div
+                key={index}
+                className="flex-none rounded-t-3xl w-[280px]"
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+              >
+                <div className="card-wrapper rounded-t-3xl overflow-hidden shadow-lg transform origin-bottom group relative">
+                  <div className="relative h-[350px]">
+                    <Image
+                      src={study.image || "/placeholder.svg"}
+                      alt={study.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    {/* Overlay on hover */}
+                    <div className="absolute bg-gradient-to-b from-transparent to-lightblue inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {/* Arrow animation */}
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 rounded-full border-2 border-white -translate-y-full group-hover:translate-y-8 transition-transform duration-500">
+                        <ArrowUpRight className="w-16 h-16 text-white" />
+                      </div>
+                      {/* Text animation */}
+                      <div className="absolute  bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 className="font-semibold rounded-t-[3px] p-2 bg-lightorange text-[22px]  text-white ">{study.title}</h3>
+                        <p className="text-slate-600 bg-white rounded-b-[3px] p-2 text-sm line-clamp-3">{study.description}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-
-        <div className="bg-blue-600 text-white py-8">
-          <p className="text-center text-2xl font-bold">
-            YOUR SUCCESS WITH OUR NETSUITE EXPERTISE | EMPOWER YOUR SUCCESS
-          </p>
+        {/* Bottom Scrolling Text Section */}
+        <div className="bg-gradient-to-b from-[#124DBA] to-lightblue text-white py-1 overflow-hidden">
+          <div className="text-scroll">
+            <p className="text-center text-[54px] font-bold whitespace-nowrap">
+              YOUR SUCCESS WITH OUR NETSUITE EXPERTISE | EMPOWER YOUR SUCCESS
+            </p>
+          </div>
         </div>
       </div>
-
+      {/* Styles for Animations */}
       <style jsx>{`
-        .infinite-scroll {
+        /* Upper Cards Scrolling Animation */
+        .cards-scroll {
           display: flex;
-          animation: scroll-infinite 70s linear infinite;
-          width: max-content; /* Allows scrolling of long content */
+          animation: cardsScroll 50s linear infinite;
         }
-        @keyframes scroll-infinite {
-          from {
-            transform: translateX(0%);
+        .cards-scroll.paused {
+          animation-play-state: paused;
+        }
+        @keyframes cardsScroll {
+          0% {
+            transform: translateX(-100%);
           }
-          to {
-            transform: translateX(-50%);
+          100% {
+            transform: translateX(100%);
+          }
+        }
+        /* Bottom Text Scrolling Animation */
+        .text-scroll {
+          display: flex;
+          align-items: center;
+          overflow: hidden;
+          white-space: nowrap;
+          animation: textScroll 50s linear infinite;
+        }
+        @keyframes textScroll {
+          0% {
+            transform: translateX(100%);
+          }
+          100% {
+            transform: translateX(-100%);
           }
         }
       `}</style>
     </section>
-  );
+  )
 }
+

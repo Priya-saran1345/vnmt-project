@@ -9,6 +9,13 @@ body {
 }
 
 :root {
+  --blue:#4583F7,
+--orange:#FF8352,
+  --darkblue:#1F57BF;
+  --textred:#E84A54;
+  --heartred:#FE0707;
+  --lightblue:#79A5F7
+  --lightorange:#FF874F,
 	--blue: #4583F7;
 	--orange:#FF8352;
 	--darkblue:#1F57BF;
@@ -74,6 +81,8 @@ a {
 .parahraph {
 	font-size: 18px;
 }
+.shadow{
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;}
 
 .custom-scrollbar::-webkit-scrollbar-track {
 	background-color: #ff8352;
