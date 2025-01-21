@@ -1,7 +1,5 @@
 import Link from "next/link"
-import Image from "next/image"
-import { Facebook, Linkedin, Search } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import {  Search } from "lucide-react"
 import { LiaFlagUsaSolid } from "react-icons/lia";
 import { MdWifiCalling3 } from "react-icons/md"
 import { FaInstagram } from "react-icons/fa"

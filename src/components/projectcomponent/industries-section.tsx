@@ -13,6 +13,7 @@ const iconMap: Record<string, LucideIcon> = {
 }
 
 export function IndustriesSection() {
+  
   return (
     <section className="py-16 bg-white">
       <div className="w-full lg:w-[95%] 2xl:w-[77%]
@@ -25,7 +26,7 @@ export function IndustriesSection() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3  mb-8">
-          {industries.map((industry:any) => {
+          {industries.map((industry:{icon:string,description:string,title:string,id:number}) => {
             const Icon = iconMap[industry.icon]
             return (
               <Card key={industry.id} className=" transition-shadow">

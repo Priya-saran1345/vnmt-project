@@ -75,7 +75,7 @@ export function Services() {
                 ref={scrollContainerRef}
                 className="h-[400px] overflow-y-auto pr-8 space-y-8 custom-scrollbar"
               >
-                {services.map((service: any) => (
+                {services.map((service: {icon:string,description:string,title:string,id:number}) => (
                   <div
                     key={service.id}
                     data-id={service.id}

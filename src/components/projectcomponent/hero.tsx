@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
-import { navigationItems, contactInfo } from "@/components/data/navigation"
-import { Play } from "lucide-react"
+import { navigationItems } from "@/components/data/navigation"
+// import { Play } from "lucide-react"
 import { FaPlay } from "react-icons/fa"
 import { FiMenu } from "react-icons/fi"
 
@@ -61,7 +61,7 @@ export function Hero() {
 
                 <FaPlay className="mr-2 text-[#FF8352] text-[44px] " />
               </div>
-              How It <br /> Work's
+              How It <br /> Work&apos;s
             </Button>
 
             <p className="text-blue-100 text-[18px] mb-8 max-w-xl">
