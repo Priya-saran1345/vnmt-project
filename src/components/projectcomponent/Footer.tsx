@@ -48,7 +48,7 @@ const Footer = () => {
                 <div>
                   <h4 className="font-semibold">India - Pune, MH</h4>
                   <p className="text-sm text-white/70 hover:text-orange cursor-pointer">
-                    6th Floor, 625 & 626, Gera'sImperium Rise, Hinjewadi Phase 2,Pune ,Maharashtra - 41157 +91 9023403569
+                    6th Floor, 625 & 626, Gera&apos;sImperium Rise, Hinjewadi Phase 2,Pune ,Maharashtra - 41157 +91 9023403569
                   </p>
                 </div>
                 <div>
