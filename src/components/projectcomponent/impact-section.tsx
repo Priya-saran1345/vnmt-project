@@ -41,7 +41,7 @@ export function ImpactSection() {
       </div>
     </div>
     
- <div className="bg-blue-600 text-white py-10">
+ <div className="bg-blue text-white py-10">
         <p className="text-center text-xl font-bold px-4">
           YOUR SUCCESS WITH OUR NETSUITE EXPERTISE | EMPOWER YOUR SUCCESS
         </p>

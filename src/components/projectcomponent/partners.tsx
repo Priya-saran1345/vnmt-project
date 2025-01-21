@@ -7,28 +7,38 @@ export function Partners() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div>
             <h2 className="heading font-bold">Our <br/> Partner</h2>
-            <p className=" text-[18px] max-w-md ">We Help You to Make the Most <br /> of NetSuite & Celigo</p>
+            <p className=" !text-[20px] max-w-md ">We Help You to Make the Most <br /> of NetSuite & Celigo</p>
           </div>
-          <div className="grid grid-cols-2 gap-8">
-            <div className="bg-white h-full p-6 rounded-lg">
+          <div className="grid grid-cols-2 h-full gap-8">
+            <div className="h-[396px] bg-gradient-to-b from-blue to-[#82AEFF]">
+
+          
+            <div className="bg-white  w-[328px] rounded-b-3xl border-orange border-[1px] border-t-0 p-6 ">
               <Image
-                src="/placeholder.svg?height=60&width=200"
+                src="/images/oracle.svg"
                 alt="Oracle NetSuite Partner"
-                width={200}
-                height={60}
-                className="h-12 w-auto"
+                width={80}
+                height={25}
+                className=""
               />
-              <p className="text-gray-600 text-sm mt-2">NetSuite SDN Partner (Service & Technology)</p>
+              <p className="text-black text-[16px] font-medium mt-4">NetSuite SDN Partner </p>
+              <p className="text-black text-[16px] font-medium "> (Service & Technology)</p>
             </div>
-            <div className="bg-white p-6 rounded-lg">
+            </div>
+            <div className="h-[396px] flex justify-start items-end bg-gradient-to-t from-blue to-[#82AEFF] ">
+              
+          
+            <div className="bg-white w-[328px] border-orange border-[1px] border-b-0 rounded-t-3xl p-6">
               <Image
-                src="/placeholder.svg?height=60&width=200"
+                src="/images/celigo.svg"
                 alt="Celigo Partner"
-                width={200}
-                height={60}
-                className="h-12 w-auto"
+                width={80}
+                height={25}
+                className=" "
               />
-              <p className="text-gray-600 text-sm mt-2">Celigo Integration Partner (AI-Driven Automation)</p>
+              <p className="text-black  text-[16px] mt-4">Celigo Integration Partner</p>
+              <p className="text-black  text-[16px] ">(AI-Driven Automation)</p>
+            </div>
             </div>
           </div>
         </div>
