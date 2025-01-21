@@ -10,11 +10,11 @@ import { LuFacebook } from "react-icons/lu"
 
 export function Header() {
   return (
-    <header className="bg-blue text-[16px] h-[72px] text-white">
+    <div className="bg-blue text-[16px] flex items-center h-[72px] text-white">
       {/* Top bar */}
-      <div className="">
+      <div className=" w-full">
         <div className="w-full lg:w-[95%] 2xl:w-[77%]
- mx-auto px-4 py-2">
+            mx-auto px-4 ">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center gap-3">
               <span><LiaFlagUsaSolid className="text-[24px]" /></span>
@@ -52,10 +52,9 @@ export function Header() {
           </div>
         </div>
       </div>
-
       {/* Main navigation */}
 
-    </header>
+    </div>
   )
 }
 
