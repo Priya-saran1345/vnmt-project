@@ -8,7 +8,6 @@ import { Menu, X } from "lucide-react"
 import { navigationItems } from "../data/navigation"
 import { FiMenu } from "react-icons/fi"
 
-
 export interface SubNavItem {
     id: number
     label: string
@@ -25,39 +24,42 @@ export interface NavItem {
     }[]
 }
 
-
-
 export default function AnimatedHeader() {
     const [isScrolled, setIsScrolled] = useState(false)
     const [hoveredItem, setHoveredItem] = useState<number | null>(null)
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
     useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50)
+        // Check if the user has scrolled before, on page load
+        const scrollState = localStorage.getItem("isScrolled");
+        if (scrollState === "true") {
+            setIsScrolled(true);
         }
 
-        window.addEventListener("scroll", handleScroll)
-        return () => window.removeEventListener("scroll", handleScroll)
-    }, [])
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+            // Store scroll state in localStorage
+            localStorage.setItem("isScrolled", window.scrollY > 50 ? "true" : "false");
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     const headerVariants = {
         initial: {
-            y: 0,
             width: "55%",
-            backgroundColor: "rgba(255, 255, 255, 1)",
+            borderColor: "orange",
         },
         scrolled: {
-            y: 0,
-            x: 0,
+
             width: "100%",
             top: 0,
             left: 0,
             backgroundColor: "white",
             borderRadius: "0",
             boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-        }
-
+        },
     }
 
     const menuVariants = {
@@ -82,21 +84,23 @@ export default function AnimatedHeader() {
             <motion.header
                 variants={headerVariants}
                 animate={isScrolled ? "scrolled" : "initial"}
-                transition={{ duration: 0.3 }}
-                className="fixed top-15 left-30 -translate-x-1/2 z-50 rounded-full py-4 px-8"
+                transition={{ duration: 0.15 }}
+                className="fixed top-15  z-50 rounded-full py-4 px-8 bg-white w-[55%]"
+                onMouseLeave={() => setHoveredItem(null)}
             >
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between gap-24">
                     <Link href="/" className="flex-shrink-0">
                         <Image src="/images/logo.svg" alt="Logo" width={140} height={35} className="h-8 w-auto" />
                     </Link>
 
                     <nav className="hidden md:flex items-center gap-6">
                         {navigationItems.map((item) => (
-                            <Link 
-                            key={item.id} 
-                            href={item.href}
-                                className="relative font-semibold text-md text-black overflow-hidden group navitem hover:text-orange"
-                                onMouseEnter={() => setHoveredItem(item.id)}>
+                            <Link
+                                key={item.id}
+                                href={item.href}
+                                className={`relative font-semibold text-md text-black overflow-hidden group  hover:text-orange ${hoveredItem === item.id ? "text-orange " : ""}`}
+                                onMouseEnter={() => setHoveredItem(item.id)}
+                            >
                                 <span
                                     className={`inline-block transition-transform duration-200 ease-in-out ${hoveredItem === item.id ? "-translate-y-full" : "translate-y-0"
                                         }`}
@@ -111,18 +115,15 @@ export default function AnimatedHeader() {
                                 </span>
                             </Link>
                         ))}
-
-
-
                     </nav>
 
                     <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden text-black">
                         {isMobileMenuOpen ? <X /> : <Menu />}
                     </button>
-                    
+
                     <div className="text-black text-[20px] border-white hover:bg-blue-700 cursor-pointer hover:text-orange smooth1">
-                <FiMenu />
-              </div>
+                        <FiMenu />
+                    </div>
                 </div>
             </motion.header>
 

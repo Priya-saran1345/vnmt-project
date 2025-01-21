@@ -5,6 +5,7 @@ export const industries = [
       description:
         "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard since the 1500s",
       icon: "Wallet",
+      iconColor: "red",
     },
     {
       id: 2,
@@ -12,6 +13,7 @@ export const industries = [
       description:
         "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard since the 1500s",
       icon: "BarChart",
+      iconColor: "green",
     },
     {
       id: 3,
@@ -19,6 +21,7 @@ export const industries = [
       description:
         "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard since the 1500s",
       icon: "Building",
+      iconColor: "red",
     },
     {
       id: 4,
@@ -26,6 +29,7 @@ export const industries = [
       description:
         "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard since the 1500s",
       icon: "Cpu",
+      iconColor: "red",
     },
     {
       id: 5,
@@ -33,6 +37,7 @@ export const industries = [
       description:
         "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard since the 1500s",
       icon: "Film",
+      iconColor: "red",
     },
     {
       id: 6,
@@ -40,6 +45,7 @@ export const industries = [
       description:
         "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard since the 1500s",
       icon: "Stethoscope",
+      iconColor: "red",
     },
   ]
   
