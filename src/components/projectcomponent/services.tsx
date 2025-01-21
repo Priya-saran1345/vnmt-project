@@ -81,7 +81,7 @@ export function Services() {
 
               {/* Scrollable container */}
               <div ref={scrollContainerRef} className="h-[400px] overflow-y-auto pr-8 space-y-8 custom-scrollbar">
-                {services.map((service:any) => (
+                {services.map((service: { id: number; title: string; description: string; icon: string; }) => (
                   <div
                     key={service.id}
                     data-id={service.id}
@@ -90,8 +90,8 @@ export function Services() {
                   >
                     <div className="flex-shrink-0 rounded-tl-full rounded-lg bg-blue h-[90px] w-[90px] flex items-center justify-center">
                       <Image src={service.icon || "/placeholder.svg"}
-                      className={` ${activeService === service.id ? "" : "invert brightness-0"} `}
-                       height={39} width={50} alt="" />
+                        className={` ${activeService === service.id ? "" : "invert brightness-0"} `}
+                        height={39} width={50} alt="" />
                     </div>
                     <div>
                       <h3 className="font-semibold mb-2">{service.title}</h3>

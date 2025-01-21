@@ -10,7 +10,7 @@ import { LuFacebook } from "react-icons/lu"
 
 export function Header() {
   return (
-    <header className="bg-blue text-[16px] h-[72px] text-white">
+    <header className="bg-darkblue text-[16px] h-[60px] text-white">
       {/* Top bar */}
       <div className="">
         <div className="w-full lg:w-[95%] 2xl:w-[77%]
