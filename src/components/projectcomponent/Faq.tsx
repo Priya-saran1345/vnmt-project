@@ -3,36 +3,52 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 const faq = () => {
   return (
-    <div className='w-full lg:w-[95%] 2xl:w-[77%] mx-auto'>
-         <h1 className="text-4xl font-bold text-center mb-12">FAQs</h1>
+    <div className=' mx-auto '>
+      <h1 className="text-4xl font-bold text-center mb-12">FAQs</h1>
+      <div className="grid w-full mx-auto lg:w-[85%] xl:w-[70%] 2xl:w-[55%] md:grid-cols-2 gap-16 mb-4">
+        <div className="space-y-4">
+          <Accordion type="single" collapsible>
+            {[1, 2, 3, 4].map((item) => (
+              <AccordionItem key={item} value={`item-${item}`} className=' rounded-xl text-[18px] border-blue border-[1.8px]'>
+                <AccordionTrigger className="text-left">Lorem ipsum is simply dummy text</AccordionTrigger>
+                <AccordionContent>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, quibusdam.
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+        <div className="space-y-4">
+          <Accordion type="single" collapsible>
+            {[5, 6, 7, 8].map((item) => (
+              <AccordionItem key={item} value={`item-${item}`} className='rounded-xl text-[18px] border-blue border-[1.8px]'>
+                <AccordionTrigger className="text-left">Lorem ipsum is simply dummy text</AccordionTrigger>
+                <AccordionContent>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, quibusdam.
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </div>
+      <div className="bg-[url('/images/footer-banner.svg')]  max-w-[1246px]  items-end pb-12 flex justify-start px-12
+     z-50 relative bg-no-repeat  mx-auto h-[350px]   rounded-3xl text-white py-4 ">
+        <div className='w-[45%]  '>
 
-<div className="grid md:grid-cols-2 gap-6 mb-16">
-  <div className="space-y-4">
-    <Accordion type="single" collapsible>
-      {[1, 2, 3, 4].map((item) => (
-        <AccordionItem key={item} value={`item-${item}`}>
-          <AccordionTrigger className="text-left">Lorem ipsum is simply dummy text</AccordionTrigger>
-          <AccordionContent>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, quibusdam.
-          </AccordionContent>
-        </AccordionItem>
-      ))}
-    </Accordion>
-  </div>
+          <h2 className="heading font-bold ">Ready to Get Started ?</h2>
+          <p className='paragraph'>
+            Let’s transform your business with our expert solutions.
+            Contact us today to begin your journey toward succe</p>
+        </div>
+        <div>
+          <div className='bg-white  text-orange text-[22px] font-semibold w-fit mb-4 px-10 mx-auto text-orange-400 py-[6px] rounded-full'>
+            Book Consultant Now
+          </div>
+        </div>
 
-  <div className="space-y-4">
-    <Accordion type="single" collapsible>
-      {[5, 6, 7, 8].map((item) => (
-        <AccordionItem key={item} value={`item-${item}`}>
-          <AccordionTrigger className="text-left">Lorem ipsum is simply dummy text</AccordionTrigger>
-          <AccordionContent>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, quibusdam.
-          </AccordionContent>
-        </AccordionItem>
-      ))}
-    </Accordion>
-  </div>
-</div>
+      </div>
+
+
     </div>
   )
 }
