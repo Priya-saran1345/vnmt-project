@@ -64,17 +64,14 @@ export function ServicesClient() {
                         <div
                             key={service.id}
                             data-id={service.id}
-                            className={`service-item flex gap-4 p-4 transition-all duration-300`}
+                            className={`service-item group flex gap-4 p-4 transition-all duration-300`}
                         >
                             <div
-                                className={`flex-shrink-0 rounded-tl-[45%] rounded-[5%] h-[90px] ${activeService === service.id
-                                        ? "border-orange/50 border-[2px]"
-                                        : "bg-blue"
-                                    } w-[90px] flex items-center justify-center`}
+                                className={`flex-shrink-0 rounded-tl-[45%] rounded-[5%] group-hover:border-orange/50 bg-blue group-hover:bg-white group-hover:border-[2px] h-[90px] w-[90px] flex items-center justify-center`}
                             >
                                 <Image
                                     src={service.icon || "/placeholder.svg"}
-                                    className={`${activeService === service.id ? "" : "invert brightness-0"
+                                    className={`group-hover:filter-none  invert brightness-0 ${activeService === service.id ? "" : ""
                                         }`}
                                     height={39}
                                     width={50}
@@ -95,3 +92,9 @@ export function ServicesClient() {
     )
 }
 
+
+
+// ${activeService === service.id
+//     ? "border-orange/50 border-[2px]"
+//     : "bg-blue"
+// }

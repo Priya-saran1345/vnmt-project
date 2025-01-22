@@ -143,9 +143,82 @@ a {
     width: 0;
     height: 2px; 
     background-color:  var(--orange); 
-    transition: width 0.2s ease;
+    transition: width 10s ease;
 }
 
 .navitem:hover::after {
     width: 100%;
 }
+
+
+@keyframes scroll-left {
+	0% {
+	  transform: translateX(0%);
+	}
+	100% {
+	  transform: translateX(-100%);
+	}
+  }
+  
+  @keyframes scroll-right {
+	0% {
+	  transform: translateX(0%);
+	}
+	100% {
+	  transform: translateX(100%);
+	}
+  }
+  
+  .animate-scroll-left {
+	animation: scroll-left 100s linear infinite;
+  }
+  
+  .animate-scroll-right {
+	animation: scroll-right 100s linear infinite;
+  }
+  
+  @keyframes scroll-loop {
+	0% {
+	  transform: translateX(0%);
+	}
+	100% {
+	  transform: translateX(-50%);
+	}
+  }
+  
+  .animate-scroll-loop {
+	animation: scroll-loop 10s linear infinite linear;
+  }
+  
+  @keyframes scroll-up {
+	0% {
+	  transform: translateY(70%);
+	}
+	50% {
+	  transform: translateY(0%);
+	}
+	100% {
+	  transform: translateY(70%);
+	}
+  }
+  
+  @keyframes scroll-down {
+	0% {
+	  transform: translateY(-70%);
+	}
+	50% {
+	  transform: translateY(0%);
+	}
+	100% {
+	  transform: translateY(-70%);
+	}
+  }
+  
+  .animate-scroll-up {
+	animation: scroll-up 6s ease-in-out infinite;
+  }
+  
+  .animate-scroll-down {
+	animation: scroll-down 6s ease-in-out infinite;
+  }
+  
