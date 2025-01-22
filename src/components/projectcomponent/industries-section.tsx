@@ -114,7 +114,7 @@ function ServiceCard({ id, title, description, icon: Icon, color, iconBg }: { id
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Gradient Background Animation */}
-      <span className={cn("absolute z-0 h-16 w-16 rounded-full  transition-all duration-800 ease-in-out transform group-hover:scale-[20] bg-gradient-to-br ", color )} />
+      <span className={cn("absolute z-0 h-16 w-16 rounded-full  transition-all duration-700 ease-in-out transform group-hover:scale-[20] bg-gradient-to-br ", color )} />
 
       <div className={cn("relative z-10 w-full", { 'mx-auto max-w-md': isHovered })}>
         {/* Icon */}
