@@ -108,6 +108,18 @@ a {
 	background-position: center;
 	background-repeat: no-repeat; 
 }
+.bg_integration {
+	background-image: url('/images/Group 1000005772.svg'); 
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat; 
+}
+/* .bg_footer {
+	background-image: url('/images/map.png'); 
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat; 
+} */
 .smooth3{
 	transition: all 0.3s ease-in-out;
 }
@@ -226,4 +238,58 @@ a {
   .animate-scroll-down {
 	animation: scroll-down 6s ease-in-out infinite;
   }
+  .embla {
+	overflow: hidden;
+  }
+  
+  .embla__container {
+	display: flex;
+  }
+  
+  .embla__slide {
+	flex: 0 0 100%;
+	min-width: 0;
+	position: relative;
+  }
+  
+  @media (min-width: 768px) {
+	.embla__slide {
+	  flex: 0 0 50%;
+	}
+  }
+  
+  @media (min-width: 1024px) {
+	.embla__slide {
+	  flex: 0 0 33.333%;
+	}
+  }
+  
+  @keyframes backgroundMove {
+	0% {
+	  background-position: 0 0;
+	}
+	100% {
+	  background-position: 100% 0;
+	}
+  }
+  
+  .animate-background-move {
+	animation: backgroundMove 20s linear infinite;
+  }
+  .bg_footer {
+	position: relative;
+	z-index: 1;
+  }
+  
+  .bg_footer::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.85);
+	z-index: -1;
+  }
+  
   

@@ -53,8 +53,8 @@ export function ImpactSection() {
       <div className="relative w-full py-16 overflow-hidden">
         <div className="flex impact-section items-stretch">
           {/* Dark curved section */}
-          <div className="impact-left w-[50%] bg-[url('/images/impact-bg.svg')] flex justify-end items-center rounded-r-full relative z-10">
-            <div className="p-12 pr-32 text-white max-w-2xl">
+          <div className="impact-left w-[50%]  bg-[url('/images/impact-bg.svg')] flex justify-end items-center rounded-r-full relative z-10">
+            <div className="p-12 pr-32 text-white ">
               <h2 className="heading font-bold heading-calisto mb-3">{impactContent?.title}</h2>
               <p
                 className="text-xl text-gray-300 mb-6"
@@ -68,7 +68,7 @@ export function ImpactSection() {
           </div>
 
           {/* Stats section */}
-          <div className="impact-right w-[65%] bg-[#EDF3FF] border-4 !py-20 border-r-0 border-darkblue h-[300px] rounded-l-full -ml-28 relative">
+          <div className="impact-right w-[65%] bg-[#EDF3FF] border-2 !py-20 border-r-0 border-darkblue h-[300px] rounded-l-full -ml-28 relative">
             <div className="absolute inset-0 flex items-center">
               <div className="pl-40 space-y-8">
                 {impactStats.map((stat) => (
@@ -76,7 +76,7 @@ export function ImpactSection() {
                     <div className="text-4xl lg:text-[65px] font-bold bg-gradient-to-b from-lightblue to-darkblue py-2 bg-clip-text text-transparent">
                       {stat.number}
                     </div>
-                    <div className="text-blue text-lg">{stat.label}</div>
+                    <div className="text-blue font-bold text-lg">{stat.label}</div>
                   </div>
                 ))}
               </div>

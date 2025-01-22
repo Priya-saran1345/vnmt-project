@@ -31,8 +31,8 @@ export function CaseStudy() {
     <section className="py-16 overflow-hidden">
       <div>
         {/* Header Section */}
-        <div className="text-center mb-12">
-          <h2 className="heading font-bold mb-4">Case Studies</h2>
+        <div className="text-center ">
+          <h2 className="heading heading-calisto font-bold mb-4">Case Studies</h2>
           <p className="text-xl text-gray-600">How We Make transformative Impact Through Client Experiences</p>
         </div>
         {/* Upper Cards Scrolling Section */}
