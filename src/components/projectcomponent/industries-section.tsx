@@ -13,6 +13,7 @@ const services = [
       "Bibendum libero enim donec elementum inc eptos feugiat praesent parturient pote susp endisse. Dapibus eros sapien blandit nibher",
     icon: MonitorSmartphone,
     color: "bg-[#8B5CF6]",
+    text: "text-[#8B5CF6]",
     hoverColor: "hover:bg-[#8B5CF6]",
     iconBg: "bg-[#8B5CF6]/10",
   },
@@ -23,6 +24,7 @@ const services = [
       "Bibendum libero enim donec elementum inc eptos feugiat praesent parturient pote susp endisse. Dapibus eros sapien blandit nibher",
     icon: Search,
     color: "bg-[#FF7B54]",
+    text: "text-[#FF7B54]",
     hoverColor: "hover:bg-[#FF7B54]",
     iconBg: "bg-[#FF7B54]/10",
   },
@@ -33,6 +35,7 @@ const services = [
       "Bibendum libero enim donec elementum inc eptos feugiat praesent parturient pote susp endisse. Dapibus eros sapien blandit nibher",
     icon: LayoutGrid,
     color: "bg-[#22D3EE]",
+    text: "text-[#22D3EE]",
     hoverColor: "hover:bg-[#22D3EE]",
     iconBg: "bg-[#22D3EE]/10",
   },
@@ -43,6 +46,7 @@ const services = [
       "Bibendum libero enim donec elementum inc eptos feugiat praesent parturient pote susp endisse. Dapibus eros sapien blandit nibher",
     icon: LineChart,
     color: "bg-[#FF7BCA]",
+    text: "text-[#FF7BCA]",
     hoverColor: "hover:bg-[#FF7BCA]",
     iconBg: "bg-[#FF7BCA]/10",
   },
@@ -53,6 +57,7 @@ const services = [
       "Bibendum libero enim donec elementum inc eptos feugiat praesent parturient pote susp endisse. Dapibus eros sapien blandit nibher",
     icon: BarChart2,
     color: "bg-[#3B82F6]",
+    text: "text-[#3B82F6]",
     hoverColor: "hover:bg-[#3B82F6]",
     iconBg: "bg-[#3B82F6]/10",
   },
@@ -63,6 +68,7 @@ const services = [
       "Bibendum libero enim donec elementum inc eptos feugiat praesent parturient pote susp endisse. Dapibus eros sapien blandit nibher",
     icon: Share2,
     color: "bg-[#8B5CF6]",
+    text: "text-[#8B5CF6]",
     hoverColor: "hover:bg-[#8B5CF6]",
     iconBg: "bg-[#8B5CF6]/10",
   },
@@ -91,9 +97,9 @@ function ServiceCard({ id, title, description, icon: Icon, color, iconBg }: {id:
   const [isHovered, setIsHovered] = React.useState(false);
 
   return (
-    <a 
+    <div 
       className={cn(
-        "card education p-7 relative overflow-hidden transition-colors duration-300 group",
+        "card education p-7 relative overflow-hidden transition-colors duration-300 group hover:shadow-xl",
         {
           "border-r border-b": id === 1,
           "border-b": id === 2,
@@ -102,29 +108,32 @@ function ServiceCard({ id, title, description, icon: Icon, color, iconBg }: {id:
           "border-l": id === 6
         }
       )}
-      href="#"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     > 
-      <div className={cn(" w-16 h-16 rounded-full flex items-center justify-center mb-6", iconBg)}>
-        <Icon className={cn("w-8 h-8", color.replace("bg-", "text-"))} />
+      <div className={cn(" w-16 h-16 rounded-full flex items-center justify-center mb-6 group group-hover:bg-white/50", iconBg)}>
+        <Icon className={cn("w-8 h-8 group-hover:text-white  ", color.replace("bg-", "text-"))} />
       </div>
       <h3 className="text-xl font-semibold mb-4 group-hover:text-white text-black">{title}</h3>
-      <p className="text-gray-600 group-hover:text-white/90">{description}</p>
-      {title === "Digital Strategy" && (
-        <button className="mt-6 text-white font-medium inline-flex items-center">
-          READ MORE
-          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
-      )}
-{isHovered && (
+      <p className="text-gray-600 group-hover:text-white">{description}</p>
+      {isHovered && (
   <motion.div
-    className={cn("absolute overflow-hidden inset-0 -z-10", color)}
-    initial={{ scale: 0, x: 32, y: 32, opacity: 0, borderRadius: "0%" }}
-    animate={{ scale: 1, x: 0, y: 0, opacity: 1, borderRadius: "0%" }}
-    exit={{ scale: 0, x: 32, y: 32, opacity: 0, borderRadius: "0%" }}
+    className={cn("absolute inset-0 -z-10", color)} // Full card coverage
+    initial={{
+      scale: 0,
+      opacity: 0,
+      borderRadius: "100%", 
+    }}
+    animate={{
+      scale: 1,
+      opacity: 1,
+      borderRadius: "0%",
+    }}
+    exit={{
+      scale: 0,
+      opacity: 0,
+      borderRadius: "100%", 
+    }}
     transition={{
       type: "spring",
       stiffness: 100,
@@ -132,13 +141,15 @@ function ServiceCard({ id, title, description, icon: Icon, color, iconBg }: {id:
       duration: 0.7,
     }}
     style={{
-      originX: 0,
-      originY: 0,
+      originX: 0.11, // Set origin to center
+      originY: 0.2, // Set origin to center
     }}
   />
 )}
 
-    </a>
+
+
+    </div>
   );
 }
 
