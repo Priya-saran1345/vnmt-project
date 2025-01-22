@@ -87,7 +87,7 @@ export function IndustriesSection() {
   )
 }
 
-function ServiceCard({ id, title, description, icon: Icon, color, hoverColor, iconBg }: {id:number, title: string, description:string, icon: React.ElementType, color:string, hoverColor:string, iconBg:string}) {
+function ServiceCard({ id, title, description, icon: Icon, color, iconBg }: {id:number, title: string, description:string, icon: React.ElementType, color:string, hoverColor:string, iconBg:string}) {
   const [isHovered, setIsHovered] = React.useState(false);
 
   return (
