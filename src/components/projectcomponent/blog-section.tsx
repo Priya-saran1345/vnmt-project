@@ -16,7 +16,6 @@ export function BlogSection() {
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + blogPosts.length) % blogPosts.length)
   }
-
   return (
     <section className="py-16">
       <div className="w-full lg:w-[95%] 2xl:w-[77%] mx-auto px-4">
