@@ -10,7 +10,7 @@ import { Hero } from '@/components/projectcomponent/hero'
 import { Services } from '@/components/projectcomponent/services'
 import { Partners } from '@/components/projectcomponent/partners'
 import { BlogSection } from '@/components/projectcomponent/blog-section'
-import { IntegrationSection } from '@/components/projectcomponent/integration-section'
+import  IntegrationSection  from '@/components/projectcomponent/integration-section'
 import { TruestedPartner } from '@/components/projectcomponent/trusted-partner'
 export default function FAQPage() {
   return (

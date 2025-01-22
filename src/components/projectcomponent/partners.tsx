@@ -5,9 +5,9 @@ export function Partners() {
     <div className="bg-blue-600 bg-[url('/images/partner-banner.svg')] h-[396px] text-white ">
       <div className="w-full lg:w-[95%] 2xl:w-[77%] mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-          <div>
-            <h2 className="heading font-bold">Our <br/> Partner</h2>
-            <p className=" !text-[20px] max-w-md ">We Help You to Make the Most <br /> of NetSuite & Celigo</p>
+          <div className="leading-tight">
+            <h2 className="heading font-bold heading-calisto">Our <br/> Partner</h2>
+            <p className=" !text-[20px] max-w-md  ">We Help You to Make the Most <br /> of NetSuite & Celigo</p>
           </div>
           <div className="grid grid-cols-2 h-full gap-8">
             <div className="h-[396px] bg-gradient-to-b from-blue to-[#82AEFF]">
