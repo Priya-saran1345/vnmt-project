@@ -190,10 +190,6 @@ a {
   }
   
 
-
-
-
-
   @keyframes scroll-loop {
 	0% {
 	  transform: translateX(0%);
@@ -369,4 +365,11 @@ a {
 	z-index: -1;
   }
   
+  
+
+
+
+
+
+
   

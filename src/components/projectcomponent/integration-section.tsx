@@ -86,7 +86,7 @@ export default function IntegrationSection() {
 
       <div className="container mx-auto px-4 py-16 relative">
         <motion.h1
-          className="font-bold text-white text-center mb-16  mx-auto heading-calisto heading"
+          className="font-bold text-white text-center mb-32  mx-auto heading-calisto heading"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -94,31 +94,31 @@ export default function IntegrationSection() {
           Get Seamless Integration Experience with Our <br /> Celigo Expertise
         </motion.h1>
 
-        <div className="relative h-48 mb-16">
-          <div className="absolute inset-0 flex justify-between items-center">
+        <div className="relative h-48  ">
+          <div className="absolute inset-0 flex justify-between items-start -mb-32">
             <PlatformIcon
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-jPEM9Gabod85LgDhquvaM7pWBQpCYC.png"
+              src="/images/integration1.svg"
               alt="Xero"
             />
             <PlatformIcon
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-jPEM9Gabod85LgDhquvaM7pWBQpCYC.png"
+              src="/images/integration2.svg"
               alt="Shopify"
             />
             <PlatformIcon
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-jPEM9Gabod85LgDhquvaM7pWBQpCYC.png"
+              src="/images/integration3.svg"
               alt="HubSpot"
               className="scale-125"
             />
             <PlatformIcon
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-jPEM9Gabod85LgDhquvaM7pWBQpCYC.png"
+              src="/images/integration4.svg"
               alt="WooCommerce"
             />
             <PlatformIcon
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-jPEM9Gabod85LgDhquvaM7pWBQpCYC.png"
+              src="/images/integration5.svg"
               alt="Adobe CC"
             />
             <PlatformIcon
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-jPEM9Gabod85LgDhquvaM7pWBQpCYC.png"
+              src="/images/integration6.svg"
               alt="Magento"
             />
           </div>

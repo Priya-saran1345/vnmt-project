@@ -52,7 +52,7 @@ export function Testimonials() {
     <section className="pb-16 overflow-hidden">
       <div className="w-full lg:w-[95%] 2xl:w-[77%] max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="heading heading-calisto font-bold mb-4">Testimonials</h2>
+          <h2 className="heading heading-calisto font-bold ">Testimonials</h2>
           <p className="text-xl text-gray-600">Hear What Our Clients Say</p>
         </div>
         <div className="flex items-center">
@@ -62,7 +62,7 @@ export function Testimonials() {
           <MdKeyboardDoubleArrowLeft className="text-3xl text-gray-600  cursor-pointer hover:text-black" />
         </div>
         <div className="relative overflow-hidden" ref={emblaRef}>
-          <div className="flex touch-pan-y">
+          <div className="flex touch-pan-y h-[360px]">
             {testimonials.map((testimonial, index) => (
               <div
                 key={testimonial.id}

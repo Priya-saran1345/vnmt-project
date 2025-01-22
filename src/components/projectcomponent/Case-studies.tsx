@@ -32,11 +32,11 @@ export function CaseStudy() {
       <div>
         {/* Header Section */}
         <div className="text-center ">
-          <h2 className="heading heading-calisto font-bold mb-4">Case Studies</h2>
+          <h2 className="heading heading-calisto font-bold ">Case Studies</h2>
           <p className="text-xl text-gray-600">How We Make transformative Impact Through Client Experiences</p>
         </div>
         {/* Upper Cards Scrolling Section */}
-        <div className="relative">
+        <div className="relative -mt-28">
           <div
             className={`cards-scroll flex gap-6 items-end`}
             style={{ animation: "cardsScroll 50s linear infinite", animationPlayState: isPaused ? 'paused' : 'running' }}
@@ -64,7 +64,7 @@ export function CaseStudy() {
                     {/* Overlay on hover */}
                     <div className="absolute bg-gradient-to-b h-full from-transparent to-lightblue inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       {/* Arrow animation */}
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 rounded-full border-2 border-white -translate-y-full group-hover:translate-y-8 transition-transform duration-500">
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 rounded-full border-2 border-white -translate-y-full group-hover:translate-y-12 transition-transform duration-500">
                         <ArrowUpRight className="w-16 h-16 text-white" />
                       </div>
                       {/* Text animation */}

@@ -7,7 +7,7 @@ export const testimonials = [
       title:"lorem is the lorem",
       avatar: "/images/testimonial-person.png",
       rating: 5,
-      text: "Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      text: "Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's .",
       liked: true,
     },
     {

@@ -3,21 +3,23 @@ import { partners } from "@/components/data/partners";
 
 export function TruestedPartner() {
   return (
-    <div className="bg-gradient-to-b from-darkblue to-lightblue py-10">
-      <div className="mx-auto px-4">
-        <h2 className="heading heading-calisto font-bold text-center text-white mb-12">
-          Trusted by Industry Leaders Worldwide
-        </h2>
-        <div className="overflow-hidden">
+    <div className="">
+      <div className="mx-auto">
+        <div className="bg-gradient-to-t rounded-t-3xl py-4 flex items-center justify-center from-darkblue to-blue">
+          <h2 className="heading heading-calisto font-bold text-center text-white">
+            Trusted by Industry Leaders Worldwide
+          </h2>
+        </div>
+        <div className="overflow-hidden bg-white">
           {/* Row 1 - Scroll Left */}
           <div
-            className="flex space-x-8 animate-scroll-left"
+            className="flex space-x-8 "
             style={{
-              animation: "scroll-left 10s linear infinite",
               display: "flex",
               width: "fit-content",
             }}
           >
+            {/* Duplicate the logos to create seamless scroll */}
             {partners.slice(0, 8).map((partner) => (
               <div
                 key={partner.id}
@@ -26,22 +28,38 @@ export function TruestedPartner() {
                 <Image
                   src={partner.logo || "/placeholder.svg"}
                   alt={partner.name}
-                  width={120}
-                  height={40}
-                  className="object-contain "
+                  width={150}
+                  height={60}
+                  className="object-contain"
+                />
+              </div>
+            ))}
+            {/* Duplicated row for seamless scroll */}
+            {partners.slice(0, 8).map((partner) => (
+              <div
+                key={`dup-${partner.id}`}
+                className="p-4 rounded-lg flex items-center justify-center"
+              >
+                <Image
+                  src={partner.logo || "/placeholder.svg"}
+                  alt={partner.name}
+                  width={150}
+                  height={60}
+                  className="object-contain"
                 />
               </div>
             ))}
           </div>
+
           {/* Row 2 - Scroll Right */}
           <div
-            className="flex space-x-8 animate-scroll-right"
+            className="flex space-x-8 "
             style={{
-              animation: "scroll-right 10s linear infinite",
               display: "flex",
               width: "fit-content",
             }}
           >
+            {/* Duplicate the logos to create seamless scroll */}
             {partners.slice(8, 16).map((partner) => (
               <div
                 key={partner.id}
@@ -50,17 +68,30 @@ export function TruestedPartner() {
                 <Image
                   src={partner.logo || "/placeholder.svg"}
                   alt={partner.name}
-                  width={120}
-                  height={40}
-                  className="object-contain  "
+                  width={150}
+                  height={60}
+                  className="object-contain"
+                />
+              </div>
+            ))}
+            {/* Duplicated row for seamless scroll */}
+            {partners.slice(8, 16).map((partner) => (
+              <div
+                key={`dup-${partner.id}`}
+                className="p-4 rounded-lg flex items-center justify-center"
+              >
+                <Image
+                  src={partner.logo || "/placeholder.svg"}
+                  alt={partner.name}
+                  width={150}
+                  height={60}
+                  className="object-contain"
                 />
               </div>
             ))}
           </div>
         </div>
-        <div className="text-center w-fit mx-auto p-2 text-white rounded-lg bg-darkblue mt-8">
-          <span>View All</span>
-        </div>
+        <div className="h-5 bg-gradient-to-t from-darkblue to-lightblue"></div>
       </div>
     </div>
   );
