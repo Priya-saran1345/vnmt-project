@@ -149,8 +149,11 @@ a {
 	0% {
 	  transform: translateX(0%);
 	}
+	50% {
+	  transform: translateX(-50%);
+	}
 	100% {
-	  transform: translateX(-100%);
+	  transform: translateX(0%);
 	}
   }
   
@@ -158,19 +161,27 @@ a {
 	0% {
 	  transform: translateX(0%);
 	}
+	50% {
+	  transform: translateX(50%);
+	}
 	100% {
-	  transform: translateX(100%);
+	  transform: translateX(0%);
 	}
   }
   
   .animate-scroll-left {
-	animation: scroll-left 100s linear infinite;
+	animation: scroll-left 10s ease-in-out infinite;
   }
   
   .animate-scroll-right {
-	animation: scroll-right 100s linear infinite;
+	animation: scroll-right 10s ease-in-out infinite;
   }
   
+
+
+
+
+
   @keyframes scroll-loop {
 	0% {
 	  transform: translateX(0%);

@@ -8,7 +8,7 @@ export function NetsuiteSection() {
         <div className="flex justify-between  gap-8 items-center">
           <div className="space-y-6 w-1/3 ">
             <div>
-              <h2 className="heading font-bold mb-2">{netsuiteContent.title}</h2>
+              <h2 className="heading heading-calisto font-bold mb-2">{netsuiteContent.title}</h2>
               <p className="bulletheading text-gray-600" dangerouslySetInnerHTML={{ __html: netsuiteContent.subtitle }}></p>
             </div>
             <div className="space-y-4 my-8 h-[304px]  overflow-y-auto custom-scrollbar bg-[#FFF4F0] rounded-lg p-6 ">

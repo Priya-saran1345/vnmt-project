@@ -26,7 +26,7 @@ export function Testimonials() {
     <section className="pb-16">
       <div className="w-[75%] mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="heading font-bold mb-4">Testimonials</h2>
+          <h2 className="heading heading-calisto font-bold mb-4">Testimonials</h2>
           <p className="text-xl text-gray-600">Hear What Our Clients Say</p>
         </div>
         <div className="relative mx-auto">

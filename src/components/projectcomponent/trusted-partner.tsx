@@ -5,7 +5,7 @@ export function TruestedPartner() {
   return (
     <div className="bg-gradient-to-b from-darkblue to-lightblue py-10">
       <div className="mx-auto px-4">
-        <h2 className="heading font-bold text-center text-white mb-12">
+        <h2 className="heading heading-calisto font-bold text-center text-white mb-12">
           Trusted by Industry Leaders Worldwide
         </h2>
         <div className="overflow-hidden">

@@ -22,7 +22,7 @@ export function BlogSection() {
       <div className="w-full lg:w-[95%] 2xl:w-[77%] mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-3">
           <div className="w-2/3">
-            <h2 className="heading font-bold mb-2">
+            <h2 className="heading heading-calisto font-bold mb-2">
               {blogContent.title}
              <br />
               {blogContent.subtitle}
