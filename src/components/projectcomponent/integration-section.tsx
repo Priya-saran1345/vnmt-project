@@ -1,92 +1,63 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Image from "next/image"
+import { motion, useInView  } from "framer-motion";
+import Image from "next/image";
+import { useRef } from "react";
 
 interface PlatformIconProps {
-  src: string
-  alt: string
-  className?: string
+  src: string;
+  alt: string;
+  className?: string;
 }
 
-function DotPattern({ className = "" }: { className?: string }) {
+function DotWave() {
+  const wavePath = "M20,50 Q250,-20 500,50 T1000,10";
+
   return (
-    <div className={`grid grid-cols-8 gap-2 ${className}`}>
-      {Array.from({ length: 64 }).map((_, i) => (
-        <motion.div
-          key={i}
-          className="w-1 h-1 bg-white/20 rounded-full"
-          animate={{
-            opacity: [0.2, 0.5, 0.2],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Number.POSITIVE_INFINITY,
-            delay: Math.random() * 2,
-          }}
-        />
-      ))}
-    </div>
-  )
+    <svg
+      width="100%"
+      height="100"
+      viewBox="0 0 1000 100"
+      preserveAspectRatio="none"
+      className="relative z-0"
+    >
+      <path
+        d={wavePath}
+        fill="none"
+        stroke="white"
+        strokeWidth="2"
+        strokeDasharray="5,5"
+      />
+
+    </svg>
+  );
 }
+
 function PlatformIcon({ src, alt, className = "" }: PlatformIconProps) {
   return (
     <motion.div
       whileHover={{ scale: 1.2 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className={`relative w-16 h-16 bg-white rounded-lg shadow-lg ${className}`}
+      className={`relative w-24 h-24 z-10 bg-white rounded-lg shadow-lg ${className}`}
     >
-      <Image src={src || "/placeholder.svg"} alt={alt} fill className="p-2 object-contain" />
+      <Image
+        src={src || "/placeholder.svg"}
+        alt={alt}
+        fill
+        className="p-2 object-contain"
+      />
     </motion.div>
-  )
+  );
 }
-
-function WavyLine() {
-
-
-  return (
-    <div className="relative">
-      <svg
-        width="100%"
-        height="100"
-        viewBox="0 0 1000 100"
-        preserveAspectRatio="none"
-        className="absolute top-1/2 left-0 -translate-y-1/2"
-      >
-        <motion.path
-          d="M0,50 Q250,0 500,50 T1000,50"
-          fill="none"
-          stroke="white"
-          strokeWidth="2"
-          strokeDasharray="5,5"
-          animate={{
-            d: ["M0,50 Q250,0 500,50 T1000,50", "M0,50 Q250,100 500,50 T1000,50", "M0,50 Q250,0 500,50 T1000,50"],
-          }}
-          transition={{
-            duration: 5,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-          }}
-        />
-
-
-      </svg>
-    </div>
-  )
-}
-
-
 
 export default function IntegrationSection() {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
   return (
-    <div className=" bg_integration relative overflow-hidden">
-      <DotPattern className="absolute top-4 right-4" />
-      <DotPattern className="absolute bottom-4 left-4" />
-
+    <div className="bg_integration relative overflow-hidden">
       <div className="container mx-auto px-4 py-16 relative">
         <motion.h1
-          className="font-bold text-white text-center mb-32  mx-auto heading-calisto heading"
+          className="font-bold text-white text-center mb-32 mx-auto heading-calisto heading"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -94,35 +65,32 @@ export default function IntegrationSection() {
           Get Seamless Integration Experience with Our <br /> Celigo Expertise
         </motion.h1>
 
-        <div className="relative h-48  ">
-          <div className="absolute inset-0 flex justify-between items-start -mb-32">
-            <PlatformIcon
-              src="/images/integration1.svg"
-              alt="Xero"
-            />
-            <PlatformIcon
-              src="/images/integration2.svg"
-              alt="Shopify"
-            />
-            <PlatformIcon
-              src="/images/integration3.svg"
-              alt="HubSpot"
-              className="scale-125"
-            />
-            <PlatformIcon
-              src="/images/integration4.svg"
-              alt="WooCommerce"
-            />
-            <PlatformIcon
-              src="/images/integration5.svg"
-              alt="Adobe CC"
-            />
-            <PlatformIcon
-              src="/images/integration6.svg"
-              alt="Magento"
-            />
+        <div 
+          ref={sectionRef}
+        className="relative h-48">
+          <DotWave />
+          <div className="absolute inset-0 flex justify-between items-center -top-[6.5rem]">
+          {[
+          { src: "/images/integration1.svg", alt: "Xero" },
+          { src: "/images/integration2.svg", alt: "Shopify" },
+          { src: "/images/integration3.svg", alt: "HubSpot" },
+          { src: "/images/integration4.svg", alt: "WooCommerce" },
+          { src: "/images/integration5.svg", alt: "Adobe CC" },
+          { src: "/images/integration6.svg", alt: "Magento" },
+        ].map((icon, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0,scale:0 }}
+            animate={isInView ? { opacity: 1, scale:1 } : {}}
+            transition={{
+              delay: index * 0.1, 
+              duration: 0.5,
+            }}
+          >
+            <PlatformIcon src={icon.src} alt={icon.alt} />
+          </motion.div>
+        ))}
           </div>
-          <WavyLine />
         </div>
 
         <motion.p
@@ -147,6 +115,5 @@ export default function IntegrationSection() {
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
-
