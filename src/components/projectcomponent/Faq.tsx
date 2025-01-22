@@ -11,7 +11,7 @@ const faq = () => {
           <Accordion type="single" collapsible>
             {[1, 2, 3, 4].map((item) => (
               <AccordionItem key={item} value={`item-${item}`} className=' rounded-xl text-[18px] border-blue border-[1.8px]'>
-                <AccordionTrigger className="text-left">Lorem ipsum is simply dummy text</AccordionTrigger>
+                <AccordionTrigger className="text-left font-medium">Lorem ipsum is simply dummy text</AccordionTrigger>
                 <AccordionContent>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, quibusdam.
                 </AccordionContent>
@@ -23,7 +23,7 @@ const faq = () => {
           <Accordion type="single" collapsible>
             {[5, 6, 7, 8].map((item) => (
               <AccordionItem key={item} value={`item-${item}`} className='rounded-xl text-[18px] border-blue border-[1.8px]'>
-                <AccordionTrigger className="text-left">Lorem ipsum is simply dummy text</AccordionTrigger>
+                <AccordionTrigger className="text-left font-medium">Lorem ipsum is simply dummy text</AccordionTrigger>
                 <AccordionContent>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, quibusdam.
                 </AccordionContent>

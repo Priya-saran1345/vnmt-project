@@ -29,7 +29,7 @@ export default function FAQPage() {
         <BlogSection />
         <TruestedPartner />
         <CaseStudy />
-        <div className="w-full px-0 bg-[url('/images/faq-bg.svg')] ">
+        <div className="w-full px-0 bg-cover bg-[url('/images/faq-bg.svg')] ">
           <Testimonials />
           <Faq />
         </div>
