@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { motion } from "framer-motion"
 import { MonitorSmartphone, Search, LayoutGrid, LineChart, BarChart2, Share2 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -12,7 +11,7 @@ const services = [
     description:
       "Bibendum libero enim donec elementum inc eptos feugiat praesent parturient pote susp endisse. Dapibus eros sapien blandit nibher",
     icon: MonitorSmartphone,
-    color: "bg-[#8B5CF6]",
+    color: "from-[#e9dfff] to-[#6726ff] ",
     text: "text-[#8B5CF6]",
     hoverColor: "hover:bg-[#8B5CF6]",
     iconBg: "bg-[#8B5CF6]/10",
@@ -23,7 +22,7 @@ const services = [
     description:
       "Bibendum libero enim donec elementum inc eptos feugiat praesent parturient pote susp endisse. Dapibus eros sapien blandit nibher",
     icon: Search,
-    color: "bg-[#FF7B54]",
+    color: " from-[#ffe3da] to-[#ff5e2e] ",
     text: "text-[#FF7B54]",
     hoverColor: "hover:bg-[#FF7B54]",
     iconBg: "bg-[#FF7B54]/10",
@@ -34,7 +33,7 @@ const services = [
     description:
       "Bibendum libero enim donec elementum inc eptos feugiat praesent parturient pote susp endisse. Dapibus eros sapien blandit nibher",
     icon: LayoutGrid,
-    color: "bg-[#22D3EE]",
+    color: "from-[#c5f7ff] to-[#22D3EE] ",
     text: "text-[#22D3EE]",
     hoverColor: "hover:bg-[#22D3EE]",
     iconBg: "bg-[#22D3EE]/10",
@@ -45,7 +44,7 @@ const services = [
     description:
       "Bibendum libero enim donec elementum inc eptos feugiat praesent parturient pote susp endisse. Dapibus eros sapien blandit nibher",
     icon: LineChart,
-    color: "bg-[#FF7BCA]",
+    color: "from-[#ffdcf1] to-[#FF7BCA] ",
     text: "text-[#FF7BCA]",
     hoverColor: "hover:bg-[#FF7BCA]",
     iconBg: "bg-[#FF7BCA]/10",
@@ -56,7 +55,7 @@ const services = [
     description:
       "Bibendum libero enim donec elementum inc eptos feugiat praesent parturient pote susp endisse. Dapibus eros sapien blandit nibher",
     icon: BarChart2,
-    color: "bg-[#3B82F6]",
+    color: "from-[#cadeff] to-[#3B82F6] ",
     text: "text-[#3B82F6]",
     hoverColor: "hover:bg-[#3B82F6]",
     iconBg: "bg-[#3B82F6]/10",
@@ -67,7 +66,7 @@ const services = [
     description:
       "Bibendum libero enim donec elementum inc eptos feugiat praesent parturient pote susp endisse. Dapibus eros sapien blandit nibher",
     icon: Share2,
-    color: "bg-[#8B5CF6]",
+    color: "from-[#ddceff] to-[#8B5CF6] ",
     text: "text-[#8B5CF6]",
     hoverColor: "hover:bg-[#8B5CF6]",
     iconBg: "bg-[#8B5CF6]/10",
@@ -90,19 +89,19 @@ export function IndustriesSection() {
         </div>
       </div>
       <div className='flex items-center justify-center '>
-      <span className="parahraph font-bold tracking-wide ">  Want to see our professional services. <a className="text-blue hover:text-orange smooth3 cursor-pointer underline"> Click here to View More </a></span>
+        <span className="parahraph font-bold tracking-wide ">  Want to see our professional services. <a className="text-blue hover:text-orange smooth3 cursor-pointer underline"> Click here to View More </a></span>
       </div>
     </section>
   )
 }
 
-function ServiceCard({ id, title, description, icon: Icon, color, iconBg }: {id:number, title: string, description:string, icon: React.ElementType, color:string, hoverColor:string, iconBg:string}) {
+function ServiceCard({ id, title, description, icon: Icon, color, iconBg }: { id: number, title: string, description: string, icon: React.ElementType, color: string, hoverColor: string, iconBg: string }) {
   const [isHovered, setIsHovered] = React.useState(false);
 
   return (
-    <div 
+    <div
       className={cn(
-        "card education p-7 relative overflow-hidden transition-colors duration-300 group hover:shadow-xl",
+        " p-7 relative overflow-hidden bg-white  transition-all duration-500 group  hover:shadow-xl",
         {
           "border-r border-b": id === 1,
           "border-b": id === 2,
@@ -113,46 +112,26 @@ function ServiceCard({ id, title, description, icon: Icon, color, iconBg }: {id:
       )}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-    > 
-      <div className={cn(" w-16 h-16 rounded-full flex items-center justify-center mb-6 group group-hover:bg-white/50", iconBg)}>
-        <Icon className={cn("w-8 h-8 group-hover:text-white  ", color.replace("bg-", "text-"))} />
+    >
+      {/* Gradient Background Animation */}
+      <span className={cn("absolute z-0 h-16 w-16 rounded-full  transition-all duration-800 ease-in-out transform group-hover:scale-[20] bg-gradient-to-br ", color )} />
+
+      <div className={cn("relative z-10 w-full", { 'mx-auto max-w-md': isHovered })}>
+        {/* Icon */}
+        <div className={cn("w-16 h-16 rounded-full flex items-center justify-center mb-6 group ", iconBg)}>
+          <Icon className={cn("w-8 h-8 text-white transition-all duration-500 ")} />
+        </div>
+        
+        {/* Title */}
+        <h3 className="text-xl font-semibold mb-4 group-hover:text-white transition-all duration-500">{title}</h3>
+        
+        {/* Description */}
+        <p className="text-gray-600 group-hover:text-white transition-all duration-500">{description}</p>
+
+
       </div>
-      <h3 className="text-xl font-semibold mb-4 group-hover:text-white text-black">{title}</h3>
-      <p className="text-gray-600 group-hover:text-white">{description}</p>
-      {isHovered && (
-  <motion.div
-    className={cn("absolute inset-0 -z-10", color)} // Full card coverage
-    initial={{
-      scale: 0,
-      opacity: 0,
-      borderRadius: "100%", 
-    }}
-    animate={{
-      scale: 1,
-      opacity: 1,
-      borderRadius: "0%",
-    }}
-    exit={{
-      scale: 0,
-      opacity: 0,
-      borderRadius: "100%", 
-    }}
-    transition={{
-      type: "spring",
-      stiffness: 100,
-      damping: 20,
-      duration: 0.7,
-    }}
-    style={{
-      originX: 0.11, // Set origin to center
-      originY: 0.2, // Set origin to center
-    }}
-  />
-)}
-
-
-
     </div>
   );
 }
+
 
