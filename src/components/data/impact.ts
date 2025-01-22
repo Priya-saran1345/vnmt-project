@@ -18,7 +18,7 @@ export const impactStats = [
   
   export const impactContent = {
     title: "Our Impact",
-    subtitle: "Driving Success Beyond Expectations",
+    subtitle: "Driving Success <br> Beyond Expectations",
   }
   
   

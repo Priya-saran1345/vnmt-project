@@ -9,7 +9,7 @@ export function NetsuiteSection() {
           <div className="space-y-6 w-1/3 ">
             <div>
               <h2 className="heading font-bold mb-2">{netsuiteContent.title}</h2>
-              <p className="bulletheading text-gray-600" dangerouslySetInnerHTML={{__html:netsuiteContent.subtitle}}></p>
+              <p className="bulletheading text-gray-600" dangerouslySetInnerHTML={{ __html: netsuiteContent.subtitle }}></p>
             </div>
             <div className="space-y-4 my-8 h-[304px]  overflow-y-auto custom-scrollbar bg-[#FFF4F0] rounded-lg p-6 ">
               {netsuiteContent.description.map((text, index) => (
@@ -18,20 +18,20 @@ export function NetsuiteSection() {
                 </p>
               ))}
             </div>
-            <div  className="bg-blue text-white border-darkblue border-2 p-2 px-4 rounded-full w-fit hover:bg-blue-700">
+            <div className="bg-blue text-white border-darkblue border-2 p-2 px-4 rounded-full w-fit hover:bg-blue-700">
               {netsuiteContent.ctaText} →
             </div>
           </div>
           <div className=" w-[60%]  rounded-l-[100px] " >
             <Image
-                                                src={'/images/netsuite-side-img.svg'}
+              src={'/images/netsuite-side-img.svg'}
 
-                                                height={495}
-                                                width={600}
-                                                className="w-full"
-                                                alt=""
-                                            />
-            </div>
+              height={495}
+              width={600}
+              className="w-full"
+              alt=""
+            />
+          </div>
         </div>
       </div>
     </div>

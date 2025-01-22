@@ -1,16 +1,18 @@
 export const partners = [
-    { id: 1, name: "UrSpace", logo: "/placeholder.svg?height=40&width=120" },
-    { id: 2, name: "Treebo", logo: "/placeholder.svg?height=40&width=120" },
-    { id: 3, name: "Swiggy", logo: "/placeholder.svg?height=40&width=120" },
-    { id: 4, name: "Univest", logo: "/placeholder.svg?height=40&width=120" },
-    { id: 5, name: "Suraasa", logo: "/placeholder.svg?height=40&width=120" },
-    { id: 6, name: "SoundTrack", logo: "/placeholder.svg?height=40&width=120" },
-    { id: 7, name: "DocsCo", logo: "/placeholder.svg?height=40&width=120" },
-    { id: 8, name: "Bookeo", logo: "/placeholder.svg?height=40&width=120" },
-    { id: 9, name: "SmartLaw", logo: "/placeholder.svg?height=40&width=120" },
-    { id: 10, name: "Bonatra", logo: "/placeholder.svg?height=40&width=120" },
-    { id: 11, name: "Bharat", logo: "/placeholder.svg?height=40&width=120" },
-    { id: 12, name: "Kreedo", logo: "/placeholder.svg?height=40&width=120" },
-  ]
-  
-  
+  { id: 1, name: "UrSpace", logo: "/images/partner1.svg" },
+  { id: 2, name: "Treebo", logo: "/images/partner2.svg" },
+  { id: 3, name: "Swiggy", logo: "/images/partner3.svg" },
+  { id: 4, name: "Univest", logo: "/images/partner4.svg" },
+  { id: 5, name: "Suraasa", logo: "/images/partner5.svg" },
+  { id: 6, name: "SoundTrack", logo: "/images/partner6.svg" },
+  { id: 7, name: "DocsCo", logo: "/images/partner7.svg" },
+  { id: 8, name: "Bookeo", logo: "/images/partner8.svg" },
+  { id: 9, name: "SmartLaw", logo: "/images/partner9.svg" },
+  { id: 10, name: "Bonatra", logo: "/images/partner10.svg" },
+  { id: 11, name: "Bharat", logo: "/images/partner11.svg" },
+  { id: 12, name: "Kreedo", logo: "/images/partner12.svg" },
+  { id: 13, name: "TechCo", logo: "/images/partner13.svg" },
+  { id: 14, name: "EduPro", logo: "/images/partner14.svg" },
+  { id: 15, name: "FitFlow", logo: "/images/partner15.svg" },
+  { id: 16, name: "Greenify", logo: "/images/partner16.svg" },
+];
