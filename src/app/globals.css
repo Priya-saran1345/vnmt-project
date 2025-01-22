@@ -220,5 +220,82 @@ a {
   
   .animate-scroll-down {
 	animation: scroll-down 6s ease-in-out infinite;
+  }.card {
+	position: relative;
+	overflow: hidden;
+	transition: all 0.3s ease-in-out;
+  }
+  
+  .card .circle {
+	width: 136px;
+	height: 136px;
+	border-radius: 50%;
+	background: #fff;
+	border: 2px solid transparent;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	z-index: 1;
+	transition: all 0.3s ease-out;
+  }
+  
+  .card .circle svg {
+	z-index: 1;
+	transform: translateZ(0);
+  }
+  
+  .card .circle:after {
+	content: "";
+	width: 118px;
+	height: 118px;
+	display: block;
+	position: absolute;
+	background: var(--bg-color);
+	border-radius: 50%;
+	top: 7px;
+	left: 7px;
+	transition: opacity 0.3s ease-out;
+  }
+  
+  .card .content {
+	position: relative;
+	z-index: 10;
+	color: #4c5656;
+	transition: color 0.3s ease-out;
+	padding: 20px;
+	background-color: var(--bg-color-light);
+  }
+  
+  .card:hover .overlay {
+	transform: scale(12);
+  }
+  
+  .card:hover .circle {
+	border-color: var(--bg-color-light);
+	background: var(--bg-color);
+  }
+  
+  .card:hover .circle:after {
+	background: var(--bg-color-light);
+	opacity: 0;
+  }
+  
+  .card:hover .content {
+	color: var(--text-color-hover);
+  }
+  
+  .card:hover {
+	transform: translateY(-5px) scale(1.005);
+	box-shadow: 0 24px 36px rgba(0, 0, 0, 0.11), 0 24px 46px var(--box-shadow-color);
+  }
+  
+  /* Additional rule to make background color dynamic based on icon color */
+  .card[data-bg-color] {
+	--bg-color: var(--bg-color, #fff); /* Set the dynamic background color */
+  }
+  
+  .card[data-bg-color]:hover {
+	--bg-color-light: var(--bg-color-light, #f0f0f0); /* Lighter background color on hover */
   }
   

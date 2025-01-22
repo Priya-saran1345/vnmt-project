@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
 import { MonitorSmartphone, Search, LayoutGrid, LineChart, BarChart2, Share2 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -74,13 +73,11 @@ export function IndustriesSection() {
     <section className="py-24 bg-white">
       <div className="container px-4 mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-16 flex flex-col items-center justify-center gap-4">
-        <h2 className="mt-3 text-4xl font-bold text-gray-900 heading-calisto heading">Our Industries</h2>
-          <span className="text-sm font-medium tracking-wider text-[#818181] parahraph uppercase">We build customized solutions that meet the unique demands of different industries.
-
-</span>
+          <h2 className="mt-3 text-4xl font-bold text-gray-900 heading-calisto heading">Our Industries</h2>
+          <span className="text-sm font-medium text-[#818181] parahraph">We build customized solutions that meet the unique demands of different industries.</span>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 ">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <ServiceCard key={service.id} {...service} />
           ))}
@@ -90,61 +87,58 @@ export function IndustriesSection() {
   )
 }
 
-function ServiceCard({id, title, description, icon: Icon, color, hoverColor, iconBg }:{id:number, title: string,description:string,icon: React.ElementType ,color:string,hoverColor:string, iconBg:string}) {
-  const [isHovered, setIsHovered] = React.useState(false)
+function ServiceCard({ id, title, description, icon: Icon, color, hoverColor, iconBg }: {id:number, title: string, description:string, icon: React.ElementType, color:string, hoverColor:string, iconBg:string}) {
+  const [isHovered, setIsHovered] = React.useState(false);
 
   return (
-    <Card
-    className={cn(
-      `relative overflow-hidden transition-colors duration-300 ${
-        id === 1 ? 'border-r border-b' :
-        id === 2 ? 'border-b' :
-        id === 3 ? 'border-l border-b' :
-        id === 4 ? 'border-r' :
-        id === 6 ? 'border-l' :
-        ''
-      }`,
-      "group hover:text-white",
-      hoverColor
-    )}
+    <a 
+      className={cn(
+        "card education p-7 relative overflow-hidden transition-colors duration-300 group",
+        {
+          "border-r border-b": id === 1,
+          "border-b": id === 2,
+          "border-l border-b": id === 3,
+          "border-r": id === 4,
+          "border-l": id === 6
+        }
+      )}
+      href="#"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-    >
-      <CardContent className="p-8">
-        <div className={cn("w-16 h-16 rounded-full flex items-center justify-center mb-6", iconBg)}>
-          <Icon className={cn("w-8 h-8", color.replace("bg-", "text-"))} />
-        </div>
-        <h3 className="text-xl font-semibold mb-4 group-hover:text-white">{title}</h3>
-        <p className="text-gray-600 group-hover:text-white/90">{description}</p>
-        {title === "Digital Strategy" && (
-          <button className="mt-6 text-white font-medium inline-flex items-center">
-            READ MORE
-            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        )}
-        {isHovered && (
-          <motion.div
-            className={cn("absolute inset-0 -z-10", color)}
-            initial={{ scale: 0, x: 32, y: 32, opacity: 0 }}
-            animate={{ scale: 1, x: 0, y: 0, opacity: 1 }}
-            exit={{ scale: 0, x: 32, y: 32, opacity: 0 }}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-              damping: 20,
-              duration: 0.3,
-            }}
-            style={{
-              originX: 0,
-              originY: 0,
-            }}
-          />
-        )}
-      </CardContent>
-    </Card>
-  )
-}
+    > 
+      <div className={cn(" w-16 h-16 rounded-full flex items-center justify-center mb-6", iconBg)}>
+        <Icon className={cn("w-8 h-8", color.replace("bg-", "text-"))} />
+      </div>
+      <h3 className="text-xl font-semibold mb-4 group-hover:text-white text-black">{title}</h3>
+      <p className="text-gray-600 group-hover:text-white/90">{description}</p>
+      {title === "Digital Strategy" && (
+        <button className="mt-6 text-white font-medium inline-flex items-center">
+          READ MORE
+          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      )}
+{isHovered && (
+  <motion.div
+    className={cn("absolute overflow-hidden inset-0 -z-10", color)}
+    initial={{ scale: 0, x: 32, y: 32, opacity: 0, borderRadius: "0%" }}
+    animate={{ scale: 1, x: 0, y: 0, opacity: 1, borderRadius: "0%" }}
+    exit={{ scale: 0, x: 32, y: 32, opacity: 0, borderRadius: "0%" }}
+    transition={{
+      type: "spring",
+      stiffness: 100,
+      damping: 20,
+      duration: 0.7,
+    }}
+    style={{
+      originX: 0,
+      originY: 0,
+    }}
+  />
+)}
 
+    </a>
+  );
+}
 
