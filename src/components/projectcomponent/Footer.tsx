@@ -1,6 +1,6 @@
 "use client"
 
-import React, {  useState } from "react"
+import React, { useState } from "react"
 import Link from "next/link"
 import { Search } from "lucide-react"
 import { FiFacebook, FiPhoneCall } from "react-icons/fi"
@@ -181,66 +181,66 @@ const Footer = () => {
               <p className="text-[14px] mt-4 hover:text-orange">Terms & Conditions | Privacy policy</p>
             </div>
           </div>
-<div className="ml-[11.5%] mr-5 mb-12">
+          <div className="ml-[11.5%] mr-5 mb-12">
 
 
-          {/* Industries */}
-          <div className="flex gap-2 px-4 text-[14px] relative z-10">
-            {industries.map((industry, index) => (
-              <span key={index}>
-                {index !== 0 && "| "}
-                {industry}
-              </span>
-            ))}
-          </div>
-
-          {/* Footer Logos */}
-          <div className="flex justify-between items-center">
-
-            <div className="flex items-center mt-4 px-4 gap-10 relative z-10">
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((elem, index) => (
-                <motion.div
-                  key={elem}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.2, duration: 0.6 }} // Sequential delay for each image
-                >
-                  <Image src={`/images/footer${elem}.svg`} height={50} width={64} alt={`Footer logo ${elem}`} />
-                </motion.div>
+            {/* Industries */}
+            <div className="flex gap-2 px-4 text-[14px] relative z-10">
+              {industries.map((industry, index) => (
+                <span key={index}>
+                  {index !== 0 && "| "}
+                  {industry}
+                </span>
               ))}
             </div>
-            <div className="flex gap-8 items-end">
 
+            {/* Footer Logos */}
+            <div className="flex justify-between items-center">
 
-              <div className="flex flex-col gap-2 items-center justify-center ">
-                <div
-                  className="bg-orange rounded-full flex justify-center cursor-pointer items-center border-[1px] border-white w-[40px] h-[40px]"
-                  onClick={() =>
-                    window.scrollTo({
-                      top: 0,
-                      behavior: "smooth", // Smooth scroll effect
-                    })
-                  }
-                >
-                  <MdOutlineKeyboardDoubleArrowUp className="text-[26px]" />
-                </div>
-                <p className="text-white
-">Scroll to Top</p>
+              <div className="flex items-center mt-4 px-4 gap-10 relative z-10">
+                {[1, 2, 3, 4, 5, 6, 7, 8].map((elem, index) => (
+                  <motion.div
+                    key={elem}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.2, duration: 0.6 }} // Sequential delay for each image
+                  >
+                    <Image src={`/images/footer${elem}.svg`} height={50} width={64} alt={`Footer logo ${elem}`} />
+                  </motion.div>
+                ))}
               </div>
-              <div className="bg-white border-blue border-[1px] p-4 rounded-md animate-zoom">
-  <p className="text-blue text-center font-semibold mb-2">Quick Connect </p>
-  <div className="flex gap-2 items-center font-semibold">
-    <IoLogoWhatsapp className="text-green-500 text-[28px]" />
-    <p className="text-black">Whatsapp Now</p>
-  </div>
-  <div className="flex gap-2 items-center font-semibold mt-2">
-    <FiPhoneCall className="text-black text-[23px]" />
-    <p className="text-black">+(91) 9876543212</p>
-  </div>
-</div>
+              <div className="flex gap-8 items-end">
 
+
+                <div className="flex flex-col gap-2 items-center justify-center ">
+                  <div
+                    className="bg-orange rounded-full z-30 flex justify-center cursor-pointer items-center border-[1px] border-white w-[40px] h-[40px]"
+                    onClick={() =>
+                      window.scrollTo({
+                        top: 0,
+                        behavior: "smooth", // Smooth scroll effect
+                      })
+                    }
+                  >
+                    <MdOutlineKeyboardDoubleArrowUp className="text-[26px]" />
+                  </div>
+                  <p className="text-white
+">Scroll to Top</p>
+                </div>
+                <div className="bg-white border-blue border-[1px] p-4 rounded-md animate-zoom">
+                  <p className="text-blue text-center font-semibold mb-2">Quick Connect </p>
+                  <div className="flex gap-2 items-center font-semibold">
+                    <IoLogoWhatsapp className="text-green-500 text-[28px]" />
+                    <p className="text-black">Whatsapp Now</p>
+                  </div>
+                  <div className="flex gap-2 items-center font-semibold mt-2">
+                    <FiPhoneCall className="text-black text-[23px]" />
+                    <p className="text-black">+(91) 9876543212</p>
+                  </div>
+                </div>
+
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </div>

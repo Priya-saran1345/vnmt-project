@@ -1,21 +1,52 @@
-"use client"
+'use client'
 
-import { useState } from "react"
+import { useRef } from "react"
 import Image from "next/image"
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { blogPosts, blogContent } from "@/components/data/blog-posts"
 import { Card, CardContent } from "@/components/ui/card"
+import Slider from "react-slick"
 
 export function BlogSection() {
-  const [currentSlide, setCurrentSlide] = useState(0)
+  // Create a reference to the slider
+  const sliderRef = useRef<Slider>(null)
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % blogPosts.length)
+  // Slick settings for autoplay, infinite scroll, and navigation
+  const slickSettings = {
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 3000, // Speed of autoplay (3 seconds)
+    speed: 500, // Transition speed
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ]
   }
 
+  // Handle previous slide action
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + blogPosts.length) % blogPosts.length)
+    sliderRef.current?.slickPrev()
   }
+
+  // Handle next slide action
+  const nextSlide = () => {
+    sliderRef.current?.slickNext()
+  }
+
   return (
     <section className="py-16">
       <div className="w-full lg:w-[95%] 2xl:w-[77%] mx-auto px-4">
@@ -23,82 +54,55 @@ export function BlogSection() {
           <div className="w-2/3">
             <h2 className="heading heading-calisto font-bold mb-2">
               {blogContent.title}
-             <br />
+              <br />
               {blogContent.subtitle}
             </h2>
           </div>
           <p className="text-xl md:w-[45%] text-gray-600">{blogContent.description}</p>
         </div>
-
-        <div className="flex justify-end mb-3 gap-4">
+        <div className="  left-0 right-0 flex justify-end gap-4 px-4 transform -translate-y-1/2 z-10">
           <button
             onClick={prevSlide}
-            disabled={currentSlide === 0}
-            className={`rounded-full border-2 border-blue-600 h-10  w-10 text-blue flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-blue border-blue transition-colors ${
-              currentSlide === 0 ? "opacity-50 cursor-not-allowed" : ""
-            }`}
+            className="rounded-full border-2 border-blue h-10
+             w-10  flex items-center justify-center text-blue hover:bg-blue hover:text-white transition-colors"
           >
             <ArrowLeft className="h-5 w-5" />
           </button>
           <button
             onClick={nextSlide}
-            disabled={currentSlide === blogPosts.length - 3}
-            className={`rounded-full border-2 border-blue-600 h-10  w-10 text-blue flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-blue border-blue transition-colors ${
-              currentSlide === blogPosts.length - 3 ? "opacity-50 cursor-not-allowed" : ""
-            }`}
+            className="rounded-full border-2 border-blue h-10 w-10 text-blue flex items-center justify-center text-blue-600 hover:bg-blue hover:text-white transition-colors"
           >
             <ArrowRight className="h-5 w-5" />
           </button>
         </div>
-
+        {/* Carousel container with React Slick */}
         <div className="relative overflow-hidden">
-          <div
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${currentSlide * 33.33}%)` }}
-          >
-            {blogPosts.map((post, index) => {
-              const isCenter = (index - currentSlide) % blogPosts.length === 1
-
+          <Slider ref={sliderRef} {...slickSettings}>
+            {blogPosts.map((post) => {
               return (
-                <div key={post.id} className="flex-none min-h-[435px]  !w-[363px] px-4 transition-all duration-500">
-                  <div
-                    className={`transform-gpu transition-all duration-500 ${
-                      isCenter ? "" : ""
-                    } perspective-1000 group`}
-                  >
+                <div key={post.id} className="flex-none border-orange group min-h-[435px] !w-[363px] px-4 transition-all duration-500">
+                  <div className="transform-gpu transition-all duration-500 perspective-1000 group">
                     <Card
-                      className={`relative h-[450px] overflow-hidden rounded-2xl transform-gpu transition-all duration-500 origin-top group-hover:[transform:rotateX(10deg)]`}
+                      className="relative h-[450px] overflow-hidden rounded-2xl transform-gpu transition-all duration-500 origin-top group-hover:[transform:rotateX(10deg)]"
                     >
                       {/* Background Image */}
                       <div className="absolute inset-0">
                         <Image src={post.image || "/placeholder.svg"} alt="" fill className="object-cover" />
                         {/* Overlay */}
-                        <div
-                          className={`absolute inset-0 ${
-                            isCenter ? "bg-gradient-to-br from-blue-600/90 to-blue-700/90" : "bg-black/50"
-                          }`}
-                        />
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/90 to-blue-700/90" />
                       </div>
                       {/* Content */}
-                      <CardContent className="relative !pb-0 h-full flex flex-col justify-end  text-white">
+                      <CardContent className="relative !pb-0 h-full flex flex-col justify-end text-white">
                         <div>
-                          <div  className={`p-2 rounded-sm w-fit bg-blue-600 ${
-                      isCenter ? "bg-orange text-white" : "bg-blue text-white"
-                    } text-white hover:bg-blue-700`}>
+                          <div className="p-2 group-hover:bg-orange bg-blue rounded-sm w-fit bg-blue-600 text-white hover:bg-blue-700">
                             Check My Strategy
                           </div>
                         </div>
-                        <div className={`p-2 pb-4  ${
-                      isCenter ? "bg-blue text-white" : "bg-white text-darkblue"
-                    } rounded-sm items-center `}>
+                        <div className="p-2 pb-4 text-darkblue bg-white group-hover:bg-darkblue group-hover:text-white rounded-sm items-center">
                           <p className="!text-[16px] font-medium line-clamp-3 mb-4">{post.title}</p>
-                          <span className={`${
-                      isCenter ? " text-white" : " text-orange"
-                    }`}>{post.author}</span>
+                          <span className="">{post.author}</span>
                           <span className="mx-2">-</span>
-                          <span className={` ${
-                      isCenter ? " text-white" : " text-slate-600"
-                    }`}>{post.date}</span>
+                          <span className="">{post.date}</span>
                         </div>
                       </CardContent>
                     </Card>
@@ -106,16 +110,12 @@ export function BlogSection() {
                 </div>
               )
             })}
-          </div>
+          </Slider>
         </div>
-      </div>
 
-      {/* <style jsx>{`
-        .perspective-1000 {
-          perspective: 1000px;
-        }
-      `}</style> */}
+        {/* Left and Right Buttons */}
+      
+      </div>
     </section>
   )
 }
-
