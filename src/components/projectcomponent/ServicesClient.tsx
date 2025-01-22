@@ -42,23 +42,23 @@ export function ServicesClient() {
     }, [])
 
     return (
-        <div className="flex  items-start ">
-            <div className="md:w-1/3 ">
+        <div className="flex  items-start gap-4 ">
+            <div className="md:w-full ">
                 <div className="relative rounded-2xl overflow-hidden">
                     <Image
-                        src="/images/service-girl.svg"
+                        src="/images/bgservices.svg"
                         alt="NetSuite Services"
-                        width={410}
-                        height={410}
-                        className="object-cover shadow-lg rounded-2xl "
+                        width={1000}
+                        height={1000}
+                        className="object-contain shadow-lg rounded-2xl "
                     />
                 </div>
             </div>
-            <div className="md:w-1/2 relative">
+            <div className="md:w-full relative">
                 <div className="absolute right-0 top-0 bottom-0 w-1 bg-orange-500" />
                 <div
                     ref={scrollContainerRef}
-                    className="h-[400px] overflow-y-auto pr-8 space-y-8 custom-scrollbar"
+                    className="h-[450px] overflow-y-auto pr-8 space-y-8 custom-scrollbar"
                 >
                     {services.map((service: { icon: string, description: string, title: string, id: number }) => (
                         <div
@@ -92,9 +92,3 @@ export function ServicesClient() {
     )
 }
 
-
-
-// ${activeService === service.id
-//     ? "border-orange/50 border-[2px]"
-//     : "bg-blue"
-// }

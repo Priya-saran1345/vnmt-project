@@ -50,7 +50,7 @@ export function ImpactSection() {
 
   return (
     <div className="">
-      <div className="relative w-full py-16 overflow-hidden">
+      <div className="relative w-full pb-16 overflow-hidden">
         <div className="flex impact-section items-stretch">
           {/* Dark curved section */}
           <div className="impact-left w-[50%]  bg-[url('/images/impact-bg.svg')] flex justify-end items-center rounded-r-full relative z-10">
