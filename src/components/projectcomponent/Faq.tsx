@@ -42,7 +42,7 @@ const faq = () => {
             Contact us today to begin your journey toward succe</p>
         </div>
         <div>
-          <div className='bg-white text-orange text-[22px] font-semibold w-fit mb-4 px-10 mx-auto text-orange-400 py-[6px] rounded-full'>
+          <div className='bg-white text-orange text-[22px] font-semibold w-fit mb-4 px-10 mx-auto text-orange-400 py-[6px] rounded-full animate-zoom cursor-pointer hover:bg-orange hover:text-white smooth3  '>
 
             Book Consultant Now
           </div>
