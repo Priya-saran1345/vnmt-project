@@ -7,7 +7,8 @@ import { impactStats, impactContent } from "@/components/data/impact"
 gsap.registerPlugin(ScrollTrigger)
 
 export function ImpactSection() {
-  const numberRefs = useRef<(HTMLDivElement | null)[]>([])
+  const numberRefs = useRef<(HTMLDivElement | null)[]>([]);
+
 
   useEffect(() => {
     // Left Section Animation
@@ -87,7 +88,7 @@ export function ImpactSection() {
 
   return (
     <div className="">
-      <div className="relative w-full py-16 overflow-hidden">
+      <div className="relative w-full pb-16 overflow-hidden">
         <div className="flex impact-section items-stretch">
           {/* Dark curved section */}
           <div className="impact-left w-[50%] bg-blue bg-[url('/images/impact-bg.svg')] flex justify-end items-center rounded-r-full relative z-10">
@@ -108,17 +109,17 @@ export function ImpactSection() {
           <div className="impact-right w-[65%] bg-[#EDF3FF] border-2 !py-20 border-r-0 border-darkblue h-[300px] rounded-l-full -ml-28 relative">
             <div className="absolute inset-0 flex items-center">
               <div className="pl-40 space-y-8">
-                {impactStats.map((stat, index) => (
+                {/* {impactStats.map((stat, index) => (
                   <div key={stat.id} className="flex items-center gap-4">
                     <div
-                  ref={(el:any) => (numberRefs.current[index] = el)}
+              ref={(el: HTMLDivElement | null) => (numberRefs.current[index] = el)}
                       className="text-4xl lg:text-[65px] font-bold bg-gradient-to-b from-lightblue to-darkblue py-2 bg-clip-text text-transparent"
                     >
                       0
                     </div>
                     <div className="text-blue font-bold text-lg">{stat.label}</div>
                   </div>
-                ))}
+                ))} */}
               </div>
             </div>
           </div>

@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 const services = [
   {
     id: 1,
-    title: "Digital Strategy",
+    title: "Financial Services",
     description:
       "Bibendum libero enim donec elementum inc eptos feugiat praesent parturient pote susp endisse. Dapibus eros sapien blandit nibher",
     icon: MonitorSmartphone,
@@ -19,7 +19,7 @@ const services = [
   },
   {
     id: 2,
-    title: "Product Research",
+    title: "Financial Services",
     description:
       "Bibendum libero enim donec elementum inc eptos feugiat praesent parturient pote susp endisse. Dapibus eros sapien blandit nibher",
     icon: Search,
@@ -30,7 +30,7 @@ const services = [
   },
   {
     id: 3,
-    title: "User Experience",
+    title: "Agencies",
     description:
       "Bibendum libero enim donec elementum inc eptos feugiat praesent parturient pote susp endisse. Dapibus eros sapien blandit nibher",
     icon: LayoutGrid,
@@ -41,7 +41,7 @@ const services = [
   },
   {
     id: 4,
-    title: "SEO Optimization",
+    title: "Hardware Manufacturing",
     description:
       "Bibendum libero enim donec elementum inc eptos feugiat praesent parturient pote susp endisse. Dapibus eros sapien blandit nibher",
     icon: LineChart,
@@ -52,7 +52,7 @@ const services = [
   },
   {
     id: 5,
-    title: "SEO Optimization",
+    title: "Media Manufacturing",
     description:
       "Bibendum libero enim donec elementum inc eptos feugiat praesent parturient pote susp endisse. Dapibus eros sapien blandit nibher",
     icon: BarChart2,
@@ -63,7 +63,7 @@ const services = [
   },
   {
     id: 6,
-    title: "Digital Marketing",
+    title: "Healthcare & Pharma",
     description:
       "Bibendum libero enim donec elementum inc eptos feugiat praesent parturient pote susp endisse. Dapibus eros sapien blandit nibher",
     icon: Share2,
@@ -76,9 +76,9 @@ const services = [
 
 export function IndustriesSection() {
   return (
-    <section className="py-24 bg-white">
+    <section className="pt-20 pb-10 bg_industry flex flex-col gap-4">
       <div className="container px-4 mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-16 flex flex-col items-center justify-center gap-4">
+        <div className="text-center max-w-2xl mx-auto mb-10 flex flex-col items-center justify-center gap-4">
           <h2 className="mt-3 text-4xl font-bold text-gray-900 heading-calisto heading">Our Industries</h2>
           <span className="text-sm font-medium text-[#818181] parahraph">We build customized solutions that meet the unique demands of different industries.</span>
         </div>
@@ -88,6 +88,9 @@ export function IndustriesSection() {
             <ServiceCard key={service.id} {...service} />
           ))}
         </div>
+      </div>
+      <div className='flex items-center justify-center '>
+      <span className="parahraph font-bold tracking-wide ">  Want to see our professional services. <a className="text-blue hover:text-orange smooth3 cursor-pointer underline"> Click here to View More </a></span>
       </div>
     </section>
   )

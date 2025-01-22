@@ -86,14 +86,17 @@ export default function AnimatedHeader() {
                 animate={isScrolled ? "scrolled" : "initial"}
                 transition={{ duration: 0.15 }}
                 className="fixed top-15  z-50 rounded-full py-4 px-8 bg-white w-[55%]"
-                onMouseLeave={() => setHoveredItem(null)}
+
             >
-                <div className="flex items-center justify-between gap-24">
+                <div 
+                
+                className="flex items-center justify-between gap-24">
                     <Link href="/" className="flex-shrink-0">
                         <Image src="/images/logo.svg" alt="Logo" width={140} height={35} className="h-8 w-auto" />
                     </Link>
 
-                    <nav className="hidden md:flex items-center gap-6">
+                    <nav 
+                    className="hidden md:flex items-center gap-6">
                         {navigationItems.map((item) => (
                             <Link
                                 key={item.id}
@@ -134,10 +137,10 @@ export default function AnimatedHeader() {
                         animate="visible"
                         exit="exit"
                         variants={menuVariants}
-                        className={`fixed ${isScrolled ? "top-12 w-full left-0 " : "top-40 w-1/2 left-[15%]"}   bg-white shadow-lg z-40  border-t-2 border-blue`}
+                        className={`fixed ${isScrolled ? "top-[4.2rem] w-full left-0 " : "top-[10.4rem] w-1/2 left-[15%]"}   bg-white shadow-lg z-40  border-t-2 border-blue`}
                         onMouseLeave={() => setHoveredItem(null)}
                     >
-                        <div className="container mx-auto px-4 py-8">
+                        <div className="container mx-auto p-4">
                             <div className="grid grid-cols-4 gap-8">
                                 {navigationItems
                                     .find((item) => item.id === hoveredItem)
@@ -148,8 +151,9 @@ export default function AnimatedHeader() {
                                                 hidden: { opacity: 0, y: 20 },
                                                 visible: { opacity: 1, y: 0 },
                                             }}
+                                            className=" border-r"
                                         >
-                                            <h3 className="font-bold text-sm text-black mb-4">{category.title}</h3>
+                                            <h3 className="font-bold text-sm text-black mb-4  ">{category.title}</h3>
                                             <ul className="space-y-2">
                                                 {category.items.map((subItem) => (
                                                     <motion.li
@@ -159,7 +163,7 @@ export default function AnimatedHeader() {
                                                             visible: { opacity: 1, x: 0 },
                                                         }}
                                                     >
-                                                        <Link href={subItem.href} className="text-black hover:text-black transition-colors">
+                                                        <Link href={subItem.href} className=" text-black hover:text-orange  transition-colors">
                                                             {subItem.label}
                                                         </Link>
                                                     </motion.li>

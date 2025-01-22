@@ -21,8 +21,11 @@ export function Header() {
               <span>|</span>
               <span>FAQ</span>
               <span>|</span>
-              <span><MdWifiCalling3 className="text-[22px]" />
-              </span>
+              <div className='relative'>
+              <span ><MdWifiCalling3 className="text-[22px]" /></span>
+              <div className='absolute h-5 w-5 rounded-full -top-2 -left-1 bg-orange opacity-50 animate-ping '> </div>
+              <div className='absolute h-2.5 w-2.5 rounded-full -top-[3px] left-0 bg-orange animate-pulse'> </div>
+               </div>
               <span>
                 +(123)456789321
               </span>
