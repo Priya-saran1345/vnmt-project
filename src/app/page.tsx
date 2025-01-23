@@ -11,7 +11,7 @@ import { Services } from '@/components/projectcomponent/services'
 import { Partners } from '@/components/projectcomponent/partners'
 import { BlogSection } from '@/components/projectcomponent/blog-section'
 import  IntegrationSection  from '@/components/projectcomponent/integration-section'
-import { TruestedPartner } from '@/components/projectcomponent/trusted-partner'
+import { TrustedPartner } from '@/components/projectcomponent/trusted-partner'
 export default function FAQPage() {
   return (
     <div className="text-black">
@@ -27,7 +27,7 @@ export default function FAQPage() {
         <NetsuiteSection />
         <IntegrationSection />
         <BlogSection />
-        <TruestedPartner />
+        <TrustedPartner />
         <CaseStudy />
         <div className="w-full px-0 bg-cover bg-[url('/images/faq-bg.svg')] ">
           <Testimonials />
