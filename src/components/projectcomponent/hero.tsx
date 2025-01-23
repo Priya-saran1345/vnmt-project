@@ -10,7 +10,7 @@ export function Hero() {
   return (
     <div className="  text-white pt-8 pb-16 relative overflow-hidden">
       <div
-        className=" h-[642px] w-full flex flex-col justify-between lg:w-[95%] 2xl:w-[77%] mx-auto bg-[url('/images/banner.svg')] min-h-[68vh] bg-no-repeat pt-4"
+        className=" h-[642px] w-full flex flex-col justify-between xl:w-[95%] 2xl:w-[77%] mx-auto bg-[url('/images/banner.svg')] min-h-[68vh] bg-no-repeat pt-4"
       >
         <div className="px-7  ">
           <AnimatedHeader />

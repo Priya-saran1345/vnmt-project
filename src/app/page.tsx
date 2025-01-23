@@ -30,8 +30,8 @@ export default function FAQPage() {
         <IntegrationSection />
         <BlogSection />
         <TrustedPartner />
-        <CaseStudy />
-        <div className="w-full px-0 bg-cover bg-[url('/images/faq-bg.svg')] ">
+        <CaseStudy /> 
+        <div className="w-full px-4 lg:px-0 bg-cover bg-[url('/images/faq-bg.svg')] ">
           <Testimonials />
           <Faq />
         </div>

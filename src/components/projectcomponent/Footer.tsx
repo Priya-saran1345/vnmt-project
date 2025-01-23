@@ -182,7 +182,7 @@ const Footer = () => {
               <p className="text-[14px] mt-4"><span className="text-white hover:text-orange cursor-pointer"> Terms & Conditions</span> | <span className="text-white hover:text-orange cursor-pointer"> Privacy policy</span> </p>
             </div>
           </div>
-          <div className="ml-[11.5%] mr-5 mb-12">
+          <div className="ml-2 lg:ml-[3%] 2xl:ml-[11.5%] mr-5 mb-12">
 
 
             {/* Industries */}
@@ -227,7 +227,7 @@ const Footer = () => {
                   >
                     <MdOutlineKeyboardDoubleArrowUp className="text-[26px]  " />
                   </div>
-                  <p className="text-white
+                  <p className=" text-center text-white
 ">Scroll to Top</p>
                 </div>
                 <div className="bg-white border-blue border-[1px] p-4 rounded-md animate-zoom">

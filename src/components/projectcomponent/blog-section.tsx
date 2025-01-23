@@ -23,6 +23,12 @@ export function BlogSection() {
     slidesToScroll: 1,
     responsive: [
       {
+        breakpoint: 1795,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
@@ -75,7 +81,7 @@ export function BlogSection() {
           </button>
         </div>
         {/* Carousel container with React Slick */}
-        <div className="relative overflow-hidden">
+        <div className="relative w-full overflow-hidden">
           <Slider ref={sliderRef} {...slickSettings}>
             {blogPosts.map((post) => {
               return (
