@@ -60,6 +60,10 @@ export default {
           "5": "hsl(var(--chart-5))",
         },
       },
+      fontWeight: {
+        medium: "500",
+        semibold: "600",
+      },
     //   borderRadius: {
     //     lg: "var(--radius)",
     //     md: "calc(var(--radius) - 2px)",
@@ -89,5 +93,6 @@ export default {
       },
     },
   },
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;

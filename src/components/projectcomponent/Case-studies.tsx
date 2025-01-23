@@ -9,7 +9,7 @@ export function CaseStudy() {
 
   // Define the sizes for the three types of cards
   const getCardSize = (index: number) => {
-    const sizes = [320, 360, 400];  // Sizes: small, medium, large
+    const sizes = [ 360,320, 400];  // Sizes: small, medium, large
     const groupSize = 3;  // Group size (3 items in a group)
     
     // Determine the size based on the index's position within the group
@@ -24,7 +24,7 @@ export function CaseStudy() {
         {/* Header Section */}
         <div className="text-center mb-16">
           <h2 className="heading heading-calisto font-bold">Case Studies</h2>
-          <p className="text-xl text-gray-600">How We Make Transformative Impact Through Client Experiences</p>
+          <p className="text-xl text-gray-700">How We Make Transformative Impact Through Client Experiences</p>
         </div>
         
         {/* Upper Cards Scrolling Section */}
@@ -80,10 +80,10 @@ export function CaseStudy() {
         <div className="bg-gradient-to-b from-[#124DBA] to-lightblue text-white  overflow-hidden">
           <div className="text-scroll">
             <p className="text-center heading font-bold whitespace-nowrap">
-              YOUR SUCCESS WITH OUR NETSUITE EXPERTISE | EMPOWER YOUR SUCCESS
+               WITH OUR NETSUITE EXPERTISE | EMPOWER YOUR SUCCESS 
             </p>
             <p className="text-center heading font-bold whitespace-nowrap">
-              YOUR SUCCESS WITH OUR NETSUITE EXPERTISE | EMPOWER YOUR SUCCESS
+             WITH OUR NETSUITE EXPERTISE | EMPOWER YOUR SUCCESS 
             </p>
           </div>
         </div>
@@ -109,6 +109,7 @@ export function CaseStudy() {
         .text-scroll {
           display: flex;
           flex-wrap: nowrap;
+          gap:10px;
           animation: textScroll 20s linear infinite;
         }
 

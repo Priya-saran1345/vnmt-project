@@ -74,7 +74,7 @@ export function TrustedPartner() {
   return (
     <div className="w-full">
       <div className="mx-auto">
-        <div className="bg-gradient-to-t rounded-t-3xl py-4 flex items-center justify-center from-darkblue to-blue">
+        <div className="bg-gradient-to-t rounded-t-full py-4 flex items-center justify-center from-darkblue to-blue">
           <h2 className="heading heading-calisto font-bold text-center text-white">
             Trusted by Industry Leaders Worldwide
           </h2>

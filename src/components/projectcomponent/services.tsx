@@ -1,5 +1,6 @@
 
 import { ServicesClient } from "./ServicesClient";
+import Button from '@/components/projectcomponent/button'
 
 export function Services() {
 
@@ -14,9 +15,10 @@ export function Services() {
               <p className="font-medium parahraph mb-6 text-[#818181]">Your Trusted Partner for NetSuite Success</p>
             </div>
             <div className="flex justify-end mb-4">
-              <button  className="text-blue border-2 border-blue px-4 py-1 rounded-[8px] font-semibold">
-                View All
-              </button>
+            <Button content= 'View All'></Button>
+              {/* <button  className="text-blue border-2 border-blue px-4 py-1 rounded-[8px] font-semibold">
+               
+              </button> */}
             </div>
           </div>
           <ServicesClient />

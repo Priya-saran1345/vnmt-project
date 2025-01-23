@@ -89,7 +89,7 @@ export function IndustriesSection() {
         </div>
       </div>
       <div className='flex items-center justify-center '>
-        <span className="parahraph font-bold tracking-wide ">  Want to see our professional services. <a className="text-blue hover:text-orange smooth3 cursor-pointer underline"> Click here to View More </a></span>
+        <span className="parahraph font-bold tracking-wide flex items-center gap-3 ">  Want to see our professional services. <a className="text-blue hover:text-orange smooth1 hover:scale-105 cursor-pointer underline"> Click here to View More </a></span>
       </div>
     </section>
   )
@@ -123,10 +123,10 @@ function ServiceCard({ id, title, description, icon: Icon, color, iconBg }: { id
         </div>
         
         {/* Title */}
-        <h3 className="text-xl font-semibold mb-4 group-hover:text-white transition-all duration-500">{title}</h3>
+        <h3 className="text-xl font-semibold mb-4 group-hover:text-white transition-all duration-500 bulletheading">{title}</h3>
         
         {/* Description */}
-        <p className="text-gray-600 group-hover:text-white transition-all duration-500">{description}</p>
+        <p className="text-gray-700 group-hover:text-white transition-all duration-500 text-base">{description}</p>
 
 
       </div>

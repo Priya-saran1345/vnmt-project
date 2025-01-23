@@ -11,7 +11,7 @@ interface PlatformIconProps {
 }
 
 function DotWave() {
-  const wavePath = "M20,50 Q250,-20 500,50 T1000,10";
+  const wavePath = "M20,50 Q250,-25 500,50 T1000,10";
 
   return (
     <svg
@@ -27,8 +27,8 @@ function DotWave() {
         stroke="white"
         strokeWidth="2"
         strokeDasharray="5,5"
+        className="wave-path"
       />
-
     </svg>
   );
 }
@@ -37,8 +37,9 @@ function PlatformIcon({ src, alt, className = "" }: PlatformIconProps) {
   return (
     <motion.div
       whileHover={{ scale: 1.2 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className={`relative w-24 h-24 z-10 bg-white rounded-lg shadow-lg ${className}`}
+      exit={{scale:1}}
+      transition={{ type: "spring", stiffness: 500, damping: 15 }}
+      className={`relative w-[6.5rem] h-[6.5rem] z-10 bg-white rounded-lg shadow-lg cursor-pointer ${className}`}
     >
       <Image
         src={src || "/placeholder.svg"}
@@ -109,9 +110,14 @@ export default function IntegrationSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <button className="bg-white text-blue px-8 py-3 rounded-full font-bold text-lg hover:scale-105 smooth3 transition-colors">
+             <button
+     className='_button1'
+    >
+     EXPLORE CELIGO
+    </button>
+          {/* <button className="bg-white text-blue px-8 py-3 rounded-full font-bold text-lg hover:scale-105 smooth3 transition-colors">
             EXPLORE CELIGO
-          </button>
+          </button> */}
         </motion.div>
       </div>
     </div>

@@ -10,9 +10,9 @@ const faq = () => {
         <div className="space-y-4">
           <Accordion type="single" collapsible>
             {[1, 2, 3, 4].map((item) => (
-              <AccordionItem key={item} value={`item-${item}`} className=' rounded-xl text-[18px] border-blue border-[1.8px]'>
-                <AccordionTrigger className="text-left font-medium">Lorem ipsum is simply dummy text</AccordionTrigger>
-                <AccordionContent>
+              <AccordionItem key={item} value={`item-${item}`} className=' rounded-xl text-[18px] border-blue border-[1.8px] hover:bg-blue hover:text-white  group'>
+                <AccordionTrigger className="text-left text-lg  group-hover:text-white">Lorem ipsum is simply dummy text?</AccordionTrigger>
+                <AccordionContent className='group-hover:text-white '>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, quibusdam.
                 </AccordionContent>
               </AccordionItem>
@@ -22,9 +22,9 @@ const faq = () => {
         <div className="space-y-4">
           <Accordion type="single" collapsible>
             {[5, 6, 7, 8].map((item) => (
-              <AccordionItem key={item} value={`item-${item}`} className='rounded-xl text-[18px] border-blue border-[1.8px]'>
-                <AccordionTrigger className="text-left font-medium">Lorem ipsum is simply dummy text</AccordionTrigger>
-                <AccordionContent>
+              <AccordionItem key={item} value={`item-${item}`} className='rounded-xl text-[18px] border-blue border-[1.8px] hover:bg-blue hover:text-white  group'>
+                <AccordionTrigger className="text-left text-lg  group-hover:text-white">Lorem ipsum is simply dummy text?</AccordionTrigger>
+                <AccordionContent className='group-hover:text-white '>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, quibusdam.
                 </AccordionContent>
               </AccordionItem>
@@ -41,11 +41,17 @@ const faq = () => {
             Let&apos;s transform your business with our expert solutions.
             Contact us today to begin your journey toward succe</p>
         </div>
-        <div>
-          <div className='bg-white text-orange text-[22px] font-semibold w-fit mb-4 px-10 mx-auto text-orange-400 py-[6px] rounded-full animate-zoom cursor-pointer hover:bg-orange hover:text-white smooth3  '>
+        <div className='mb-9 ml-4'>
+        <button
+     className='_button1'
+    >
+     Book Consultant Now
+    </button>
+        {/* <Button content=' Book Consultant Now'></Button> */}
+          {/* <div className='bg-white text-orange text-[22px] font-[600]  w-lg mb-4 px-10 mx-auto text-orange-400 py-[6px] rounded-full animate-zoom cursor-pointer hover:bg-orange hover:text-white   '>
 
             Book Consultant Now
-          </div>
+          </div> */}
         </div>
 
       </div>
