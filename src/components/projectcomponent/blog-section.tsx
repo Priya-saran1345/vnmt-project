@@ -51,13 +51,13 @@ export function BlogSection() {
       <div className="w-full lg:w-[95%] 2xl:w-[77%] mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-3">
           <div className="w-2/3">
-            <h2 className="heading heading-calisto font-bold mb-2">
+            <h2 className="heading heading-calisto font-bold mb-2 leading-tight">
               {blogContent.title}
               <br />
               {blogContent.subtitle}
             </h2>
           </div>
-          <p className="text-xl md:w-[45%] text-gray-600">{blogContent.description}</p>
+          <p className="text-xl md:w-[45%] text-gray-700">{blogContent.description}</p>
         </div>
         <div className="  left-0 right-0 flex justify-end gap-4 px-4 transform -translate-y-1/2 z-10">
           <button
@@ -93,12 +93,12 @@ export function BlogSection() {
                       {/* Content */}
                       <CardContent className="relative !pb-0 h-full flex flex-col justify-end text-white">
                         <div>
-                          <div className="p-2 group-hover:bg-orange bg-blue rounded-sm w-fit bg-blue-600 text-white hover:bg-blue-700">
-                            Check My Strategy
+                          <div className="p-2 group-hover:bg-orange smooth3 bg-blue rounded-sm w-fit bg-blue-600 text-white hover:bg-blue-700 font-semibold text-sm rounded-t-lg">
+                            Check Fly Strategy
                           </div>
                         </div>
                         <div className="p-2 pb-4 text-darkblue bg-white px-4 smooth3 group-hover:bg-darkblue group-hover:text-white rounded-sm items-center">
-                          <p className="!text-[16px] font-medium line-clamp-3  mb-4">{post.title}</p>
+                          <p className="!text-[16px] font-medium line-clamp-3 text-base  mb-4">{post.title}</p>
                           <div className="flex items-center gap-3">
                             <Image
                               src={post.avatar || "/placeholder.svg"}
@@ -109,7 +109,7 @@ export function BlogSection() {
                             />
                             <div>
                               <p className="font-semibold group-hover:text-white text-orange">{post.name}</p>
-                              <p className="text-sm group-hover:text-white text-gray-600">{post.date}</p>
+                              <p className="text-sm group-hover:text-white text-gray-700">{post.date}</p>
                             </div>
                           </div>
                         </div>

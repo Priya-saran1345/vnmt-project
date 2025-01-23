@@ -114,7 +114,7 @@ const Footer = () => {
                   </div>
                 ))}
               </div>
-              <h3 className="font-bold mb-4 underline  cursor-pointer mt-4">INDUSTRIES THAT WE SERVE</h3>
+              <h3 className="font-bold underline mt-4">INDUSTRIES THAT WE SERVE</h3>
             </div>
             {/* Footer Sections */}
             {footerSections.map((section, index) => (
@@ -179,7 +179,7 @@ const Footer = () => {
                   </div>
                 </div>
               </div>
-              <p className="text-[14px] mt-4 hover:text-orange">Terms & Conditions | Privacy policy</p>
+              <p className="text-[14px] mt-4"><span className="text-white hover:text-orange cursor-pointer"> Terms & Conditions</span> | <span className="text-white hover:text-orange cursor-pointer"> Privacy policy</span> </p>
             </div>
           </div>
           <div className="ml-[11.5%] mr-5 mb-12">
@@ -188,9 +188,9 @@ const Footer = () => {
             {/* Industries */}
             <div className="flex gap-2 px-4 text-[14px] relative z-10">
               {industries.map((industry, index) => (
-                <span key={index}>
+                <span key={index} >
                   {index !== 0 && "| "}
-                  {industry}
+                 <span className="hover:text-orange text-white cursor-pointer"> {industry} </span>
                 </span>
               ))}
             </div>
@@ -217,7 +217,7 @@ const Footer = () => {
 
                 <div className="flex flex-col z-20 gap-2 items-center justify-center ">
                   <div
-                    className="bg-orange rounded-full flex justify-center cursor-pointer items-center border-[1px] border-white w-[40px] h-[40px]"
+                    className="bg-orange hover:scale-105 smooth3 rounded-full flex justify-center cursor-pointer items-center border-[1px] border-white w-[40px] h-[40px]"
                     onClick={() =>
                       window.scrollTo({
                         top: 0,
@@ -225,21 +225,21 @@ const Footer = () => {
                       })
                     }
                   >
-                    <MdOutlineKeyboardDoubleArrowUp className="text-[26px]" />
+                    <MdOutlineKeyboardDoubleArrowUp className="text-[26px]  " />
                   </div>
                   <p className="text-white
 ">Scroll to Top</p>
                 </div>
                 <div className="bg-white border-blue border-[1px] p-4 rounded-md animate-zoom">
                   <p className="text-blue text-center font-semibold mb-2">Quick Connect </p>
-                  <div className="flex gap-2 items-center font-semibold">
+                  <div className="flex gap-2 items-center font-">
                     <IoLogoWhatsapp className="text-green-500 text-[28px]" />
                     <p className="text-black">Whatsapp Now</p>
                   </div>
-                  <div className="flex gap-2 items-center font-semibold mt-2">
+                  <div className="flex gap-2 items-center font- mt-2">
                     <FiPhoneCall className="text-black text-[23px]" />
                     <p className="text-black">+(91) 9876543212</p>
-                  </div>
+                  </div>  
                 </div>
 
               </div>

@@ -58,20 +58,20 @@ export function ServicesClient() {
                 <div className="absolute right-0 top-0 bottom-0 w-1 bg-orange-500" />
                 <div
                     ref={scrollContainerRef}
-                    className="h-[450px] overflow-y-auto pr-8 space-y-8 custom-scrollbar"
+                    className="h-[450px] overflow-y-auto pr-8 space-y-4 custom-scrollbar"
                 >
                     {services.map((service: { icon: string, description: string, title: string, id: number }) => (
                         <div
                             key={service.id}
                             data-id={service.id}
-                            className={`service-item group flex gap-4 p-4 transition-all duration-300`}
+                            className={`service-item group flex gap-4 p-4 pb-1 transition-all duration-300 hover:scale-105 navitemup shadowop`}
                         >
                             <div
-                                className={`flex-shrink-0 rounded-tl-[45%] rounded-[5%] group-hover:border-orange/50 bg-blue group-hover:bg-white group-hover:border-[2px] h-[90px] w-[90px] flex items-center justify-center`}
+                                className={`flex-shrink-0 rounded-tl-[45%] rounded-[5%] group-hover:border-orange/50 bg-blue group-hover:bg-white group-hover:border-[2px] h-[90px] w-[90px] flex items-center justify-center smooth3`}
                             >
                                 <Image
                                     src={service.icon || "/placeholder.svg"}
-                                    className={`group-hover:filter-none  invert brightness-0 ${activeService === service.id ? "" : ""
+                                    className={`group-hover:filter-none smoot3  invert brightness-0 ${activeService === service.id ? "" : ""
                                         }`}
                                     height={39}
                                     width={50}
@@ -79,8 +79,8 @@ export function ServicesClient() {
                                 />
                             </div>
                             <div>
-                                <h3 className="bulletheading font-semibold mb-2">{service.title}</h3>
-                                <p className="parahraph text-[#818181]">{service.description}</p>
+                                <h3 className="bulletheading font-semibold mb-2 navitem cursor-default">{service.title}</h3>
+                                <p className="parahraph text-[#818181] cursor-default">{service.description}</p>
                             </div>
                         </div>
                     ))}

@@ -3,17 +3,17 @@ import Image from "next/image"
 import Button from '@/components/projectcomponent/button'
 export function NetsuiteSection() {
   return (
-    <div className="py-8 justify-end flex  bg-[url('/images/netsuite.svg')] ">
+    <div className="py-10 justify-end flex bg_netsuite ">
       <div className="w-full lg:w-[95%] 2xl:w-[87%]">
         <div className="flex justify-between  gap-8 items-center">
           <div className="space-y-6 w-1/3 ">
             <div>
               <h2 className="heading heading-calisto font-bold mb-2">{netsuiteContent.title}</h2>
-              <p className="bulletheading text-gray-600" dangerouslySetInnerHTML={{ __html: netsuiteContent.subtitle }}></p>
+              <p className="parahraph text-black font-medium" dangerouslySetInnerHTML={{ __html: netsuiteContent.subtitle }}></p>
             </div>
             <div className="space-y-4 my-8 h-[304px]  overflow-y-auto custom-scrollbar bg-[#FFF4F0] rounded-lg p-6 ">
               {netsuiteContent.description.map((text, index) => (
-                <p key={index} className="text-gray-600 parahraph ">
+                <p key={index} className="text-gray-700 text-base  ">
                   {text}
                 </p>
               ))}

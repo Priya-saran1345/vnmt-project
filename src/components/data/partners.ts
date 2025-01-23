@@ -4,7 +4,7 @@ export const partners = [
   { id: 3, name: "Swiggy", logo: "/images/partner3.svg" },
   { id: 4, name: "Univest", logo: "/images/partner4.svg" },
   { id: 5, name: "Suraasa", logo: "/images/partner5.svg" },
-  { id: 6, name: "SoundTrack", logo: "/images/partner6.svg" },
+  { id: 6, name: "SoundTrack", logo: "/images/partner15.svg" },
   { id: 7, name: "DocsCo", logo: "/images/partner7.svg" },
   { id: 8, name: "Bookeo", logo: "/images/partner8.svg" },
   { id: 9, name: "SmartLaw", logo: "/images/partner9.svg" },

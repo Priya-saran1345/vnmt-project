@@ -18,13 +18,13 @@ export function ImpactSection() {
         x: "0%",
         opacity: 1,
         duration: 4,
-        ease: "power4.out",
+        ease: "expo.out",
         delay: 2,
         scrollTrigger: {
           trigger: ".impact-section",
           start: "top bottom",
           end: "top center",
-          scrub: true,
+          scrub: 1,
         },
       },
     )
@@ -37,21 +37,21 @@ export function ImpactSection() {
         x: "0%",
         opacity: 1,
         duration: 4,
-        ease: "power4.out",
+        ease: "expo.out",
         delay: 2,
         scrollTrigger: {
           trigger: ".impact-section",
           start: "top bottom",
           end: "top center",
-          scrub: true,
+          scrub: 1,
         },
       },
     )
 
     // Numbers counting animation
     ScrollTrigger.create({
-      trigger: ".impact-section",
-      start: "top bottom",
+      trigger: ".impact-right",
+      start: "top bottom-=100",
       onEnter: () => {
         impactStats.forEach((stat, index) => {
           const numberElement = numberRefs.current[index]
@@ -68,7 +68,7 @@ export function ImpactSection() {
             {
               duration: 2,
               innerText: stat.number.includes("+") ? endNumber : stat.number,
-              ease: "power2.out",
+              ease: "expo.out",
               snap: { innerText: 1 },
               onComplete: () => {
                 if (stat.number.includes("+")) {
@@ -86,7 +86,7 @@ export function ImpactSection() {
   }, [])
 
   return (
-    <div className="relative w-full pb-16 overflow-hidden">
+    <div className="relative w-full  overflow-hidden">
    <div className="flex impact-section items-stretch w-full">
   {/* Dark curved section */}
   <div className="impact-left w-1/2 flex-shrink-0 z-50 relative bg-blue bg-[url('/images/impact-bg.svg')] flex justify-end items-center rounded-r-full">
@@ -124,7 +124,7 @@ export function ImpactSection() {
 </div>
 
 
-      <div className="bg-gradient-to-b from-darkblue to-lightblue text-white  mt-16 overflow-hidden">
+      <div className="bg-gradient-to-b from-darkblue to-lightblue text-white  mt-10 overflow-hidden">
         <div
           className="flex whitespace-nowrap animate-scroll-loop"
           style={{
