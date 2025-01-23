@@ -54,7 +54,7 @@ export default function IntegrationSection() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
   return (
-    <div className="bg_integration relative overflow-hidden">
+    <div className="bg_integration bg-blue">
       <div className="container mx-auto px-4 py-16 relative">
         <motion.h1
           className="font-bold text-white text-center mb-32 mx-auto heading-calisto heading"

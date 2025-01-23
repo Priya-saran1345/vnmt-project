@@ -118,6 +118,12 @@ a {
 	background-position: center;
 	background-repeat: no-repeat; 
 }
+.bg_netsuite{
+	background-image: url('/images/netsuite.svg'); 
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat; 
+}
 /* .bg_footer {
 	background-image: url('/images/map.png'); 
 	background-size: contain;

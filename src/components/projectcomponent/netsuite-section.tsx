@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export function NetsuiteSection() {
   return (
-    <div className="py-8 justify-end flex  bg-[url('/images/netsuite.svg')] ">
+    <div className="py-8 justify-end flex bg_netsuite ">
       <div className="w-full lg:w-[95%] 2xl:w-[87%]">
         <div className="flex justify-between  gap-8 items-center">
           <div className="space-y-6 w-1/3 ">
