@@ -32,13 +32,13 @@ export function Header() {
               {/* <span>FAQ: {contactInfo.phone}</span> */}
             </div>
             <div className="flex items-center gap-4">
-              <Link href="#" className="hover:text-blue-200 text-white">
+              <Link href="#" className="hover:text-orange text-white">
                 <FaInstagram className="text-[22px]" />
               </Link>
-              <Link href="#" className="hover:text-blue-200 text-white">
+              <Link href="#" className="hover:text-orange text-white">
                 <LuFacebook className="text-[22px]" />
               </Link>
-              <Link href="#" className="hover:text-blue-200 text-white">
+              <Link href="#" className="hover:text-orange text-white">
                 <BiLogoLinkedin className="text-[22px]" />
               </Link>
               <div className="relative rounded-full px-4 flex bg-white justify-between items-center">
