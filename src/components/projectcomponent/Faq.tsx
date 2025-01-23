@@ -32,7 +32,7 @@ const faq = () => {
           </Accordion>
         </div>
       </div>
-      {/* <div className="  lg:bg-[url('/images/footer-banner.svg')] -mt-20 max-w-[1246px]  items-end pb-12 flex justify-start px-12
+      <div className="  bg-[url('/images/footer-banner.svg')] -mt-20 max-w-[1246px]  items-end pb-12 flex justify-start px-12
      z-50 relative bg-no-repeat  mx-auto h-[350px] gap-12   rounded-3xl text-white py-4 ">
         <div className='w-[45%]  '>
 
@@ -50,7 +50,7 @@ const faq = () => {
           
         </div>
 
-      </div> */}
+      </div>
 
 
     </div>
