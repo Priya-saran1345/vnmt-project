@@ -9,7 +9,7 @@ export function CaseStudy() {
 
   // Define the sizes for the three types of cards
   const getCardSize = (index: number) => {
-    const sizes = [320, 360, 400];  // Sizes: small, medium, large
+    const sizes = [ 360,320, 400];  // Sizes: small, medium, large
     const groupSize = 3;  // Group size (3 items in a group)
     
     // Determine the size based on the index's position within the group

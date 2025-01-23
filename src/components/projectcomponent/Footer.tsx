@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useRef, useState } from "react"
 import Link from "next/link"
 import { Search } from "lucide-react"
 import { FiFacebook, FiPhoneCall } from "react-icons/fi"
@@ -9,14 +9,16 @@ import { GrLinkedinOption } from "react-icons/gr"
 import { BiLogoGmail } from "react-icons/bi"
 import { MdOutlineKeyboardDoubleArrowUp, MdWifiCalling3 } from "react-icons/md"
 import Image from "next/image"
-import ReactPlayer from "react-player"
+// import ReactPlayer from "react-player"
 import { IoLogoWhatsapp } from "react-icons/io";
 
-import { motion } from "framer-motion"
+import { motion, useInView  } from "framer-motion";
 const Footer = () => {
   // const targetSectionRef = useRef<HTMLElement | null>(null);
-
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
   const [searchTerm, setSearchTerm] = useState("")
+  
 
   const handleSearch = () => {
     if (searchTerm.trim()) {
@@ -88,16 +90,15 @@ const Footer = () => {
       {/* Footer */}
       <div className="bg-black -mt-20 pt-28 text-white/80 relative overflow-hidden">
         {/* Video Background */}
-        <ReactPlayer
-          url="/images/bg-video.mp4"
-          playing
-          loop
-          muted
-          width="100%"
-          height="100%"
-          className="absolute inset-0 object-cover"
-          style={{ opacity: 0.08 }}
-        />
+<video 
+  src="/images/bg-video.mp4" 
+  autoPlay 
+  loop 
+  muted 
+  style={{ position: 'absolute', inset: '0', objectFit: 'cover', zIndex: 10, width: "100%", height:"100%" }} 
+  className="opacity-20"
+/>
+
 
         {/* Content */}
         <div className="">
@@ -195,15 +196,17 @@ const Footer = () => {
             </div>
 
             {/* Footer Logos */}
-            <div className="flex justify-between items-center">
+            <div 
+            ref={sectionRef}
+            className="flex justify-between items-center">
 
               <div className="flex items-center mt-4 px-4 gap-10 relative z-10">
                 {[1, 2, 3, 4, 5, 6, 7, 8].map((elem, index) => (
                   <motion.div
                     key={elem}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.2, duration: 0.6 }} // Sequential delay for each image
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={isInView ? { opacity: 1, x: 0  } : {}}
+                    transition={{ delay: index * 0.2, duration: 0.6 }}
                   >
                     <Image src={`/images/footer${elem}.svg`} height={50} width={64} alt={`Footer logo ${elem}`} />
                   </motion.div>
@@ -212,9 +215,9 @@ const Footer = () => {
               <div className="flex gap-8 items-end">
 
 
-                <div className="flex flex-col gap-2 items-center justify-center ">
+                <div className="flex flex-col z-20 gap-2 items-center justify-center ">
                   <div
-                    className="bg-orange rounded-full z-30 flex justify-center cursor-pointer items-center border-[1px] border-white w-[40px] h-[40px]"
+                    className="bg-orange rounded-full flex justify-center cursor-pointer items-center border-[1px] border-white w-[40px] h-[40px]"
                     onClick={() =>
                       window.scrollTo({
                         top: 0,

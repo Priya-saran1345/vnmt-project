@@ -109,9 +109,14 @@ export default function IntegrationSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <button className="bg-white text-blue px-8 py-3 rounded-full font-bold text-lg hover:scale-105 smooth3 transition-colors">
+             <button
+     className='_button1'
+    >
+     EXPLORE CELIGO
+    </button>
+          {/* <button className="bg-white text-blue px-8 py-3 rounded-full font-bold text-lg hover:scale-105 smooth3 transition-colors">
             EXPLORE CELIGO
-          </button>
+          </button> */}
         </motion.div>
       </div>
     </div>

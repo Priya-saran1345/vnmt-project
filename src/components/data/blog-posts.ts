@@ -6,6 +6,8 @@ export const blogPosts = [
       image: "/images/blog-img.svg",
       date: "January 10,2024",
       author: "Chelsy",
+      avatar: "/images/testimonial-person.png",
+name: "PK Rawat"
     },
     {
       id: 2,
@@ -14,6 +16,9 @@ export const blogPosts = [
       image: "/images/blog-img.svg",
       date: "January 10,2024",
       author: "Chelsy",
+      avatar: "/images/testimonial-person.png",
+      name: "PK Rawat"
+
     },
     {
       id: 3,
@@ -22,6 +27,9 @@ export const blogPosts = [
       image: "/images/blog-img.svg",
       date: "January 10,2024",
       author: "Chelsy",
+      avatar: "/images/testimonial-person.png",
+      name: "PK Rawat"
+
     },
     {
       id: 4,
@@ -30,6 +38,9 @@ export const blogPosts = [
       image: "/images/blog-img.svg",
       date: "January 10,2024",
       author: "Chelsy",
+      avatar: "/images/testimonial-person.png",
+      name: "PK Rawat"
+
     },
     {
       id: 5,
@@ -37,6 +48,9 @@ export const blogPosts = [
         "NetSuite has advanced filtering feature, making ERP systems that tie to its versatility, extensive customization options, ef...",
       image: "/images/blog-img.svg",
       date: "January 10,2024",
+      avatar: "/images/testimonial-person.png",
+      name: "PK Rawat",
+
       author: "Chelsy",
     },
   ]

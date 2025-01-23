@@ -17,7 +17,7 @@ export function BlogSection() {
   const slickSettings = {
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 3000, // Speed of autoplay (3 seconds)
+    autoplaySpeed: 2000, // Speed of autoplay (3 seconds)
     speed: 500, // Transition speed
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -36,7 +36,6 @@ export function BlogSection() {
       }
     ]
   }
-
   // Handle previous slide action
   const prevSlide = () => {
     sliderRef.current?.slickPrev()
@@ -98,11 +97,21 @@ export function BlogSection() {
                             Check My Strategy
                           </div>
                         </div>
-                        <div className="p-2 pb-4 text-darkblue bg-white group-hover:bg-darkblue group-hover:text-white rounded-sm items-center">
-                          <p className="!text-[16px] font-medium line-clamp-3 mb-4">{post.title}</p>
-                          <span className="">{post.author}</span>
-                          <span className="mx-2">-</span>
-                          <span className="">{post.date}</span>
+                        <div className="p-2 pb-4 text-darkblue bg-white px-4 smooth3 group-hover:bg-darkblue group-hover:text-white rounded-sm items-center">
+                          <p className="!text-[16px] font-medium line-clamp-3  mb-4">{post.title}</p>
+                          <div className="flex items-center gap-3">
+                            <Image
+                              src={post.avatar || "/placeholder.svg"}
+                              alt={post.author}
+                              width={50}
+                              height={50}
+                              className="rounded-full"
+                            />
+                            <div>
+                              <p className="font-semibold group-hover:text-white text-orange">{post.name}</p>
+                              <p className="text-sm group-hover:text-white text-gray-600">{post.date}</p>
+                            </div>
+                          </div>
                         </div>
                       </CardContent>
                     </Card>
@@ -114,7 +123,7 @@ export function BlogSection() {
         </div>
 
         {/* Left and Right Buttons */}
-      
+
       </div>
     </section>
   )

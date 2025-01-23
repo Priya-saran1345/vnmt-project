@@ -1,5 +1,6 @@
 import React from 'react'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import Button from '@/components/projectcomponent/button'
 
 const faq = () => {
   return (
@@ -42,10 +43,16 @@ const faq = () => {
             Contact us today to begin your journey toward succe</p>
         </div>
         <div>
-          <div className='bg-white text-orange text-[22px] font-semibold w-fit mb-4 px-10 mx-auto text-orange-400 py-[6px] rounded-full'>
+        <button
+     className='_button1'
+    >
+     Book Consultant Now
+    </button>
+        {/* <Button content=' Book Consultant Now'></Button> */}
+          {/* <div className='bg-white text-orange text-[22px] font-semibold w-fit mb-4 px-10 mx-auto text-orange-400 py-[6px] rounded-full animate-zoom cursor-pointer hover:bg-orange hover:text-white smooth3  '>
 
             Book Consultant Now
-          </div>
+          </div> */}
         </div>
 
       </div>

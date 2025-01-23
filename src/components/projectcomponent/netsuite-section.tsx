@@ -1,6 +1,6 @@
 import { netsuiteContent } from "@/components/data/netsuite"
 import Image from "next/image"
-
+import Button from '@/components/projectcomponent/button'
 export function NetsuiteSection() {
   return (
     <div className="py-8 justify-end flex  bg-[url('/images/netsuite.svg')] ">
@@ -18,9 +18,10 @@ export function NetsuiteSection() {
                 </p>
               ))}
             </div>
-            <div className="bg-blue text-white border-darkblue ctabtn hover:scale-105 smooth3 p-2 px-4 rounded-full w-fit hover:bg-blue-700">
+            <Button content='LEARN MORE'></Button>
+            {/* <div className="bg-blue text-white border-darkblue ctabtn hover:scale-105 smooth3 p-2 px-4 rounded-full w-fit hover:bg-blue-700">
               {netsuiteContent.ctaText} →
-            </div>
+            </div> */}
           </div>
           <div className=" w-[60%]  rounded-l-[100px] " >
             <Image

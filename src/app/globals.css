@@ -389,5 +389,68 @@ a {
   
 
 
+  .videoo-backgroundr::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+	pointer-events: none;
+  }
+  
 
+
+
+  ._button {
+	--bg: #1F57BF;
+	--hover-bg: #1F57BF;
+	--hover-text: #000;
+	color: #fff;
+	cursor: pointer;
+	border: 1px solid var(--bg);
+	border-radius: 35px;
+	padding: 0.8em 2em;
+	background: var(--bg);
+	transition: 0.2s;
+  }
+  
+  ._button:hover {
+	color: white;
+	transform: translate(-0.25rem, -0.25rem);
+	background: var(--hover-bg);
+	box-shadow: 0.35rem 0.35rem #FF8352 ;
+  }
+  
+  ._button:active {
+	transform: translate(0);
+	box-shadow: none;
+  }
+  
+
+  ._button1 {
+	--bg: white;
+	--hover-bg: white;
+	--hover-text: #000;
+	color: #1F57BF;
+	cursor: pointer;
+	border: 1px solid var(--bg);
+	border-radius: 35px;
+	padding: 0.8em 2em;
+	background: var(--bg);
+	transition: 0.2s;
+  }
+  
+  ._button1:hover {
+	color: #1F57BF;
+	transform: translate(-0.25rem, -0.25rem);
+	background: var(--hover-bg);
+	box-shadow: 0.35rem 0.35rem #FF8352 ;
+  }
+  
+  ._button1:active {
+	transform: translate(0);
+	box-shadow: none;
+  }
   
