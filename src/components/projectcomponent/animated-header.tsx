@@ -83,14 +83,14 @@ export default function AnimatedHeader() {
         <>
             <motion.header
                 variants={headerVariants}
-                animate={isScrolled ? "scrolled" : "initial"}
+                // animate={isScrolled ? "scrolled" : "initial"}
                 transition={{ duration: 0.15 }}
-                className="fixed top-15  z-50 rounded-full py-4 px-8 bg-white w-[55%]"
+                className={`fixed top-15  z-50 rounded-full   ${isScrolled ? "hidden " : ""}  py-4 px-8 bg-white w-[55%]`}
 
             >
                 <div 
                 
-                className="flex items-center justify-between gap-24">
+                className="flex  items-center justify-between gap-24">
                     <Link href="/" className="flex-shrink-0">
                         <Image src="/images/logo.svg" alt="Logo" width={140} height={35} className="h-8 w-auto" />
                     </Link>
@@ -137,7 +137,7 @@ export default function AnimatedHeader() {
                         animate="visible"
                         exit="exit"
                         variants={menuVariants}
-                        className={`fixed ${isScrolled ? "top-[4.2rem] w-full left-0 " : "top-[10.4rem] w-1/2 left-[15%]"}   bg-white shadow-lg z-40  border-t-2 border-blue`}
+                        className={`fixed ${isScrolled ? "top-[4.2rem] w-0 left-0 " : "top-[10.4rem] w-1/2 left-[15%]"}   bg-white shadow-lg z-40  border-t-2 border-blue`}
                         onMouseLeave={() => setHoveredItem(null)}
                     >
                         <div className="container mx-auto p-4">

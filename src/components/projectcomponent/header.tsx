@@ -53,7 +53,6 @@ export function Header() {
         </div>
       </div>
       {/* Main navigation */}
-
     </div>
   )
 }

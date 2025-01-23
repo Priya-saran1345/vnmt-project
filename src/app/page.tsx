@@ -12,11 +12,13 @@ import { Partners } from '@/components/projectcomponent/partners'
 import { BlogSection } from '@/components/projectcomponent/blog-section'
 import  IntegrationSection  from '@/components/projectcomponent/integration-section'
 import { TrustedPartner } from '@/components/projectcomponent/trusted-partner'
+import Navbar from '@/components/projectcomponent/navbar'
 export default function FAQPage() {
   return (
     <div className="text-black">
       <div className=" w-full">
         <Header />
+        <Navbar/>
         <div className='bg_banner'>
           <Hero />
           <Services />
