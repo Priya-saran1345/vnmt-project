@@ -42,7 +42,7 @@ export function Hero() {
         <div className="flex mr-8 justify-between items-center w-full ">
           <div className="flex gap-[80px]">
 
-            <button className="text-white w-[110%] text-[30px] flex items-center text-left justify-around font-semibold mt-3 h-[90px] rounded-3xl  bg-[#FF8352] border-white hover:bg-blue-700 leading-8 ">
+            <button className="text-white w-[110%] text-[30px] flex items-center text-left justify-around font-semibold mt-3 h-[90px] rounded-3xl  bg-[#FF8352] border-white hover:scale-105 smooth3 leading-8  ">
               <div className="bg-white flex  justify-center items-center p-5 rounded-full h-[70px] w-[70px]">
 
                 <FaPlay className=" pl-1 animate text-[#FF8352] text-[44px] " />
@@ -55,10 +55,10 @@ export function Hero() {
               more recently with Aldus PageMaker.
             </p>
           </div>
-          <div className='relative '>
+          <div className='relative hover:scale-105 smooth3 '>
             <button className="mr-16 border-[#FF8352] border bg-white text-blue rounded-xl font-semibold text-lg px-4 py-1 relative">FREE CONSULTATION
             </button>
-            <div className='absolute h-6 w-6 rounded-full -top-2 right-14 bg-orange opacity-50  '> </div>
+            <div className='absolute h-6 w-6 rounded-full -top-2 right-14 bg-orange opacity-50 animate-ping  '> </div>
             <div className='absolute h-3 w-3 rounded-full -top-[2px] right-[62px] bg-orange animate-pulse'> </div>
           </div>
         </div>

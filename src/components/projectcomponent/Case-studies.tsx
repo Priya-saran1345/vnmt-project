@@ -24,7 +24,7 @@ export function CaseStudy() {
         {/* Header Section */}
         <div className="text-center mb-16">
           <h2 className="heading heading-calisto font-bold">Case Studies</h2>
-          <p className="text-xl text-gray-700">How We Make Transformative Impact Through Client Experiences</p>
+          <p className="text-xl text-black">How We Make Transformative Impact Through Client Experiences</p>
         </div>
         
         {/* Upper Cards Scrolling Section */}
@@ -54,7 +54,7 @@ export function CaseStudy() {
                       className="object-cover transition-transform duration-500"
                     />
                     {/* Overlay on hover */}
-                    <div className="absolute bg-gradient-to-b h-full flex flex-col justify-center items-center from-transparent to-lightblue inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bg-gradient-to-b h-full flex flex-col justify-center items-center from-transparent to-blue inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       {/* Arrow animation */}
                       <div className="absolute top-0 left-1/2 -translate-x-1/2 rounded-full border-2 border-white -translate-y-full group-hover:translate-y-16 transition-transform duration-500">
                         <ArrowUpRight className="w-16 h-16 text-white" />
@@ -64,7 +64,7 @@ export function CaseStudy() {
                         <h3 className="font-semibold rounded-t-[3px] p-2 bg-lightorange text-[22px] text-white">
                           {study.title}
                         </h3>
-                        <p className="text-slate-600 bg-white rounded-b-[3px] p-2 text-sm line-clamp-3">
+                        <p className="text-gray-800  bg-white rounded-b-[3px] p-2 text-base line-clamp-3">
                           {study.description}
                         </p>
                       </div>
@@ -77,16 +77,21 @@ export function CaseStudy() {
         </div>
 
         {/* Bottom Scrolling Text Section */}
-        <div className="bg-gradient-to-b from-[#124DBA] to-lightblue text-white  overflow-hidden">
-          <div className="text-scroll">
-            <p className="text-center heading font-bold whitespace-nowrap">
-               WITH OUR NETSUITE EXPERTISE | EMPOWER YOUR SUCCESS 
-            </p>
-            <p className="text-center heading font-bold whitespace-nowrap">
-             WITH OUR NETSUITE EXPERTISE | EMPOWER YOUR SUCCESS 
-            </p>
-          </div>
+        <div className="bg-gradient-to-b from-darkblue to-lightblue text-white overflow-hidden">
+        <div
+          className="flex whitespace-nowrap animate-scroll-loop"
+          style={{
+            animation: "scroll-loop 15s linear infinite",
+          }}
+        >
+          <span className="text-center subheading font-bold px-2 py-4">
+             WITH OUR NETSUITE EXPERTISE | EMPOWER YOUR SUCCESS
+          </span>
+          <span className="text-center subheading font-bold px-2 py-4">
+             WITH OUR NETSUITE EXPERTISE | EMPOWER YOUR SUCCESS
+          </span>
         </div>
+      </div>
       </div>
 
       {/* Styles for Animations */}

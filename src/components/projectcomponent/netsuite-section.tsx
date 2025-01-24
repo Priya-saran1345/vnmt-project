@@ -13,7 +13,7 @@ export function NetsuiteSection() {
             </div>
             <div className="space-y-4 my-8 h-[304px]  overflow-y-auto custom-scrollbar bg-[#FFF4F0] rounded-lg p-6 ">
               {netsuiteContent.description.map((text, index) => (
-                <p key={index} className="text-gray-700 text-base  ">
+                <p key={index} className="text-black text-base  ">
                   {text}
                 </p>
               ))}

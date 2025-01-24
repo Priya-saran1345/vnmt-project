@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function Partners() {
   return (
-    <div className="bg-blue-600 bg-[url('/images/partner-banner.svg')] h-[396px] text-white overflow-hidden">
+    <div className="bg-blue-600 bg-[url('/images/bgpartner.svg')] h-[396px] text-white overflow-hidden">
       <div className="w-full lg:w-[95%] 2xl:w-[77%] mx-auto px-4">
         <div className="flex flex-col md:flex-row items-start justify-between gap-12">
           <div className=" flex flex-col gap-2 mt-10 ">

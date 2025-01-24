@@ -12,11 +12,13 @@ import { Partners } from '@/components/projectcomponent/partners'
 import { BlogSection } from '@/components/projectcomponent/blog-section'
 import  IntegrationSection  from '@/components/projectcomponent/integration-section'
 import { TrustedPartner } from '@/components/projectcomponent/trusted-partner'
+import Navbar from '@/components/projectcomponent/navbar'
 export default function FAQPage() {
   return (
     <div className="text-black">
       <div className=" w-full">
         <Header />
+        <Navbar/>
         <div className='bg_banner'>
           <Hero />
           <Services />
@@ -28,8 +30,8 @@ export default function FAQPage() {
         <IntegrationSection />
         <BlogSection />
         <TrustedPartner />
-        <CaseStudy />
-        <div className="w-full px-0 bg-cover bg-[url('/images/faq-bg.svg')] ">
+        <CaseStudy /> 
+        <div className="w-full px-4 lg:px-0 bg-cover bg-[url('/images/faq-bg.svg')] ">
           <Testimonials />
           <Faq />
         </div>

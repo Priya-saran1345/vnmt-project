@@ -61,7 +61,7 @@ function PartnersRow({ partners, direction }: { partners: any ; direction: 1 | -
               alt={partner.name}
               width={150}
               height={60}
-              className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+              className="object-contain filter grayscale  hover:grayscale-0 transition-all duration-300 brightness-50 hover:brightness-100 "
             />
           </motion.div>
         ))}

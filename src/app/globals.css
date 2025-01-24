@@ -109,8 +109,8 @@ a {
 }
 
 .bg_integration {
-	background-image: url('/images/Group 1000005772.svg');
-	background-size: contain;
+	background-image: url('/images/bgintegration.svg');
+	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 }
@@ -410,17 +410,17 @@ a {
 
 
 @keyframes zoomInOut {
-	0% {
-		transform: scale(1);
-	}
+    0% {
+        transform: translateY(0);
+    }
 
-	50% {
-		transform: scale(1.1);
-	}
+    50% {
+        transform: translateY(-30px); 
+    }
 
-	100% {
-		transform: scale(1);
-	}
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .animate-zoom {
@@ -440,7 +440,10 @@ a {
 	pointer-events: none;
 }
 
-
+.customanim{
+	perspective: 70px;
+    perspective-origin: 50% 50%;
+}
 
 
 ._button {
@@ -510,3 +513,127 @@ a {
 		/* Adjust this value based on the wave length */
 	}
 }
+
+@keyframes slideDown {
+	0% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.animate-slide-down {
+	animation: slideDown 0.3s ease-in-out forwards;
+}
+
+
+@keyframes topShrink {
+	0% {
+	  transform: perspective(1000px) rotateX(0deg);
+	}
+	100% {
+	  transform: perspective(1000px) rotateX(30deg) scale(0.9, 0.7);
+	}
+  }
+  
+  @keyframes wobble {
+	0%,
+	100% {
+	  transform: perspective(1000px) rotateX(30deg) scale(0.9, 0.7);
+	}
+	25% {
+	  transform: perspective(1000px) rotateX(32deg) scale(0.91, 0.71) translateX(2px);
+	}
+	75% {
+	  transform: perspective(1000px) rotateX(28deg) scale(0.89, 0.69) translateX(-2px);
+	}
+  }
+  
+  .card-container {
+	perspective: 2000px;
+	height: 450px;
+	width: 100%;
+	max-width: 363px;
+  }
+  
+  .card {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	border-radius: 16px;
+	overflow: hidden;
+  }
+  
+  .card-upper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50%;
+	transform-origin: top;
+	transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+	overflow: hidden;
+	background-color: white;
+  }
+  
+  .card-lower {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 50%;
+	background-color: white;
+	transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Ensure images and content stay within bounds */
+  .card-upper > img,
+  .card-lower > img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+  }
+  
+  .group:hover .card-upper {
+	transform: rotateX(-45deg) scale(0.95);
+  }
+  
+  /* Add shadow effect for depth */
+  .group:hover .card-upper::after {
+	content: "";
+	position: absolute;
+	bottom: -20px;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), transparent);
+	transform: translateY(-100%);
+  }
+  
+  .animated-card {
+	transition: all 0.5s ease;
+  }
+  
+  .animated-card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 50%;
+	background: inherit;
+	transition: all 0.5s ease;
+	transform-origin: top;
+	z-index: 1;
+  }
+  
+  .animated-card:hover::before {
+	animation: topShrink 0.5s forwards, wobble 1s 0.5s infinite;
+  }
+  
+  

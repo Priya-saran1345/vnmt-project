@@ -53,13 +53,13 @@ export function Testimonials() {
       <div className="w-full lg:w-[95%] 2xl:w-[77%] max-w-screen-2xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="heading heading-calisto font-bold ">Testimonials</h2>
-          <p className="text-xl text-gray-700">Hear What Our Clients Say</p>
+          <p className="text-xl text-black">Hear What Our Clients Say</p>
         </div>
         <div className="flex items-center">
 
         
         <div className=" left-0 top-1/2 -translate-y-1/2 z-10" onClick={scrollPrev}>
-          <MdKeyboardDoubleArrowLeft className="text-3xl text-gray-700  cursor-pointer hover:text-black" />
+          <MdKeyboardDoubleArrowLeft className="text-3xl text-black  cursor-pointer hover:text-black" />
         </div>
         <div className="relative overflow-hidden" ref={emblaRef}>
           <div className="flex touch-pan-y h-[360px]">
@@ -103,7 +103,7 @@ export function Testimonials() {
                           />
                           <div>
                             <p className="font-semibold">{testimonial.author}</p>
-                            <p className="text-sm text-gray-700">{testimonial.role}</p>
+                            <p className="text-sm text-black">{testimonial.role}</p>
                           </div>
                         </div>
                         <Heart
@@ -125,7 +125,7 @@ export function Testimonials() {
         {/* Left and Right Navigation Buttons */}
      
         <div className=" right-0 top-1/2 -translate-y-1/2 z-10" onClick={scrollNext}>
-          <MdKeyboardDoubleArrowRight className="text-3xl text-gray-700 cursor-pointer hover:text-black" />
+          <MdKeyboardDoubleArrowRight className="text-3xl text-black cursor-pointer hover:text-black" />
         </div>
         </div>
 

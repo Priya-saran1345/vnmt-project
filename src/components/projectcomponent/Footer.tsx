@@ -12,13 +12,13 @@ import Image from "next/image"
 // import ReactPlayer from "react-player"
 import { IoLogoWhatsapp } from "react-icons/io";
 
-import { motion, useInView  } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 const Footer = () => {
   // const targetSectionRef = useRef<HTMLElement | null>(null);
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
   const [searchTerm, setSearchTerm] = useState("")
-  
+
 
   const handleSearch = () => {
     if (searchTerm.trim()) {
@@ -88,16 +88,16 @@ const Footer = () => {
   return (
     <div className="pb-0">
       {/* Footer */}
-      <div className="bg-black -mt-20 pt-28 text-white/80 relative overflow-hidden">
+      <div className="bg-black -mt-20 pt-28 text-white/85 text-base relative overflow-hidden">
         {/* Video Background */}
-<video 
-  src="/images/bg-video.mp4" 
-  autoPlay 
-  loop 
-  muted 
-  style={{ position: 'absolute', inset: '0', objectFit: 'cover', zIndex: 10, width: "100%", height:"100%" }} 
-  className="opacity-20"
-/>
+        <video
+          src="/images/bg-video.mp4"
+          autoPlay
+          loop
+          muted
+          style={{ position: 'absolute', inset: '0', objectFit: 'cover', zIndex: 10, width: "100%", height: "100%" }}
+          className="opacity-20"
+        />
 
 
         {/* Content */}
@@ -110,7 +110,7 @@ const Footer = () => {
                 {locationData.map((loc, index) => (
                   <div key={index}>
                     <h4 className="font-semibold">{loc.country}</h4>
-                    <p className="text-sm text-white/70 hover:text-orange cursor-pointer">{loc.address}</p>
+                    <p className="text-sm text-white/85 text-base hover:text-orange cursor-pointer">{loc.address}</p>
                   </div>
                 ))}
               </div>
@@ -123,7 +123,7 @@ const Footer = () => {
                 <ul className="space-y-2">
                   {section.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
-                      <Link href="#" className="text-white/80 hover:text-orange text-[15px]">
+                      <Link href="#" className="text-white/85 text-base hover:text-orange text-[15px]">
                         {link}
                       </Link>
                     </li>
@@ -147,14 +147,14 @@ const Footer = () => {
               </div>
               <h3 className="font-bold mb-4 mt-4 underline hover:text-blue cursor-pointer">FOLLOW US@</h3>
               <div className="flex gap-2 mb-4">
-                <Link href="#">
-                  <FaInstagram className="text-[22px] text-white/80 hover:text-orange" />
+                <Link href="#" className="border p-1.5 hover:border-pink-500 smooth1 hover:scale-105 rounded-md group">
+                  <FaInstagram className="text-[22px] text-white/85  group-hover:text-pink-500" />
                 </Link>
-                <Link href="#">
-                  <FiFacebook className="text-[22px] text-white/80 hover:text-orange" />
+                <Link href="#" className="border p-1.5 hover:border-lightblue smooth1 hover:scale-105 rounded-md group">
+                  <FiFacebook className="text-[22px] text-white/85  group-hover:text-lightblue" />
                 </Link>
-                <Link href="#">
-                  <GrLinkedinOption className="text-[22px] text-white/80 hover:text-orange" />
+                <Link href="#" className="border p-1.5 hover:border-blue smooth1 hover:scale-105 rounded-md group">
+                  <GrLinkedinOption className="text-[22px] text-white/85  group-hover:text-blue" />
                 </Link>
               </div>
               <div className="relative bg-white text-black rounded-full shadow-md">
@@ -172,7 +172,7 @@ const Footer = () => {
                     }}
                   />
                   <div
-                    className="text-[20px] flex items-center justify-center text-white/90 cursor-pointer"
+                    className="text-[20px] flex items-center justify-center text-white/85 text-base cursor-pointer"
                     onClick={handleSearch}
                   >
                     <Search className="h-full w-full text-black" />
@@ -182,7 +182,7 @@ const Footer = () => {
               <p className="text-[14px] mt-4"><span className="text-white hover:text-orange cursor-pointer"> Terms & Conditions</span> | <span className="text-white hover:text-orange cursor-pointer"> Privacy policy</span> </p>
             </div>
           </div>
-          <div className="ml-[11.5%] mr-5 mb-12">
+          <div className="ml-2 lg:ml-[3%] 2xl:ml-[11.5%] mr-5 mb-12">
 
 
             {/* Industries */}
@@ -190,25 +190,26 @@ const Footer = () => {
               {industries.map((industry, index) => (
                 <span key={index} >
                   {index !== 0 && "| "}
-                 <span className="hover:text-orange text-white cursor-pointer"> {industry} </span>
+                  <span className="hover:text-orange text-white cursor-pointer"> {industry} </span>
                 </span>
               ))}
             </div>
 
             {/* Footer Logos */}
-            <div 
-            ref={sectionRef}
-            className="flex justify-between items-center">
+            <div
+              ref={sectionRef}
+              className="flex justify-between items-center">
 
-              <div className="flex items-center mt-4 px-4 gap-10 relative z-10">
+              <div className="flex items-center mt-4 px-4 gap-10 relative z-40 ">
                 {[1, 2, 3, 4, 5, 6, 7, 8].map((elem, index) => (
                   <motion.div
                     key={elem}
                     initial={{ opacity: 0, x: 20 }}
-                    animate={isInView ? { opacity: 1, x: 0  } : {}}
+                    animate={isInView ? { opacity: 1, x: 0 } : {}}
                     transition={{ delay: index * 0.2, duration: 0.6 }}
+                    className=""
                   >
-                    <Image src={`/images/footer${elem}.svg`} height={50} width={64} alt={`Footer logo ${elem}`} />
+                    <Image src={`/images/footer${elem}.svg`} height={50} width={90} alt={`Footer logo ${elem}`} className="hover:scale-110 smooth3" />
                   </motion.div>
                 ))}
               </div>
@@ -227,19 +228,22 @@ const Footer = () => {
                   >
                     <MdOutlineKeyboardDoubleArrowUp className="text-[26px]  " />
                   </div>
-                  <p className="text-white
+                  <p className=" text-center text-white
 ">Scroll to Top</p>
                 </div>
-                <div className="bg-white border-blue border-[1px] p-4 rounded-md animate-zoom">
+
+                <div className="bg-[#fff] z-40 border-blue border-[1px] p-4 rounded-lg shadow-md animate-zoom">
                   <p className="text-blue text-center font-semibold mb-2">Quick Connect </p>
-                  <div className="flex gap-2 items-center font-">
-                    <IoLogoWhatsapp className="text-green-500 text-[28px]" />
-                    <p className="text-black">Whatsapp Now</p>
-                  </div>
-                  <div className="flex gap-2 items-center font- mt-2">
-                    <FiPhoneCall className="text-black text-[23px]" />
-                    <p className="text-black">+(91) 9876543212</p>
-                  </div>  
+
+                  <a className="flex gap-2 items-center cursor-pointer group z-50"  href="https://wa.me/919876543212"  target="_blank" rel="noopener noreferrer" >
+                    <IoLogoWhatsapp className="text-green-500 text-[28px] cursor-pointer" />
+                    <p className="text-black group-hover:text-orange cursor-pointer group-hover:font-semibold smooth1">Whatsapp Now</p>
+                  </a>
+
+                  <a className="flex gap-2 items-center cursor-pointer group z-50 mt-2" href="tel:+919876543212" target="_blank" rel="noopener noreferrer" >
+                    <FiPhoneCall className="text-black text-[23px] cursor-pointer" />
+                    <p className="text-black group-hover:text-orange cursor-pointer group-hover:font-semibold smooth1">+(91) 9876543212</p>
+                  </a>
                 </div>
 
               </div>
@@ -249,8 +253,8 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="text-center py-4 bg-darkblue text-sm text-white/90">
-        © Copyright 2024 @ VNMT | All rights reserved
+      <div className="text-center py-4 bg-darkblue text-base text-white">
+        © Copyright 2025 @  <span className="font-semibold">VNMT</span> | All rights reserved
       </div>
     </div>
   )

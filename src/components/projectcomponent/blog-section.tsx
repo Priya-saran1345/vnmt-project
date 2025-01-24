@@ -23,6 +23,12 @@ export function BlogSection() {
     slidesToScroll: 1,
     responsive: [
       {
+        breakpoint: 1795,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
@@ -57,7 +63,7 @@ export function BlogSection() {
               {blogContent.subtitle}
             </h2>
           </div>
-          <p className="text-xl md:w-[45%] text-gray-700">{blogContent.description}</p>
+          <p className="text-xl md:w-[45%] text-black">{blogContent.description}</p>
         </div>
         <div className="  left-0 right-0 flex justify-end gap-4 px-4 transform -translate-y-1/2 z-10">
           <button
@@ -75,14 +81,14 @@ export function BlogSection() {
           </button>
         </div>
         {/* Carousel container with React Slick */}
-        <div className="relative overflow-hidden">
+        <div className="relative w-full overflow-hidden">
           <Slider ref={sliderRef} {...slickSettings}>
             {blogPosts.map((post) => {
               return (
                 <div key={post.id} className="flex-none border-orange group min-h-[435px] !w-[363px] px-4 transition-all duration-500">
                   <div className="transform-gpu transition-all duration-500 perspective-1000 group">
                     <Card
-                      className="relative h-[450px] overflow-hidden rounded-2xl transform-gpu transition-all duration-500 origin-top group-hover:[transform:rotateX(10deg)]"
+                      className="relative h-[450px] overflow-hidden rounded-2xl transform-gpu transition-all duration-500 origin-top  "
                     >
                       {/* Background Image */}
                       <div className="absolute inset-0">
@@ -97,8 +103,8 @@ export function BlogSection() {
                             Check Fly Strategy
                           </div>
                         </div>
-                        <div className="p-2 pb-4 text-darkblue bg-white px-4 smooth3 group-hover:bg-darkblue group-hover:text-white rounded-sm items-center">
-                          <p className="!text-[16px] font-medium line-clamp-3 text-base  mb-4">{post.title}</p>
+                        <div className="p-2 pb-4 text-black bg-white px-4 smooth3 group-hover:bg-darkblue group-hover:text-white rounded-sm items-center">
+                          <p className="!text-[16px] font-semibold paragraph line-clamp-3 text-base  mb-4">{post.title}</p>
                           <div className="flex items-center gap-3">
                             <Image
                               src={post.avatar || "/placeholder.svg"}
@@ -109,7 +115,7 @@ export function BlogSection() {
                             />
                             <div>
                               <p className="font-semibold group-hover:text-white text-orange">{post.name}</p>
-                              <p className="text-sm group-hover:text-white text-gray-700">{post.date}</p>
+                              <p className="text-sm group-hover:text-white text-black">{post.date}</p>
                             </div>
                           </div>
                         </div>

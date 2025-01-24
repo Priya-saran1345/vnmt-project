@@ -128,14 +128,14 @@ export function ImpactSection() {
         <div
           className="flex whitespace-nowrap animate-scroll-loop"
           style={{
-            animation: "scroll-loop 10s linear infinite",
+            animation: "scroll-loop 25s linear infinite",
           }}
         >
-          <span className="text-center heading font-bold px-4">
-            YOUR SUCCESS WITH OUR NETSUITE EXPERTISE | EMPOWER YOUR SUCCESS
+          <span className="text-center subheading font-bold px-2 py-4">
+             WITH OUR NETSUITE EXPERTISE | EMPOWER YOUR SUCCESS
           </span>
-          <span className="text-center heading font-bold px-4">
-            YOUR SUCCESS WITH OUR NETSUITE EXPERTISE | EMPOWER YOUR SUCCESS
+          <span className="text-center subheading font-bold px-2 py-4">
+             WITH OUR NETSUITE EXPERTISE | EMPOWER YOUR SUCCESS
           </span>
         </div>
       </div>

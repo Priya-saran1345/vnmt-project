@@ -1,6 +1,5 @@
 import Link from "next/link"
 import {  Search } from "lucide-react"
-import { LiaFlagUsaSolid } from "react-icons/lia";
 import { MdWifiCalling3 } from "react-icons/md"
 import { FaInstagram } from "react-icons/fa"
 import { BiLogoLinkedin } from "react-icons/bi"
@@ -15,20 +14,19 @@ export function Header() {
             mx-auto px-4 ">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center gap-3">
-              <span><LiaFlagUsaSolid className="text-[24px]" /></span>
               {/* <span>COUNTRY+ : {contactInfo.country}</span> */}
-              <span>COUNTRY+ </span>
-              <span>|</span>
-              <span>FAQ</span>
+
+              <a href="#faq" className=" hover:text-orange text-white cursor-pointer">FAQ</a>
               <span>|</span>
               <div className='relative'>
               <span ><MdWifiCalling3 className="text-[22px]" /></span>
               <div className='absolute h-5 w-5 rounded-full -top-2 -left-1 bg-orange opacity-50 animate-ping '> </div>
               <div className='absolute h-2.5 w-2.5 rounded-full -top-[3px] left-0 bg-orange animate-pulse'> </div>
                </div>
-              <span>
-                +(123)456789321
-              </span>
+               <a href="tel:+123456789321" className="hover:text-orange text-white">
+  +(123)456789321
+</a>
+
               {/* <span>FAQ: {contactInfo.phone}</span> */}
             </div>
             <div className="flex items-center gap-4">
@@ -53,7 +51,6 @@ export function Header() {
         </div>
       </div>
       {/* Main navigation */}
-
     </div>
   )
 }

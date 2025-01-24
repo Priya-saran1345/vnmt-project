@@ -126,7 +126,7 @@ function ServiceCard({ id, title, description, icon: Icon, color, iconBg }: { id
         <h3 className="text-xl font-semibold mb-4 group-hover:text-white transition-all duration-500 bulletheading">{title}</h3>
         
         {/* Description */}
-        <p className="text-gray-700 group-hover:text-white transition-all duration-500 text-base">{description}</p>
+        <p className="text-black group-hover:text-white transition-all duration-500 text-base">{description}</p>
 
 
       </div>
