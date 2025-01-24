@@ -461,7 +461,7 @@ a {
 	color: white;
 	transform: translate(-0.25rem, -0.25rem);
 	background: var(--hover-bg);
-	box-shadow: 0.35rem 0.35rem #FF8352;
+	box-shadow: 0.35rem 0.35rem #FF6528;
 }
 
 ._button:active {
@@ -472,7 +472,7 @@ a {
 
 ._button1 {
 	--bg: white;
-	--hover-bg: white;
+	--hover-bg: rgba(230, 230, 230, 0.9);
 	--hover-text: #000;
 	font-weight: 600;
 	color: #1F57BF;
@@ -485,10 +485,10 @@ a {
 }
 
 ._button1:hover {
-	color: #1F57BF;
+	color: #1f57bf;
 	transform: translate(-0.25rem, -0.25rem);
 	background: var(--hover-bg);
-	box-shadow: 0.35rem 0.35rem #FF8352;
+	box-shadow: 0.35rem 0.35rem #FF6528;
 }
 
 ._button1:active {
