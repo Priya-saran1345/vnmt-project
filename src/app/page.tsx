@@ -12,6 +12,7 @@ import { Partners } from '@/components/projectcomponent/partners'
 import { BlogSection } from '@/components/projectcomponent/blog-section'
 import  IntegrationSection  from '@/components/projectcomponent/integration-section'
 import { TrustedPartner } from '@/components/projectcomponent/trusted-partner'
+import SideSheet from '@/components/projectcomponent/SideSheet'
 import Navbar from '@/components/projectcomponent/navbar'
 export default function FAQPage() {
   return (
@@ -24,6 +25,7 @@ export default function FAQPage() {
           <Services />
         </div>
         <Partners />
+          <SideSheet></SideSheet>
         <IndustriesSection />
         <ImpactSection />
         <NetsuiteSection />

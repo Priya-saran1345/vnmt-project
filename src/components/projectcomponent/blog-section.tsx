@@ -85,17 +85,20 @@ export function BlogSection() {
           <Slider ref={sliderRef} {...slickSettings}>
             {blogPosts.map((post) => {
               return (
-                <div key={post.id} className="flex-none border-orange group min-h-[435px] !w-[363px] px-4 transition-all duration-500">
+                <div key={post.id} className="flex-none border-orange div-container group min-h-[435px] !w-[363px] px-4 transition-all duration-500">
+                  <div className="upper-half">
+
+</div>
                   <div className="transform-gpu transition-all duration-500 perspective-1000 group">
                     <Card
                       className="relative h-[450px] overflow-hidden rounded-2xl transform-gpu transition-all duration-500 origin-top  "
                     >
                       {/* Background Image */}
-                      <div className="absolute inset-0">
+                      {/* <div className="absolute inset-0">
                         <Image src={post.image || "/placeholder.svg"} alt="" fill className="object-cover" />
-                        {/* Overlay */}
+                        
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/90 to-blue-700/90" />
-                      </div>
+                      </div> */}
                       {/* Content */}
                       <CardContent className="relative !pb-0 h-full flex flex-col justify-end text-white">
                         <div>

@@ -34,8 +34,7 @@ const faq = () => {
       </div>
       <div className="  bg-[url('/images/footer-banner.svg')] -mt-20 max-w-[1246px]  items-end pb-12 flex justify-start px-12
      z-50 relative bg-no-repeat  mx-auto h-[350px] gap-12   rounded-3xl text-white py-4 ">
-        <div className='w-[45%]  '>
-
+        <div className='w-[45%] '>
           <h2 className="heading font-bold heading-calisto ">Ready to Get Started ?</h2>
           <p className='paragraph'>
             Let&apos;s transform your business with our expert solutions.
@@ -47,12 +46,8 @@ const faq = () => {
           >
             Book Consultant Now
           </button>
-          
         </div>
-
       </div>
-
-
     </div>
   )
 }
