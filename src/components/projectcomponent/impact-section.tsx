@@ -89,7 +89,7 @@ export function ImpactSection() {
     <div className="relative w-full  overflow-hidden">
    <div className="flex impact-section items-stretch w-full">
   {/* Dark curved section */}
-  <div className="impact-left w-1/2 flex-shrink-0 z-50 relative bg-blue bg-[url('/images/impact-bg.svg')] flex justify-end items-center rounded-r-full">
+  <div className="impact-left w-1/2 flex-shrink-0 z-20 relative bg-blue bg-[url('/images/impact-bg.svg')] flex justify-end items-center rounded-r-full">
     <div className="p-12 pr-32 text-white">
       <h2 className="heading font-bold heading-calisto mb-3">{impactContent?.title}</h2>
       <p

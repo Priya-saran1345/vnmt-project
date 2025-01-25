@@ -3,10 +3,11 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
-import { navigationItems } from "../data/navigation"
-import { FiMenu } from "react-icons/fi"
+import NavbarItems from '@/components/projectcomponent/Navbar-items'
+// import { FiMenu } from "react-icons/fi"
+// import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 
 export interface SubNavItem {
     id: number
@@ -26,7 +27,7 @@ export interface NavItem {
 
 export default function AnimatedHeader() {
     const [isScrolled, setIsScrolled] = useState(false)
-    const [hoveredItem, setHoveredItem] = useState<number | null>(null)
+    // const [hoveredItem, setHoveredItem] = useState<number | null>(null)
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
     useEffect(() => {
@@ -62,22 +63,22 @@ export default function AnimatedHeader() {
         },
     }
 
-    const menuVariants = {
-        hidden: { opacity: 0, y: -20 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.2,
-                staggerChildren: 0.1,
-            },
-        },
-        exit: {
-            opacity: 0,
-            y: -20,
-            transition: { duration: 0.2 },
-        },
-    }
+    // const menuVariants = {
+    //     hidden: { opacity: 0, y: -20 },
+    //     visible: {
+    //         opacity: 1,
+    //         y: 0,
+    //         transition: {
+    //             duration: 0.2,
+    //             staggerChildren: 0.1,
+    //         },
+    //     },
+    //     exit: {
+    //         opacity: 0,
+    //         y: -20,
+    //         transition: { duration: 0.2 },
+    //     },
+    // }
 
     return (
         <>
@@ -85,17 +86,17 @@ export default function AnimatedHeader() {
                 variants={headerVariants}
                 // animate={isScrolled ? "scrolled" : "initial"}
                 transition={{ duration: 0.15 }}
-                className={`fixed top-15  z-50 rounded-full   ${isScrolled ? "hidden " : ""}  py-4 px-8 bg-white `}
+                className={`fixed top-15  z-50 rounded-full   ${isScrolled ? "hidden " : "animate-slide-down"}  py-2 px-8 bg-white `}
 
             >
-                <div 
-                
-                className="flex  items-center justify-between gap-24">
+                <div
+
+                    className="flex text-black  items-center justify-between gap-24">
                     <Link href="/" className="flex-shrink-0">
                         <Image src="/images/logo.svg" alt="Logo" width={140} height={35} className="h-8 w-auto" />
                     </Link>
 
-                    <nav 
+                    {/* <nav 
                     className="hidden md:flex items-center gap-6">
                         {navigationItems.map((item) => (
                             <Link
@@ -118,19 +119,42 @@ export default function AnimatedHeader() {
                                 </span>
                             </Link>
                         ))}
-                    </nav>
+                    </nav> */}
+                    <NavbarItems></NavbarItems>
 
                     <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden text-black">
                         {isMobileMenuOpen ? <X /> : <Menu />}
                     </button>
 
-                    <div className="text-black text-[20px] border-white hover:bg-blue-700 cursor-pointer hover:text-orange smooth1">
-                        <FiMenu />
-                    </div>
+                    {/* <div className="text-black text-[20px] border-white hover:bg-blue-700 cursor-pointer hover:text-orange smooth1">
+                        <Sheet>
+                            <SheetTrigger asChild>
+                                <div className="text-black text-[20px] border-white hover:bg-blue-700 cursor-pointer hover:text-orange smooth1">
+                                    <FiMenu />
+                                </div>
+                            </SheetTrigger>
+                            <SheetContent className="bg-white">
+                                <SheetHeader>
+                                    <SheetTitle>Menu</SheetTitle>
+                                    <SheetDescription>
+                                        Select an option from the menu below.
+                                    </SheetDescription>
+                                </SheetHeader>
+                                <div className="grid gap-4 py-4">
+                                    <ul className="space-y-2 text-black text-[18px]">
+                                        <li className="hover:text-blue cursor-pointer">Home</li>
+                                        <li className="hover:text-blue cursor-pointer">About</li>
+                                        <li className="hover:text-blue cursor-pointer">Contact</li>
+                                        <li className="hover:text-blue cursor-pointer">Services</li>
+                                    </ul>
+                                </div>
+                            </SheetContent>
+                        </Sheet>
+                    </div> */}
                 </div>
             </motion.header>
 
-            <AnimatePresence>
+            {/* <AnimatePresence>
                 {hoveredItem && (
                     <motion.div
                         initial="hidden"
@@ -175,10 +199,10 @@ export default function AnimatedHeader() {
                         </div>
                     </motion.div>
                 )}
-            </AnimatePresence>
+            </AnimatePresence> */}
 
             {/* Mobile Menu */}
-            <AnimatePresence>
+            {/* <AnimatePresence>
                 {isMobileMenuOpen && (
                     <motion.div
                         initial={{ opacity: 0, y: -20 }}
@@ -201,7 +225,7 @@ export default function AnimatedHeader() {
                         </nav>
                     </motion.div>
                 )}
-            </AnimatePresence>
+            </AnimatePresence> */}
         </>
     )
 }

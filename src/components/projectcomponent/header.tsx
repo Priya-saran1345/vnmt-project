@@ -1,5 +1,5 @@
 import Link from "next/link"
-import {  Search } from "lucide-react"
+import { Search } from "lucide-react"
 import { MdWifiCalling3 } from "react-icons/md"
 import { FaInstagram } from "react-icons/fa"
 import { BiLogoLinkedin } from "react-icons/bi"
@@ -19,13 +19,13 @@ export function Header() {
               <a href="#faq" className=" hover:text-orange text-white cursor-pointer">FAQ</a>
               <span>|</span>
               <div className='relative'>
-              <span ><MdWifiCalling3 className="text-[22px]" /></span>
-              <div className='absolute h-5 w-5 rounded-full -top-2 -left-1 bg-orange opacity-50 animate-ping '> </div>
-              <div className='absolute h-2.5 w-2.5 rounded-full -top-[3px] left-0 bg-orange animate-pulse'> </div>
-               </div>
-               <a href="tel:+123456789321" className="hover:text-orange text-white">
-  +(123)456789321
-</a>
+                <span ><MdWifiCalling3 className="text-[22px]" /></span>
+                <div className='absolute h-5 w-5 rounded-full -top-2 -left-1 bg-orange opacity-50 animate-ping '> </div>
+                <div className='absolute h-2.5 w-2.5 rounded-full -top-[3px] left-0 bg-orange animate-pulse'> </div>
+              </div>
+              <a href="tel:+123456789321" className="hover:text-orange text-white">
+                +(123)456789321
+              </a>
 
               {/* <span>FAQ: {contactInfo.phone}</span> */}
             </div>
@@ -46,7 +46,7 @@ export function Header() {
                 />
                 <Search className=" h-5 w-5 text-black " />
               </div>
-            </div> 
+            </div>
           </div>
         </div>
       </div>
