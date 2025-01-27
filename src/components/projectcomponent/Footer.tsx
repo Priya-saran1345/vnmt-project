@@ -101,7 +101,6 @@ const Footer = () => {
           className="opacity-20"
         />
 
-
         {/* Content */}
         <div className="">
           <div className="flex justify-center  w-full relative lg:w-[95%] 2xl:w-[77%] mx-auto py-12 z-10">
@@ -110,9 +109,9 @@ const Footer = () => {
               <h3 className="font-bold mb-4 underline-custom  cursor-pointer">GLOBAL LOCATIONS</h3>
               <div className="space-y-4">
                 {locationData.map((loc, index) => (
-                  <div key={index}>
-                    <h4 className="font-semibold">{loc.country}</h4>
-                    <p className=" text-white/85 text-base hover:text-orange cursor-pointer">{loc.address}</p>
+                  <div key={index} className="group ">
+                    <h4 className="font-semibold group-hover:text-orange">{loc.country}</h4>
+                    <p className=" text-white/85 text-base  cursor-pointer">{loc.address}</p>
                   </div>
                 ))}
               </div>
