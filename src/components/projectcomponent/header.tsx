@@ -30,6 +30,9 @@ export function Header() {
               {/* <span>FAQ: {contactInfo.phone}</span> */}
             </div>
             <div className="flex items-center gap-4">
+              <Link href="#" className="hover:text-orange text-[16px] text-white">
+                Career
+              </Link>
               <Link href="#" className="hover:text-orange text-white">
                 <FaInstagram className="text-[22px]" />
               </Link>
