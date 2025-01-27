@@ -429,6 +429,7 @@ a {
 
 
 
+
 .videoo-backgroundr::before {
 	content: "";
 	position: absolute;
@@ -740,4 +741,28 @@ a {
 
   .div-container:hover .upper-half {
     transform: perspective(500px) rotateX(11deg) ;
+  }
+  .popup-effect {
+	/* width: 200px;
+	height: 100px; */
+	/* background-color: #ff5722; */
+	/* color: white; */
+	/* display: flex; */
+	/* align-items: center; */
+	/* justify-content: center; */
+	/* font-size: 1.5rem; */
+	/* border-radius: 10px; */
+	/* margin: 50px auto; */
+	animation: zoomInOut 2s infinite ease-in-out; /* Apply animation */
+  }
+  @keyframes zoomInOut {
+	0% {
+	  transform: scale(1); /* Normal size */
+	}
+	50% {
+	  transform: scale(1.1); /* Zoom in */
+	}
+	100% {
+	  transform: scale(1); /* Back to normal size */
+	}
   }

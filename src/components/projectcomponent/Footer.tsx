@@ -11,6 +11,8 @@ import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md"
 import Image from "next/image"
 // import ReactPlayer from "react-player"
 import { IoLogoWhatsapp } from "react-icons/io";
+import { FaSquarePinterest } from "react-icons/fa6";
+import { BsMicrosoftTeams } from "react-icons/bs";
 
 import { motion, useInView } from "framer-motion";
 const Footer = () => {
@@ -81,7 +83,7 @@ const Footer = () => {
     },
     {
       title: "ABOUT COMPANY",
-      links: ["About Us", "Career", "Customer", "Stories", "Blogs", "Case Studies"],
+      links: ["About Us", "Career", "Customer Stories", "Blogs", "Case Studies"],
     },
   ]
 
@@ -147,6 +149,13 @@ const Footer = () => {
                   {/* <MdWifiCalling3 className="text-white bg-gradient-to-b from-orange to-white text-[20px] rounded-[15%]" /> */}
                   61 1300147617
                 </p>
+                <p className="flex hover:text-orange cursor-pointer gap-2">
+                {/* <Image src={'/images/call.svg'} alt="" height={24} width={24}></Image> */}
+                <BsMicrosoftTeams className="text-blue text-[28px]" />
+                  {/* <MdWifiCalling3 className="text-white bg-gradient-to-b from-orange to-white text-[20px] rounded-[15%]" /> */}
+                  sales@vnmtsolutions.com
+
+                </p>
               </div>
               <h3 className="font-bold mb-4 mt-4 underline-custom hover:text-blue cursor-pointer">FOLLOW US@</h3>
               <div className="flex gap-2 mb-4">
@@ -158,6 +167,10 @@ const Footer = () => {
                 </Link>
                 <Link href="#" className="border p-1.5 hover:border-blue smooth1 hover:scale-105 rounded-md group">
                   <GrLinkedinOption className="text-[22px] text-white/85  group-hover:text-blue" />
+                </Link>
+                <Link href="#" className="border p-1.5 hover:border-blue smooth1 hover:scale-105 rounded-md group">
+                <FaSquarePinterest 
+ className="text-[22px] text-white/85  group-hover:text-blue" />
                 </Link>
               </div>
               <div className="relative bg-white text-black rounded-full shadow-md">
@@ -182,7 +195,10 @@ const Footer = () => {
                   </div>
                 </div>
               </div>
-              <p className="text-[14px] mt-4"><span className="text-white hover:text-orange cursor-pointer"> Terms & Conditions</span> | <span className="text-white hover:text-orange cursor-pointer"> Privacy policy</span> </p>
+              <p className="text-[14px] mt-4"><span className="text-white hover:text-orange cursor-pointer">
+                 Terms & Conditions</span> </p>
+              <p className="text-[14px] mt-1">
+                 <span className="text-white hover:text-orange cursor-pointer"> Privacy policy</span> </p>
             </div>
           </div>
           <div className="ml-2 lg:ml-[3%] 2xl:ml-[11.5%] mr-5 mb-12">
@@ -254,7 +270,8 @@ const Footer = () => {
         className="relative group"
       >
         <div
-          className="bg-orange hover:scale-105 smooth3 rounded-full flex justify-center cursor-pointer items-center border-[1px] border-white w-[40px] h-[40px]"
+          className="bg-orange hover:scale-105 smooth3 rounded-full flex justify-center cursor-pointer items-center 
+          border-[1px] border-white w-[40px] h-[40px]"
           onClick={() =>
             window.scrollTo({
               top: 0,

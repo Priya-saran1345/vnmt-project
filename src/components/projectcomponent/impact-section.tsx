@@ -115,7 +115,7 @@ export function ImpactSection() {
             >
               0
             </div>
-            <div className="text-blue font-bold text-lg">{stat.label}</div>
+            <div className="text-blue font-bold text-2xl">{stat.label}</div>
           </div>
         ))}
       </div>

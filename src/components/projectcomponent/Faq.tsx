@@ -42,7 +42,7 @@ const faq = () => {
         </div>
         <div className='mb-9 ml-4'>
           <button
-            className='_button1'
+            className='_button1 popup-effect'
           >
             Book Consultant Now
           </button>
