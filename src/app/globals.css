@@ -775,9 +775,10 @@ a {
 	position: relative;
 	margin: auto;
 	margin-top: 10px;
-	padding: 12px 18px;
+	padding: 9px 18px;
 	transition: all 0.2s ease;
-	border: none;
+	border: 1px solid orange;
+	border-radius: 50px;
 	background: none;
 	cursor: pointer;
   }
@@ -798,9 +799,8 @@ a {
   .cta span {
 	position: relative;
 	font-family: "Ubuntu", sans-serif;
-	font-size: 18px;
-	font-weight: 700;
-	letter-spacing: 0.05em;
+	font-size: 16px;
+	font-weight: 600;
 	/* color: white; */
 	/* color: #FF8352; */
   }

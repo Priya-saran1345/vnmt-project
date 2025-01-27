@@ -10,7 +10,7 @@ export function Hero() {
   return (
     <div className="  text-white pt-8 pb-16 relative overflow-hidden">
       <div
-        className=" h-[642px] w-full flex flex-col justify-between lg:w-[95%] 2xl:w-[77%] mx-auto bg-[url('/images/bgbanner.svg')] min-h-[68vh] bg-no-repeat pt-4"
+        className="h-[642px]  relative w-full flex flex-col  lg:w-[95%] 2xl:w-[77%] mx-auto bg-[url('/images/bgbanner.svg')] min-h-[68vh] bg-no-repeat pt-4"
       >
         <div className="px-7  ">
           <AnimatedHeader />
@@ -21,9 +21,6 @@ export function Hero() {
 
             </div>
           }
-
-
-
           <div className="max-w-2xl mt-32 mx-20 relative z-10  flex flex-col gap-2">
             <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6 heading-calisto">
               Operational
@@ -39,7 +36,8 @@ export function Hero() {
           </div>
 
         </div>
-        <div className="flex mr-8 justify-between items-center w-full ">
+
+        <div className="flex mr-8 justify-between items-center w-full absolute bottom-0  ">
           <div className="flex gap-[80px]">
 
             <button className="text-white w-[110%] text-[30px] flex items-center text-left justify-around font-semibold mt-3 h-[90px] rounded-3xl  bg-[#FF8352] border-white hover:scale-105 smooth3 leading-8  ">
@@ -63,7 +61,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-      {/* Decorative circles */}
 
     </div>
   )
