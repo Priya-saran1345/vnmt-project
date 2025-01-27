@@ -91,7 +91,7 @@ export function BlogSection() {
 </div>
                   <div className="transform-gpu transition-all duration-500 perspective-1000 group">
                     <Card
-                      className="relative h-[450px] overflow-hidden rounded-2xl transform-gpu transition-all duration-500 origin-top  "
+                      className="relative h-[412px] overflow-hidden rounded-2xl transform-gpu transition-all duration-500   "
                     >
                       {/* Background Image */}
                       {/* <div className="absolute inset-0">

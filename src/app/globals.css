@@ -96,9 +96,9 @@ a {
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
 	background-color: white;
-	border: 2px solid #ff8352;
+	border: 1px solid #ff8352;
 	border-radius: 20px;
-	height: 30px;
+
 }
 
 .bg_banner {
@@ -656,10 +656,13 @@ a {
 
   @keyframes scrollRightToLeft {
 	0% {
-	  transform: translateX(100%); /* Start from the right */
+	  transform: translateX(10%);
+	}
+	50% {
+	  transform: translateX(0%); 
 	}
 	100% {
-	  transform: translateX(-100%); /* End at the left */
+	  transform: translateX(10%); 
 	}
   }
   
@@ -681,6 +684,7 @@ a {
   display: flex;
   flex-shrink: 0;  /* Prevents items from shrinking */
   width: max-content; /* Makes sure the width adjusts based on content */
+  animation: scrollRightToLeft 10s linear infinite;
 }
 
 /* Individual image styling */
@@ -702,7 +706,7 @@ a {
 .div-container {
     max-width: 343px!important;
     min-height: 435px;
-	background-color: #FF6528;
+	background-color: #fff;
     cursor: pointer;
     position: relative;
     overflow: hidden;

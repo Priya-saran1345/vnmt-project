@@ -71,7 +71,7 @@ export function ServicesClient() {
                             >
                                 <Image
                                     src={service.icon || "/placeholder.svg"}
-                                    className={`group-hover:filter-none smoot3  invert brightness-0 ${activeService === service.id ? "" : ""
+                                    className={`group-hover:filter-none smoot3 invert brightness-0 ${activeService === service.id ? "" : ""
                                         }`}
                                     height={39}
                                     width={50}

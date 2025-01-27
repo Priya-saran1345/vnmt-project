@@ -138,13 +138,13 @@ const Footer = () => {
               <h3 className="font-bold mb-4 underline-custom  cursor-pointer">CONTACT US</h3>
               <div className="space-y-4">
                 <p className="flex hover:text-orange cursor-pointer gap-2">
-                <Image src={'/images/mail.svg'} alt="" height={22} width={22}></Image>
+                  <Image src={'/images/mail.svg'} alt="" height={22} width={22}></Image>
 
                   {/* <BiLogoGmail className="!text-orange text-[20px] bg-white" /> */}
                   sales@vnmtsolutions.com
                 </p>
                 <p className="flex hover:text-orange cursor-pointer gap-2">
-                <Image src={'/images/call.svg'} alt="" height={24} width={24}></Image>
+                  <Image src={'/images/call.svg'} alt="" height={24} width={24}></Image>
 
                   {/* <MdWifiCalling3 className="text-white bg-gradient-to-b from-orange to-white text-[20px] rounded-[15%]" /> */}
                   61 1300147617
@@ -177,7 +177,7 @@ const Footer = () => {
                 <div className="relative px-3 w-full flex items-center">
                   <input
                     type="search"
-                    placeholder="SEARCH"
+                    placeholder="Search"
                     className="w-full rounded-full border-none outline-none py-[6px] text-[14px] pl-2 pr-10"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
@@ -221,34 +221,34 @@ const Footer = () => {
 
 
 
-<div className=" z-40 mt-4 px-4">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isInView ? 1 : 0 }}
-        transition={{ duration: 0.6 }}
-        className="infinite-scroll-container "
-      >
-        <div className="infinite-scroll gap-8">
-          {[1, 2, 3, 4, 5, 6, 7, 8].map((elem, index) => (
-            <motion.div
-              key={elem}
-              initial={{ opacity: 0, x: 20 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ delay: index * 0.2, duration: 0.6 }}
-              className="flex items-center"
-            >
-              <Image
-                src={`/images/footer${elem}.svg`}
-                height={50}
-                width={90}
-                alt={`Footer logo ${elem}`}
-                className="hover:scale-110"
-              />
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
-    </div>
+              <div className=" z-40 mt-4 flex-1 ">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: isInView ? 1 : 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="infinite-scroll-container "
+                >
+                  <div className="infinite-scroll gap-8">
+                    {[1, 2, 3, 4, 5, 6, 7, 8].map((elem, index) => (
+                      <motion.div
+                        key={elem}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={isInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ delay: index * 0.2, duration: 0.6 }}
+                        className="flex items-center"
+                      >
+                        <Image
+                          src={`/images/footer${elem}.svg`}
+                          height={50}
+                          width={90}
+                          alt={`Footer logo ${elem}`}
+                          className="hover:scale-110"
+                        />
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              </div>
 
 
 
@@ -265,34 +265,33 @@ const Footer = () => {
 
 
               <div className="flex gap-8 items-end">
-              <div className="flex fixed bottom-8 right-[5%] flex-col z-20 gap-2 items-center justify-center">
-      <div
-        className="relative group"
-      >
-        <div
-          className="bg-orange hover:scale-105 smooth3 rounded-full flex justify-center cursor-pointer items-center 
-          border-[1px] border-white w-[40px] h-[40px]"
-          onClick={() =>
-            window.scrollTo({
-              top: 0,
-              behavior: "smooth", // Smooth scroll effect
-            })
-          }
-        >
-          <MdOutlineKeyboardDoubleArrowUp className="text-[26px]" />
-        </div>
-        {/* Tooltip */}
-        <div className="absolute bottom-12 text-nowrap opacity-0 -left-4 group-hover:opacity-100
+                <div className="flex fixed bottom-8 right-[5%] flex-col z-20 gap-2 items-center justify-center">
+                  <div
+                    className="relative group"
+                  >
+                    <div
+                      className="bg-orange hover:scale-105 smooth3 rounded-full flex justify-center cursor-pointer items-center border-[1px] border-white w-[40px] h-[40px]"
+                      onClick={() =>
+                        window.scrollTo({
+                          top: 0,
+                          behavior: "smooth", // Smooth scroll effect
+                        })
+                      }
+                    >
+                      <MdOutlineKeyboardDoubleArrowUp className="text-[26px]" />
+                    </div>
+                    {/* Tooltip */}
+                    <div className="absolute bottom-12 text-nowrap opacity-0 -left-4 group-hover:opacity-100
          transition-opacity duration-300 bg-orange text-white text-xs rounded py-1 px-2">
-          Scroll to Top
-        </div>
-      </div>
-    </div>
+                      Scroll to Top
+                    </div>
+                  </div>
+                </div>
 
                 <div className="bg-[#fff] z-40 border-blue border-[1px] p-4 rounded-lg shadow-md animate-zoom">
                   <p className="text-blue text-center font-semibold mb-2">Quick Connect </p>
 
-                  <a className="flex gap-2 items-center cursor-pointer group z-50"  href="https://wa.me/123456789"  target="_blank" rel="noopener noreferrer" >
+                  <a className="flex gap-2 items-center cursor-pointer group z-50" href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer" >
                     <IoLogoWhatsapp className="text-green-500 text-[28px] cursor-pointer" />
                     <p className="text-black group-hover:text-orange cursor-pointer group-hover:font-semibold smooth1">Whatsapp Now</p>
                   </a>

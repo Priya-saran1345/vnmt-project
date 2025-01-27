@@ -11,8 +11,8 @@ const faq = () => {
           <Accordion type="single" collapsible>
             {[1, 2, 3, 4].map((item) => (
               <AccordionItem key={item} value={`item-${item}`} className=' rounded-xl text-[18px] border-blue border-[1.8px] hover:bg-blue hover:text-white  group'>
-                <AccordionTrigger className="text-left text-lg  group-hover:text-white">Lorem ipsum is simply dummy text?</AccordionTrigger>
-                <AccordionContent className='group-hover:text-white '>
+                <AccordionTrigger className="text-left text-lg  group-hover:text-white font-bold">Lorem ipsum is simply dummy text?</AccordionTrigger>
+                <AccordionContent className='group-hover:text-white  '>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, quibusdam.
                 </AccordionContent>
               </AccordionItem>
@@ -23,8 +23,8 @@ const faq = () => {
           <Accordion type="single" collapsible>
             {[5, 6, 7, 8].map((item) => (
               <AccordionItem key={item} value={`item-${item}`} className='rounded-xl text-[18px] border-blue border-[1.8px] hover:bg-blue hover:text-white  group'>
-                <AccordionTrigger className="text-left text-lg  group-hover:text-white">Lorem ipsum is simply dummy text?</AccordionTrigger>
-                <AccordionContent className='group-hover:text-white '>
+                <AccordionTrigger className="text-left text-lg  group-hover:text-white font-bold">Lorem ipsum is simply dummy text?</AccordionTrigger>
+                <AccordionContent className='group-hover:text-white  '>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, quibusdam.
                 </AccordionContent>
               </AccordionItem>
@@ -33,7 +33,7 @@ const faq = () => {
         </div>
       </div>
       <div className="  bg-[url('/images/footer-banner.svg')] -mt-20 max-w-[1246px]  items-end pb-12 flex justify-start px-12
-     z-50 relative bg-no-repeat  mx-auto h-[350px] gap-12   rounded-3xl text-white py-4 ">
+     z-30 relative bg-no-repeat  mx-auto h-[350px] gap-12   rounded-3xl text-white py-4 ">
         <div className='w-[45%] '>
           <h2 className="heading font-bold heading-calisto ">Ready to Get Started ?</h2>
           <p className='paragraph'>
