@@ -121,12 +121,13 @@ function ServiceCard({ id, title, description, icon: Icon, color, iconBg }: { id
         <div className={cn("w-16 h-16 rounded-full flex items-center justify-center mb-6 group ", iconBg)}>
           <Icon className={cn("w-8 h-8 text-white transition-all duration-500 ")} />
         </div>
-        
         {/* Title */}
         <h3 className="text-xl font-semibold mb-4 group-hover:text-white transition-all duration-500 bulletheading">{title}</h3>
         
         {/* Description */}
         <p className="text-black group-hover:text-white transition-all duration-500 text-base">{description}</p>
+        <p className="text-black group-hover:text-white transition-all duration-500 text-base cursor-pointer">      Read More..</p>
+  
 
 
       </div>
