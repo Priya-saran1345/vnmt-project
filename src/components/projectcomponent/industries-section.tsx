@@ -126,8 +126,17 @@ function ServiceCard({ id, title, description, icon: Icon, color, iconBg }: { id
         
         {/* Description */}
         <p className="text-black group-hover:text-white transition-all duration-500 text-base">{description}</p>
-        <p className="text-black group-hover:text-white transition-all duration-500 text-base cursor-pointer">      Read More..</p>
-  
+        {/* <p className="text-black group-hover:text-white transition-all duration-500 text-base cursor-pointer">    </p> */}
+        <div className="">
+
+        <button className="cta ">
+  <span>Read More</span>
+  {/* <svg width="15px" height="10px" viewBox="0 0 13 10">
+    <path d="M1,5 L11,5"></path>
+    <polyline points="8 1 12 5 8 9"></polyline>
+  </svg> */}
+</button>
+        </div>
 
 
       </div>
