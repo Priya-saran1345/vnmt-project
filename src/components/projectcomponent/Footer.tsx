@@ -291,12 +291,12 @@ const Footer = () => {
 
                   <a className="flex gap-2 items-center cursor-pointer group z-50" href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer" >
                     <IoLogoWhatsapp className="text-green-500 text-[28px] cursor-pointer" />
-                    <p className="text-black group-hover:text-orange cursor-pointer group-hover:font-semibold smooth1">Whatsapp Now</p>
+                    <p className="text-black group-hover:text-orange cursor-pointer  smooth1">Whatsapp Now</p>
                   </a>
 
                   <a className="flex gap-2 items-center cursor-pointer group z-50 mt-2" href="tel:+91123456789" target="_blank" rel="noopener noreferrer" >
                     <FiPhoneCall className="text-black text-[23px] cursor-pointer" />
-                    <p className="text-black group-hover:text-orange cursor-pointer group-hover:font-semibold smooth1">+(91) 123456789</p>
+                    <p className="text-black group-hover:text-orange cursor-pointer  smooth1">+(91) 123456789</p>
                   </a>
                 </div>
 
