@@ -14,8 +14,7 @@ export function Header() {
             mx-auto px-4 ">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center gap-3">
-              {/* <span>COUNTRY+ : {contactInfo.country}</span> */}
-
+              {/* <span>COUNTRY+ : {contactInfo?.country}</span> */}
               <a href="#faq" className=" hover:text-orange text-white cursor-pointer">FAQ</a>
               <span>|</span>
               <div className='relative'>

@@ -91,7 +91,7 @@ export default function AnimatedHeader() {
             >
                 <div
 
-                    className="flex text-black  items-center justify-between gap-24">
+                    className="flex w-full text-black  items-center justify-between gap-24">
                     <Link href="/" className="flex-shrink-0">
                         <Image src="/images/logo.svg" alt="Logo" width={140} height={35} className="h-8 w-auto" />
                     </Link>

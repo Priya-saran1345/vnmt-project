@@ -21,8 +21,8 @@ const QuerySheet = () => {
           <SheetTrigger asChild>
             <div
               className="fixed uppercase cursor-pointer z-[99] bg-gradient-to-b rounded-b-xl from-lightblue to-darkblue
-               rotate-90 px-5 py-2 text-[20px] text-white 
-              -right-[6rem] bottom-[40%] flex items-center gap-3 transition-opacity duration-300"
+               rotate-90 px-5 py-2 text-[15px] text-white 
+              -right-[5rem] bottom-[40%] flex items-center gap-3 transition-opacity duration-300"
             >
               Have A Query ? <IoMdMenu />
 

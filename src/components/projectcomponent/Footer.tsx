@@ -13,7 +13,6 @@ import Image from "next/image"
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaSquarePinterest } from "react-icons/fa6";
 import { BsMicrosoftTeams } from "react-icons/bs";
-
 import { motion, useInView } from "framer-motion";
 const Footer = () => {
   // const targetSectionRef = useRef<HTMLElement | null>(null);
@@ -103,24 +102,23 @@ const Footer = () => {
 
         {/* Content */}
         <div className="">
-          <div className="flex justify-center  w-full relative lg:w-[95%] 2xl:w-[77%] mx-auto py-12 z-10">
+          <div className="flex justify-between  w-full relative lg:w-[95%] 2xl:w-[77%] mx-auto py-12 z-10">
             {/* Global Locations */}
-            <div className="px-4 border-blue border-r-2 w-[20%] pt-3">
+            <div className="px-4 border-blue border-r-2 w-[35%] pt-3">
               <h3 className="font-bold mb-4 underline-custom  cursor-pointer">GLOBAL LOCATIONS</h3>
               <div className="space-y-4">
                 {locationData.map((loc, index) => (
                   <div key={index} className="group ">
-                    <h4 className="font-semibold group-hover:text-orange">{loc.country}</h4>
+                    <h4 className="font-semibold ">{loc.country}</h4>
                     <p className=" text-white/85 text-base  cursor-pointer">{loc.address}</p>
                   </div>
                 ))}
               </div>
-              <h3 className="font-bold underline-custom mt-4">INDUSTRIES THAT WE SERVE</h3>
             </div>
             {/* Footer Sections */}
             {footerSections.map((section, index) => (
-              <div key={index} className="border-r-2 px-4 border-blue w-[20%] py-3">
-                <h3 className="font-bold mb-4 underline-custom  cursor-pointer">{section.title}</h3>
+              <div key={index} className={` px-4 ${section.title === 'ABOUT COMPANY' ? 'border-none' : 'border-blue border-r-2'}  py-3`}>
+                <h3 className="font-bold mb-4 underline-custom cursor-pointer">{section.title}</h3>
                 <ul className="space-y-2">
                   {section.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
@@ -130,96 +128,111 @@ const Footer = () => {
                     </li>
                   ))}
                 </ul>
+                {section.title === 'ABOUT COMPANY' && (
+                  <>
+                    <h3 className="font-bold mb-4 mt-4 underline-custom hover:text-blue cursor-pointer">
+                      FOLLOW US@
+                    </h3>
+                    <div className="flex gap-2 mb-4">
+                      <Link href="#" className="border p-1.5 hover:border-pink-500 smooth1 hover:scale-105 rounded-md group">
+                        <FaInstagram className="text-[22px] text-white/85 group-hover:text-pink-500" />
+                      </Link>
+                      <Link href="#" className="border p-1.5 hover:border-lightblue smooth1 hover:scale-105 rounded-md group">
+                        <FiFacebook className="text-[22px] text-white/85 group-hover:text-lightblue" />
+                      </Link>
+                      <Link href="#" className="border p-1.5 hover:border-blue smooth1 hover:scale-105 rounded-md group">
+                        <GrLinkedinOption className="text-[22px] text-white/85 group-hover:text-blue" />
+                      </Link>
+                      <Link href="#" className="border p-1.5 hover:border-blue smooth1 hover:scale-105 rounded-md group">
+                        <FaSquarePinterest className="text-[22px] text-white/85 group-hover:text-blue" />
+                      </Link>
+                    </div>
+                    <div className="relative bg-white text-black rounded-full shadow-md">
+                      <div className="relative px-3 w-full flex items-center">
+                        <input
+                          type="search"
+                          placeholder="Search"
+                          className="w-full rounded-full border-none outline-none py-[6px] text-[14px] pl-2 pr-10"
+                          value={searchTerm}
+                          onChange={(e) => setSearchTerm(e.target.value)}
+                          onKeyPress={(e) => {
+                            if (e.key === "Enter") {
+                              handleSearch();
+                            }
+                          }}
+                        />
+                        <div
+                          className="text-[20px] flex items-center justify-center text-white/85 text-base cursor-pointer"
+                          onClick={handleSearch}
+                        >
+                          <Search className="h-full w-full text-black" />
+                        </div>
+
+                      </div>
+
+                    </div>
+                    <p className="text-[14px] mt-4"><span className="text-white hover:text-orange cursor-pointer">
+                      Terms & Conditions</span> </p>
+                    <p className="text-[14px] mt-1">
+                      <span className="text-white hover:text-orange cursor-pointer"> Privacy policy</span> </p>
+                  </>
+                )}
+
+                {section.title === 'CELIGO' && (
+                  <>
+                    <div className="  py-3">
+                      <h3 className="font-bold mb-4 underline-custom  cursor-pointer">CONTACT US</h3>
+                      <div className="space-y-4">
+                        <p className="flex hover:text-orange cursor-pointer gap-2">
+                          <Image src={'/images/mail.svg'} alt="" height={22} width={22}></Image>
+
+                          {/* <BiLogoGmail className="!text-orange text-[20px] bg-white" /> */}
+                          sales@vnmtsolutions.com
+                        </p>
+                        <p className="flex hover:text-orange cursor-pointer gap-2">
+                          <Image src={'/images/call.svg'} alt="" height={24} width={24}></Image>
+
+                          {/* <MdWifiCalling3 className="text-white bg-gradient-to-b from-orange to-white text-[20px] rounded-[15%]" /> */}
+                          61 1300147617
+                        </p>
+                        <p className="flex hover:text-orange cursor-pointer gap-2">
+                          {/* <Image src={'/images/call.svg'} alt="" height={24} width={24}></Image> */}
+                          <BsMicrosoftTeams className="text-blue text-[28px]" />
+                          {/* <MdWifiCalling3 className="text-white bg-gradient-to-b from-orange to-white text-[20px] rounded-[15%]" /> */}
+                          sales@vnmtsolutions.com
+
+                        </p>
+                      </div>
+
+
+                    </div>
+                  </>
+                )}
+
+
               </div>
             ))}
+
             {/* Contact Us */}
-            <div className="px-4 w-[20%] py-3">
-              <h3 className="font-bold mb-4 underline-custom  cursor-pointer">CONTACT US</h3>
-              <div className="space-y-4">
-                <p className="flex hover:text-orange cursor-pointer gap-2">
-                  <Image src={'/images/mail.svg'} alt="" height={22} width={22}></Image>
 
-                  {/* <BiLogoGmail className="!text-orange text-[20px] bg-white" /> */}
-                  sales@vnmtsolutions.com
-                </p>
-                <p className="flex hover:text-orange cursor-pointer gap-2">
-                  <Image src={'/images/call.svg'} alt="" height={24} width={24}></Image>
-
-                  {/* <MdWifiCalling3 className="text-white bg-gradient-to-b from-orange to-white text-[20px] rounded-[15%]" /> */}
-                  61 1300147617
-                </p>
-                <p className="flex hover:text-orange cursor-pointer gap-2">
-                {/* <Image src={'/images/call.svg'} alt="" height={24} width={24}></Image> */}
-                <BsMicrosoftTeams className="text-blue text-[28px]" />
-                  {/* <MdWifiCalling3 className="text-white bg-gradient-to-b from-orange to-white text-[20px] rounded-[15%]" /> */}
-                  sales@vnmtsolutions.com
-
-                </p>
-              </div>
-              <h3 className="font-bold mb-4 mt-4 underline-custom hover:text-blue cursor-pointer">FOLLOW US@</h3>
-              <div className="flex gap-2 mb-4">
-                <Link href="#" className="border p-1.5 hover:border-pink-500 smooth1 hover:scale-105 rounded-md group">
-                  <FaInstagram className="text-[22px] text-white/85  group-hover:text-pink-500" />
-                </Link>
-                <Link href="#" className="border p-1.5 hover:border-lightblue smooth1 hover:scale-105 rounded-md group">
-                  <FiFacebook className="text-[22px] text-white/85  group-hover:text-lightblue" />
-                </Link>
-                <Link href="#" className="border p-1.5 hover:border-blue smooth1 hover:scale-105 rounded-md group">
-                  <GrLinkedinOption className="text-[22px] text-white/85  group-hover:text-blue" />
-                </Link>
-                <Link href="#" className="border p-1.5 hover:border-blue smooth1 hover:scale-105 rounded-md group">
-                <FaSquarePinterest 
- className="text-[22px] text-white/85  group-hover:text-blue" />
-                </Link>
-              </div>
-              <div className="relative bg-white text-black rounded-full shadow-md">
-                <div className="relative px-3 w-full flex items-center">
-                  <input
-                    type="search"
-                    placeholder="Search"
-                    className="w-full rounded-full border-none outline-none py-[6px] text-[14px] pl-2 pr-10"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    onKeyPress={(e) => {
-                      if (e.key === "Enter") {
-                        handleSearch()
-                      }
-                    }}
-                  />
-                  <div
-                    className="text-[20px] flex items-center justify-center text-white/85 text-base cursor-pointer"
-                    onClick={handleSearch}
-                  >
-                    <Search className="h-full w-full text-black" />
-                  </div>
-                </div>
-              </div>
-              <p className="text-[14px] mt-4"><span className="text-white hover:text-orange cursor-pointer">
-                 Terms & Conditions</span> </p>
-              <p className="text-[14px] mt-1">
-                 <span className="text-white hover:text-orange cursor-pointer"> Privacy policy</span> </p>
-            </div>
           </div>
           <div className="ml-2 lg:ml-[3%] 2xl:ml-[11.5%] mr-5 mb-12">
-
-
-            {/* Industries */}
-            <div className="flex gap-2 px-4 text-[14px] relative z-10">
-              {industries.map((industry, index) => (
-                <span key={index} >
-                  {index !== 0 && "| "}
-                  <span className="hover:text-orange text-white cursor-pointer"> {industry} </span>
-                </span>
-              ))}
+            <div className="flex flex-col gap-4 ml-5 ">
+              {/* Industries */}
+              <h3 className="font-bold underline-custom mt-4">INDUSTRIES THAT WE SERVE</h3>
+              <div className="flex gap-2  text-[14px] relative z-10">
+                {industries.map((industry, index) => (
+                  <span key={index} >
+                    {index !== 0 && "| "}
+                    <span className="hover:text-orange text-white cursor-pointer"> {industry} </span>
+                  </span>
+                ))}
+              </div>
             </div>
             {/* Footer Logos */}
             <div
               ref={sectionRef}
               className="flex justify-between items-center">
-
-
-
-
               <div className=" z-40 mt-4 flex-1 ">
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -248,20 +261,6 @@ const Footer = () => {
                   </div>
                 </motion.div>
               </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
               <div className="flex gap-8 items-end">
                 <div className="flex fixed bottom-8 right-[5%] flex-col z-20 gap-2 items-center justify-center">
@@ -309,8 +308,9 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="text-center py-4 bg-darkblue text-base text-white">
-        © Copyright 2025 @  <span className="font-semibold">VNMT</span> | All rights reserved
-      </div>
+  © Copyright {new Date().getFullYear()} @ <span className="font-semibold">VNMT</span> | All rights reserved
+</div>
+
     </div>
   )
 }
