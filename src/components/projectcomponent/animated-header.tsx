@@ -86,7 +86,7 @@ export default function AnimatedHeader() {
                 variants={headerVariants}
                 // animate={isScrolled ? "scrolled" : "initial"}
                 transition={{ duration: 0.15 }}
-                className={`fixed top-15 w-[55%]  z-50 rounded-full   ${isScrolled ? "hidden " : "animate-slide-down"}  py-2 px-8 bg-white `}
+                className={`fixed top-15 w-[55%]  z-50 rounded-full   ${isScrolled ? "hidden " : "animate-slide-down"}   px-8 bg-white `}
 
             >
                 <div
