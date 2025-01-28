@@ -27,7 +27,7 @@ const Navbar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
   return (
-    <div className={`text-homeblack py-3 lg:py-0 bg-white   ${isScrolled ? " animate-slide-down" : "hidden"} sticky shadow-md -top-2 z-[50]`}>
+    <div className={`text-homeblack py-3 lg:py-0 bg-white   ${isScrolled ? " animate-slide-down" : "hidden"} sticky shadow-lg -top-1 z-[50]`}>
       <div className='w-full px-4 xl:w-[95%]  2xl:w-[75%] mx-auto'>
         <div className='flex w-full  justify-between items-center '>
           {/* Logo */}

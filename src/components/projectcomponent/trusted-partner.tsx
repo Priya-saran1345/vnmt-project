@@ -71,6 +71,8 @@ function PartnersRow({ partners, direction }: { partners: any ; direction: 1 | -
 }
 
 export function TrustedPartner() {
+  const firstHalf = partners.slice(0, Math.floor(partners.length / 2));
+const lastHalf = partners.slice(Math.floor(partners.length / 2));
   return (
     <div className="w-full">
       <div className="mx-auto">
@@ -80,9 +82,9 @@ export function TrustedPartner() {
           </h2>
         </div>
         <div className="overflow-hidden bg-white py-8">
-          <PartnersRow partners={partners} direction={1} />
+          <PartnersRow partners={firstHalf} direction={1} />
           <div className="h-8" /> {/* Spacer */}
-          <PartnersRow partners={partners} direction={-1} />
+          <PartnersRow partners={lastHalf} direction={-1} />
         </div>
         <div className="h-5 bg-gradient-to-t from-darkblue to-lightblue"></div>
       </div>

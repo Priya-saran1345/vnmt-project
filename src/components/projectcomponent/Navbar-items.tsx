@@ -5,30 +5,33 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { MdKeyboardDoubleArrowRight } from 'react-icons/md';
+import { IoIosArrowForward } from 'react-icons/io';
 // import { FaInstagram } from 'react-icons/fa';
 // import { LuFacebook } from 'react-icons/lu';
 // import { BiLogoLinkedin } from 'react-icons/bi';
 // import { Search } from 'lucide-react';
 const NavbarIndex = ({ show }: any) => {
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+    const [isHovered, setIsHovered] = useState(false);
     const toggleDropdown = (menu: string) => {
         setOpenDropdown(openDropdown === menu ? null : menu);
     };
     return (
-        <div className=' lg:flex gap-[10px] w-full  justify-between 2xl:gap-3 py-3 items-center text-[17px] lg:text-[15px] bg-blu  xl:text-[15px] 2xl:text=[17px] '>
-            <div className={`lg:items-center ${show ? "flex flex-col" : "flex"}   xl:gap-4 flex-1 justify-center gap-5`}>
+        <div
+            onMouseLeave={() => toggleDropdown('')}
+            className=' lg:flex gap-[10px] w-full  justify-between 2xl:gap-3 py-3 items-center text-[17px] lg:text-[15px] bg-blu  xl:text-[15px] 2xl:text=[17px] '>
+            <div className={`lg:items-center ${show ? "flex flex-col" : "flex"}   xl:gap-4 flex-1 justify-center items-center gap-5`}>
 
                 <div className='relative'>
                     <div className='flex gap-1 items-center'>
                         <li onClick={() => toggleDropdown('seo')} onMouseOver={() => toggleDropdown('seo')} className={`
-                        flex ${openDropdown === 'seo'?'border-b-4  border-orange ':'border-b-4 border-white'} 
+                        flex ${openDropdown === 'seo' ? 'border-b-4  border-orange ' : 'border-b-4 border-white'} 
                         font-semibold  gap-1 items-center cursor-pointer hover:text-pink text-[16px ] ${openDropdown === 'seo' && "text-pink"}`}>
                             Company
                         </li>
-
                     </div>
 
-                  {openDropdown === 'seo' && (
+                    {openDropdown === 'seo' && (
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -69,7 +72,7 @@ const NavbarIndex = ({ show }: any) => {
                     <div className='flex gap-1 items-center'>
                         <li onClick={() => toggleDropdown('netsuite')}
                             onMouseOver={() => toggleDropdown('netsuite')}
-                            className={`flex  font-semibold ${openDropdown === 'netsuite'?'border-b-4  border-orange ':'border-b-4 border-white'}   gap-1 items-center cursor-pointer hover:text-pink text-[16px ] 
+                            className={`flex  font-semibold ${openDropdown === 'netsuite' ? 'border-b-4  border-orange ' : 'border-b-4 border-white'} gap-1 items-center cursor-pointer hover:text-pink text-[16px ] 
                         ${openDropdown === 'netsuite' && "text-pink"}`}>
                             Netsuite
                         </li>
@@ -113,12 +116,11 @@ const NavbarIndex = ({ show }: any) => {
                     )}
                 </div>
 
-
                 <div className='relative'>
                     <div className='flex gap-1 items-center'>
                         <li onClick={() => toggleDropdown('Celigo')}
                             onMouseOver={() => toggleDropdown('Celigo')}
-                            className={`flex  font-semibold ${openDropdown === 'Celigo'?'border-b-4  border-orange ':'border-b-4 border-white'}  gap-1 items-center cursor-pointer hover:text-pink text-[16px ] 
+                            className={`flex  font-semibold ${openDropdown === 'Celigo' ? 'border-b-4  border-orange ' : 'border-b-4 border-white'}  gap-1 items-center cursor-pointer hover:text-pink text-[16px ] 
                         ${openDropdown === 'Celigo' && "text-pink"}`}>
                             Celigo
                         </li>
@@ -173,11 +175,12 @@ const NavbarIndex = ({ show }: any) => {
                         </motion.div>
                     )}
                 </div>
+
                 <div className='relative'>
                     <div className='flex gap-1 items-center'>
                         <li onClick={() => toggleDropdown('Integrations')}
                             onMouseOver={() => toggleDropdown('Integrations')}
-                            className={`flex  font-semibold  ${openDropdown === 'Integrations'?'border-b-4  border-orange ':'border-b-4 border-white'}  gap-1 items-center cursor-pointer hover:text-pink text-[16px ] 
+                            className={`flex  font-semibold  ${openDropdown === 'Integrations' ? 'border-b-4  border-orange ' : 'border-b-4 border-white'}  gap-1 items-center cursor-pointer hover:text-pink text-[16px ] 
                         ${openDropdown === 'Integrations' && "text-pink"}`}>
                             Integrations
                         </li>
@@ -234,14 +237,11 @@ const NavbarIndex = ({ show }: any) => {
                     )}
                 </div>
 
-
-
-
                 <div className='relative'>
                     <div className='flex gap-1 items-center'>
                         <li onClick={() => toggleDropdown('Products')}
                             onMouseOver={() => toggleDropdown('Products')}
-                            className={`flex  font-semibold  gap-1 ${openDropdown === 'Products'?'border-b-4  border-orange ':'border-b-4 border-white'}  items-center cursor-pointer hover:text-pink text-[16px ] 
+                            className={`flex  font-semibold  gap-1 ${openDropdown === 'Products' ? 'border-b-4  border-orange ' : 'border-b-4 border-white'}  items-center cursor-pointer hover:text-pink text-[16px ] 
                         ${openDropdown === 'Products' && "text-pink"}`}>
                             Products
                         </li>
@@ -278,11 +278,12 @@ const NavbarIndex = ({ show }: any) => {
                         </motion.div>
                     )}
                 </div>
+
                 <div className='relative'>
                     <div className='flex gap-1 items-center'>
                         <li onClick={() => toggleDropdown('industries')}
                             onMouseOver={() => toggleDropdown('industries')}
-                            className={`flex  font-semibold ${openDropdown === 'industries'?'border-b-4  border-orange ':'border-b-4 border-white'}  gap-1 items-center cursor-pointer hover:text-pink text-[16px ] 
+                            className={`flex  font-semibold ${openDropdown === 'industries' ? 'border-b-4  border-orange ' : 'border-b-4 border-white'}  gap-1 items-center cursor-pointer hover:text-pink text-[16px ] 
                         ${openDropdown === 'industries' && "text-pink"}`}>
                             Industries
                         </li>
@@ -344,11 +345,12 @@ const NavbarIndex = ({ show }: any) => {
                         </motion.div>
                     )}
                 </div>
+
                 <div className='relative'>
                     <div className='flex gap-1 items-center'>
                         <li onClick={() => toggleDropdown('Resources')}
                             onMouseOver={() => toggleDropdown('Resources')}
-                            className={`flex  font-semibold ${openDropdown === 'Resources'?'border-b-4  border-orange ':'border-b-4 border-white'}   gap-1 items-center cursor-pointer hover:text-pink text-[16px ] 
+                            className={`flex  font-semibold ${openDropdown === 'Resources' ? 'border-b-4  border-orange ' : 'border-b-4 border-white'}   gap-1 items-center cursor-pointer hover:text-pink text-[16px ] 
                         ${openDropdown === 'Resources' && "text-pink"}`}>
                             Resources
                         </li>
@@ -387,48 +389,25 @@ const NavbarIndex = ({ show }: any) => {
                         </motion.div>
                     )}
                 </div>
+
                 <div className='relative'>
                     <div className='flex gap-1 items-center'>
-                        <li onClick={() => toggleDropdown('Contact ')}
-                            onMouseOver={() => toggleDropdown('Contact ')}
-                            className={`flex  font-semibold ${openDropdown === 'Contact '?'border-b-4  border-orange ':'border-b-4 border-white'}   gap-1 items-center cursor-pointer hover:text-pink text-[16px ] 
-                        ${openDropdown === 'Contact ' && "text-pink"}`}>
+                        <li
+                            className={`flex px-4 py-2 bg-orange rounded-full text-white font-semibold  smooth1
+        ${isHovered ? 'pr-8  border-orange text-pink' : ' border-white'} 
+        gap-1 items-center cursor-pointer text-[16px] relative`}
+                            onMouseEnter={() => setIsHovered(true)}
+                            onMouseLeave={() => setIsHovered(false)}
+                        >
                             Contact Us
+                            <IoIosArrowForward
+                                className={`absolute right-2 transition-all duration-300 transform 
+          ${isHovered ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}
+                                size={20}
+                            />
                         </li>
+
                     </div>
-                    {/* {openDropdown === 'Resources' && (
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-
-                            className=' absolute text-homegrey shadow-md text-[17px]
-                            w-fit text-nowrap lg:w-fit overflow-y-scroll lg:overflow-auto  max-h-[70vh] lg:h-fit
-                flex-wrap lg:flex-nowrap  px-6 py-6 z-[99999] left-0 top-9  bg-white justify-start lg:justify-around flex 
-                   gap-5  p-4 rounded-b-xl' onMouseLeave={() => toggleDropdown('')}>
-                            <motion.div
-                                initial={{ x: -50, opacity: 0 }}
-                                animate={{ x: 0, opacity: 1 }}
-                                transition={{ delay: 0.1, easings: ["easeIn", "easeOut"] }}
-                            >
-                                <ul className='flex flex-col text-[16px] gap-[5px]'>
-                                    <Link target='_blank' href='/seo-tools' passHref>
-                                        <li className='flex items-center gap-2 text-black hover:text-orange hover:translate-x-2 transition-all duration-300'>
-                                            <MdKeyboardDoubleArrowRight />
-                                            Blog
-                                        </li>
-                                    </Link>
-                                    <Link target='_blank' href='/website-seo-analyzer' passHref>
-                                        <li className='flex items-center gap-2 text-black hover:text-orange hover:translate-x-2 transition-all duration-300'>
-                                            <MdKeyboardDoubleArrowRight />
-                                            Case Studies
-                                        </li>
-                                    </Link>
-
-                                </ul>
-
-                            </motion.div>
-                        </motion.div>
-                    )} */}
                 </div>
             </div>
 

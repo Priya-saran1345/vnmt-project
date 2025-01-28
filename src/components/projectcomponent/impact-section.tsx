@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
@@ -105,20 +106,19 @@ export function ImpactSection() {
 
   <div className="impact-right w-[65%] bg-[#EDF3FF] border-2 z-10 !py-20 border-r-0 border-darkblue h-[300px] rounded-l-full relative -ml-20 ">
     <div className="absolute inset-0 flex items-center">
-      <div className="pl-40 space-y-8">
-        {impactStats.map((stat, index) => (
-          <div key={stat.id} className="flex items-center gap-4">
-            <div
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              ref={(el: any) => (numberRefs.current[index] = el)}
-              className="text-4xl lg:text-[65px] font-bold bg-gradient-to-b from-lightblue to-darkblue py-2 bg-clip-text text-transparent"
-            >
-              0
-            </div>
-            <div className="text-blue font-bold text-3xl">{stat.label}</div>
+    <div className="grid grid-cols-[auto_1fr]  items-center pl-36  gap-x-4  ">
+    {impactStats.map((stat, index) => (
+        <div key={stat.id} className="contents">
+          <div
+            ref={(el:any) => (numberRefs.current[index] = el)}
+            className="text-[65px] font-bold bg-gradient-to-b from-lightblue to-darkblue bg-clip-text text-transparent text-right min-w-[120px]"
+          >
+            0
           </div>
-        ))}
-      </div>
+          <div className="text-blue font-bold text-3xl">{stat.label}</div>
+        </div>
+      ))}
+    </div>
     </div>
   </div>
 </div>

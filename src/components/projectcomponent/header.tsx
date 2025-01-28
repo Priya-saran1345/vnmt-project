@@ -14,8 +14,7 @@ export function Header() {
             mx-auto px-4 ">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center gap-3">
-              {/* <span>COUNTRY+ : {contactInfo.country}</span> */}
-
+              {/* <span>COUNTRY+ : {contactInfo?.country}</span> */}
               <a href="#faq" className=" hover:text-orange text-white cursor-pointer">FAQ</a>
               <span>|</span>
               <div className='relative'>
@@ -30,6 +29,9 @@ export function Header() {
               {/* <span>FAQ: {contactInfo.phone}</span> */}
             </div>
             <div className="flex items-center gap-4">
+              <Link href="#" className="font-semibold hover:bg-orange hover:text-white  text-[16px] smooth1 text-sm px-4 py-1 rounded-full text-darkblue bg-white ">
+                CAREER
+              </Link>
               <Link href="#" className="hover:text-orange text-white">
                 <FaInstagram className="text-[22px]" />
               </Link>

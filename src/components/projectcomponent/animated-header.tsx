@@ -86,12 +86,12 @@ export default function AnimatedHeader() {
                 variants={headerVariants}
                 // animate={isScrolled ? "scrolled" : "initial"}
                 transition={{ duration: 0.15 }}
-                className={`fixed top-15  z-50 rounded-full   ${isScrolled ? "hidden " : "animate-slide-down"}  py-2 px-8 bg-white `}
+                className={`fixed top-15 w-[55%]  z-50 rounded-full   ${isScrolled ? "hidden " : "animate-slide-down"}  py-2 px-8 bg-white `}
 
             >
                 <div
 
-                    className="flex text-black  items-center justify-between gap-24">
+                    className="flex w-full text-black  items-center justify-between gap-24">
                     <Link href="/" className="flex-shrink-0">
                         <Image src="/images/logo.svg" alt="Logo" width={140} height={35} className="h-8 w-auto" />
                     </Link>

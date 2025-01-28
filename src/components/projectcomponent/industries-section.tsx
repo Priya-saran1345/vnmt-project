@@ -3,6 +3,7 @@
 import * as React from "react"
 import { MonitorSmartphone, Search, LayoutGrid, LineChart, BarChart2, Share2 } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { motion } from 'framer-motion';
 
 const services = [
   {
@@ -97,6 +98,11 @@ export function IndustriesSection() {
 
 function ServiceCard({ id, title, description, icon: Icon, color, iconBg }: { id: number, title: string, description: string, icon: React.ElementType, color: string, hoverColor: string, iconBg: string }) {
   const [isHovered, setIsHovered] = React.useState(false);
+  const variants = {
+    collapsed: { height: "auto" },
+    expanded: { height: "auto", marginBottom: "2rem" },
+  }
+
 
   return (
     <div
@@ -114,32 +120,36 @@ function ServiceCard({ id, title, description, icon: Icon, color, iconBg }: { id
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Gradient Background Animation */}
-      <span className={cn("absolute z-0 h-16 w-16 rounded-full  transition-all duration-700 ease-in-out transform group-hover:scale-[20] bg-gradient-to-br ", color )} />
+      <span className={cn("absolute z-0 h-16 w-16 rounded-full  transition-all duration-700 ease-in-out transform group-hover:scale-[20] bg-gradient-to-br ", color)} />
 
-      <div className={cn("relative z-10 w-full", { 'mx-auto max-w-md': isHovered })}>
-        {/* Icon */}
-        <div className={cn("w-16 h-16 rounded-full flex items-center justify-center mb-6 group ", iconBg)}>
-          <Icon className={cn("w-8 h-8 text-white transition-all duration-500 ")} />
-        </div>
-        {/* Title */}
-        <h3 className="text-xl font-semibold mb-4 group-hover:text-white transition-all duration-500 bulletheading">{title}</h3>
-        
-        {/* Description */}
-        <p className="text-black group-hover:text-white transition-all duration-500 text-base">{description}</p>
-        {/* <p className="text-black group-hover:text-white transition-all duration-500 text-base cursor-pointer">    </p> */}
-        <div className="">
-
-        <button className="cta ">
-  <span>Read More</span>
-  {/* <svg width="15px" height="10px" viewBox="0 0 13 10">
-    <path d="M1,5 L11,5"></path>
-    <polyline points="8 1 12 5 8 9"></polyline>
-  </svg> */}
-</button>
-        </div>
-
-
+      <motion.div
+      initial="collapsed"
+      animate={isHovered ? "expanded" : "collapsed"}
+      variants={variants}
+      transition={{ duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98] }}
+      className={cn("relative z-10 w-full", { "mx-auto max-w-md": isHovered })}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Icon */}
+      <div className={cn("w-16 h-16 rounded-full flex items-center justify-center mb-6 group", iconBg)}>
+        <Icon className={cn("w-8 h-8 text-white transition-all duration-500")} />
       </div>
+
+      {/* Title */}
+      <h3 className="text-xl font-semibold mb-4 group-hover:text-white transition-all duration-500 bulletheading">
+        {title}
+      </h3>
+
+      {/* Description */}
+      <p className="text-black group-hover:text-white transition-all duration-500 text-base">{description}</p>
+
+      <button
+        className="cta mt-4 group-hover:inline-block hidden "
+      >
+        <span>Read More</span>
+      </button>
+    </motion.div>
     </div>
   );
 }
