@@ -101,10 +101,10 @@ const Footer = () => {
         />
 
         {/* Content */}
-        <div className=" ">
-          <div className=" flex flex-col w-full  lg:w-[95%] 2xl:w-[70%] mx-auto py-12 z-20">
-            <div className=' flex justify-between   relative '>
+        <div className="">
+          <div className=" lg:w-[95%] 2xl:w-[70%] mx-auto">
             {/* Global Locations */}
+            <div className='flex justify-between  w-full relative py-12 z-10'>
             <div className="px-4 border-blue border-r-2 w-[35%] pt-3">
               <h3 className="font-bold mb-4 underline-custom  cursor-pointer">GLOBAL LOCATIONS</h3>
               <div className="space-y-4">
@@ -118,7 +118,7 @@ const Footer = () => {
             </div>
             {/* Footer Sections */}
             {footerSections.map((section, index) => (
-              <div key={index} className={` px-4  ${section.title === 'ABOUT COMPANY' ? 'border-none' : 'border-blue border-r-2'}  py-3`}>
+              <div key={index} className={` px-4 ${section.title === 'ABOUT COMPANY' ? 'border-none' : 'border-blue border-r-2'}  py-3`}>
                 <h3 className="font-bold mb-4 underline-custom cursor-pointer">{section.title}</h3>
                 <ul className="space-y-2">
                   {section.links.map((link, linkIndex) => (
@@ -213,9 +213,7 @@ const Footer = () => {
             ))}
 </div>
             {/* Contact Us */}
-
-            <div className="ml-2 mr-5 mb-12 w-full">
-            <div className="flex flex-col gap-4 ">
+            <div className="flex flex-col gap-4 ml-4 ">
               {/* Industries */}
               <h3 className="font-bold underline-custom mt-4">INDUSTRIES THAT WE SERVE</h3>
               <div className="flex gap-2  text-[14px] relative z-10">
@@ -227,6 +225,9 @@ const Footer = () => {
                 ))}
               </div>
             </div>
+          </div>
+          <div className="ml-2 lg:ml-[3%] 2xl:ml-[11.5%] mr-5 mb-12">
+
             {/* Footer Logos */}
             <div
               ref={sectionRef}
@@ -289,20 +290,18 @@ const Footer = () => {
 
                   <a className="flex gap-2 items-center cursor-pointer group z-50" href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer" >
                     <IoLogoWhatsapp className="text-green-500 text-[28px] cursor-pointer" />
-                    <p className="text-black group-hover:text-orange cursor-pointer  smooth1">Whatsapp Now</p>
+                    <p className="text-black group-hover:text-orange cursor-pointer group-hover:font-semibold smooth1">Whatsapp Now</p>
                   </a>
 
                   <a className="flex gap-2 items-center cursor-pointer group z-50 mt-2" href="tel:+91123456789" target="_blank" rel="noopener noreferrer" >
                     <FiPhoneCall className="text-black text-[23px] cursor-pointer" />
-                    <p className="text-black group-hover:text-orange cursor-pointer  smooth1">+(91) 123456789</p>
+                    <p className="text-black group-hover:text-orange cursor-pointer group-hover:font-semibold smooth1">+(91) 123456789</p>
                   </a>
                 </div>
 
               </div>
             </div>
           </div>
-          </div>
-
         </div>
       </div>
 
