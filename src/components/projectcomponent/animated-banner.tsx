@@ -41,8 +41,8 @@ useEffect(() => {  gsap.set(itemsRef.current, { opacity: 0, scale: 0, y: 50 }); 
       y: (i) => items[i].y,
       duration: 0.5,
       stagger: 0.2,  // Keep stagger to add slight delay between items
-      ease: "power2.out",
-      delay: .1, // Delay animation start by 2 seconds
+      ease: "expo.inOut",
+      delay: 0,
     });
   }, []);
 
@@ -69,12 +69,12 @@ useEffect(() => {  gsap.set(itemsRef.current, { opacity: 0, scale: 0, y: 50 }); 
   }, [mousePosition]);
 
   return (
-    <div ref={containerRef} className="relative flex flex-col py-6 items-center h-[500px] w-[800px] overflow-hidden">
+    <div ref={containerRef} className="relative flex flex-col py-6 items-center h-[500px] w-[800px] overflow-hidden z-30">
       {items.map((item, index) => (
         <div
           key={item.id}
           ref={(el: any) => (itemsRef.current[index] = el)}
-          className="z-[9999] opacity-0 flex items-center  w-fit gap-2 hover:bg-orange hover:text-white 
+          className="opacity-0 flex items-center  w-fit gap-2 hover:bg-orange hover:text-white 
           duration-300 text-[18px] rounded-full bg-white text-orange font-bold px-4 py-1 shadow-lg"
         >
           <img className="h-12 w-12 border-orange border-2 rounded-full" src={item.image} alt={item.title} />
