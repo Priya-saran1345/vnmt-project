@@ -63,7 +63,7 @@ useEffect(() => {  gsap.set(itemsRef.current, { opacity: 0, scale: 0, y: 50 }); 
         x: items[index].x + mouseX * 0.05,
         y: items[index].y + mouseY * 0.05,
         duration: 0.5,
-        ease: "power2.out",
+        ease: "back.out",
       });
     });
   }, [mousePosition]);
@@ -77,8 +77,8 @@ useEffect(() => {  gsap.set(itemsRef.current, { opacity: 0, scale: 0, y: 50 }); 
           className="opacity-0 flex items-center  w-fit gap-2 hover:bg-orange hover:text-white 
           duration-300 text-[18px] rounded-full bg-white text-orange font-bold px-4 py-1 shadow-lg"
         >
-          <img className="h-12 w-12 border-orange border-2 rounded-full" src={item.image} alt={item.title} />
-          <span className="text-md font-bold">{item.title}</span>
+          <img className="h-11 w-11 border-orange border-2 rounded-full" src={item.image} alt={item.title} />
+          <span className="text-base font-bold">{item.title}</span>
         </div>
       ))}
     </div>
