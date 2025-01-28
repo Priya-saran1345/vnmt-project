@@ -3,7 +3,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
-import { motion, useSpring, useTransform, useScroll } from "framer-motion"
+import { motion, useTransform, useScroll } from "framer-motion"
 import { services } from "@/components/data/services"
 
 export function ServicesClient() {
@@ -23,11 +23,8 @@ export function ServicesClient() {
     })
 
     // Smooth spring animation for the scrollbar thumb
-    const springConfig = { damping: 25, stiffness: 100 }
-    const y = useSpring(
-        useTransform(scrollYProgress, [0, 1], [0, containerRef.current ? containerRef.current.clientHeight - 100 : 0]),
-        springConfig,
-    )
+    // const springConfig = { damping: 25, stiffness: 100 }
+    const y =   useTransform(scrollYProgress, [0, 1], [0, containerRef.current ? containerRef.current.clientHeight - 100 : 0])
 
     // Handle drag to scroll
     const handleDrag = (_: any, info: { delta: { y: number } }) => {

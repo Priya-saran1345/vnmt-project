@@ -4,7 +4,7 @@
 import { netsuiteContent } from "@/components/data/netsuite"
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
-import { motion, useSpring, useTransform, useScroll } from "framer-motion"
+import { motion,  useTransform, useScroll } from "framer-motion"
 import Button from '@/components/projectcomponent/button'
 export function NetsuiteSection() {
 
@@ -25,11 +25,8 @@ export function NetsuiteSection() {
   });
 
   // Smooth spring animation for the scrollbar thumb
-  const springConfig = { damping: 25, stiffness: 100 };
-  const y = useSpring(
-      useTransform(scrollYProgress, [0, 1], [0, containerHeight]),
-      springConfig
-  );
+  // const springConfig = { damping: 25, stiffness: 100 };
+  const y = useTransform(scrollYProgress, [0, 1], [0, containerHeight])
 
   // Handle drag to scroll
   const handleDrag = (_: any, info: { delta: { y: number } }) => {
@@ -43,7 +40,7 @@ export function NetsuiteSection() {
     <div className="py-10 justify-end flex bg_netsuite ">
       <div className="w-full lg:w-[95%] 2xl:w-[87%]">
         <div className="flex justify-between  gap-8 items-center">
-          <div className="space-y-6 w-1/3 ">
+          <div className="space-y-4 flex-1 ">
             <div>
               <h2 className="heading heading-calisto font-bold mb-2">{netsuiteContent.title}</h2>
               <p className="parahraph text-black font-medium" dangerouslySetInnerHTML={{ __html: netsuiteContent.subtitle }}></p>
@@ -80,7 +77,7 @@ export function NetsuiteSection() {
               {netsuiteContent.ctaText} →
             </div> */}
           </div>
-          <div className=" w-[60%]  rounded-l-[100px] " >
+          <div className=" flex-1  rounded-l-[100px] " >
             <Image
               src={'/images/netsuite-side-img.svg'}
 

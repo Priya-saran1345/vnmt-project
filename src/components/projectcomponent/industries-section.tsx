@@ -126,7 +126,7 @@ function ServiceCard({ id, title, description, icon: Icon, color, iconBg }: { id
       initial="collapsed"
       animate={isHovered ? "expanded" : "collapsed"}
       variants={variants}
-      transition={{ duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98] }}
+      transition={{ duration: 0.5,ease:"easeInOut"}}
       className={cn("relative z-10 w-full", { "mx-auto max-w-md": isHovered })}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -145,7 +145,7 @@ function ServiceCard({ id, title, description, icon: Icon, color, iconBg }: { id
       <p className="text-black group-hover:text-white transition-all duration-500 text-base">{description}</p>
 
       <button
-        className="cta mt-4 group-hover:inline-block hidden "
+        className="cta mt-4 group-hover:inline-block hidden smooth1 "
       >
         <span>Read More</span>
       </button>

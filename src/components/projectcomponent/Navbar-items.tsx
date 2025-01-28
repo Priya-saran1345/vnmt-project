@@ -20,7 +20,7 @@ const NavbarIndex = ({ show }: any) => {
         <div
             onMouseLeave={() => toggleDropdown('')}
             className=' lg:flex gap-[10px] w-full  justify-between 2xl:gap-3 py-3 items-center text-[17px] lg:text-[15px] bg-blu  xl:text-[15px] 2xl:text=[17px] '>
-            <div className={`lg:items-center ${show ? "flex flex-col" : "flex"}   xl:gap-4 flex-1 justify-center items-center gap-5`}>
+            <div className={`lg:items-center ${show ? "flex flex-col" : "flex"}   xl:gap-4 flex-1 justify-center items-center gap-3`}>
 
                 <div className='relative'>
                     <div className='flex gap-1 items-center'>
