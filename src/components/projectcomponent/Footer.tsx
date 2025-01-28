@@ -101,8 +101,8 @@ const Footer = () => {
         />
 
         {/* Content */}
-        <div className="">
-          <div className=" flex flex-col w-full lg:w-[95%] 2xl:w-[70%] mx-auto py-12 z-10">
+        <div className=" ">
+          <div className=" flex flex-col w-full  lg:w-[95%] 2xl:w-[70%] mx-auto py-12 z-20">
             <div className=' flex justify-between   relative '>
             {/* Global Locations */}
             <div className="px-4 border-blue border-r-2 w-[35%] pt-3">
@@ -123,7 +123,7 @@ const Footer = () => {
                 <ul className="space-y-2">
                   {section.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
-                      <Link href="#" className="text-white/85 text-base hover:text-orange text-[15px]">
+                      <Link href="#" className="text-white/85  text-base hover:text-orange text-[15px]">
                         {link}
                       </Link>
                     </li>
@@ -153,7 +153,7 @@ const Footer = () => {
                         <input
                           type="search"
                           placeholder="Search"
-                          className="w-full rounded-full border-none outline-none py-[6px] text-[14px] pl-2 pr-10"
+                          className="w-full rounded-full bg-white border-none outline-none py-[6px] text-[14px] pl-2 pr-10"
                           value={searchTerm}
                           onChange={(e) => setSearchTerm(e.target.value)}
                           onKeyPress={(e) => {
@@ -168,9 +168,7 @@ const Footer = () => {
                         >
                           <Search className="h-full w-full text-black" />
                         </div>
-
                       </div>
-
                     </div>
                     <p className="text-[14px] mt-4"><span className="text-white hover:text-orange cursor-pointer">
                       Terms & Conditions</span> </p>

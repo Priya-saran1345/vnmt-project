@@ -3,7 +3,7 @@ import { useState } from "react"
 // import { Play } from "lucide-react"
 import { FaPlay } from "react-icons/fa"
 import AnimatedHeader from "./animated-header"
-
+import { AnimatedBanner } from "./animated-banner"
 export function Hero() {
   const [hoveredItem, setHoveredItem] = useState<string | null | number>(null)
 
@@ -12,13 +12,12 @@ export function Hero() {
       <div
         className="h-[642px]  relative w-full flex flex-col  lg:w-[95%] 2xl:w-[77%] mx-auto bg-[url('/images/bgbanner.svg')] min-h-[68vh] bg-no-repeat pt-4"
       >
-        <div className="px-7  ">
+        <div className="px-7  flex justify-between items-start ">
           <AnimatedHeader />
           {hoveredItem &&
             <div
               onMouseLeave={() => setHoveredItem(null)}
               className='absolute bg-white text-black h-[30vh] w-1/2 '>
-
             </div>
           }
           <div className="max-w-2xl mt-32 mx-20 relative z-10  flex flex-col gap-2">
@@ -33,6 +32,9 @@ export function Hero() {
               <div className='w-[23%] rounded-full h-[7px] bg-white border border-orange'></div>
               <div className='w-[4%] rounded-full h-[7px] bg-white border border-orange'></div>
             </div>
+          </div>
+          <div className=" absolute  top-[15vh] right-12 ">
+            <AnimatedBanner />
           </div>
 
         </div>
