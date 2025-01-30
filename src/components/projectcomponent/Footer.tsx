@@ -96,7 +96,7 @@ const Footer = () => {
 
         {/* Content */}
         <div className="bg_footer_img">
-          <div className=" lg:w-[95%] 2xl:w-[70%] mx-auto z-10 ">
+          <div className=" lg:w-[95%] 2xl:w-[70%] mx-auto  ">
             {/* Global Locations */}
             <div className='flex justify-between  w-full relative py-12 z-10'>
               <div className="px-4 border-blue border-r-2 w-[30%] pt-3">
@@ -127,7 +127,7 @@ const Footer = () => {
               {footerSections.map((section, index) => (
                 <div key={index} className={` px-4 ${section.title === 'ABOUT COMPANY' ? 'border-none' : 'border-blue border-r-2'}  py-3`}>
                   <h3 className=" mb-4 underline-custom text-xl cursor-pointer">{section.title}</h3>
-                  <ul className={`grid grid-cols-2  gap-y-4  items-start ${ section.title === "ABOUT COMPANY" ? " gap-x-4" :" " }`}>
+                  <ul className={`grid xl:grid-cols-2 grid-cols-1  gap-y-4  items-start ${section.title === "ABOUT COMPANY" ? " gap-x-4" : " "}`}>
                     {section.links.map((link, linkIndex) => (
                       <li key={linkIndex}>
                         <Link href="#" className="text-white/85  text-sm hover:text-orange text-[15px]">
@@ -238,7 +238,7 @@ const Footer = () => {
             <div
               ref={sectionRef}
               className="flex justify-between items-center">
-              <div className=" z-40 mt-4 flex-1 ">
+              <div className=" z-10 mt-4 flex-1 ">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: isInView ? 1 : 0 }}
@@ -268,7 +268,7 @@ const Footer = () => {
               </div>
 
               <div className="flex gap-8 items-end">
-                <div className="flex fixed bottom-8 right-[3%] flex-row-reverse z-20 gap-6 items-center justify-center">
+                <div className="flex fixed bottom-8 right-[3%] flex-row-reverse z-[1000] gap-6 items-center justify-center">
                   <div
                     className="relative group"
                   >
@@ -290,7 +290,7 @@ const Footer = () => {
                     </div>
 
                   </div>
-                  <div className="bg-[#fff] z-40 p-4 rounded-xl shadow-lg animate-zoom">
+                  <div className="bg-[#fff]  p-4 rounded-xl shadow-lg animate-zoom">
                     <p className="text-blue text-center font-semibold mb-2 text-lg">Quick Connect </p>
 
                     <a className="flex gap-2 items-center cursor-pointer group z-50" href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer" >

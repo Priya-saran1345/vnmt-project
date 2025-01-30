@@ -39,7 +39,7 @@ function PlatformIcon({ src, alt, className = "" }: PlatformIconProps) {
       whileHover={{ scale: 1.2 }}
       exit={{scale:1}}
       transition={{ type: "spring", stiffness: 500, damping: 15 }}
-      className={`relative w-[6.5rem] h-[6.5rem] z-10 bg-white rounded-lg shadow-lg cursor-pointer ${className}`}
+      className={`relative w-[6.5rem] h-[6.5rem] z-5 bg-white rounded-lg shadow-lg cursor-pointer ${className}`}
     >
       <Image
         src={src || "/placeholder.svg"}

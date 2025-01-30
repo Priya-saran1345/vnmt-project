@@ -19,6 +19,7 @@ import Navbar from '@/components/projectcomponent/navbar'
 export default function FAQPage() {
     useEffect(() => {
         window.scrollTo(0, 0);
+        localStorage.setItem("isScrolled", JSON.stringify(false));
     }, []);
     return (
 

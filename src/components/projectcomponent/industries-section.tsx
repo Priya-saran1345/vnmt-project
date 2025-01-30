@@ -141,7 +141,7 @@ function ServiceCard({
 
       <div
         className={cn(
-          "relative z-10 w-full transition-all duration-500 ease-in-out",
+          "relative z-1 w-full transition-all duration-500 ease-in-out",
           "group-hover:mx-auto group-hover:max-w-md",
         )}
       >

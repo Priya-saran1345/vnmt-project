@@ -90,7 +90,7 @@ export function ImpactSection() {
     <div className="relative w-full  overflow-hidden">
    <div className="flex impact-section items-stretch w-full">
   {/* Dark curved section */}
-  <div className="impact-left w-1/2 flex-shrink-0 z-20 relative bg-blue bg-[url('/images/impact-bg.svg')] flex justify-end items-center rounded-r-full">
+  <div className="impact-left w-1/2 flex-shrink-0 z-10 relative bg-blue bg-[url('/images/impact-bg.svg')] flex justify-end items-center rounded-r-full">
     <div className="p-12 pr-32 text-white">
       <h2 className="heading font-bold heading-calisto mb-3">{impactContent?.title}</h2>
       <p
@@ -104,7 +104,7 @@ export function ImpactSection() {
     </div>
   </div>
 
-  <div className="impact-right w-[65%] bg-[#EDF3FF] border-2 z-10 !py-20 border-r-0 border-darkblue h-[300px] rounded-l-full relative -ml-20 ">
+  <div className="impact-right w-[65%] bg-[#EDF3FF] border-2 z-5 !py-20 border-r-0 border-darkblue h-[300px] rounded-l-full relative -ml-20 ">
     <div className="absolute inset-0 flex items-center">
     <div className="grid grid-cols-[auto_1fr]  items-center pl-36  gap-x-4  ">
     {impactStats.map((stat, index) => (

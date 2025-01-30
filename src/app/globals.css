@@ -922,7 +922,7 @@ body {
         background-position: 0 0;
     }
     50% {
-        background-position: -800px 0; 
+        background-position: -600px 0; 
     }
     100% {
         background-position: -0 0; 
@@ -938,6 +938,7 @@ body {
     height: 100%;
     background: rgba(0,0,0,0.7); 
     z-index: 2;
+	scroll-behavior: smooth;
 }
 
 .bg_footer_img {
@@ -948,4 +949,5 @@ body {
     animation: mapslide 100s linear infinite; 
     position: relative; 
     z-index: 1;
+	scroll-behavior: smooth;
 }
