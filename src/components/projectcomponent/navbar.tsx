@@ -6,8 +6,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import NavbarItems from '@/components/projectcomponent/Navbar-items'
 import { RxCross2 } from 'react-icons/rx';
-import { FaInstagram } from 'react-icons/fa';
-import { LuFacebook } from 'react-icons/lu';
 import { BiLogoLinkedin } from 'react-icons/bi';
 import { Search } from 'lucide-react';
 const Navbar = () => {
@@ -53,13 +51,6 @@ const Navbar = () => {
                         <span className="meeting-text font-semibold text-sm ">Contact Us</span>
                     </button>
                 </Link> */}
-
-                <Link href="#" className="hover:text-orange text-blue">
-                    <FaInstagram className="text-[22px]" />
-                </Link>
-                <Link href="#" className="hover:text-orange text-blue">
-                    <LuFacebook className="text-[22px]" />
-                </Link>
                 <Link href="#" className="hover:text-orange text-blue">
                     <BiLogoLinkedin className="text-[22px]" />
                 </Link>

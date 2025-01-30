@@ -4,8 +4,8 @@
 
 html {
 	scroll-behavior: smooth;
-  }
-  
+}
+
 
 :root {
 	--blue: #4583F7,
@@ -29,10 +29,12 @@ html {
 a {
 	color: #074E8C;
 }
-body{
+
+body {
 	font-family: 'Roboto', sans-serif;
 	src: url('/fonts/Roboto-Bold.ttf') format('truetype');
 }
+
 .scrollbar {
 	margin-left: 30px;
 	float: left;
@@ -237,7 +239,7 @@ body{
 
 @keyframes scroll-up {
 	0% {
-		transform: translateY(70%);
+		transform: translateY(60%);
 	}
 
 	50% {
@@ -245,13 +247,13 @@ body{
 	}
 
 	100% {
-		transform: translateY(70%);
+		transform: translateY(60%);
 	}
 }
 
 @keyframes scroll-down {
 	0% {
-		transform: translateY(-70%);
+		transform: translateY(-51%);
 	}
 
 	50% {
@@ -259,7 +261,7 @@ body{
 	}
 
 	100% {
-		transform: translateY(-70%);
+		transform: translateY(-51%);
 	}
 }
 
@@ -412,17 +414,17 @@ body{
 
 
 @keyframes zoomInOut {
-    0% {
-        transform: translateY(0);
-    }
+	0% {
+		transform: translateY(0);
+	}
 
-    50% {
-        transform: translateY(-30px); 
-    }
+	50% {
+		transform: translateY(-30px);
+	}
 
-    100% {
-        transform: translateY(0);
-    }
+	100% {
+		transform: translateY(0);
+	}
 }
 
 .animate-zoom {
@@ -443,9 +445,9 @@ body{
 	pointer-events: none;
 }
 
-.customanim{
+.customanim {
 	perspective: 70px;
-    perspective-origin: 50% 50%;
+	perspective-origin: 50% 50%;
 }
 
 
@@ -536,43 +538,47 @@ body{
 
 @keyframes topShrink {
 	0% {
-	  transform: perspective(1000px) rotateX(0deg);
+		transform: perspective(1000px) rotateX(0deg);
 	}
+
 	100% {
-	  transform: perspective(1000px) rotateX(30deg) scale(0.9, 0.7);
+		transform: perspective(1000px) rotateX(30deg) scale(0.9, 0.7);
 	}
-  }
-  
-  @keyframes wobble {
+}
+
+@keyframes wobble {
+
 	0%,
 	100% {
-	  transform: perspective(1000px) rotateX(30deg) scale(0.9, 0.7);
+		transform: perspective(1000px) rotateX(30deg) scale(0.9, 0.7);
 	}
+
 	25% {
-	  transform: perspective(1000px) rotateX(32deg) scale(0.91, 0.71) translateX(2px);
+		transform: perspective(1000px) rotateX(32deg) scale(0.91, 0.71) translateX(2px);
 	}
+
 	75% {
-	  transform: perspective(1000px) rotateX(28deg) scale(0.89, 0.69) translateX(-2px);
+		transform: perspective(1000px) rotateX(28deg) scale(0.89, 0.69) translateX(-2px);
 	}
-  }
-  
-  .card-container {
+}
+
+.card-container {
 	perspective: 2000px;
 	height: 450px;
 	width: 100%;
 	max-width: 363px;
-  }
-  
-  .card {
+}
+
+.card {
 	position: relative;
 	width: 100%;
 	height: 100%;
 	transform-style: preserve-3d;
 	border-radius: 16px;
 	overflow: hidden;
-  }
-  
-  .card-upper {
+}
+
+.card-upper {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -582,9 +588,9 @@ body{
 	transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 	overflow: hidden;
 	background-color: white;
-  }
-  
-  .card-lower {
+}
+
+.card-lower {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -592,22 +598,22 @@ body{
 	height: 50%;
 	background-color: white;
 	transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  /* Ensure images and content stay within bounds */
-  .card-upper > img,
-  .card-lower > img {
+}
+
+/* Ensure images and content stay within bounds */
+.card-upper>img,
+.card-lower>img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-  }
-  
-  .group:hover .card-upper {
+}
+
+.group:hover .card-upper {
 	transform: rotateX(-45deg) scale(0.95);
-  }
-  
-  /* Add shadow effect for depth */
-  .group:hover .card-upper::after {
+}
+
+/* Add shadow effect for depth */
+.group:hover .card-upper::after {
 	content: "";
 	position: absolute;
 	bottom: -20px;
@@ -616,13 +622,13 @@ body{
 	height: 40px;
 	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), transparent);
 	transform: translateY(-100%);
-  }
-  
-  .animated-card {
+}
+
+.animated-card {
 	transition: all 0.5s ease;
-  }
-  
-  .animated-card::before {
+}
+
+.animated-card::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -633,18 +639,18 @@ body{
 	transition: all 0.5s ease;
 	transform-origin: top;
 	z-index: 1;
-  }
-  
-  .animated-card:hover::before {
+}
+
+.animated-card:hover::before {
 	animation: topShrink 0.5s forwards, wobble 1s 0.5s infinite;
-  }
-  
-  .underline-custom {
+}
+
+.underline-custom {
 	display: inline-block;
 	position: relative;
-  }
-  
-  .underline-custom::after {
+}
+
+.underline-custom::after {
 	content: '';
 	position: absolute;
 	bottom: -5px;
@@ -653,102 +659,121 @@ body{
 	width: 40px;
 	height: 3.5px;
 	border-radius: 4px;
-	background-color: #FF8352; /* Use the color of the text */
-  }
+	background-color: #FF8352;
+	/* Use the color of the text */
+}
 
-  @keyframes scrollRightToLeft {
+@keyframes scrollRightToLeft {
 	0% {
-	  transform: translateX(10%);
+		transform: translateX(10%);
 	}
+
 	50% {
-	  transform: translateX(0%); 
+		transform: translateX(0%);
 	}
+
 	100% {
-	  transform: translateX(10%); 
+		transform: translateX(10%);
 	}
-  }
-  
-  /* Parent container: enable horizontal scroll */
+}
+
+/* Parent container: enable horizontal scroll */
 .infinite-scroll-container {
-  display: flex;
-  overflow-x: auto;  /* Allows horizontal scrolling */
-  scroll-snap-type: x mandatory;  /* Enforces snap scrolling */
-  gap: 10px;  /* Spacing between images */
-  width: 100%; /* Ensure it takes the full width of the parent */
-  padding: 10px 0;  /* Optional padding */
-  scroll-behavior: smooth; /* Smooth scrolling */
-  box-sizing: border-box; /* Prevents overflow */
-  position: relative; /* Ensures it's properly positioned */
+	display: flex;
+	overflow-x: auto;
+	/* Allows horizontal scrolling */
+	scroll-snap-type: x mandatory;
+	/* Enforces snap scrolling */
+	gap: 10px;
+	/* Spacing between images */
+	width: 100%;
+	/* Ensure it takes the full width of the parent */
+	padding: 10px 0;
+	/* Optional padding */
+	scroll-behavior: smooth;
+	/* Smooth scrolling */
+	box-sizing: border-box;
+	/* Prevents overflow */
+	position: relative;
+	/* Ensures it's properly positioned */
 }
 
 /* Child container: keeps images in a row */
 .infinite-scroll {
-  display: flex;
-  flex-shrink: 0;  /* Prevents items from shrinking */
-  width: max-content; /* Makes sure the width adjusts based on content */
-  animation: scrollRightToLeft 10s linear infinite;
+	display: flex;
+	flex-shrink: 0;
+	/* Prevents items from shrinking */
+	width: max-content;
+	/* Makes sure the width adjusts based on content */
+	animation: scrollRightToLeft 10s linear infinite;
 }
 
 /* Individual image styling */
 .infinite-scroll img {
-  object-fit: contain;
-  transition: transform 0.3s ease;  /* Smooth hover effect */
-  scroll-snap-align: center;  /* Ensure each item snaps to the center */
+	object-fit: contain;
+	transition: transform 0.3s ease;
+	/* Smooth hover effect */
+	scroll-snap-align: center;
+	/* Ensure each item snaps to the center */
 }
 
 .infinite-scroll img:hover {
-  transform: scale(1.1);  /* Slight zoom effect on hover */
+	transform: scale(1.1);
+	/* Slight zoom effect on hover */
 }
 
 /* Optional: Hide scrollbar for a cleaner look */
 .infinite-scroll-container::-webkit-scrollbar {
-  display: none;
+	display: none;
 }
 
 .div-container {
-    max-width: 343px!important;
-    min-height: 435px;
+	max-width: 343px !important;
+	min-height: 435px;
 	background-color: #fff;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px; 
-    background-image: url('/images/blog-img.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    z-index: 0;
-  }
-  .div-container::before{
-    content: ''; 
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    z-index: -10;
-    background-color: rgba(255, 255, 255); 
-  }
-  .upper-half {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    transform-origin: bottom; 
-    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    background: inherit;
-    background-size: cover;
-    background-position: top;
-    z-index: 10;
-    
-  }
-  
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	border-radius: 12px;
+	background-image: url('/images/blog-img.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	z-index: 0;
+}
 
-  .div-container:hover .upper-half {
-    transform: perspective(500px) rotateX(11deg) ;
-  }
-  .popup-effect {
+.div-container::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50%;
+	z-index: -10;
+	background-color: rgba(255, 255, 255);
+}
+
+.upper-half {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50%;
+	transform-origin: bottom;
+	transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+	background: inherit;
+	background-size: cover;
+	background-position: top;
+	z-index: 10;
+
+}
+
+
+.div-container:hover .upper-half {
+	transform: perspective(500px) rotateX(11deg);
+}
+
+.popup-effect {
 	/* width: 200px;
 	height: 100px; */
 	/* background-color: #ff5722; */
@@ -759,20 +784,28 @@ body{
 	/* font-size: 1.5rem; */
 	/* border-radius: 10px; */
 	/* margin: 50px auto; */
-	animation: zoomInOut 2s infinite ease-in-out; /* Apply animation */
-  }
-  @keyframes zoomInOut {
+	animation: zoomInOut 2s infinite ease-in-out;
+	/* Apply animation */
+}
+
+@keyframes zoomInOut {
 	0% {
-	  transform: scale(1); /* Normal size */
+		transform: scale(1);
+		/* Normal size */
 	}
+
 	50% {
-	  transform: scale(1.1); /* Zoom in */
+		transform: scale(1.1);
+		/* Zoom in */
 	}
+
 	100% {
-	  transform: scale(1); /* Back to normal size */
+		transform: scale(1);
+		/* Back to normal size */
 	}
-  }
-  /* From Uiverse.io by alexmaracinaru */ 
+}
+
+/* From Uiverse.io by alexmaracinaru */
 .cta {
 	position: relative;
 	margin: auto;
@@ -783,9 +816,9 @@ body{
 	border-radius: 50px;
 	background: none;
 	cursor: pointer;
-  }
-  
-  .cta:before {
+}
+
+.cta:before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -796,18 +829,18 @@ body{
 	width: 45px;
 	height: 45px;
 	transition: all 0.3s ease;
-  }
-  
-  .cta span {
+}
+
+.cta span {
 	position: relative;
 	font-family: "Ubuntu", sans-serif;
 	font-size: 16px;
 	font-weight: 600;
 	/* color: white; */
 	/* color: #FF8352; */
-  }
-  
-  .cta svg {
+}
+
+.cta svg {
 	position: relative;
 	top: 0;
 	margin-left: 10px;
@@ -818,30 +851,69 @@ body{
 	stroke-width: 2;
 	transform: translateX(-5px);
 	transition: all 0.3s ease;
-  }
-  
-  .cta:hover:before {
+}
+
+.cta:hover:before {
 	width: 100%;
 	background: white;
 	color: #FF8352;
-  }
-  .cta:hover{
+}
+
+.cta:hover {
 	color: #FF8352;
-  }
-  
-  .cta:hover svg {
+}
+
+.cta:hover svg {
 	transform: translateX(0);
-  }
-  
-  .cta:active {
+}
+
+.cta:active {
 	transform: scale(0.95);
-  }
+}
+
 .scrollbar-none {
 	scrollbar-width: none;
 	-ms-overflow-style: none;
-  }
-  
-  .scrollbar-none::-webkit-scrollbar {
+}
+
+.scrollbar-none::-webkit-scrollbar {
 	display: none;
-  }
-  
+}
+
+/* From Uiverse.io by ernestnash */
+.btn_left {
+	padding: 4px 18px;
+	font-size: 16px;
+	font-weight: 700;
+	color: var(--darkblue);
+	cursor: pointer;
+	position: relative;
+	transition: all .3s ease-in-out;
+	background-color: white;
+	text-decoration: none;
+	overflow: hidden;
+	z-index: 1;
+	font-size: 14px;
+}
+
+.btn_left:hover {
+	color: white;
+}
+
+.btn_left::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--orange);
+	transform: translateX(-100%);
+	transition: all .3s;
+	z-index: -1;
+}
+
+.btn_left:hover::before {
+	transform: translateX(0);
+
+}

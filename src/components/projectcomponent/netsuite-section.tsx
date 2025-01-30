@@ -37,7 +37,7 @@ export function NetsuiteSection() {
   };
 
   return (
-    <div className="py-10 justify-end flex bg_netsuite ">
+    <div className="pb-10 pt-7 justify-end flex bg_netsuite ">
       <div className="w-full lg:w-[95%] 2xl:w-[87%]">
         <div className="flex justify-between  gap-8 items-center">
           <div className="space-y-4 flex-1 ">

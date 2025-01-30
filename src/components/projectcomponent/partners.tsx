@@ -11,8 +11,8 @@ export function Partners() {
           </div>
           <div className="grid grid-cols-2 h-full gap-8">
             {/* First Box - Scroll Up */}
-            <div className="h-[396px] bg-gradient-to-b from-blue to-[#82AEFF] animate-scroll-up">
-              <div className="bg-white w-[328px] rounded-b-3xl border-orange border-[1px] border-t-0 p-6">
+            <div className="h-[396px]  bg-gradient-to-b from-blue to-[#82AEFF] animate-scroll-up">
+              <div className="bg-white shadow-lg w-[328px] rounded-b-3xl border-orange border-[1px] border-t-0 p-6 space-y-2">
                 <Image
                   src="/images/oracle.svg"
                   alt="Oracle NetSuite Partner"
@@ -20,13 +20,21 @@ export function Partners() {
                   height={25}
                   className=""
                 />
-                <p className="text-black text-[16px] font-medium mt-4">NetSuite SDN Partner </p>
-                <p className="text-black text-[16px] font-medium">(Service & Technology)</p>
+                <div className=''>
+                <p className="text-black text-[16px]  ">NetSuite SDN Partner </p>
+                <p className="text-black text-[16px] ">(Service & Technology)</p></div>
+                <Image
+                  src="/images/oracle_net_dev.png"
+                  alt="Oracle NetSuite Partner"
+                  width={140}
+                  height={25}
+                  className="-ml-2"
+                />
               </div>
             </div>
             {/* Second Box - Scroll Down */}
-            <div className="h-[396px] flex justify-start items-end bg-gradient-to-t from-blue to-[#82AEFF] animate-scroll-down">
-              <div className="bg-white w-[328px] border-orange border-[1px] border-b-0 rounded-t-3xl p-6">
+            <div className="h-[396px]  flex justify-start items-end bg-gradient-to-t from-blue to-[#82AEFF] animate-scroll-down">
+              <div className="bg-white shadow-lg w-[328px] border-orange border-[1px] border-b-0 rounded-t-3xl p-6 space-y-2">
                 <Image
                   src="/images/celigo.svg"
                   alt="Celigo Partner"
@@ -34,8 +42,25 @@ export function Partners() {
                   height={25}
                   className=""
                 />
-                <p className="text-black text-[16px] mt-4">Celigo Integration Partner</p>
-                <p className="text-black text-[16px]">(AI-Driven Automation)</p>
+                <div className=''>
+                <p className="text-black text-[16px] ">Celigo Platinum Partner</p>
+                <p className="text-black text-[16px]">(AI-Driven Automation)</p></div>
+                <div className='flex gap-4'>
+                <Image
+                  src="/images/celigo_serv.png"
+                  alt="Oracle NetSuite Partner"
+                  width={50}
+                  height={25}
+                  className="-ml-2"
+                />
+                                <Image
+                  src="/images/celigo_black (1).png"
+                  alt="Oracle NetSuite Partner"
+                  width={50}
+                  height={25}
+                  className="-ml-2"
+                />
+                </div>
               </div>
             </div>
           </div>

@@ -84,12 +84,19 @@ export function CaseStudy() {
             animation: "scroll-loop 15s linear infinite",
           }}
         >
-          <span className="text-center subheading font-bold px-2 py-4">
+          <span className="text-center text-[26px] font-[500] px-2 py-1">
              WITH OUR NETSUITE EXPERTISE | EMPOWER YOUR SUCCESS
           </span>
-          <span className="text-center subheading font-bold px-2 py-4">
+          <span className="text-center text-[26px] font-[500] px-1 py-1">
              WITH OUR NETSUITE EXPERTISE | EMPOWER YOUR SUCCESS
           </span>
+          <span className="text-center text-[26px] font-[500] px-1 py-1">
+             WITH OUR NETSUITE EXPERTISE | EMPOWER YOUR SUCCESS
+          </span>
+          <span className="text-center text-[26px] font-[500] px-1 py-1">
+             WITH OUR NETSUITE EXPERTISE | EMPOWER YOUR SUCCESS
+          </span>
+          
         </div>
       </div>
       </div>

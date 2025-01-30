@@ -31,28 +31,23 @@ const Footer = () => {
 
   const locationData = [
     {
-      flag:"https://flagcdn.com/w320/au.png",
-      country: "Australia",
-      address: "4 Bakewell Cres, Truganina VIC 3029, Australia ",
+      flag: "https://flagcdn.com/w320/au.png",
+      country: "Australia - Truganina VIC 3029",
       phone: "+611 3001 47617 ",
     },
     {
-      flag: "https://flagcdn.com/w320/in.png" ,
+      flag: "https://flagcdn.com/w320/in.png",
       country: "India - Gandhinagar, GJ",
-      address: "113, The Urbania, Kudasan, Gandhinagar, Gujarat - 382421 ",
-            phone: "+91 90234 03569 ",
+      phone: "+91 90234 03569 ",
     },
     {
-      flag: "https://flagcdn.com/w320/in.png" ,
+      flag: "https://flagcdn.com/w320/in.png",
       country: "India - Pune, MH",
-      address:
-        "6th Floor, 625 & 626, Gera's Imperium Rise, Hinjewadi Phase 2, Pune, Maharashtra - 411057 ",
-              phone: "+91 90234 03569 ",
+      phone: "+91 90234 03569 ",
     },
     {
-      flag: "https://flagcdn.com/w320/us.png" ,
-      country: "USA",
-      address: "166 Geary Str STE 1500 #2157 San Francisco, CA-94108",
+      flag: "https://flagcdn.com/w320/us.png",
+      country: "USA - San Francisco, CA-94108",
       phone: "0113004747617",
     },
   ]
@@ -95,9 +90,9 @@ const Footer = () => {
   ]
 
   return (
-    <div className="pb-0">
+    <div className="pb-0 max-h-screen">
       {/* Footer */}
-      <div className="bg-black -mt-20 pt-28 text-white/85 text-sm relative overflow-hidden">
+      <div className="bg-black -mt-20 pt-20 text-white/85 text-sm relative overflow-hidden">
         {/* Video Background */}
         <video
           src="/images/bg-video.mp4"
@@ -113,26 +108,26 @@ const Footer = () => {
           <div className=" lg:w-[95%] 2xl:w-[70%] mx-auto">
             {/* Global Locations */}
             <div className='flex justify-between  w-full relative py-12 z-10'>
-              <div className="px-4 border-blue border-r-2 w-[35%] pt-3">
+              <div className="px-4 border-blue border-r-2 w-[30%] pt-3">
                 <h3 className=" mb-4 underline-custom text-xl  cursor-pointer">GLOBAL LOCATIONS</h3>
                 <div className="space-y-4">
                   {locationData.map((loc, index) => (
                     <div key={index} className="group flex items-start gap-3">
-  <Image 
-    src={loc.flag} 
-    alt={loc.flag} 
-    height={10} 
-    width={10} 
-    className="w-6 h-3 mt-1"
-  />
-  <div className="flex flex-col">
-    <h4 className="font-semibold flex gap-2 text-[15px] items-center">
-      {loc.country}
-    </h4>
-    <p className="text-white/85 text-[15px] cursor-pointer">{loc.address}</p>
-    <p className="text-white/85 text-[15px] cursor-pointer">Tel: {loc.phone}</p>
-  </div>
-</div>
+                      <Image
+                        src={loc.flag}
+                        alt={loc.flag}
+                        height={10}
+                        width={10}
+                        className="w-6 h-3 mt-1"
+                      />
+                      <div className="flex flex-col">
+                        <h4 className="font-semibold flex gap-2 text-[15px] items-center">
+                          {loc.country}
+                        </h4>
+                        {/* <p className="text-white/85 text-[15px] cursor-pointer">{loc.address}</p> */}
+                        <p className="text-white/85 text-[15px] cursor-pointer">Tel: {loc.phone}</p>
+                      </div>
+                    </div>
 
                   ))}
                 </div>
@@ -141,11 +136,7 @@ const Footer = () => {
               {footerSections.map((section, index) => (
                 <div key={index} className={` px-4 ${section.title === 'ABOUT COMPANY' ? 'border-none' : 'border-blue border-r-2'}  py-3`}>
                   <h3 className=" mb-4 underline-custom text-xl cursor-pointer">{section.title}</h3>
-                  <ul       className={`${
-        section.title === "ABOUT COMPANY"
-          ? "grid grid-cols-2 gap-x-6 gap-y-4 items-start"
-          : "space-y-4"
-      }`}>
+                  <ul className={`grid grid-cols-2  gap-y-4  items-start ${ section.title === "ABOUT COMPANY" ? " gap-x-4" :" " }`}>
                     {section.links.map((link, linkIndex) => (
                       <li key={linkIndex}>
                         <Link href="#" className="text-white/85  text-sm hover:text-orange text-[15px]">
@@ -156,7 +147,7 @@ const Footer = () => {
                   </ul>
                   {section.title === 'ABOUT COMPANY' && (
                     <>
-                      <h3 className=" mb-4 mt-4 underline-custom text-xl hover:text-blue cursor-pointer">
+                      <h3 className=" mb-4 mt-4 underline-custom text-xl cursor-pointer">
                         FOLLOW US @
                       </h3>
                       <div className="flex gap-2 mb-4">
@@ -195,8 +186,8 @@ const Footer = () => {
                           </div>
                         </div>
                       </div>
-                      <p className="text-[14px] mt-4 flex gap-3"><span className="text-white hover:text-orange cursor-pointer">
-                        Terms & Conditions</span> <span className="text-white hover:text-orange cursor-pointer"> Privacy policy</span> </p>
+                      <p className="text-[14px] mt-4 flex gap-1"><span className="text-white hover:text-orange cursor-pointer">
+                        Terms & Conditions</span> | <span className="text-white hover:text-orange cursor-pointer"> Privacy policy</span> </p>
 
                     </>
                   )}
@@ -250,7 +241,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="ml-2 lg:ml-[3%] 2xl:ml-[11.5%] mr-5 mb-12">
+          <div className="ml-2 lg:ml-[3%] 2xl:ml-[11.5%] mr-5 mb-8">
 
             {/* Footer Logos */}
             <div
@@ -309,18 +300,18 @@ const Footer = () => {
 
                   </div>
                   <div className="bg-[#fff] z-40 p-4 rounded-xl shadow-lg animate-zoom">
-                  <p className="text-blue text-center font-semibold mb-2 text-lg">Quick Connect </p>
+                    <p className="text-blue text-center font-semibold mb-2 text-lg">Quick Connect </p>
 
-                  <a className="flex gap-2 items-center cursor-pointer group z-50" href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer" >
-                    <IoLogoWhatsapp className="text-green-500 text-[23px] cursor-pointer" />
-                    <p className="text-black group-hover:text-orange cursor-pointer  smooth1">Whatsapp Now</p>
-                  </a>
+                    <a className="flex gap-2 items-center cursor-pointer group z-50" href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer" >
+                      <IoLogoWhatsapp className="text-green-500 text-[23px] cursor-pointer" />
+                      <p className="text-black group-hover:text-orange cursor-pointer  smooth1">Whatsapp Now</p>
+                    </a>
 
-                  <a className="flex gap-2 items-center cursor-pointer group z-50 mt-2" href="tel:+91123456789" target="_blank" rel="noopener noreferrer" >
-                    <FiPhoneCall className="text-black text-[16px] cursor-pointer" />
-                    <p className="text-black group-hover:text-orange cursor-pointer  smooth1">+(91) 123456789</p>
-                  </a>
-                </div>
+                    <a className="flex gap-2 items-center cursor-pointer group z-50 mt-2" href="tel:+91123456789" target="_blank" rel="noopener noreferrer" >
+                      <FiPhoneCall className="text-black text-[16px] cursor-pointer" />
+                      <p className="text-black group-hover:text-orange cursor-pointer  smooth1">+(91) 123456789</p>
+                    </a>
+                  </div>
 
                 </div>
 
