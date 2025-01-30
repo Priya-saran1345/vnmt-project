@@ -90,22 +90,13 @@ const Footer = () => {
   ]
 
   return (
-    <div className="pb-0 max-h-screen">
+    <div className="pb-0 max-h-screen bg-black ">
       {/* Footer */}
-      <div className="bg-black -mt-20 pt-20 text-white/85 text-sm relative overflow-hidden">
-        {/* Video Background */}
-        <video
-          src="/images/bg-video.mp4"
-          autoPlay
-          loop
-          muted
-          style={{ position: 'absolute', inset: '0', objectFit: 'cover', zIndex: 10, width: "100%", height: "100%" }}
-          className="opacity-20"
-        />
+      <div className="  -mt-20 pt-20 text-white/85 text-sm overflow-hidden relative">
 
         {/* Content */}
-        <div className="">
-          <div className=" lg:w-[95%] 2xl:w-[70%] mx-auto">
+        <div className="bg_footer_img">
+          <div className=" lg:w-[95%] 2xl:w-[70%] mx-auto z-10 ">
             {/* Global Locations */}
             <div className='flex justify-between  w-full relative py-12 z-10'>
               <div className="px-4 border-blue border-r-2 w-[30%] pt-3">
@@ -228,9 +219,9 @@ const Footer = () => {
               ))}
             </div>
             {/* Contact Us */}
-            <div className="flex flex-col gap-4 ml-4 ">
+            <div className="flex flex-col gap-4 ml-4 z-10">
               {/* Industries */}
-              <h3 className="font-bold underline-custom text-xl mt-4">INDUSTRIES THAT WE SERVE</h3>
+              <h3 className="font-bold underline-custom text-xl mt-4 text-white z-10">INDUSTRIES THAT WE SERVE</h3>
               <div className="flex gap-2  text-[14px] relative z-10">
                 {industries.map((industry, index) => (
                   <span key={index} >

@@ -917,3 +917,35 @@ body {
 	transform: translateX(0);
 
 }
+@keyframes mapslide {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: -800px 0; 
+    }
+    100% {
+        background-position: -0 0; 
+    }
+}
+
+.bg_footer_img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7); 
+    z-index: 2;
+}
+
+.bg_footer_img {
+    background-image: url('/images/footer_img.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: mapslide 100s linear infinite; 
+    position: relative; 
+    z-index: 1;
+}
