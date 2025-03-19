@@ -38,7 +38,7 @@ const Counter = ({ targetValue }:any) => {
 const OurImpact = () => {
   return (
     <div className='bg-[url("/images/impactbg.svg")] bg-cover 2xl:bg-center bg-right flex flex-col items-end text-white py-16'>
-      <div className="w-full max-w-4xl space-y-2">
+      <div className="w-full xl:max-w-3xl 2xl:max-w-4xl space-y-2">
         <h2 className="heading font-bold heading-calisto mb-3">{impactContent.title}</h2>
         <p className="text-xl text-white mb-6" dangerouslySetInnerHTML={{ __html: impactContent.subtitle }}></p>
 
