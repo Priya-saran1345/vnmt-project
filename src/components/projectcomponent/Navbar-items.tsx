@@ -6,6 +6,8 @@ import { motion } from "framer-motion"
 import { MdKeyboardDoubleArrowRight } from "react-icons/md"
 import { IoIosArrowForward } from "react-icons/io"
 import { FaCircle } from "react-icons/fa"
+import { RiArrowDropDownLine } from "react-icons/ri";
+
 
 const NavbarItems = ({ show }: { show?: number }) => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
@@ -25,16 +27,16 @@ const NavbarItems = ({ show }: { show?: number }) => {
       >
         {/* Company */}
         <div className="relative">
-          <div className="flex gap-1 items-center">
+          <div className="flex items-center">
             <li
               onClick={() => toggleDropdown("company")}
               onMouseOver={() => toggleDropdown("company")}
               className={`
-                            flex ${openDropdown === "company" ? "border-b-4 border-orange" : "border-b-4 border-white"} 
-                            font-semibold gap-1 items-center cursor-pointer hover:text-pink text-[16px] ${openDropdown === "company" && "text-pink"}`}
-            >
+                            flex ${openDropdown === "company" ? "border-b-2 border-orange" : "border-b-2 border-white"} 
+                            font-semibold items-center cursor-pointer hover:text-orange text-[16px] ${openDropdown === "company" && "text-orange"}`}>
               Company
             </li>
+            <RiArrowDropDownLine className="text-2xl" />
           </div>
 
           {openDropdown === "company" && (
@@ -81,11 +83,12 @@ const NavbarItems = ({ show }: { show?: number }) => {
             <li
               onClick={() => toggleDropdown("netsuite")}
               onMouseOver={() => toggleDropdown("netsuite")}
-              className={`flex font-semibold ${openDropdown === "netsuite" ? "border-b-4 border-orange text-orange" : "border-b-4 border-white"} gap-1 items-center cursor-pointer hover:text-pink text-[16px] 
-                            ${openDropdown === "netsuite" ? "text-orange" : "text-orange"}`}
+              className={`flex font-semibold ${openDropdown === "netsuite" ? "border-b-2 border-orange " : "border-b-2 border-white"} gap-1 items-center cursor-pointer hover:text-orange text-[16px] 
+                            ${openDropdown === "netsuite" && "text-orange"}`}
             >
               Netsuite
             </li>
+            <RiArrowDropDownLine className="text-2xl" />
           </div>
           {openDropdown === "netsuite" && (
             <motion.div
@@ -178,94 +181,95 @@ const NavbarItems = ({ show }: { show?: number }) => {
             <li
               onClick={() => toggleDropdown("celigo")}
               onMouseOver={() => toggleDropdown("celigo")}
-              className={`flex font-semibold ${openDropdown === "celigo" ? "border-b-4 border-orange" : "border-b-4 border-white"} gap-1 items-center cursor-pointer hover:text-pink text-[16px] 
-                            ${openDropdown === "celigo" && "text-pink"}`}
+              className={`flex font-semibold ${openDropdown === "celigo" ? "border-b-2 border-orange" : "border-b-2 border-white"} gap-1 items-center cursor-pointer hover:text-orange text-[16px] 
+                            ${openDropdown === "celigo" && "text-orange"}`}
             >
               Celigo
             </li>
+            <RiArrowDropDownLine className="text-2xl" />
           </div>
           {openDropdown === "celigo" && (
             <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="absolute text-homegrey shadow-md text-[17px]
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="absolute text-homegrey shadow-md text-[17px]
                           w-fit text-nowrap lg:w-fit overflow-y-scroll lg:overflow-auto max-h-[70vh] lg:h-fit
                           flex-wrap lg:flex-nowrap px-6 py-6 z-[99999] left-0 top-9 bg-white justify-start lg:justify-around flex 
                           gap-5 p-4 rounded-b-xl"
-            onMouseLeave={() => toggleDropdown("")}
-          >
-            <motion.div
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.1, easings: ["easeIn", "easeOut"] }}
+              onMouseLeave={() => toggleDropdown("")}
             >
-              <ul className="flex flex-col text-[16px] gap-[12px]">
-                <li className="flex items-start gap-3 text-blue">
-                  <div className="mt-1 text-blue">
-                    <FaCircle className="text-blue size-5" />
-                  </div>
-                  <div>
-                    <div className="font-semibold">NetSuite Consulting</div>
-                    <div className="text-sm text-gray-500">
-                      Lorem ipsum is simply text of the printing & typesetting industry.
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.1, easings: ["easeIn", "easeOut"] }}
+              >
+                <ul className="flex flex-col text-[16px] gap-[12px]">
+                  <li className="flex items-start gap-3 text-blue">
+                    <div className="mt-1 text-blue">
+                      <FaCircle className="text-blue size-5" />
                     </div>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="mt-1">
-                    <FaCircle className="text-orange size-5" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-orange">NetSuite Consulting</div>
-                    <div className="text-sm text-gray-500">
-                      Lorem ipsum is simply text of the printing & typesetting industry.
+                    <div>
+                      <div className="font-semibold">NetSuite Consulting</div>
+                      <div className="text-sm text-gray-500">
+                        Lorem ipsum is simply text of the printing & typesetting industry.
+                      </div>
                     </div>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="mt-1">
-                    <FaCircle className="text-blue size-5" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-blue">NetSuite Consulting</div>
-                    <div className="text-sm text-gray-500">
-                      Lorem ipsum is simply text of the printing & typesetting industry.
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1">
+                      <FaCircle className="text-orange size-5" />
                     </div>
-                  </div>
-                </li>
-              </ul>
+                    <div>
+                      <div className="font-semibold text-orange">NetSuite Consulting</div>
+                      <div className="text-sm text-gray-500">
+                        Lorem ipsum is simply text of the printing & typesetting industry.
+                      </div>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1">
+                      <FaCircle className="text-blue size-5" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-blue">NetSuite Consulting</div>
+                      <div className="text-sm text-gray-500">
+                        Lorem ipsum is simply text of the printing & typesetting industry.
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </motion.div>
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.2, easings: ["easeIn", "easeOut"] }}
+              >
+                <ul className="flex flex-col text-[16px] gap-[12px]">
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1">
+                      <FaCircle className="text-blue size-5" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-blue">NetSuite Consulting</div>
+                      <div className="text-sm text-gray-500">
+                        Lorem ipsum is simply text of the printing & typesetting industry.
+                      </div>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1">
+                      <FaCircle className="text-blue size-5" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-blue">NetSuite Consulting</div>
+                      <div className="text-sm text-gray-500">
+                        Lorem ipsum is simply text of the printing & typesetting industry.
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </motion.div>
             </motion.div>
-            <motion.div
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.2, easings: ["easeIn", "easeOut"] }}
-            >
-              <ul className="flex flex-col text-[16px] gap-[12px]">
-                <li className="flex items-start gap-3">
-                  <div className="mt-1">
-                    <FaCircle className="text-blue size-5" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-blue">NetSuite Consulting</div>
-                    <div className="text-sm text-gray-500">
-                      Lorem ipsum is simply text of the printing & typesetting industry.
-                    </div>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="mt-1">
-                    <FaCircle className="text-blue size-5" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-blue">NetSuite Consulting</div>
-                    <div className="text-sm text-gray-500">
-                      Lorem ipsum is simply text of the printing & typesetting industry.
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </motion.div>
-          </motion.div>
           )}
         </div>
 
@@ -275,94 +279,95 @@ const NavbarItems = ({ show }: { show?: number }) => {
             <li
               onClick={() => toggleDropdown("integration")}
               onMouseOver={() => toggleDropdown("integration")}
-              className={`flex font-semibold ${openDropdown === "integration" ? "border-b-4 border-orange" : "border-b-4 border-white"} gap-1 items-center cursor-pointer hover:text-pink text-[16px] 
-                            ${openDropdown === "integration" && "text-pink"}`}
+              className={`flex font-semibold ${openDropdown === "integration" ? "border-b-2 border-orange" : "border-b-2 border-white"} gap-1 items-center cursor-pointer hover:text-orange text-[16px] 
+                            ${openDropdown === "integration" && "text-orange"}`}
             >
               Integration
             </li>
+            <RiArrowDropDownLine className="text-2xl" />
           </div>
           {openDropdown === "integration" && (
             <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="absolute text-homegrey shadow-md text-[17px]
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="absolute text-homegrey shadow-md text-[17px]
                           w-fit text-nowrap lg:w-fit overflow-y-scroll lg:overflow-auto max-h-[70vh] lg:h-fit
                           flex-wrap lg:flex-nowrap px-6 py-6 z-[99999] left-0 top-9 bg-white justify-start lg:justify-around flex 
                           gap-5 p-4 rounded-b-xl"
-            onMouseLeave={() => toggleDropdown("")}
-          >
-            <motion.div
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.1, easings: ["easeIn", "easeOut"] }}
+              onMouseLeave={() => toggleDropdown("")}
             >
-              <ul className="flex flex-col text-[16px] gap-[12px]">
-                <li className="flex items-start gap-3 text-blue">
-                  <div className="mt-1 text-blue">
-                    <FaCircle className="text-blue size-5" />
-                  </div>
-                  <div>
-                    <div className="font-semibold">NetSuite Consulting</div>
-                    <div className="text-sm text-gray-500">
-                      Lorem ipsum is simply text of the printing & typesetting industry.
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.1, easings: ["easeIn", "easeOut"] }}
+              >
+                <ul className="flex flex-col text-[16px] gap-[12px]">
+                  <li className="flex items-start gap-3 text-blue">
+                    <div className="mt-1 text-blue">
+                      <FaCircle className="text-blue size-5" />
                     </div>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="mt-1">
-                    <FaCircle className="text-orange size-5" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-orange">NetSuite Consulting</div>
-                    <div className="text-sm text-gray-500">
-                      Lorem ipsum is simply text of the printing & typesetting industry.
+                    <div>
+                      <div className="font-semibold">NetSuite Consulting</div>
+                      <div className="text-sm text-gray-500">
+                        Lorem ipsum is simply text of the printing & typesetting industry.
+                      </div>
                     </div>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="mt-1">
-                    <FaCircle className="text-blue size-5" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-blue">NetSuite Consulting</div>
-                    <div className="text-sm text-gray-500">
-                      Lorem ipsum is simply text of the printing & typesetting industry.
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1">
+                      <FaCircle className="text-orange size-5" />
                     </div>
-                  </div>
-                </li>
-              </ul>
+                    <div>
+                      <div className="font-semibold text-orange">NetSuite Consulting</div>
+                      <div className="text-sm text-gray-500">
+                        Lorem ipsum is simply text of the printing & typesetting industry.
+                      </div>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1">
+                      <FaCircle className="text-blue size-5" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-blue">NetSuite Consulting</div>
+                      <div className="text-sm text-gray-500">
+                        Lorem ipsum is simply text of the printing & typesetting industry.
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </motion.div>
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.2, easings: ["easeIn", "easeOut"] }}
+              >
+                <ul className="flex flex-col text-[16px] gap-[12px]">
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1">
+                      <FaCircle className="text-blue size-5" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-blue">NetSuite Consulting</div>
+                      <div className="text-sm text-gray-500">
+                        Lorem ipsum is simply text of the printing & typesetting industry.
+                      </div>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1">
+                      <FaCircle className="text-blue size-5" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-blue">NetSuite Consulting</div>
+                      <div className="text-sm text-gray-500">
+                        Lorem ipsum is simply text of the printing & typesetting industry.
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </motion.div>
             </motion.div>
-            <motion.div
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.2, easings: ["easeIn", "easeOut"] }}
-            >
-              <ul className="flex flex-col text-[16px] gap-[12px]">
-                <li className="flex items-start gap-3">
-                  <div className="mt-1">
-                    <FaCircle className="text-blue size-5" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-blue">NetSuite Consulting</div>
-                    <div className="text-sm text-gray-500">
-                      Lorem ipsum is simply text of the printing & typesetting industry.
-                    </div>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="mt-1">
-                    <FaCircle className="text-blue size-5" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-blue">NetSuite Consulting</div>
-                    <div className="text-sm text-gray-500">
-                      Lorem ipsum is simply text of the printing & typesetting industry.
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </motion.div>
-          </motion.div>
           )}
         </div>
 
@@ -372,94 +377,95 @@ const NavbarItems = ({ show }: { show?: number }) => {
             <li
               onClick={() => toggleDropdown("products")}
               onMouseOver={() => toggleDropdown("products")}
-              className={`flex font-semibold gap-1 ${openDropdown === "products" ? "border-b-4 border-orange" : "border-b-4 border-white"} items-center cursor-pointer hover:text-pink text-[16px] 
-                            ${openDropdown === "products" && "text-pink"}`}
+              className={`flex font-semibold gap-1 ${openDropdown === "products" ? "border-b-2 border-orange" : "border-b-2 border-white"} items-center cursor-pointer hover:text-orange text-[16px] 
+                            ${openDropdown === "products" && "text-orange"}`}
             >
               Products
             </li>
+            <RiArrowDropDownLine className="text-2xl" />
           </div>
           {openDropdown === "products" && (
             <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="absolute text-homegrey shadow-md text-[17px]
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="absolute text-homegrey shadow-md text-[17px]
                           w-fit text-nowrap lg:w-fit overflow-y-scroll lg:overflow-auto max-h-[70vh] lg:h-fit
                           flex-wrap lg:flex-nowrap px-6 py-6 z-[99999] left-0 top-9 bg-white justify-start lg:justify-around flex 
                           gap-5 p-4 rounded-b-xl"
-            onMouseLeave={() => toggleDropdown("")}
-          >
-            <motion.div
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.1, easings: ["easeIn", "easeOut"] }}
+              onMouseLeave={() => toggleDropdown("")}
             >
-              <ul className="flex flex-col text-[16px] gap-[12px]">
-                <li className="flex items-start gap-3 text-blue">
-                  <div className="mt-1 text-blue">
-                    <FaCircle className="text-blue size-5" />
-                  </div>
-                  <div>
-                    <div className="font-semibold">NetSuite Consulting</div>
-                    <div className="text-sm text-gray-500">
-                      Lorem ipsum is simply text of the printing & typesetting industry.
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.1, easings: ["easeIn", "easeOut"] }}
+              >
+                <ul className="flex flex-col text-[16px] gap-[12px]">
+                  <li className="flex items-start gap-3 text-blue">
+                    <div className="mt-1 text-blue">
+                      <FaCircle className="text-blue size-5" />
                     </div>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="mt-1">
-                    <FaCircle className="text-orange size-5" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-orange">NetSuite Consulting</div>
-                    <div className="text-sm text-gray-500">
-                      Lorem ipsum is simply text of the printing & typesetting industry.
+                    <div>
+                      <div className="font-semibold">NetSuite Consulting</div>
+                      <div className="text-sm text-gray-500">
+                        Lorem ipsum is simply text of the printing & typesetting industry.
+                      </div>
                     </div>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="mt-1">
-                    <FaCircle className="text-blue size-5" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-blue">NetSuite Consulting</div>
-                    <div className="text-sm text-gray-500">
-                      Lorem ipsum is simply text of the printing & typesetting industry.
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1">
+                      <FaCircle className="text-orange size-5" />
                     </div>
-                  </div>
-                </li>
-              </ul>
+                    <div>
+                      <div className="font-semibold text-orange">NetSuite Consulting</div>
+                      <div className="text-sm text-gray-500">
+                        Lorem ipsum is simply text of the printing & typesetting industry.
+                      </div>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1">
+                      <FaCircle className="text-blue size-5" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-blue">NetSuite Consulting</div>
+                      <div className="text-sm text-gray-500">
+                        Lorem ipsum is simply text of the printing & typesetting industry.
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </motion.div>
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.2, easings: ["easeIn", "easeOut"] }}
+              >
+                <ul className="flex flex-col text-[16px] gap-[12px]">
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1">
+                      <FaCircle className="text-blue size-5" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-blue">NetSuite Consulting</div>
+                      <div className="text-sm text-gray-500">
+                        Lorem ipsum is simply text of the printing & typesetting industry.
+                      </div>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1">
+                      <FaCircle className="text-blue size-5" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-blue">NetSuite Consulting</div>
+                      <div className="text-sm text-gray-500">
+                        Lorem ipsum is simply text of the printing & typesetting industry.
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </motion.div>
             </motion.div>
-            <motion.div
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.2, easings: ["easeIn", "easeOut"] }}
-            >
-              <ul className="flex flex-col text-[16px] gap-[12px]">
-                <li className="flex items-start gap-3">
-                  <div className="mt-1">
-                    <FaCircle className="text-blue size-5" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-blue">NetSuite Consulting</div>
-                    <div className="text-sm text-gray-500">
-                      Lorem ipsum is simply text of the printing & typesetting industry.
-                    </div>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="mt-1">
-                    <FaCircle className="text-blue size-5" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-blue">NetSuite Consulting</div>
-                    <div className="text-sm text-gray-500">
-                      Lorem ipsum is simply text of the printing & typesetting industry.
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </motion.div>
-          </motion.div>
           )}
         </div>
 
@@ -469,11 +475,12 @@ const NavbarItems = ({ show }: { show?: number }) => {
             <li
               onClick={() => toggleDropdown("resources")}
               onMouseOver={() => toggleDropdown("resources")}
-              className={`flex font-semibold ${openDropdown === "resources" ? "border-b-4 border-orange" : "border-b-4 border-white"} gap-1 items-center cursor-pointer hover:text-pink text-[16px] 
-                            ${openDropdown === "resources" && "text-pink"}`}
+              className={`flex font-semibold ${openDropdown === "resources" ? "border-b-2 border-orange" : "border-b-2 border-white"} gap-1 items-center cursor-pointer hover:text-orange text-[16px] 
+                            ${openDropdown === "resources" && "text-orange"}`}
             >
               Resources
             </li>
+            <RiArrowDropDownLine className="text-2xl" />
           </div>
           {openDropdown === "resources" && (
             <motion.div
@@ -513,7 +520,7 @@ const NavbarItems = ({ show }: { show?: number }) => {
         <div className="relative">
           <div className="flex gap-1 items-center">
             <li
-              className={`flex font-semibold border-b-4 border-white gap-1 items-center cursor-pointer hover:text-pink text-[16px]`}
+              className={`flex font-semibold border-b-2 border-white gap-1 items-center cursor-pointer hover:text-orange text-[16px]`}
             >
               Careers
             </li>
@@ -526,7 +533,7 @@ const NavbarItems = ({ show }: { show?: number }) => {
             <div className="flex gap-1 items-center">
               <li
                 className={`flex px-4 py-2 bg-orange rounded-full text-white font-semibold
-                                ${isHovered ? "pr-8 border-orange text-pink" : "border-white"} 
+                                ${isHovered ? "pr-8 border-orange text-orange" : "border-white"} 
                                 gap-1 items-center cursor-pointer text-[16px] relative`}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}

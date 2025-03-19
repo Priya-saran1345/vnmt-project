@@ -1,10 +1,10 @@
 "use client"
 
-import { FaChevronDown } from "react-icons/fa"
 import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
+import { RiArrowDropDownLine } from "react-icons/ri"
 
 const defaultCountry = {
   name: "India",
@@ -40,11 +40,15 @@ const CountrySelector = ({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: (i
   }
 
   return (
-    <div className="relative" onMouseEnter={() => setIsOpen(true)}>
-      <button className="flex items-center gap-2 hover:text-orange text-white cursor-pointer py-2">
+    <div
+      className="relative"
+      onMouseEnter={() => setIsOpen(true)}
+      onClick={() => setIsOpen(!isOpen)}
+    >
+      <button className="flex items-center hover:text-orange text-white cursor-pointer py-2">
         <Image src={selectedCountry.flag || "/placeholder.svg"} alt={selectedCountry.name} height={20} width={20} />
         <motion.span animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.3, ease: "easeInOut" }}>
-          <FaChevronDown />
+          <RiArrowDropDownLine className="text-2xl text-black" />
         </motion.span>
       </button>
 
@@ -52,9 +56,9 @@ const CountrySelector = ({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: (i
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : -10 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className={`absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-lg border border-gray-200 z-[999] ${
-          isOpen ? "block" : "hidden"
-        }`}
+        className={`absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-lg border border-gray-200 z-[999] ${isOpen ? "block" : "hidden"
+          }`}
+        onMouseLeave={() => setIsOpen(false)}
       >
         {countries.map((country) => (
           <div

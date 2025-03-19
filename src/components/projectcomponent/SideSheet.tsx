@@ -20,7 +20,7 @@ const QuerySheet = () => {
         {!isOpen && (
           <SheetTrigger asChild>
             <div
-              className="fixed uppercase cursor-pointer z-[99] bg-gradient-to-b rounded-b-xl from-lightblue to-darkblue
+              className="fixed uppercase cursor-pointer z-[99] rounded-b-xl bg-darkblue
                rotate-90 px-5 py-2 text-[15px] text-white font-bold 
               -right-[4.9rem] bottom-[40%] flex items-center gap-3 transition-opacity duration-300 hover:scale-105 smooth1 "
             >
@@ -37,7 +37,7 @@ const QuerySheet = () => {
           </SheetHeader>
           <div className="grid gap-4 py-4">{/* Your content goes here */}</div>
           <SheetClose asChild>
-            <button className="bg-blue text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">
+            <button className="bg-gray-400 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
               Close
             </button>
           </SheetClose>

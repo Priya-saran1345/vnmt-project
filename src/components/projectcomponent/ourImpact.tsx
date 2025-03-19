@@ -1,31 +1,63 @@
-import React from "react";
-import { impactStats } from "../data/impact";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+'use client';
+
+import React, { useRef, useEffect, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import { impactStats, impactContent } from "../data/impact";
+
+const Counter = ({ targetValue }:any) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  useEffect(() => {
+    if (isInView) {
+      let start = 0;
+      const duration = 1500; 
+      const stepTime = 16; 
+      const steps = duration / stepTime;
+      const increment = parseFloat(targetValue) / steps;
+
+      const animate = () => {
+        start += increment;
+        if (start >= parseFloat(targetValue)) {
+          setCount(parseFloat(targetValue));
+        } else {
+          setCount(Math.floor(start));
+          requestAnimationFrame(animate);
+        }
+      };
+
+      animate();
+    }
+  }, [isInView, targetValue]);
+
+  return <span ref={ref}>{count}</span>;
+};
 
 const OurImpact = () => {
-  // const numberRefs = useRef<(HTMLDivElement | null)[]>([]);
-
   return (
-    <div className='bg-[url("/images/impactbg.svg")] bg-cover bg-center flex flex-col items-end text-white  py-16'>
-<div className="w-full max-w-4xl space-y-2">
-      <h2 className="heading font-bold heading-calisto mb-3">Our Impact</h2>
-      <p className="text-xl text-white mb-6">Driving Success Beyond Expectations</p>
+    <div className='bg-[url("/images/impactbg.svg")] bg-cover bg-center flex flex-col items-end text-white py-16'>
+      <div className="w-full max-w-4xl space-y-2">
+        <h2 className="heading font-bold heading-calisto mb-3">{impactContent.title}</h2>
+        <p className="text-xl text-white mb-6" dangerouslySetInnerHTML={{ __html: impactContent.subtitle }}></p>
 
-
-        <div className="flex flex-wrap  gap-12">
+        <div className="flex flex-wrap gap-12">
           {impactStats.map((stat) => (
-            <div key={stat.id} className="flex flex-col items- w-48 -space-y-4">
-              <div
+            <div key={stat.id} className="flex flex-col items-center w-48 -space-y-4">
+              <motion.div
                 className="text-[65px] font-bold text-white"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
               >
-                {stat.number}
-              </div>
+                <Counter targetValue={stat.number.replace(/\D/g, "")} />
+              </motion.div>
               <div className="font-bold text-xl">{stat.label}</div>
             </div>
           ))}
         </div>
-
       </div>
-
     </div>
   );
 };

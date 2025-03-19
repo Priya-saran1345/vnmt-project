@@ -36,7 +36,7 @@ export default function FAQPage() {
                 <SideSheet></SideSheet>
                 <IndustriesSection />
                 {/* <ImpactSection /> */}
-                <OurImpact/>
+                <OurImpact />
                 <NetsuiteSection />
                 <IntegrationSection />
                 <BlogSection />
