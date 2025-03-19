@@ -944,8 +944,8 @@ body {
 
 .bg_footer_img {
     background-image: url('/images/footer_img.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: repeat;
     background-position: center;
     animation: mapslide 100s linear infinite; 
     position: relative; 

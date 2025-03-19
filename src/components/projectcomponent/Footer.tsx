@@ -90,7 +90,7 @@ const Footer = () => {
   ]
 
   return (
-    <div className="pb-0 max-h-screen bg-black ">
+    <div className="pb-0  bg-black ">
       {/* Footer */}
       <div className="  -mt-20 pt-20 text-white/85 text-sm overflow-hidden relative">
 

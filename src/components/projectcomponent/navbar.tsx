@@ -259,7 +259,7 @@ const navItems: MenuItem[] = [
   },
 ]
 
-export default function Header({ className = "" }: NavbarItemsProps) {
+export default function Navbar({ className = "" }: NavbarItemsProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null)
@@ -306,7 +306,7 @@ export default function Header({ className = "" }: NavbarItemsProps) {
   }
     
     className={`w-full bg-white border-b border-gray-200 ${className}`}>
-      <div className="w-full lg:w-[95%] 2xl:w-[77%] mx-auto px-5 ">
+      <div className="w-full  mx-auto container px-5 ">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="w-full">
@@ -324,7 +324,6 @@ export default function Header({ className = "" }: NavbarItemsProps) {
 
           {/* Desktop Navigation */}
           <nav 
-
           className="hidden lg:flex items-center gap-1 lg:gap-2 xl:gap-3 2xl:gap-4 w-full justify-center">
             {navItems.map((item) => (
               <div
@@ -449,7 +448,7 @@ export default function Header({ className = "" }: NavbarItemsProps) {
             </div>
             <button
               onClick={handleMobileMenuToggle}
-              className="lg:hidden p-2 text-gray-500 hover:text-gray-700 transition-colors"
+              className="lg:hidden p-2 text-gray-500 hover:text-gray-700 transition-colors w-full"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
