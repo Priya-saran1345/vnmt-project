@@ -1,555 +1,336 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import Link from "next/link"
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { MdKeyboardDoubleArrowRight } from "react-icons/md"
+import { motion, AnimatePresence } from "framer-motion"
 import { IoIosArrowForward } from "react-icons/io"
-import { FaCircle } from "react-icons/fa"
-import { RiArrowDropDownLine } from "react-icons/ri";
+import { RiArrowDropDownLine } from "react-icons/ri"
+import { getMenuIcon } from "./icons"
 
+interface NavbarItemsProps {
+  show?: number
+  isMobile?: boolean
+}
 
-const NavbarItems = ({ show }: { show?: number }) => {
+interface MenuItem {
+  title: string
+  path?: string
+  hasDropdown?: boolean
+  items?: {
+    title: string
+    description: string
+    path: string
+    icon?: string
+    highlight?: boolean
+    subItems?: {
+      title: string
+      description: string
+      path: string
+    }[]
+  }[][]
+}
+
+const navItems: MenuItem[] = [
+  {
+    title: "Company",
+    hasDropdown: true,
+    items: [
+      [
+        {
+          title: "About Us",
+          description: "Learn about our company's mission and values",
+          path: "/about-us",
+          icon: "info",
+          highlight: true,
+        },
+        {
+          title: "Our Team",
+          description: "Meet the experts behind our success",
+          path: "/our-team",
+          icon: "team",
+        },
+        {
+          title: "Locations",
+          description: "Find our offices around the globe",
+          path: "/locations",
+          icon: "location",
+        },
+      ],
+    ],
+  },
+  {
+    title: "NetSuite",
+    hasDropdown: true,
+    items: [
+      [
+        {
+          title: "NetSuite Consulting",
+          description: "Lorem ipsum is simply text of the printing & typesetting industry.",
+          path: "/netsuite/consulting",
+          icon: "consulting",
+          highlight: true,
+        },
+        {
+          title: "NetSuite Integration",
+          description: "Lorem ipsum is simply text of the printing & typesetting industry.",
+          path: "/netsuite/integration",
+          icon: "integration",
+        },
+        {
+          title: "NetSuite Support",
+          description: "Lorem ipsum is simply text of the printing & typesetting industry.",
+          path: "/netsuite/support",
+          icon: "support",
+        },
+      ],
+      [
+        {
+          title: "NetSuite Training",
+          description: "Lorem ipsum is simply text of the printing & typesetting industry.",
+          path: "/netsuite/training",
+          icon: "training",
+        },
+        {
+          title: "NetSuite Optimization",
+          description: "Lorem ipsum is simply text of the printing & typesetting industry.",
+          path: "/netsuite/optimization",
+          icon: "optimization",
+        },
+      ],
+    ],
+  },
+  {
+    title: "Celigo",
+    hasDropdown: true,
+    items: [
+      [
+        {
+          title: "Celigo iPaaS",
+          description: "Integration Platform as a Service solutions",
+          path: "/celigo/ipaas",
+          icon: "ipaas",
+        },
+        {
+          title: "Celigo Integrations",
+          description: "Pre-built and custom integration solutions",
+          path: "/celigo/integrations",
+          icon: "integrations",
+        },
+      ],
+    ],
+  },
+  {
+    title: "Integration",
+    hasDropdown: true,
+    items: [
+      [
+        {
+          title: "API Integration",
+          description: "Custom API development and integration",
+          path: "/integration/api",
+          icon: "api",
+        },
+        {
+          title: "ERP Integration",
+          description: "Connect your enterprise systems seamlessly",
+          path: "/integration/erp",
+          icon: "erp",
+        },
+      ],
+    ],
+  },
+  {
+    title: "Products",
+    path: "/products",
+  },
+  {
+    title: "Resources",
+    hasDropdown: true,
+    items: [
+      [
+        {
+          title: "Blog",
+          description: "Latest insights and updates",
+          path: "/blog",
+          icon: "blog",
+        },
+        {
+          title: "Case Studies",
+          description: "Success stories and implementations",
+          path: "/case-studies",
+          icon: "case-studies",
+        },
+      ],
+    ],
+  },
+  {
+    title: "Careers",
+    path: "/careers",
+  },
+]
+
+const NavbarItems = ({ show, isMobile }: NavbarItemsProps) => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [isHovered, setIsHovered] = useState(false)
+  const [windowWidth, setWindowWidth] = useState(0)
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth)
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
   const toggleDropdown = (menu: string) => {
-    setOpenDropdown(openDropdown === menu ? null : menu)
+    if (windowWidth < 1024 && isMobile) {
+      setOpenDropdown(openDropdown === menu ? null : menu)
+    } else if (windowWidth >= 1024) {
+      setOpenDropdown(menu)
+    }
+  }
+
+  const dropdownVariants = {
+    hidden: {
+      opacity: 0,
+      y: -10,
+      transition: { duration: 0.2 },
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.2 },
+    },
   }
 
   return (
-    <div
-      onMouseLeave={() => toggleDropdown("")}
-      className="lg:flex gap-[10px] w-full justify-between 2xl:gap-3 py-3 items-center text-[17px] lg:text-[15px] bg-white xl:text-[15px] 2xl:text=[17px]"
+    <nav
+      className="w-full bg-white flex flex-col lg:flex-row lg:items-center transition-all duration-300"
+      onMouseLeave={() => {
+        if (!isMobile) {
+          setOpenDropdown(null)
+        }
+      }}
     >
-      <div
-        className={`lg:items-center ${show ? "flex flex-col" : "flex"} xl:gap-4 flex-1 justify-center items-center gap-3`}
-      >
-        {/* Company */}
-        <div className="relative">
-          <div className="flex items-center">
-            <li
-              onClick={() => toggleDropdown("company")}
-              onMouseOver={() => toggleDropdown("company")}
-              className={`
-                            flex ${openDropdown === "company" ? "border-b-2 border-orange" : "border-b-2 border-white"} 
-                            font-semibold items-center cursor-pointer hover:text-orange text-[16px] ${openDropdown === "company" && "text-orange"}`}>
-              Company
-            </li>
-            <RiArrowDropDownLine className="text-2xl" />
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between w-full gap-4 lg:gap-6 py-3 px-4 lg:px-6 text-sm lg:text-base">
+        {navItems.map((item) => (
+          <div key={item.title} className="relative group">
+            {item.path ? (
+              <Link href={item.path} passHref>
+                <span className="font-semibold cursor-pointer text-gray-700 hover:text-orange transition-colors flex items-center gap-1">
+                  {item.title}
+                </span>
+              </Link>
+            ) : (
+              <div
+                onClick={() => toggleDropdown(item.title)}
+                onMouseEnter={() => !isMobile && toggleDropdown(item.title)}
+                className={`
+                  flex items-center gap-1 cursor-pointer
+                  font-semibold transition-colors
+                  text-gray-700
+                  ${openDropdown === item.title ? "text-orange" : ""}
+                  hover:text-orange
+                `}
+              >
+                {item.title}
+                {item.hasDropdown && (
+                  <RiArrowDropDownLine
+                    className={`
+                    text-xl transition-transform duration-200
+                    ${openDropdown === item.title ? "rotate-180" : ""}
+                  `}
+                  />
+                )}
+              </div>
+            )}
+
+            <AnimatePresence>
+              {item.hasDropdown && openDropdown === item.title && item.items && (
+                <motion.div
+                  variants={dropdownVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
+                  className={`
+                    absolute z-50 bg-white shadow-lg rounded-lg
+                    ${isMobile ? "relative mt-2 w-full" : "top-full left-0 mt-2"}
+                    w-[400px] max-w-[95vw]
+                    overflow-hidden
+                  `}
+                  style={{ width: item.items[0].length > 3 ? "400px" : "400px" }}
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-0 p-0 w-full">
+                    {item.items.map((column, colIndex) => (
+                      <div key={colIndex} className="space-y-0">
+                        {column.map((subItem) => (
+                          <Link key={subItem.title} href={subItem.path} className="block">
+                            <div
+                              className={`
+                                flex items-center gap-3 cursor-pointer
+                                p-4 transition-colors
+                                hover:bg-gray-50 group
+                              `}
+                            >
+                              <div
+                                className={`
+                                  flex items-center justify-center
+                                  size-10 rounded-full
+                                  ${subItem.highlight ? "bg-orange text-white" : "bg-blue-900 text-white"}
+                                `}
+                              >
+                                {getMenuIcon(subItem.icon || "default")}
+                              </div>
+                              <div className="flex-1">
+                                <div
+                                  className={`
+                                    font-semibold transition-colors
+                                    ${subItem.highlight ? "text-orange" : "text-gray-700"}
+                                    group-hover:text-orange
+                                  `}
+                                >
+                                  {subItem.title}
+                                </div>
+                                <div className="text-xs text-gray-500">{subItem.description}</div>
+                              </div>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
+        ))}
 
-          {openDropdown === "company" && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="absolute text-homegrey shadow-md text-[17px]
-                            w-fit text-nowrap lg:w-fit overflow-y-scroll lg:overflow-auto max-h-[70vh] lg:h-fit
-                            flex-wrap lg:flex-nowrap px-6 py-6 z-[99999] left-0 top-9 bg-white justify-start lg:justify-around flex 
-                            gap-5 p-4 rounded-b-xl"
-              onMouseLeave={() => toggleDropdown("")}
-            >
-              <motion.div
-                initial={{ x: -50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.1, easings: ["easeIn", "easeOut"] }}
-              >
-                <ul className="flex flex-col text-[16px] gap-[5px]">
-                  <li className="flex items-center gap-2 text-black hover:text-orange hover:translate-x-2 transition-all duration-300">
-                    <MdKeyboardDoubleArrowRight />
-                    About Us
-                  </li>
-                  <Link target="_blank" href="/careers" passHref>
-                    <li className="flex items-center gap-2 text-black hover:text-orange hover:translate-x-2 transition-all duration-300">
-                      <MdKeyboardDoubleArrowRight />
-                      Career
-                    </li>
-                  </Link>
-                  <Link target="_blank" href="/team" passHref>
-                    <li className="flex items-center gap-2 text-black hover:text-orange hover:translate-x-2 transition-all duration-300">
-                      <MdKeyboardDoubleArrowRight />
-                      Meet The Team
-                    </li>
-                  </Link>
-                </ul>
-              </motion.div>
-            </motion.div>
-          )}
-        </div>
-
-        {/* Netsuite */}
-        <div className="relative">
-          <div className="flex gap-1 items-center">
-            <li
-              onClick={() => toggleDropdown("netsuite")}
-              onMouseOver={() => toggleDropdown("netsuite")}
-              className={`flex font-semibold ${openDropdown === "netsuite" ? "border-b-2 border-orange " : "border-b-2 border-white"} gap-1 items-center cursor-pointer hover:text-orange text-[16px] 
-                            ${openDropdown === "netsuite" && "text-orange"}`}
-            >
-              Netsuite
-            </li>
-            <RiArrowDropDownLine className="text-2xl" />
-          </div>
-          {openDropdown === "netsuite" && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="absolute text-homegrey shadow-md text-[17px]
-                            w-fit text-nowrap lg:w-fit overflow-y-scroll lg:overflow-auto max-h-[70vh] lg:h-fit
-                            flex-wrap lg:flex-nowrap px-6 py-6 z-[99999] left-0 top-9 bg-white justify-start lg:justify-around flex 
-                            gap-5 p-4 rounded-b-xl"
-              onMouseLeave={() => toggleDropdown("")}
-            >
-              <motion.div
-                initial={{ x: -50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.1, easings: ["easeIn", "easeOut"] }}
-              >
-                <ul className="flex flex-col text-[16px] gap-[12px]">
-                  <li className="flex items-start gap-3 text-blue">
-                    <div className="mt-1 text-blue">
-                      <FaCircle className="text-blue size-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold">NetSuite Consulting</div>
-                      <div className="text-sm text-gray-500">
-                        Lorem ipsum is simply text of the printing & typesetting industry.
-                      </div>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="mt-1">
-                      <FaCircle className="text-orange size-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-orange">NetSuite Consulting</div>
-                      <div className="text-sm text-gray-500">
-                        Lorem ipsum is simply text of the printing & typesetting industry.
-                      </div>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="mt-1">
-                      <FaCircle className="text-blue size-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-blue">NetSuite Consulting</div>
-                      <div className="text-sm text-gray-500">
-                        Lorem ipsum is simply text of the printing & typesetting industry.
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </motion.div>
-              <motion.div
-                initial={{ x: -50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.2, easings: ["easeIn", "easeOut"] }}
-              >
-                <ul className="flex flex-col text-[16px] gap-[12px]">
-                  <li className="flex items-start gap-3">
-                    <div className="mt-1">
-                      <FaCircle className="text-blue size-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-blue">NetSuite Consulting</div>
-                      <div className="text-sm text-gray-500">
-                        Lorem ipsum is simply text of the printing & typesetting industry.
-                      </div>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="mt-1">
-                      <FaCircle className="text-blue size-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-blue">NetSuite Consulting</div>
-                      <div className="text-sm text-gray-500">
-                        Lorem ipsum is simply text of the printing & typesetting industry.
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </motion.div>
-            </motion.div>
-          )}
-        </div>
-
-        {/* Celigo */}
-        <div className="relative">
-          <div className="flex gap-1 items-center">
-            <li
-              onClick={() => toggleDropdown("celigo")}
-              onMouseOver={() => toggleDropdown("celigo")}
-              className={`flex font-semibold ${openDropdown === "celigo" ? "border-b-2 border-orange" : "border-b-2 border-white"} gap-1 items-center cursor-pointer hover:text-orange text-[16px] 
-                            ${openDropdown === "celigo" && "text-orange"}`}
-            >
-              Celigo
-            </li>
-            <RiArrowDropDownLine className="text-2xl" />
-          </div>
-          {openDropdown === "celigo" && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="absolute text-homegrey shadow-md text-[17px]
-                          w-fit text-nowrap lg:w-fit overflow-y-scroll lg:overflow-auto max-h-[70vh] lg:h-fit
-                          flex-wrap lg:flex-nowrap px-6 py-6 z-[99999] left-0 top-9 bg-white justify-start lg:justify-around flex 
-                          gap-5 p-4 rounded-b-xl"
-              onMouseLeave={() => toggleDropdown("")}
-            >
-              <motion.div
-                initial={{ x: -50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.1, easings: ["easeIn", "easeOut"] }}
-              >
-                <ul className="flex flex-col text-[16px] gap-[12px]">
-                  <li className="flex items-start gap-3 text-blue">
-                    <div className="mt-1 text-blue">
-                      <FaCircle className="text-blue size-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold">NetSuite Consulting</div>
-                      <div className="text-sm text-gray-500">
-                        Lorem ipsum is simply text of the printing & typesetting industry.
-                      </div>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="mt-1">
-                      <FaCircle className="text-orange size-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-orange">NetSuite Consulting</div>
-                      <div className="text-sm text-gray-500">
-                        Lorem ipsum is simply text of the printing & typesetting industry.
-                      </div>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="mt-1">
-                      <FaCircle className="text-blue size-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-blue">NetSuite Consulting</div>
-                      <div className="text-sm text-gray-500">
-                        Lorem ipsum is simply text of the printing & typesetting industry.
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </motion.div>
-              <motion.div
-                initial={{ x: -50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.2, easings: ["easeIn", "easeOut"] }}
-              >
-                <ul className="flex flex-col text-[16px] gap-[12px]">
-                  <li className="flex items-start gap-3">
-                    <div className="mt-1">
-                      <FaCircle className="text-blue size-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-blue">NetSuite Consulting</div>
-                      <div className="text-sm text-gray-500">
-                        Lorem ipsum is simply text of the printing & typesetting industry.
-                      </div>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="mt-1">
-                      <FaCircle className="text-blue size-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-blue">NetSuite Consulting</div>
-                      <div className="text-sm text-gray-500">
-                        Lorem ipsum is simply text of the printing & typesetting industry.
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </motion.div>
-            </motion.div>
-          )}
-        </div>
-
-        {/* Integration */}
-        <div className="relative">
-          <div className="flex gap-1 items-center">
-            <li
-              onClick={() => toggleDropdown("integration")}
-              onMouseOver={() => toggleDropdown("integration")}
-              className={`flex font-semibold ${openDropdown === "integration" ? "border-b-2 border-orange" : "border-b-2 border-white"} gap-1 items-center cursor-pointer hover:text-orange text-[16px] 
-                            ${openDropdown === "integration" && "text-orange"}`}
-            >
-              Integration
-            </li>
-            <RiArrowDropDownLine className="text-2xl" />
-          </div>
-          {openDropdown === "integration" && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="absolute text-homegrey shadow-md text-[17px]
-                          w-fit text-nowrap lg:w-fit overflow-y-scroll lg:overflow-auto max-h-[70vh] lg:h-fit
-                          flex-wrap lg:flex-nowrap px-6 py-6 z-[99999] left-0 top-9 bg-white justify-start lg:justify-around flex 
-                          gap-5 p-4 rounded-b-xl"
-              onMouseLeave={() => toggleDropdown("")}
-            >
-              <motion.div
-                initial={{ x: -50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.1, easings: ["easeIn", "easeOut"] }}
-              >
-                <ul className="flex flex-col text-[16px] gap-[12px]">
-                  <li className="flex items-start gap-3 text-blue">
-                    <div className="mt-1 text-blue">
-                      <FaCircle className="text-blue size-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold">NetSuite Consulting</div>
-                      <div className="text-sm text-gray-500">
-                        Lorem ipsum is simply text of the printing & typesetting industry.
-                      </div>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="mt-1">
-                      <FaCircle className="text-orange size-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-orange">NetSuite Consulting</div>
-                      <div className="text-sm text-gray-500">
-                        Lorem ipsum is simply text of the printing & typesetting industry.
-                      </div>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="mt-1">
-                      <FaCircle className="text-blue size-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-blue">NetSuite Consulting</div>
-                      <div className="text-sm text-gray-500">
-                        Lorem ipsum is simply text of the printing & typesetting industry.
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </motion.div>
-              <motion.div
-                initial={{ x: -50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.2, easings: ["easeIn", "easeOut"] }}
-              >
-                <ul className="flex flex-col text-[16px] gap-[12px]">
-                  <li className="flex items-start gap-3">
-                    <div className="mt-1">
-                      <FaCircle className="text-blue size-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-blue">NetSuite Consulting</div>
-                      <div className="text-sm text-gray-500">
-                        Lorem ipsum is simply text of the printing & typesetting industry.
-                      </div>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="mt-1">
-                      <FaCircle className="text-blue size-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-blue">NetSuite Consulting</div>
-                      <div className="text-sm text-gray-500">
-                        Lorem ipsum is simply text of the printing & typesetting industry.
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </motion.div>
-            </motion.div>
-          )}
-        </div>
-
-        {/* Products */}
-        <div className="relative">
-          <div className="flex gap-1 items-center">
-            <li
-              onClick={() => toggleDropdown("products")}
-              onMouseOver={() => toggleDropdown("products")}
-              className={`flex font-semibold gap-1 ${openDropdown === "products" ? "border-b-2 border-orange" : "border-b-2 border-white"} items-center cursor-pointer hover:text-orange text-[16px] 
-                            ${openDropdown === "products" && "text-orange"}`}
-            >
-              Products
-            </li>
-            <RiArrowDropDownLine className="text-2xl" />
-          </div>
-          {openDropdown === "products" && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="absolute text-homegrey shadow-md text-[17px]
-                          w-fit text-nowrap lg:w-fit overflow-y-scroll lg:overflow-auto max-h-[70vh] lg:h-fit
-                          flex-wrap lg:flex-nowrap px-6 py-6 z-[99999] left-0 top-9 bg-white justify-start lg:justify-around flex 
-                          gap-5 p-4 rounded-b-xl"
-              onMouseLeave={() => toggleDropdown("")}
-            >
-              <motion.div
-                initial={{ x: -50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.1, easings: ["easeIn", "easeOut"] }}
-              >
-                <ul className="flex flex-col text-[16px] gap-[12px]">
-                  <li className="flex items-start gap-3 text-blue">
-                    <div className="mt-1 text-blue">
-                      <FaCircle className="text-blue size-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold">NetSuite Consulting</div>
-                      <div className="text-sm text-gray-500">
-                        Lorem ipsum is simply text of the printing & typesetting industry.
-                      </div>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="mt-1">
-                      <FaCircle className="text-orange size-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-orange">NetSuite Consulting</div>
-                      <div className="text-sm text-gray-500">
-                        Lorem ipsum is simply text of the printing & typesetting industry.
-                      </div>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="mt-1">
-                      <FaCircle className="text-blue size-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-blue">NetSuite Consulting</div>
-                      <div className="text-sm text-gray-500">
-                        Lorem ipsum is simply text of the printing & typesetting industry.
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </motion.div>
-              <motion.div
-                initial={{ x: -50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.2, easings: ["easeIn", "easeOut"] }}
-              >
-                <ul className="flex flex-col text-[16px] gap-[12px]">
-                  <li className="flex items-start gap-3">
-                    <div className="mt-1">
-                      <FaCircle className="text-blue size-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-blue">NetSuite Consulting</div>
-                      <div className="text-sm text-gray-500">
-                        Lorem ipsum is simply text of the printing & typesetting industry.
-                      </div>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="mt-1">
-                      <FaCircle className="text-blue size-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-blue">NetSuite Consulting</div>
-                      <div className="text-sm text-gray-500">
-                        Lorem ipsum is simply text of the printing & typesetting industry.
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </motion.div>
-            </motion.div>
-          )}
-        </div>
-
-        {/* Resources */}
-        <div className="relative">
-          <div className="flex gap-1 items-center">
-            <li
-              onClick={() => toggleDropdown("resources")}
-              onMouseOver={() => toggleDropdown("resources")}
-              className={`flex font-semibold ${openDropdown === "resources" ? "border-b-2 border-orange" : "border-b-2 border-white"} gap-1 items-center cursor-pointer hover:text-orange text-[16px] 
-                            ${openDropdown === "resources" && "text-orange"}`}
-            >
-              Resources
-            </li>
-            <RiArrowDropDownLine className="text-2xl" />
-          </div>
-          {openDropdown === "resources" && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="absolute text-homegrey shadow-md text-[17px]
-                            w-fit text-nowrap lg:w-fit overflow-y-scroll lg:overflow-auto max-h-[70vh] lg:h-fit
-                            flex-wrap lg:flex-nowrap px-6 py-6 z-[99999] left-0 top-9 bg-white justify-start lg:justify-around flex 
-                            gap-5 p-4 rounded-b-xl"
-              onMouseLeave={() => toggleDropdown("")}
-            >
-              <motion.div
-                initial={{ x: -50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.1, easings: ["easeIn", "easeOut"] }}
-              >
-                <ul className="flex flex-col text-[16px] gap-[5px]">
-                  <Link target="_blank" href="/blog" passHref>
-                    <li className="flex items-center gap-2 text-black hover:text-orange hover:translate-x-2 transition-all duration-300">
-                      <MdKeyboardDoubleArrowRight />
-                      Blog
-                    </li>
-                  </Link>
-                  <Link target="_blank" href="/case-studies" passHref>
-                    <li className="flex items-center gap-2 text-black hover:text-orange hover:translate-x-2 transition-all duration-300">
-                      <MdKeyboardDoubleArrowRight />
-                      Case Studies
-                    </li>
-                  </Link>
-                </ul>
-              </motion.div>
-            </motion.div>
-          )}
-        </div>
-
-        {/* Careers */}
-        <div className="relative">
-          <div className="flex gap-1 items-center">
-            <li
-              className={`flex font-semibold border-b-2 border-white gap-1 items-center cursor-pointer hover:text-orange text-[16px]`}
-            >
-              Careers
-            </li>
-          </div>
-        </div>
-
-        {/* Contact Us Button - Only for mobile */}
         {show === 1 && (
-          <div className="relative mt-4">
-            <div className="flex gap-1 items-center">
-              <li
-                className={`flex px-4 py-2 bg-orange rounded-full text-white font-semibold
-                                ${isHovered ? "pr-8 border-orange text-orange" : "border-white"} 
-                                gap-1 items-center cursor-pointer text-[16px] relative`}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-              >
-                Contact Us
-                <IoIosArrowForward
-                  className={`absolute right-2 transition-all duration-300 transform 
-                                    ${isHovered ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}
-                  size={20}
-                />
-              </li>
-            </div>
+          <div className="mt-4 lg:mt-0">
+            <button
+              className={`
+                flex items-center gap-2
+                px-6 py-2 rounded-full
+                bg-orange text-white
+                font-semibold transition-all
+                hover:bg-orange/90
+                ${isHovered ? "pr-10" : ""}
+              `}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              CONTACT US
+              <IoIosArrowForward
+                className={`
+                  absolute transform transition-all duration-300
+                  ${isHovered ? "opacity-100 translate-x-6" : "opacity-0 translate-x-2"}
+                `}
+                size={20}
+              />
+            </button>
           </div>
         )}
       </div>
-    </div>
+    </nav>
   )
 }
 

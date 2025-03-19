@@ -23,7 +23,7 @@ export type MenuItem = {
       ],
     },
     {
-      title: "Netsuite",
+      title: "NetSuite",
       isHighlighted: true,
       items: [
         { title: "Netsuite Consulting", url: "/netsuite-consulting", color: "#FF7A59" },

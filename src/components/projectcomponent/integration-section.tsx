@@ -56,7 +56,7 @@ export default function IntegrationSection() {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
   return (
     <div className="bg_integration bg-blue">
-      <div className="container mx-auto px-4 py-10 relative">
+      <div className="w-full lg:w-[95%] 2xl:w-[77%] mx-auto px-5  py-10 relative">
         <motion.h1
           className="font-bold text-white text-center mb-32 mx-auto heading-calisto heading"
           initial={{ opacity: 0, y: 20 }}
@@ -68,7 +68,7 @@ export default function IntegrationSection() {
 
         <div 
           ref={sectionRef}
-        className="relative h-48">
+        className="relative h-48 ">
           <DotWave />
           <div className="absolute inset-0 flex justify-between items-center -top-[6.5rem]">
           {[
