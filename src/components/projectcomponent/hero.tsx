@@ -1,70 +1,98 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 import { useState } from "react"
-// import { Play } from "lucide-react"
-import { FaPlay } from "react-icons/fa"
-import AnimatedHeader from "./animated-header"
-import { AnimatedBanner } from "./animated-banner"
-export function Hero() {
-  const [hoveredItem, setHoveredItem] = useState<string | null | number>(null)
+import type React from "react"
+import { GoDotFill } from "react-icons/go";
+import Slider from "react-slick"
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa"
+import Image from "next/image";
 
+const bgImages = [
+  { id: 1, image: "/images/bgbanner1.svg" },
+  { id: 2, image: "/images/bgbanner2.svg" },
+  { id: 3, image: "/images/bgbanner3.svg" },
+]
+
+// Custom arrow components
+const PrevArrow = (props: any) => {
+  const { onClick } = props
   return (
-    <div className="  text-white pt-8 pb-16 relative overflow-hidden">
-      <div
-        className="h-[642px]  relative w-full flex flex-col  lg:w-[95%] 2xl:w-[77%] mx-auto bg-[url('/images/bgbanner.svg')] min-h-[68vh] bg-no-repeat pt-4 rounded-3xl"
-      >
-        <div className="px-7  flex justify-between items-start ">
-          <AnimatedHeader />
-          {hoveredItem &&
-            <div
-              onMouseLeave={() => setHoveredItem(null)}
-              className='absolute bg-white text-black h-[30vh] w-1/2 '>
-            </div>
-          }
-          <div className="max-w-2xl mt-32 mx-20 relative z-10  flex flex-col gap-2">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6 heading-calisto">
-              Operational
-              <br />
-              <span className="font-bold "> Excellence</span>
-              <br />
-              with Ease
-            </h1>
-            <div className='flex gap-2 items-center '>
-              <div className='w-[23%] rounded-full h-[7px] bg-white border border-orange'></div>
-              <div className='w-[4%] rounded-full h-[7px] bg-white border border-orange'></div>
-            </div>
-          </div>
-          <div className=" absolute  top-[15vh] right-0 ">
-            <AnimatedBanner />
-          </div>
-
-        </div>
-
-        <div className="flex mr-8 justify-between items-center w-full absolute bottom-0  ">
-          <div className="flex gap-[80px]">
-
-            <button className="text-white w-[110%] text-[30px] flex items-center text-left justify-around font-semibold mt-3 h-[90px] rounded-3xl  bg-[#FF8352] border-white hover:scale-105 smooth3 leading-8  ">
-              <div className="bg-white flex  justify-center items-center p-5 rounded-full h-[70px] w-[70px]">
-
-                <FaPlay className=" pl-1 animate text-[#FF8352] text-[44px] " />
-              </div>
-              How It <br /> Work&apos;s
-            </button>
-
-            <p className="parahraph  mb-8 max-w-xl">
-              It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
-              more recently with Aldus PageMaker.
-            </p>
-          </div>
-          <div className='relative hover:scale-105 smooth3 '>
-            <button className="mr-16 border-[#FF8352] border bg-white text-blue rounded-xl font-semibold text-lg px-4 py-1 relative">FREE CONSULTATION
-            </button>
-            <div className='absolute h-6 w-6 rounded-full -top-2 right-14 bg-orange opacity-50 animate-ping  '> </div>
-            <div className='absolute h-3 w-3 rounded-full -top-[2px] right-[62px] bg-orange animate-pulse'> </div>
-          </div>
-        </div>
-      </div>
-
+    <div
+      className="hidden xl:flex absolute left-10 top-1/2 -translate-y-1/2 z-20  items-center justify-center w-12 h-12 rounded-full bg-white text-orange cursor-pointer hover:bg-white/30 transition-all"
+      onClick={onClick}
+    >
+      <FaArrowLeft className="text-2xl" />
     </div>
   )
 }
 
+const NextArrow = (props: any) => {
+  const { onClick } = props
+  return (
+    <div
+      className="hidden xl:flex absolute right-10 top-1/2 -translate-y-1/2 z-20  items-center justify-center w-12 h-12 rounded-full bg-white text-orange cursor-pointer hover:bg-white/30 transition-all"
+      onClick={onClick}
+    >
+      <FaArrowRight className="text-2xl" />
+    </div>
+  )
+}
+
+export function Hero() {
+  const [currentBg, setCurrentBg] = useState(bgImages[0].image)
+console.log(currentBg);
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+    cssEase: "ease-in-out", 
+    beforeChange: (_: number, next: number) => setCurrentBg(bgImages[next].image)
+  }
+
+  return (
+    <div
+      className="relative w-full flex flex-col bg-contain bg-right mx-auto bg-no-repeat h-[76vh] transition-all duration-500"
+    >
+      <div className="absolute inset-0 banner-gradient pointer-events-none " aria-hidden="true" />
+
+
+      <Slider {...settings} className="">
+  {bgImages.map((bg) => (
+    <div key={bg.id} className="relative h-[80vh] w-full flex items-center justify-center ">
+      {/* Background Image */}
+      <Image src={bg.image} alt={`Background ${bg.id}`}   className="object-cover w-full h-full"  width={10000} height={10000} />
+
+      {/* Content Overlay */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="w-full lg:w-[95%] 2xl:w-[77%] mx-auto px-5 text-center md:text-left">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-16">
+            <div className="space-y-6 ">
+              <p className="font-semibold tracking-wide text-orange flex items-center gap-1">
+                <GoDotFill /> BUSINESS MAKE EASY
+              </p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                Reliably guiding your business to success
+              </h1>
+              <p className="text-lg text-gray-200 max-w-lg">
+                We ensure a smooth ERP implementation to your business needs, setup to go-live
+              </p>
+              <button className="bg-orange hover:bg-orange-600 transition-colors text-white font-semibold px-6 py-2 border-2 border-orange rounded">
+                DISCOVER MORE
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  ))}
+</Slider>
+    </div>
+  )
+}

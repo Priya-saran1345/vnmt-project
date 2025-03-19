@@ -8,15 +8,16 @@ html {
 
 
 :root {
-	--blue: #4583F7,
-		--orange:#FF8352,
-		--darkblue:#1F57BF;
+	--blue: #0F2373;
+		--orange:#FF8352;
+		--darkblue:#0F2373;
 	--textred: #E84A54;
 	--heartred: #FE0707;
-	--lightblue: #79A5F7 --lightorange:#FF874F,
-		--blue: #4583F7;
+	--lightblue: #79A5F7;
+	--lightorange: #FF874F;
+		--blue: #0F2373;
 	--orange: #FF8352;
-	--darkblue: #1F57BF;
+	--darkblue: #0F2373;
 }
 
 #info {
@@ -452,13 +453,13 @@ body {
 
 
 ._button {
-	--bg: rgb(69 131 247);
+	--bg: #0F2373;
 	--hover-bg: #1F57BF;
 	--hover-text: #000;
 	color: #fff;
 	cursor: pointer;
 	font-weight: 600;
-	border: 1px solid var(--bg);
+	border: 1px solid var(--hover-bg);
 	border-radius: 35px;
 	padding: 0.6em 2em;
 	background: var(--bg);
@@ -951,3 +952,8 @@ body {
     z-index: 1;
 	scroll-behavior: smooth;
 }
+
+.banner-gradient {
+	background: linear-gradient(to right, #0F2373 40%, transparent 80%, transparent 100%);
+  }
+  

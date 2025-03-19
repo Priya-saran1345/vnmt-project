@@ -86,7 +86,7 @@ const lastHalf = partners.slice(Math.floor(partners.length / 2));
           <div className="h-8" /> {/* Spacer */}
           <PartnersRow partners={lastHalf} direction={-1} />
         </div>
-        <div className="h-5 bg-gradient-to-t from-darkblue to-lightblue"></div>
+        <div className="h-5 bg-darkblue"></div>
       </div>
     </div>
   )

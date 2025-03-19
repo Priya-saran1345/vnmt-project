@@ -4,10 +4,10 @@ import Faq from '@/components/projectcomponent/Faq'
 import Footer from '@/components/projectcomponent/Footer'
 import { Testimonials } from '@/components/projectcomponent/Testimonials'
 import { CaseStudy } from '@/components/projectcomponent/Case-studies'
-import { ImpactSection } from '@/components/projectcomponent/impact-section'
+
 import { IndustriesSection } from '@/components/projectcomponent/industries-section'
 import { NetsuiteSection } from '@/components/projectcomponent/netsuite-section'
-import { Header } from '@/components/projectcomponent/header'
+
 import { Hero } from '@/components/projectcomponent/hero'
 import { Services } from '@/components/projectcomponent/services'
 import { Partners } from '@/components/projectcomponent/partners'
@@ -16,6 +16,7 @@ import IntegrationSection from '@/components/projectcomponent/integration-sectio
 import { TrustedPartner } from '@/components/projectcomponent/trusted-partner'
 import SideSheet from '@/components/projectcomponent/SideSheet'
 import Navbar from '@/components/projectcomponent/navbar'
+import OurImpact from "../projectcomponent/ourImpact";
 export default function FAQPage() {
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -25,7 +26,7 @@ export default function FAQPage() {
 
         <div className="text-black">
             <div className=" w-full">
-                <Header />
+                {/* <Header /> */}
                 <Navbar />
                 <div className='bg_banner'>
                     <Hero />
@@ -34,7 +35,8 @@ export default function FAQPage() {
                 <Partners />
                 <SideSheet></SideSheet>
                 <IndustriesSection />
-                <ImpactSection />
+                {/* <ImpactSection /> */}
+                <OurImpact/>
                 <NetsuiteSection />
                 <IntegrationSection />
                 <BlogSection />

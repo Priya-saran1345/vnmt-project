@@ -12,9 +12,9 @@ export default {
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        blue: "#4583F7",
+        blue: "#0F2373",
         orange: "#FF8352",
-        darkblue: "#1F57BF",
+        darkblue: "#0F2373",
         textred: "#E84A54",
         heartred: "#FE0707",
 		lightblue:'#79A5F7',

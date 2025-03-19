@@ -76,29 +76,7 @@ export function CaseStudy() {
           </div>
         </div>
 
-        {/* Bottom Scrolling Text Section */}
-        <div className="bg-gradient-to-b from-darkblue to-lightblue text-white overflow-hidden">
-        <div
-          className="flex whitespace-nowrap animate-scroll-loop"
-          style={{
-            animation: "scroll-loop 15s linear infinite",
-          }}
-        >
-          <span className="text-center text-[26px] font-[500] px-2 py-1">
-             WITH OUR NETSUITE EXPERTISE | EMPOWER YOUR SUCCESS
-          </span>
-          <span className="text-center text-[26px] font-[500] px-1 py-1">
-             WITH OUR NETSUITE EXPERTISE | EMPOWER YOUR SUCCESS
-          </span>
-          <span className="text-center text-[26px] font-[500] px-1 py-1">
-             WITH OUR NETSUITE EXPERTISE | EMPOWER YOUR SUCCESS
-          </span>
-          <span className="text-center text-[26px] font-[500] px-1 py-1">
-             WITH OUR NETSUITE EXPERTISE | EMPOWER YOUR SUCCESS
-          </span>
-          
-        </div>
-      </div>
+
       </div>
 
       {/* Styles for Animations */}

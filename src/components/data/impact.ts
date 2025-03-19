@@ -1,18 +1,18 @@
 export const impactStats = [
+
   {
     id: 1,
-    number: "500+",
-    label: "Successful Projects",
-  },
-  {
-    id: 2,
     number: "30+",
     label: "Certified Experts",
   },
   {
-    id: 3,
+    id: 2,
     number: "95%",
     label: "Customer Satisfaction Rate",
+  },  {
+    id: 3,
+    number: "500+",
+    label: "Successful Projects",
   },
 ]
 
