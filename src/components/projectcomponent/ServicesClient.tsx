@@ -35,7 +35,8 @@ export function ServicesClient() {
     }
 
     return (
-        <div className="flex  items-start gap-4 ">
+        <div className="flex  items-start gap-4 lg:flex-row flex-col-reverse ">
+
             <div className="md:w-full  ">
                 <div className="relative rounded-2xl overflow-hidden">
                     <Image
@@ -47,6 +48,7 @@ export function ServicesClient() {
                     />
                 </div>
             </div>
+
             <div className="md:w-full relative overflow-hidden ">
                 <div className="relative flex overflow-y-hidden  w-full">
                     <div ref={containerRef} className="h-[450px]  pr-8 space-y-4 scrollbar-none overflow-x-hidden">

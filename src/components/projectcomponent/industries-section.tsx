@@ -78,7 +78,7 @@ export function IndustriesSection() {
     <section className="pt-20 pb-10 bg_industry flex flex-col gap-4">
       <div className="container px-4 mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-10 flex flex-col items-center justify-center gap-4">
-          <h2 className="mt-3 text-4xl font-bold text-gray-900 heading-calisto heading">Our Industries</h2>
+          <h2 className="mt-3 text-4xl font-bold text-gray-900 heading-calisto heading ">Our Industries</h2>
           <span className="text-sm font-medium text-[#818181] parahraph">
             We build customized solutions that meet the unique demands of different industries.
           </span>
@@ -91,7 +91,7 @@ export function IndustriesSection() {
         </div>
       </div>
       <div className="flex items-center justify-center ">
-        <span className="parahraph font-bold tracking-wide flex items-center gap-3 ">
+        <span className="parahraph font-bold tracking-wide flex items-center gap-3 md:flex-row flex-col">
           {" "}
           Want to see our professional services.{" "}
           <a className="text-blue hover:text-orange smooth1 hover:scale-105 cursor-pointer underline">

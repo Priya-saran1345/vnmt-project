@@ -438,9 +438,7 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
             ))}
           </nav>
 
-          <div className="flex w-full gap-2 items-center mt-2 lg:mt-0 flex-col lg:flex-row justify-end"
-
-          >
+          <div className="flex w-full gap-2 items-center mt-2 lg:mt-0 flex-col lg:flex-row justify-end">
             <div className=" lg:flex gap-2 items-center hidden">
             <CountrySelector isOpen={isOpen} setIsOpen={setIsOpen} />
             <IoMdSearch className="text-2xl text-orange" />
@@ -448,7 +446,7 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
             </div>
             <button
               onClick={handleMobileMenuToggle}
-              className="lg:hidden p-2 text-gray-500 hover:text-gray-700 transition-colors w-full"
+              className="lg:hidden p-2 text-gray-500 hover:text-gray-700 transition-colors w-full flex justify-end"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (

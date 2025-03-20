@@ -65,7 +65,8 @@ export function BlogSection() {
           </div>
           <p className="text-xl md:w-[45%] text-black">{blogContent.description}</p>
         </div>
-        <div className="  left-0 right-0 flex justify-end gap-4 px-4 transform -translate-y-1/2 z-10">
+
+        <div className="  left-0 right-0 hidden md:flex justify-end gap-4 px-4 transform -translate-y-1/2 z-10">
           <button
             onClick={prevSlide}
             className="rounded-full border-2 border-blue h-10
@@ -81,6 +82,7 @@ export function BlogSection() {
           </button>
         </div>
         {/* Carousel container with React Slick */}
+
         <div className="relative w-full overflow-hidden">
           <Slider ref={sliderRef} {...slickSettings}>
             {blogPosts.map((post) => {

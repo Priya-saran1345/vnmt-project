@@ -58,7 +58,7 @@ export default function IntegrationSection() {
     <div className="bg_integration bg-blue">
       <div className="w-full lg:w-[95%] 2xl:w-[77%] mx-auto px-5  py-10 relative">
         <motion.h1
-          className="font-bold text-white text-center mb-32 mx-auto heading-calisto heading"
+          className="font-bold text-white text-center mb-32 mx-auto heading-calisto heading leading-tight"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -70,7 +70,7 @@ export default function IntegrationSection() {
           ref={sectionRef}
         className="relative h-48 ">
           <DotWave />
-          <div className="absolute inset-0 flex justify-between items-center -top-[6.5rem]">
+          <div className="absolute inset-0 flex justify-between items-center -top-[6.5rem] lg:flex-row flex-col flex-wrap ">
           {[
           { src: "/images/integration1.svg", alt: "Xero" },
           { src: "/images/integration2.svg", alt: "Shopify" },
@@ -95,7 +95,7 @@ export default function IntegrationSection() {
         </div>
 
         <motion.p
-          className="text-white text-center text-lg md:text-xl mb-12 max-w-4xl mx-auto"
+          className="text-white text-center text-lg md:text-xl mb-12 mt-12 md:mt-0 max-w-4xl mx-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}

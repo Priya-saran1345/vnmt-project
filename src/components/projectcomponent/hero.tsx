@@ -73,13 +73,13 @@ export function Hero() {
 
             {/* Content Overlay */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-full lg:w-[95%] 2xl:w-[77%] mx-auto px-5 text-center md:text-left">
+              <div className="w-full lg:w-[95%] 2xl:w-[77%] mx-auto px-5 text-left">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-16">
                   <div className="space-y-6 ">
                     <p className="font-semibold tracking-wide text-orange flex items-center gap-1">
                       <GoDotFill /> BUSINESS MAKE EASY
                     </p>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white ">
                       Reliably guiding your business to success
                     </h1>
                     <p className="text-lg text-gray-200 max-w-lg">
