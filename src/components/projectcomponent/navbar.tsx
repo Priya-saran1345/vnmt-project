@@ -43,7 +43,6 @@ const navItems: MenuItem[] = [
           description: "Learn about our company's mission and values",
           path: "/about-us",
           icon: "info",
-          highlight: true,
           subItems: [
             {
               title: "Our Story",
@@ -82,7 +81,6 @@ const navItems: MenuItem[] = [
           description: "Expert guidance for your NetSuite implementation",
           path: "/netsuite/consulting",
           icon: "consulting",
-          highlight: true,
         },
         {
           title: "NetSuite Integration",
@@ -263,6 +261,8 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null)
+  console.log("activeSubmenu",activeSubmenu);
+  
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRefs = useRef<Record<string, HTMLDivElement | null>>({})
 
@@ -363,12 +363,12 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute left-0 mt-2 bg-white rounded-md shadow-lg overflow-hidden border border-gray-100 z-50"
+                      className="absolute left-0 mt-2 bg-white rounded-md shadow-lg  border border-gray-100 z-50"
                       style={{ width: "auto", minWidth: "250px" }}
                     >
                       <div className="py-1">
                         {item.items?.flat().map((subItem) => (
-                          <div key={subItem.title} className="relative">
+                          <div key={subItem.title} className="relative ">
                             {subItem.subItems ? (
                               <button
                                 onClick={(e) => toggleSubmenu(subItem.title, e)}
@@ -376,8 +376,7 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
                                 className="w-full text-left"
                               >
                                 <div className="flex items-start p-3 hover:bg-gray-50 transition-colors">
-                                  <div className={`flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full ${subItem.highlight ? "bg-blue-900 text-white" : "bg-blue-100 text-blue-900"
-                                    }`}>
+                                  <div className={`flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full text-blue `}>
                                     {getMenuIcon(subItem.icon || "default")}
                                   </div>
                                   <div className="ml-3 flex-1">
@@ -390,8 +389,7 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
                             ) : (
                               <Link href={subItem.path}>
                                 <div className="flex items-start p-3 hover:bg-gray-50 transition-colors">
-                                  <div className={`flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full ${subItem.highlight ? "bg-blue-900 text-white" : "bg-blue-100 text-blue-900"
-                                    }`}>
+                                  <div className={`flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full  `}>
                                     {getMenuIcon(subItem.icon || "default")}
                                   </div>
                                   <div className="ml-3">
@@ -405,13 +403,14 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
                             {/* Submenu */}
                             <AnimatePresence>
                               {subItem.subItems && activeSubmenu === subItem.title && (
+                                    console.log("Rendering submenu:", subItem.title),
                                 <motion.div
                                   initial={{ opacity: 0, x: -10 }}
                                   animate={{ opacity: 1, x: 0 }}
                                   exit={{ opacity: 0, x: -10 }}
                                   transition={{ duration: 0.2 }}
-                                  className="absolute top-0 left-full bg-white rounded-md shadow-lg overflow-hidden border border-gray-100 z-50"
-                                  style={{ width: "auto", minWidth: "200px" }}
+                                  className="absolute top-0 left-60  bg-white rounded-md shadow-lg overflow-hidden border border-gray-100 z-50"
+                                  style={{ width: "auto", minWidth: "240px" }}
                                 >
                                   <div className="py-1">
                                     {subItem.subItems.map((subSubItem) => (
