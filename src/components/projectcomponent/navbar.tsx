@@ -28,6 +28,7 @@ interface MenuItem {
       title: string
       description: string
       path: string
+      icon?: string
     }[]
   }[][]
 }
@@ -47,11 +48,13 @@ const navItems: MenuItem[] = [
             {
               title: "Our Story",
               description: "How we started and where we're going",
+              icon: "optimization",
               path: "/about-us/our-story",
             },
             {
               title: "Leadership",
               description: "Meet our executive team",
+              icon: "team",
               path: "/about-us/leadership",
             },
           ],
@@ -261,8 +264,8 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null)
-  console.log("activeSubmenu",activeSubmenu);
-  
+  console.log("activeSubmenu", activeSubmenu);
+
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRefs = useRef<Record<string, HTMLDivElement | null>>({})
 
@@ -298,14 +301,14 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
   }
 
   return (
-    <header 
-    onMouseLeave={() =>{
-     toggleDropdown("")
-     setIsOpen(false)
-    }
-  }
-    
-    className={`w-full bg-white border-b border-gray-200 ${className}`}>
+    <header
+      onMouseLeave={() => {
+        toggleDropdown("")
+        setIsOpen(false)
+      }
+      }
+
+      className={`w-full bg-white border-b border-gray-200 ${className}`}>
       <div className="w-full  mx-auto container px-5 ">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -323,8 +326,8 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
           </div>
 
           {/* Desktop Navigation */}
-          <nav 
-          className="hidden lg:flex items-center gap-1 lg:gap-2 xl:gap-3 2xl:gap-4 w-full justify-center">
+          <nav
+            className="hidden lg:flex items-center gap-1 lg:gap-2 xl:gap-3 2xl:gap-4 w-full justify-center">
             {navItems.map((item) => (
               <div
                 key={item.title}
@@ -375,12 +378,12 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
                                 onMouseEnter={(e) => toggleSubmenu(subItem.title, e)}
                                 className="w-full text-left"
                               >
-                                <div className="flex items-start p-3 hover:bg-gray-50 transition-colors">
-                                  <div className={`flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full text-blue `}>
+                                <div className="flex items-start p-3 hover:bg-gray-50 transition-colors group">
+                                  <div className={`flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full group-hover:text-orange text-blue `}>
                                     {getMenuIcon(subItem.icon || "default")}
                                   </div>
                                   <div className="ml-3 flex-1">
-                                    <p className="text-sm font-medium text-gray-900">{subItem.title}</p>
+                                    <p className="text-base font-semibold text-blue group-hover:text-orange">{subItem.title}</p>
                                     <p className="text-xs text-gray-500">{subItem.description}</p>
                                   </div>
                                   <ChevronRight className="h-4 w-4 text-gray-400 self-center ml-2" />
@@ -388,12 +391,12 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
                               </button>
                             ) : (
                               <Link href={subItem.path}>
-                                <div className="flex items-start p-3 hover:bg-gray-50 transition-colors">
-                                  <div className={`flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full  `}>
+                                <div className="flex items-start p-3 hover:bg-gray-50 transition-colors group">
+                                  <div className={`flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full group-hover:text-orange text-blue  `}>
                                     {getMenuIcon(subItem.icon || "default")}
                                   </div>
                                   <div className="ml-3">
-                                    <p className="text-sm font-medium text-gray-900">{subItem.title}</p>
+                                    <p className="text-base font-semibold group-hover:text-orange text-blue">{subItem.title}</p>
                                     <p className="text-xs text-gray-500">{subItem.description}</p>
                                   </div>
                                 </div>
@@ -403,7 +406,7 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
                             {/* Submenu */}
                             <AnimatePresence>
                               {subItem.subItems && activeSubmenu === subItem.title && (
-                                    console.log("Rendering submenu:", subItem.title),
+                                console.log("Rendering submenu:", subItem.title),
                                 <motion.div
                                   initial={{ opacity: 0, x: -10 }}
                                   animate={{ opacity: 1, x: 0 }}
@@ -417,10 +420,14 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
                                       <Link
                                         key={subSubItem.title}
                                         href={subSubItem.path}
-                                        className="block p-3 hover:bg-gray-50"
+                                        className=" p-3 hover:bg-gray-50 group flex items-start transition-colors group"
                                       >
-                                        <p className="text-sm font-medium text-gray-900">{subSubItem.title}</p>
-                                        <p className="text-xs text-gray-500">{subSubItem.description}</p>
+                                                                          <div className={`flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full group-hover:text-orange text-blue  `}>
+                                    {getMenuIcon(subSubItem.icon || "default")}
+                                  </div>
+                                          <div className="ml-3">
+                                        <p className="text-base font-semibold group-hover:text-orange text-blue">{subSubItem.title}</p>
+                                        <p className="text-xs text-gray-500">{subSubItem.description}</p></div>
                                       </Link>
                                     ))}
                                   </div>
@@ -439,9 +446,9 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
 
           <div className="flex w-full gap-2 items-center mt-2 lg:mt-0 flex-col lg:flex-row justify-end">
             <div className=" lg:flex gap-2 items-center hidden">
-            <CountrySelector isOpen={isOpen} setIsOpen={setIsOpen} />
-            <IoMdSearch className="text-2xl text-orange" />
-            <button className="uppercase px-4 py-0.5 font-medium bg-orange text-white rounded-lg border-2 border-orange hover:bg-transparent hover:text-orange smooth3"> Contact US </button>
+              <CountrySelector isOpen={isOpen} setIsOpen={setIsOpen} />
+              <IoMdSearch className="text-2xl text-orange" />
+              <button className="uppercase px-4 py-0.5 font-medium bg-orange text-white rounded-lg border-2 border-orange hover:bg-transparent hover:text-orange smooth3"> Contact US </button>
             </div>
             <button
               onClick={handleMobileMenuToggle}
