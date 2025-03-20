@@ -51,7 +51,7 @@ export function Hero() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 4000,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
     cssEase: "ease-in-out",
