@@ -33,24 +33,25 @@ const Footer = () => {
     {
       flag: "https://flagcdn.com/w320/au.png",
       country: "Australia - Truganina VIC 3029",
-      phone: "+611 3001 47617 ",
+      phone: "+61 1300 147617",
     },
     {
       flag: "https://flagcdn.com/w320/in.png",
       country: "India - Gandhinagar, GJ",
-      phone: "+91 90234 03569 ",
+      phone: "+91 90234 03569",
     },
     {
       flag: "https://flagcdn.com/w320/in.png",
       country: "India - Pune, MH",
-      phone: "+91 90234 03569 ",
+      phone: "+91 90234 03569",
     },
     {
       flag: "https://flagcdn.com/w320/us.png",
       country: "USA - San Francisco, CA-94108",
-      phone: "0113004747617",
+      phone: "+1 442 319 8010",
     },
-  ]
+  ];
+  
 
   const industries = [
     "Retail",
@@ -116,7 +117,9 @@ const Footer = () => {
                           {loc.country}
                         </h4>
                         {/* <p className="text-white/85 text-[15px] cursor-pointer">{loc.address}</p> */}
-                        <p className="text-white/85 text-[15px] cursor-pointer">Tel: {loc.phone}</p>
+                        <p className=" text-[15px] cursor-pointer">
+  Tel: <a href={`tel:${loc.phone}`} className="hover:underline text-white/85">{loc.phone}</a>
+</p>
                       </div>
                     </div>
 
@@ -291,14 +294,14 @@ const Footer = () => {
                   <div className="bg-[#fff]  p-4 rounded-xl shadow-lg animate-zoom">
                     <p className="text-blue text-center font-semibold mb-2 text-lg">Quick Connect </p>
 
-                    <a className="flex gap-2 items-center cursor-pointer group z-50" href="https://wa.me/123456789" target="_blank" rel="noopener noreferrer" >
+                    <a className="flex gap-2 items-center cursor-pointer group z-50" href="https://wa.me/+61452217290" target="_blank" rel="noopener noreferrer" >
                       <IoLogoWhatsapp className="text-green-500 text-[23px] cursor-pointer" />
                       <p className="text-black group-hover:text-orange cursor-pointer  smooth1">Whatsapp Now</p>
                     </a>
 
-                    <a className="flex gap-2 items-center cursor-pointer group z-50 mt-2" href="tel:+91123456789" target="_blank" rel="noopener noreferrer" >
+                    <a className="flex gap-2 items-center cursor-pointer group z-50 mt-2" href="tel:+91 90234 03569" target="_blank" rel="noopener noreferrer" >
                       <FiPhoneCall className="text-black text-[16px] cursor-pointer" />
-                      <p className="text-black group-hover:text-orange cursor-pointer  smooth1">+(91) 123456789</p>
+                      <p className="text-black group-hover:text-orange cursor-pointer  smooth1">+91 90234 03569</p>
                     </a>
                   </div>
 
