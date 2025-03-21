@@ -309,7 +309,7 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
       }
 
       className={`w-full bg-white border-b border-gray-200 ${className}`}>
-      <div className="w-full  mx-auto container ">
+      <div className="w-full  mx-auto container px-5 ">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="w-full">
