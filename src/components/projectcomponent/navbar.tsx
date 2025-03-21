@@ -309,8 +309,8 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
       }
 
       className={`w-full bg-white border-b border-gray-200 ${className}`}>
-      <div className="w-full  mx-auto container px-5 ">
-        <div className="flex items-center justify-between h-16">
+      <div className="w-full  mx-auto container ">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="w-full">
             <Link href="/">
@@ -327,7 +327,7 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
 
           {/* Desktop Navigation */}
           <nav
-            className="hidden lg:flex items-center gap-1 lg:gap-2 xl:gap-3 2xl:gap-4 w-full justify-center">
+            className="hidden lg:flex items-center gap-1 lg:gap-3 xl:gap-4 2xl:gap-5 w-full justify-center">
             {navItems.map((item) => (
               <div
                 key={item.title}
@@ -366,7 +366,7 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute left-0 mt-2 bg-white rounded-md shadow-lg  border border-gray-100 z-50"
+                      className="absolute left-0 mt-7 bg-white rounded-md shadow-lg  border border-gray-100 z-50"
                       style={{ width: "auto", minWidth: "250px" }}
                     >
                       <div className="py-1">
@@ -412,7 +412,7 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
                                   animate={{ opacity: 1, x: 0 }}
                                   exit={{ opacity: 0, x: -10 }}
                                   transition={{ duration: 0.2 }}
-                                  className="absolute top-0 left-60  bg-white rounded-md shadow-lg overflow-hidden border border-gray-100 z-50"
+                                  className="absolute -top-1 left-60  bg-white rounded-md shadow-lg overflow-hidden border border-gray-100 z-50"
                                   style={{ width: "auto", minWidth: "240px" }}
                                 >
                                   <div className="py-1">

@@ -32,7 +32,7 @@ export default function FAQPage() {
                     <Hero />
                     <Services />
                 </div>
-                <Partners />    
+                <Partners />
                 <SideSheet></SideSheet>
                 <IndustriesSection />
                 {/* <ImpactSection /> */}

@@ -95,7 +95,7 @@ export default function IntegrationSection() {
         </div>
 
         <motion.p
-          className="text-white text-center text-lg md:text-xl mb-12 mt-12 md:mt-0 max-w-4xl mx-auto"
+          className="text-white text-center text-lg md:text-xl mb-12 mt-12 md:mt-0 max-w-4xl mx-auto parahraph"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}

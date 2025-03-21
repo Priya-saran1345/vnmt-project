@@ -40,7 +40,7 @@ const OurImpact = () => {
     <div className='bg-[url("/images/impactbg.svg")] bg-cover  bg-right flex flex-col items-end text-white py-16 px-6'>
       <div className="w-full max-w-3xl space-y-2">
         <h2 className="heading font-bold heading-calisto mb-3 ">{impactContent.title}</h2>
-        <p className="text-xl text-white mb-6" dangerouslySetInnerHTML={{ __html: impactContent.subtitle }}></p>
+        <p className="text-xl text-white mb-6 parahraph" dangerouslySetInnerHTML={{ __html: impactContent.subtitle }}></p>
 
         <div className="flex flex-wrap gap-12">
           {impactStats.map((stat) => (

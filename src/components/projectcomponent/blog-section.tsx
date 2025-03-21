@@ -63,7 +63,7 @@ export function BlogSection() {
               {blogContent.subtitle}
             </h2>
           </div>
-          <p className="text-xl md:w-[45%] text-black">{blogContent.description}</p>
+          <p className="text-xl md:w-[45%] text-black parahraph">{blogContent.description}</p>
         </div>
 
         <div className="  left-0 right-0 hidden md:flex justify-end gap-4 px-4 transform -translate-y-1/2 z-10">

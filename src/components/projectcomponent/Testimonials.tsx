@@ -53,12 +53,12 @@ export function Testimonials() {
       <div className="w-full lg:w-[95%] 2xl:w-[77%] max-w-screen-2xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="heading heading-calisto font-bold ">Testimonials</h2>
-          <p className="text-xl text-black">Hear What Our Clients Say</p>
+          <p className="text-xl text-black parahraph">Hear What Our Clients Say</p>
         </div>
         <div className="flex items-center">
 
 
-          <div className=" left-0 top-1/2 -translate-y-1/2 z-10" onClick={scrollPrev}>
+          <div className=" left-0 top-1/2 -translate-y-1/2 z-10 hidden md:block" onClick={scrollPrev}>
             <MdKeyboardDoubleArrowLeft className="text-3xl text-black  cursor-pointer hover:text-black" />
           </div>
           <div className="relative overflow-hidden" ref={emblaRef}>
@@ -120,10 +120,7 @@ export function Testimonials() {
               ))}
             </div>
           </div>
-
-          {/* Left and Right Navigation Buttons */}
-
-          <div className=" right-0 top-1/2 -translate-y-1/2 z-10" onClick={scrollNext}>
+          <div className=" right-0 top-1/2 -translate-y-1/2 z-10 hidden md:block" onClick={scrollNext}>
             <MdKeyboardDoubleArrowRight className="text-3xl text-black cursor-pointer hover:text-black" />
           </div>
         </div>

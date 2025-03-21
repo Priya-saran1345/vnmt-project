@@ -22,9 +22,9 @@ export function CaseStudy() {
     <section className="py-16 overflow-hidden">
       <div>
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 px-4">
           <h2 className="heading heading-calisto font-bold">Case Studies</h2>
-          <p className="text-xl text-black">How We Make Transformative Impact Through Client Experiences</p>
+          <p className="text-xl text-black parahraph">How We Make Transformative Impact Through Client Experiences</p>
         </div>
         
         {/* Upper Cards Scrolling Section */}
