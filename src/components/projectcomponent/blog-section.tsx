@@ -8,6 +8,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 import { blogPosts, blogContent } from "@/components/data/blog-posts"
 import { Card, CardContent } from "@/components/ui/card"
 import Slider from "react-slick"
+import Button from "./button";
 
 export function BlogSection() {
   // Create a reference to the slider
@@ -80,6 +81,7 @@ export function BlogSection() {
           >
             <ArrowRight className="h-5 w-5" />
           </button>
+          <Button content='View All'></Button>
         </div>
         {/* Carousel container with React Slick */}
 

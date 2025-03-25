@@ -130,7 +130,7 @@ const Footer = () => {
               {footerSections.map((section, index) => (
                 <div key={index} className={` px-4 ${section.title === 'ABOUT COMPANY' ? 'border-none' : 'border-blue border-r-2'}  py-3`}>
                   <h3 className=" mb-4 underline-custom text-xl cursor-pointer">{section.title}</h3>
-                  <ul className={`grid xl:grid-cols-2 grid-cols-1  gap-y-4  items-start ${section.title === "ABOUT COMPANY" ? " gap-x-4" : " "}`}>
+                  <ul className={`grid ${section.title === "NETSUITE" ? " grid-cols-1" : "xl:grid-cols-2 grid-cols-1 "}  gap-y-4  items-start ${section.title === "ABOUT COMPANY" ? " gap-x-4" : " "}`}>
                     {section.links.map((link, linkIndex) => (
                       <li key={linkIndex}>
                         <Link href="#" className="text-white/85  text-sm hover:text-orange text-[15px]">

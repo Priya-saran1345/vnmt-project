@@ -32,7 +32,7 @@ const Counter = ({ targetValue }:any) => {
     }
   }, [isInView, targetValue]);
 
-  return <span ref={ref}>{count}                {targetValue === "95" && "%"}</span>;
+  return <span ref={ref}>{count}               {targetValue === "30" && "+"} {targetValue === "500" && "+"} {targetValue === "95" && "%"}</span>;
 };
 
 const OurImpact = () => {

@@ -3,6 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { caseStudies } from "@/components/data/case-studies";
+import Button from "./button";
 
 export function CaseStudy() {
   const [isPaused, setIsPaused] = useState(false);
@@ -74,6 +75,9 @@ export function CaseStudy() {
               </div>
             ))}
           </div>
+          <div className='mt-6 flex items-center justify-center'>
+        <Button content='View All'></Button>
+        </div>
         </div>
 
 

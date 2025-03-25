@@ -8,7 +8,8 @@ import { ChevronDown, Menu, X, ChevronRight } from 'lucide-react'
 import { getMenuIcon } from "./icons"
 import Image from "next/image"
 import CountrySelector from "./countrySelect"
-import { IoMdSearch } from "react-icons/io"
+// import { IoMdSearch } from "react-icons/io"
+import ToolbarSearch from "./search"
 
 interface NavbarItemsProps {
   className?: string
@@ -447,8 +448,9 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
           <div className="flex w-full gap-2 items-center mt-2 lg:mt-0 flex-col lg:flex-row justify-end">
             <div className=" lg:flex gap-2 items-center hidden">
               <CountrySelector isOpen={isOpen} setIsOpen={setIsOpen} />
-              <IoMdSearch className="text-2xl text-orange" />
-              <button className="uppercase px-4 py-0.5 font-medium bg-orange text-white rounded-lg border-2 border-orange hover:bg-transparent hover:text-orange smooth3"> Contact US </button>
+              {/* <IoMdSearch className="text-2xl text-orange" /> */}
+              <ToolbarSearch />
+              <button className="uppercase px-2 py-0.5 font-medium bg-orange text-white rounded-lg border-2 border-orange hover:bg-transparent hover:text-orange smooth3"> Contact US </button>
             </div>
             <button
               onClick={handleMobileMenuToggle}

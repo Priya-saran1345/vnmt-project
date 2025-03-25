@@ -6,14 +6,10 @@ import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { RiArrowDropDownLine } from "react-icons/ri"
 
-const defaultCountry = {
-  name: "India",
-  flag: "https://flagcdn.com/w320/in.png",
-  ext: "in",
-}
+const defaultCountry =   { name: "Australia", flag: "https://flagcdn.com/w320/au.png", ext: "au" }
 
 const countries = [
-  { name: "Australia", flag: "https://flagcdn.com/w320/au.png", ext: "au" },
+  { name: "Australia", flag: "https://flagcdn.com/w320/au.png", ext: "au" }, 
   { name: "USA", flag: "https://flagcdn.com/w320/us.png", ext: "usa" },
 ]
 
@@ -46,7 +42,7 @@ const CountrySelector = ({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: (i
       onClick={() => setIsOpen(!isOpen)}
     >
       <button className="flex items-center hover:text-orange text-white cursor-pointer py-2">
-        <Image src={selectedCountry.flag || "/placeholder.svg"} alt={selectedCountry.name} height={20} width={20} />
+        <Image src={selectedCountry.flag || "/placeholder.svg"} alt={selectedCountry.name} height={25} width={25} />
         <motion.span animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.3, ease: "easeInOut" }}>
           <RiArrowDropDownLine className="text-2xl text-black" />
         </motion.span>
@@ -66,7 +62,7 @@ const CountrySelector = ({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: (i
             className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 cursor-pointer text-black"
             onClick={() => handleSelect(country)}
           >
-            <Image src={country.flag || "/placeholder.svg"} alt={country.name} height={20} width={20} />
+            <Image src={country.flag || "/placeholder.svg"} alt={country.name} height={25} width={25} />
             <span>{country.name}</span>
           </div>
         ))}
