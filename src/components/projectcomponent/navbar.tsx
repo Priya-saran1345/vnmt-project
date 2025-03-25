@@ -301,14 +301,14 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
   }
 
   return (
-    <header
+    <motion.header
       onMouseLeave={() => {
         toggleDropdown("")
         setIsOpen(false)
       }
       }
 
-      className={`w-full bg-white border-b border-gray-200 ${className}`}>
+      className={`w-full bg-white border-b border-gray-200 sticky top-0 z-[9] shadow-xl ${className}`}>
       <div className="w-full  mx-auto container px-5 ">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -570,6 +570,6 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
           )}
         </AnimatePresence>
       </div>
-    </header>
+    </motion.header>
   )
 }

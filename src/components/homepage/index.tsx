@@ -25,7 +25,7 @@ export default function FAQPage() {
     return (
 
         <div className="text-black">
-            <div className=" w-full">
+            <div className=" w-full relative">
                 {/* <Header /> */}
                 <Navbar />
                 <div className='bg_banner'>
