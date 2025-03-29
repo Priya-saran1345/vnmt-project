@@ -9,7 +9,7 @@ import { getMenuIcon } from "./icons"
 import Image from "next/image"
 import CountrySelector from "./countrySelect"
 import ToolbarSearch from "./search"
-import { BASE_URL } from "@/utils/api"
+// import { BASE_URL } from "@/utils/api"
 
 
 interface NavbarItemsProps {
@@ -262,12 +262,12 @@ const navItems: MenuItem[] = [
 ]
 
 export default function Navbar({ className = "" ,logo }: NavbarItemsProps) {
-  console.log(logo);
+  // console.log(logo);
   
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null)
-  console.log("activeSubmenu", activeSubmenu);
+  // console.log("activeSubmenu", activeSubmenu);
 
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRefs = useRef<Record<string, HTMLDivElement | null>>({})
@@ -318,7 +318,7 @@ export default function Navbar({ className = "" ,logo }: NavbarItemsProps) {
           <div className="w-full">
             <Link href="/">
               <Image
-                src={logo ? `${BASE_URL}${logo}` : "/images/logo.svg"}
+                src={logo ? `https://vnmt-project-o45r.vercel.app${logo}` : "/images/logo.svg"}
                 loading="lazy"
                 width={150}
                 height={35}
@@ -409,7 +409,7 @@ export default function Navbar({ className = "" ,logo }: NavbarItemsProps) {
                             {/* Submenu */}
                             <AnimatePresence>
                               {subItem.subItems && activeSubmenu === subItem.title && (
-                                console.log("Rendering submenu:", subItem.title),
+                                // console.log("Rendering submenu:", subItem.title),
                                 <motion.div
                                   initial={{ opacity: 0, x: -10 }}
                                   animate={{ opacity: 1, x: 0 }}

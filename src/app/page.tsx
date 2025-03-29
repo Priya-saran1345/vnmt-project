@@ -23,7 +23,7 @@ export default Home
 export async function generateMetadata() {
   try {
     const metaData = await fetchData();
-    console.log(metaData);
+    // console.log(metaData);
 
     return {
       title: metaData?.meta_title || '',
