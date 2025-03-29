@@ -9,6 +9,7 @@ import { getMenuIcon } from "./icons"
 import Image from "next/image"
 import CountrySelector from "./countrySelect"
 import ToolbarSearch from "./search"
+import { BASE_URL } from "@/utils/api"
 // import { BASE_URL } from "@/utils/api"
 
 
@@ -318,7 +319,7 @@ export default function Navbar({ className = "" ,logo }: NavbarItemsProps) {
           <div className="w-full">
             <Link href="/">
               <Image
-                src={logo ? `${logo}` : "/images/logo.svg"}
+                src={logo ? `${BASE_URL}${logo}` : "/images/logo.svg"}
                 loading="lazy"
                 width={150}
                 height={35}
