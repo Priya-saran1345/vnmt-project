@@ -11,7 +11,7 @@ import { MdChevronRight } from "react-icons/md";
 
 const bgImages = [
   { id: 1, image: "/images/bgbanner1.svg" },
-  { id: 2, image: "/images/bgbanner2.svg" },
+  { id: 2, image: "/images/bgbanner2.png" },
   { id: 3, image: "/images/bgbanner3.svg" },
 ]
 

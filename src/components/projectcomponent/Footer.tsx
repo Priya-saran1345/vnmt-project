@@ -1,57 +1,45 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
-import React, { useRef, useState } from "react"
 import Link from "next/link"
-import { Search } from "lucide-react"
-import { FiFacebook, FiPhoneCall } from "react-icons/fi"
-import { FaInstagram } from "react-icons/fa"
+import { useRef } from "react"
+import { FaInstagram, FaYoutube } from "react-icons/fa"
+import { FiFacebook, FiPhoneCall, FiTwitter } from "react-icons/fi"
 import { GrLinkedinOption } from "react-icons/gr"
 // import { BiLogoGmail } from "react-icons/bi"
-import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md"
+import { motion, useInView } from "framer-motion"
 import Image from "next/image"
-// import ReactPlayer from "react-player"
-import { IoLogoWhatsapp } from "react-icons/io";
-import { FaSquarePinterest } from "react-icons/fa6";
-import { BsMicrosoftTeams } from "react-icons/bs";
-import { motion, useInView } from "framer-motion";
-const Footer = () => {
-  // const targetSectionRef = useRef<HTMLElement | null>(null);
+import { BsMicrosoftTeams } from "react-icons/bs"
+import { IoLogoWhatsapp } from "react-icons/io"
+import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md"
+import NewsletterForm from "./newsletter-form"
+const Footer = ({ data }: any) => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
-  const [searchTerm, setSearchTerm] = useState("")
 
+  // const locationData = [
+  //   {
+  //     flag: "https://flagcdn.com/w320/au.png",
+  //     country: "Australia - Truganina VIC 3029",
+  //     phone: "+61 1300 147617",
+  //   },
+  //   {
+  //     flag: "https://flagcdn.com/w320/in.png",
+  //     country: "India - Gandhinagar, GJ",
+  //     phone: "+91 90234 03569",
+  //   },
+  //   {
+  //     flag: "https://flagcdn.com/w320/in.png",
+  //     country: "India - Pune, MH",
+  //     phone: "+91 90234 03569",
+  //   },
+  //   {
+  //     flag: "https://flagcdn.com/w320/us.png",
+  //     country: "USA - San Francisco, CA-94108",
+  //     phone: "+1 442 319 8010",
+  //   },
+  // ];
 
-  const handleSearch = () => {
-    if (searchTerm.trim()) {
-      console.log("Searching for:", searchTerm)
-    } else {
-      console.log("Please enter a search term.")
-    }
-  }
-
-  const locationData = [
-    {
-      flag: "https://flagcdn.com/w320/au.png",
-      country: "Australia - Truganina VIC 3029",
-      phone: "+61 1300 147617",
-    },
-    {
-      flag: "https://flagcdn.com/w320/in.png",
-      country: "India - Gandhinagar, GJ",
-      phone: "+91 90234 03569",
-    },
-    {
-      flag: "https://flagcdn.com/w320/in.png",
-      country: "India - Pune, MH",
-      phone: "+91 90234 03569",
-    },
-    {
-      flag: "https://flagcdn.com/w320/us.png",
-      country: "USA - San Francisco, CA-94108",
-      phone: "+1 442 319 8010",
-    },
-  ];
-  
 
   const industries = [
     "Retail",
@@ -63,19 +51,20 @@ const Footer = () => {
   ]
 
   const footerSections = [
-    {
-      title: "NETSUITE",
+    { title: "NETSUITE",
       links: [
-        "Netsuite Consulting",
-        "Netsuite Implementation",
-        "Netsuite Integration",
-        "Netsuite Optimization",
-        "Netsuite Support & Maintenance",
-        "Netsuite Training",
+        "NetSuite Consulting",
+        "NetSuite Implementation",
+        "NetSuite Integration",
+        "NetSuite Optimization",
+        "NetSuite Support & Maintenance",
+        "NetSuite Training",
       ],
     },
-    {
-      title: "CELIGO",
+    { title: "INTEGRATION",
+      links: ["NetSuite Integration", "Magento NetSuite Integration", "WooCommerce NetSuite Integration", "Shopify NetSuite Integration", "JitterbitNetSuite Integration"],
+    },
+    { title: "CELIGO",
       links: [
         "Celigo Customization",
         "Celigo Support",
@@ -84,56 +73,65 @@ const Footer = () => {
         "Integration Using Celigo Platform",
       ],
     },
-    {
-      title: "ABOUT COMPANY",
+    { title: "ABOUT COMPANY",
       links: ["About Us", "Career", "Customer Stories", "Blogs", "Case Studies"],
     },
   ]
 
+  const socialMedia = [
+    { key: "facebook_url", icon: <FiFacebook className="text-[22px] text-white group-hover:text-lightblue" />, color: "border-lightblue" },
+    { key: "twitter_url", icon: <FiTwitter className="text-[22px] text-white group-hover:text-lightblue" />, color: "border-lightblue" },
+    { key: "instagram_url", icon: <FaInstagram className="text-[22px] text-white group-hover:text-pink-500" />, color: "border-pink-500" },
+    { key: "linkedin_url", icon: <GrLinkedinOption className="text-[22px] text-white group-hover:text-blue" />, color: "border-blue" },
+    { key: "youtube_url", icon: <FaYoutube className="text-[22px] text-white group-hover:text-red-500" />, color: "border-red-500" },
+  ];
+
   return (
     <div className="pb-0 md:bg-black  ">
       {/* Footer */}
-      <div className="  -mt-20 pt-20 text-white/85 text-sm overflow-hidden relative">
+      <div className="  -mt-20 pt-20 text-white text-sm overflow-hidden relative">
 
         {/* Content */}
-        <div className="bg_footer_img bg-black md:bg-transparent">
-          <div className=" lg:w-[95%] 2xl:w-[80%] mx-auto  ">
+        <div className="bg_footer_img bg-black md:bg-transparent flex items-center justify-center flex-col w-full">
+          <div className="mx-auto container   ">
+            <div className=''>
             {/* Global Locations */}
-            <div className='flex flex-col md:flex-row justify-between  w-full relative py-12 z-10'>
-              <div className="px-4 border-blue border-r-2 md:w-[30%] pt-3">
-                <h3 className=" mb-4 underline-custom text-xl  cursor-pointer">GLOBAL LOCATIONS</h3>
+            <div className='flex flex-col md:flex-row flex-wrap lg:flex-nowrap w-full justify-center  relative py-12 z-10'>
+
+              <div className="px-4 lg:px-2 xl:px-5 2xl:px-6 border-blue border-r-2  pt-3">
+                <h3 className=" mb-4 underline-custom text-xl font-semibold  cursor-pointer">GLOBAL LOCATIONS</h3>
                 <div className="space-y-4">
-                  {locationData.map((loc, index) => (
+                  {data?.office_locations?.map((loc: any, index: any) => (
                     <div key={index} className="group flex items-start gap-3">
                       <Image
-                        src={loc.flag}
-                        alt={loc.flag}
+                        src={loc.flag_url}
+                        alt={loc.country_code}
                         height={10}
                         width={10}
                         className="w-6 h-3 mt-1"
                       />
                       <div className="flex flex-col">
                         <h4 className="font-semibold flex gap-2 text-[15px] items-center">
-                          {loc.country}
+                          {loc.location}
                         </h4>
-                        {/* <p className="text-white/85 text-[15px] cursor-pointer">{loc.address}</p> */}
+                        {/* <p className="text-white text-[15px] cursor-pointer">{loc.address}</p> */}
                         <p className=" text-[15px] cursor-pointer">
-  Tel: <a href={`tel:${loc.phone}`} className="hover:underline text-white/85">{loc.phone}</a>
-</p>
+                          Tel: <a href={`tel:${loc.phone_number}`} className="hover:underline text-white">{loc.phone_number}</a>
+                        </p>
                       </div>
                     </div>
 
                   ))}
                 </div>
               </div>
-              {/* Footer Sections */}
+
               {footerSections.map((section, index) => (
-                <div key={index} className={` px-4 ${section.title === 'ABOUT COMPANY' ? 'border-none' : 'border-blue border-r-2'}  py-3`}>
-                  <h3 className=" mb-4 underline-custom text-xl cursor-pointer">{section.title}</h3>
-                  <ul className={`grid ${section.title === "NETSUITE" ? " grid-cols-1" : "xl:grid-cols-2 grid-cols-1 "}  gap-y-4  items-start ${section.title === "ABOUT COMPANY" ? " gap-x-4" : " "}`}>
+                <div key={index} className={` px-4 lg:px-2 xl:px-5 2xl:px-6  ${section.title === 'ABOUT COMPANY' ? 'border-none' : 'border-blue border-r-2'}  py-3`}>
+                  <h3 className=" mb-4 underline-custom text-xl font-semibold cursor-pointer">{section.title}</h3>
+                  <ul className={`grid mb-4 ${section.title === "NETSUITE" || "CELIGO" ? " grid-cols-1" : "xl:grid-cols-2 grid-cols-1 "}  gap-y-4  items-start ${section.title === "ABOUT COMPANY" ? " gap-x-4" : " "}`}>
                     {section.links.map((link, linkIndex) => (
                       <li key={linkIndex}>
-                        <Link href="#" className="text-white/85  text-sm hover:text-orange text-[15px]">
+                        <Link href="#" className="text-white  text-sm hover:text-orange text-[15px]">
                           {link}
                         </Link>
                       </li>
@@ -141,73 +139,44 @@ const Footer = () => {
                   </ul>
                   {section.title === 'ABOUT COMPANY' && (
                     <>
-                      <h3 className=" mb-4 mt-4 underline-custom text-xl cursor-pointer">
+                      <h3 className=" mb-4 mt-4 underline-custom text-xl font-semibold ">
                         FOLLOW US @
                       </h3>
                       <div className="flex gap-2 mb-4">
-                        <Link href="#" className="border p-1.5 hover:border-pink-500 smooth1 hover:scale-105 rounded-md group">
-                          <FaInstagram className="text-[22px] text-white/85 group-hover:text-pink-500" />
-                        </Link>
-                        <Link href="#" className="border p-1.5 hover:border-lightblue smooth1 hover:scale-105 rounded-md group">
-                          <FiFacebook className="text-[22px] text-white/85 group-hover:text-lightblue" />
-                        </Link>
-                        <Link href="#" className="border p-1.5 hover:border-blue smooth1 hover:scale-105 rounded-md group">
-                          <GrLinkedinOption className="text-[22px] text-white/85 group-hover:text-blue" />
-                        </Link>
-                        <Link href="#" className="border p-1.5 hover:border-red-500 smooth1 hover:scale-105 rounded-md group">
-                          <FaSquarePinterest className="text-[22px] text-white/85 group-hover:text-red-500" />
-                        </Link>
+                        {(socialMedia && data) && socialMedia.map(({ key, icon, color }) =>
+                          data[key] ? (
+                            <Link key={key} href={data[key]} target="_blank" rel="noopener noreferrer" className={`border p-1.5 hover:${color} smooth1 hover:scale-105 rounded-md group`}>
+                              {icon}
+                            </Link>
+                          ) : null
+                        )}
                       </div>
-                      <div className="relative bg-white text-black rounded-full shadow-md">
-                        <div className="relative px-3 w-full flex items-center">
-                          <input
-                            type="search"
-                            placeholder="Search"
-                            className="w-full rounded-full bg-white border-none outline-none py-[6px] text-[14px] pl-2 pr-10"
-                            value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.target.value)}
-                            onKeyPress={(e) => {
-                              if (e.key === "Enter") {
-                                handleSearch();
-                              }
-                            }}
-                          />
-                          <div
-                            className="text-[20px] flex items-center justify-center text-white/85 text-sm cursor-pointer"
-                            onClick={handleSearch}
-                          >
-                            <Search className="h-full w-full text-black" />
-                          </div>
-                        </div>
-                      </div>
+                      
+                      <h3 className=" mb-4 mt-4 underline-custom text-xl font-semibold ">
+                        GET IN TOUCH
+                      </h3>
+                      <NewsletterForm />
                       <p className="text-[14px] mt-4 flex gap-1"><span className="text-white hover:text-orange cursor-pointer">
                         Terms & Conditions</span> | <span className="text-white hover:text-orange cursor-pointer"> Privacy policy</span> </p>
-
                     </>
-                  )}
+                  )} 
 
                   {section.title === 'CELIGO' && (
                     <>
-                      <div className="  py-3">
-                        <h3 className=" mb-4 underline-custom text-xl  cursor-pointer">CONTACT US</h3>
+                      <div className="  pt-4">
+                        <h3 className=" mb-4 underline-custom text-xl  cursor-pointer font-semibold">CONTACT US</h3>
                         <div className="space-y-4">
                           <p className="flex hover:text-orange cursor-pointer gap-2">
                             <Image src={'/images/mail.svg'} alt="" height={22} width={22}></Image>
-
-                            {/* <BiLogoGmail className="!text-orange text-[20px] bg-white" /> */}
-                            sales@vnmtsolutions.com
+                            {data?.site_email}
                           </p>
                           <p className="flex hover:text-orange cursor-pointer gap-2">
                             <Image src={'/images/call.svg'} alt="" height={24} width={24}></Image>
-
-                            {/* <MdWifiCalling3 className="text-white bg-gradient-to-b from-orange to-white text-[20px] rounded-[15%]" /> */}
-                            61 1300147617
+                            {data?.contact_number}
                           </p>
                           <p className="flex hover:text-orange cursor-pointer gap-2">
-                            {/* <Image src={'/images/call.svg'} alt="" height={24} width={24}></Image> */}
                             <BsMicrosoftTeams className="text-blue text-[28px]" />
-                            {/* <MdWifiCalling3 className="text-white bg-gradient-to-b from-orange to-white text-[20px] rounded-[15%]" /> */}
-                            sales@vnmtsolutions.com
+                            {data?.site_email}
 
                           </p>
                         </div>
@@ -218,9 +187,11 @@ const Footer = () => {
 
                 </div>
               ))}
+
             </div>
-            {/* Contact Us */}
-            <div className="flex flex-col gap-4 ml-4 z-10">
+
+            {/* INDUSTRIES THAT WE SERVE */}
+            <div className="flex flex-col  gap-4 ml-4 z-10">
               {/* Industries */}
               <h3 className="font-bold underline-custom text-xl mt-4 text-white z-10">INDUSTRIES THAT WE SERVE</h3>
               <div className="flex md:flex-row flex-wrap gap-2  text-[14px] relative z-10">
@@ -232,8 +203,12 @@ const Footer = () => {
                 ))}
               </div>
             </div>
+
+            </div>
+
           </div>
-          <div className="ml-2 lg:ml-[3%] 2xl:ml-[11.5%] mr-5 mb-8">
+
+          <div className="mx-auto container mb-8 w-full">
 
             {/* Footer Logos */}
             <div
@@ -299,17 +274,16 @@ const Footer = () => {
                       <p className="text-black group-hover:text-orange cursor-pointer  smooth1">Whatsapp Now</p>
                     </a>
 
-                    <a className="flex gap-2 items-center cursor-pointer group z-50 mt-2" href="tel:+91 90234 03569" target="_blank" rel="noopener noreferrer" >
+                    <a className="flex gap-2 items-center cursor-pointer group z-50 mt-2" href={`tel:${data?.contact_number}`} target="_blank" rel="noopener noreferrer" >
                       <FiPhoneCall className="text-black text-[16px] cursor-pointer" />
-                      <p className="text-black group-hover:text-orange cursor-pointer  smooth1">+91 90234 03569</p>
+                      <p className="text-black group-hover:text-orange cursor-pointer  smooth1"> {data?.contact_number}</p>
                     </a>
                   </div>
 
                 </div>
 
-
-
               </div>
+
             </div>
           </div>
         </div>
@@ -319,7 +293,7 @@ const Footer = () => {
       <div className="text-center py-4 bg-darkblue text-sm text-white">
         © Copyright {new Date().getFullYear()} @ <span className="font-semibold">VNMT</span> | All rights reserved
       </div>
- 
+
     </div>
   )
 }

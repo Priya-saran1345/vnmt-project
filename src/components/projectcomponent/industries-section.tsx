@@ -93,10 +93,10 @@ export function IndustriesSection() {
       <div className="flex items-center justify-center ">
         <span className="parahraph font-bold tracking-wide flex items-center gap-3 md:flex-row flex-col">
           {" "}
-          Want to see our professional services.{" "}
+          Want to know more about our industries? {" "}
           <a className="text-blue hover:text-orange smooth1 hover:scale-105 cursor-pointer underline">
             {" "}
-            Click here to View More{" "}
+            Click here to View{" "}
           </a>
         </span>
       </div>

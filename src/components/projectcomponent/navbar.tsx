@@ -8,11 +8,13 @@ import { ChevronDown, Menu, X, ChevronRight } from 'lucide-react'
 import { getMenuIcon } from "./icons"
 import Image from "next/image"
 import CountrySelector from "./countrySelect"
-// import { IoMdSearch } from "react-icons/io"
 import ToolbarSearch from "./search"
+import { BASE_URL } from "@/utils/api"
+
 
 interface NavbarItemsProps {
   className?: string
+  logo?: string
 }
 
 interface MenuItem {
@@ -35,8 +37,7 @@ interface MenuItem {
 }
 
 const navItems: MenuItem[] = [
-  {
-    title: "Company",
+  { title: "Company",
     hasDropdown: true,
     items: [
       [
@@ -75,8 +76,7 @@ const navItems: MenuItem[] = [
       ],
     ],
   },
-  {
-    title: "NetSuite",
+  { title: "NetSuite",
     hasDropdown: true,
     items: [
       [
@@ -115,8 +115,7 @@ const navItems: MenuItem[] = [
       ],
     ],
   },
-  {
-    title: "Celigo",
+  { title: "Celigo",
     hasDropdown: true,
     items: [
       [
@@ -155,48 +154,7 @@ const navItems: MenuItem[] = [
       ],
     ],
   },
-  {
-    title: "Integration",
-    hasDropdown: true,
-    items: [
-      [
-        {
-          title: "API Integration",
-          description: "Custom API development and integration",
-          path: "/integration/api",
-          icon: "api",
-        },
-        {
-          title: "ERP Integration",
-          description: "Connect your enterprise systems seamlessly",
-          path: "/integration/erp",
-          icon: "erp",
-        },
-        {
-          title: "E-commerce Integration",
-          description: "Integrate your online store with backend systems",
-          path: "/integration/ecommerce",
-          icon: "ecommerce",
-        },
-      ],
-      [
-        {
-          title: "Data Migration",
-          description: "Secure and efficient data transfer services",
-          path: "/integration/data-migration",
-          icon: "data",
-        },
-        {
-          title: "Integration Strategy",
-          description: "Strategic planning for system integration",
-          path: "/integration/strategy",
-          icon: "strategy",
-        },
-      ],
-    ],
-  },
-  {
-    title: "Products",
+  { title: "Products",
     hasDropdown: true,
     items: [
       [
@@ -235,8 +193,51 @@ const navItems: MenuItem[] = [
       ],
     ],
   },
-  {
-    title: "Resources",
+  { title: "Industries",
+    hasDropdown: true,
+    items: [
+      [
+        {
+          "title": "Retail",
+          "description": "Optimize sales with tailored retail solutions",
+          "path": "/industries/retail",
+          "icon": "retail"
+        },
+        {
+          "title": "Wholesale Distribution",
+          "description": "Streamline bulk orders with smart integrations",
+          "path": "/industries/wholesale",
+          "icon": "wholesale"
+        },
+        {
+          "title": "Manufacturing",
+          "description": "Enhance production with automated workflows",
+          "path": "/industries/manufacturing",
+          "icon": "manufacturing"
+        },
+        {
+          "title": "Professional Services",
+          "description": "Boost efficiency with seamless service solutions",
+          "path": "/industries/professional-services",
+          "icon": "services"
+        },
+        {
+          "title": "Food & Beverage",
+          "description": "Optimize supply chains for fresh, fast delivery",
+          "path": "/industries/food-beverage",
+          "icon": "food"
+        },
+        {
+          "title": "Finance",
+          "description": "Secure, scalable solutions for financial growth",
+          "path": "/industries/finance",
+          "icon": "finance"
+        }
+      ]
+         
+    ],
+  },
+  { title: "Resources",
     hasDropdown: true,
     items: [
       [
@@ -255,13 +256,14 @@ const navItems: MenuItem[] = [
       ],
     ],
   },
-  {
-    title: "Careers",
+  { title: "Careers",
     path: "/careers",
   },
 ]
 
-export default function Navbar({ className = "" }: NavbarItemsProps) {
+export default function Navbar({ className = "" ,logo }: NavbarItemsProps) {
+  console.log(logo);
+  
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null)
@@ -316,7 +318,7 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
           <div className="w-full">
             <Link href="/">
               <Image
-                src={"/images/logo.svg"}
+                src={logo ? `${BASE_URL}${logo}` : "/images/logo.svg"}
                 loading="lazy"
                 width={150}
                 height={35}
@@ -332,13 +334,13 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
             {navItems.map((item) => (
               <div
                 key={item.title}
-                className="relative"
+                className="relative "
                 ref={(el: any) => (dropdownRefs.current[item.title] = el)}
               >
                 {item.path ? (
                   <Link
                     href={item.path}
-                    className="text-gray-700 hover:text-orange  font-semibold transition-colors duration-200"
+                    className="text-black hover:text-orange  font-semibold transition-colors duration-200"
                   >
                     {item.title}
                   </Link>
@@ -346,7 +348,7 @@ export default function Navbar({ className = "" }: NavbarItemsProps) {
                   <button
                     onClick={() => toggleDropdown(item.title)}
                     onMouseEnter={() => toggleDropdown(item.title)}
-                    className={`flex items-center text-gray-700 hover:text-orange  font-semibold transition-colors duration-200 ${activeDropdown === item.title ? "text-gray-900" : ""
+                    className={`flex items-center text-black hover:text-orange  font-semibold transition-colors duration-200 ${activeDropdown === item.title ? "text-gray-900" : ""
                       }`}
                   >
                     {item.title}
