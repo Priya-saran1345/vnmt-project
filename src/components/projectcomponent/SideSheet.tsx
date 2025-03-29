@@ -55,7 +55,7 @@ const QuerySheet = () => {
 
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = `https://www.google.com/recaptcha/api.js?render=6LddUQMrAAAAAJA8P1JthBlKkvlXVsvGMDywOz72`;
+    script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.RECAPTCHA_SITE_KEY}`;
     script.async = true;
     script.onload = () => {
       // console.log("reCAPTCHA script loaded successfully");
@@ -145,7 +145,7 @@ const QuerySheet = () => {
           resolve()
         }
       })
-      const token = await window.grecaptcha.execute("6LddUQMrAAAAAJA8P1JthBlKkvlXVsvGMDywOz72", { action: "submit" });
+      const token = await window.grecaptcha.execute(`${process.env.RECAPTCHA_SITE_KEY}`, { action: "submit" });
       const response = await fetch("/mail", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

@@ -318,7 +318,7 @@ export default function Navbar({ className = "" ,logo }: NavbarItemsProps) {
           <div className="w-full">
             <Link href="/">
               <Image
-                src={logo ? `https://vnmt-project-o45r.vercel.app${logo}` : "/images/logo.svg"}
+                src={logo ? `${logo}` : "/images/logo.svg"}
                 loading="lazy"
                 width={150}
                 height={35}
