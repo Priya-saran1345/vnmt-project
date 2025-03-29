@@ -1,19 +1,21 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 
-import { useRef } from "react"
-import Image from "next/image"
-import 'slick-carousel/slick/slick.css';
+import { blogContent } from "@/components/data/blog-posts";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { useRef } from "react";
+import Slider from "react-slick";
 import 'slick-carousel/slick/slick-theme.css';
-import { ArrowLeft, ArrowRight } from "lucide-react"
-import { blogPosts, blogContent } from "@/components/data/blog-posts"
-import { Card, CardContent } from "@/components/ui/card"
-import Slider from "react-slick"
+import 'slick-carousel/slick/slick.css';
 import Button from "./button";
+import { BASE_URL } from "@/utils/api";
 
-export function BlogSection() {
+export function BlogSection({blogPosts}:any) {
   // Create a reference to the slider
   const sliderRef = useRef<Slider>(null)
-
+  
   // Slick settings for autoplay, infinite scroll, and navigation
   const slickSettings = {
     infinite: true,
@@ -87,13 +89,11 @@ export function BlogSection() {
 
         <div className="relative w-full overflow-hidden">
           <Slider ref={sliderRef} {...slickSettings}>
-            {blogPosts.map((post) => {
+            {blogPosts.map((post:any, index:any) => {
               return (
-                <div key={post.id} className="flex-none border-orange div-container group min-h-[435px] !w-[363px] px-4 transition-all duration-500">
-                  <div className="upper-half">
-
-</div>
-                  <div className="transform-gpu transition-all duration-500 perspective-1000 group">
+                <div key={index} className="flex-none border-orange div-container group min-h-[435px] !w-[363px] px-4 transition-all duration-500">
+                  <div className="upper-half"></div>
+                  <div className="transform-gpu transition-all duration-500 perspective-1000 group"> 
                     <Card
                       className="relative h-[412px] overflow-hidden rounded-2xl transform-gpu transition-all duration-500   "
                     >
@@ -111,18 +111,18 @@ export function BlogSection() {
                           </div>
                         </div>
                         <div className="p-2 pb-4 text-black bg-white px-4 smooth3 group-hover:bg-darkblue group-hover:text-white rounded-sm items-center">
-                          <p className="!text-[16px] font-semibold paragraph line-clamp-3 text-base  mb-4">{post.title}</p>
+                          <p className="!text-[16px] font-semibold paragraph line-clamp-3 text-base  mb-4">{post?.title}</p>
                           <div className="flex items-center gap-3">
                             <Image
-                              src={post.avatar || "/placeholder.svg"}
-                              alt={post.author}
+                              src={`${BASE_URL}${post?.author_avatar}` || "/placeholder.svg"}
+                              alt={post?.author_name}
                               width={50}
                               height={50}
                               className="rounded-full"
                             />
                             <div>
-                              <p className="font-semibold group-hover:text-white text-orange">{post.name}</p>
-                              <p className="text-sm group-hover:text-white text-black">{post.date}</p>
+                              <p className="font-semibold group-hover:text-white text-orange">{post.author_name}</p>
+                              <p className="text-sm group-hover:text-white text-black">{new Date(post.published_date).toLocaleDateString()}</p>
                             </div>
                           </div>
                         </div>

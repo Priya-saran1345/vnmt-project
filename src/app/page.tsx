@@ -2,18 +2,22 @@
 import HomePage from '@/components/homepage'
 import React from 'react'
 import { fetchData } from './websitesettings'
+import { BASE_URL } from '@/utils/api';
 
 const Home = async () => {
   let websiteDetails = null;
+  let blogData = null;
 
   try {
     websiteDetails = await fetchData();
+      const response = await fetch(`${BASE_URL}/api/blog`);
+     blogData = await response.json();
   } catch (error) {
     console.error("Failed to fetch website details:", error);
   }
   // console.log("websiteDetails",websiteDetails);
   return (
-    <HomePage data={websiteDetails} />
+    <HomePage data={websiteDetails} blogdata={blogData} />
   )
 }
 

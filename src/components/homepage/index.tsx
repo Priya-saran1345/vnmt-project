@@ -17,11 +17,13 @@ import { Services } from '@/components/projectcomponent/services';
 import { TrustedPartner } from '@/components/projectcomponent/trusted-partner';
 import OurImpact from "../projectcomponent/ourImpact";
 
-export default function HomePage({ data }: any) {
+export default function HomePage({ data ,blogdata}: any) {
     useEffect(() => {
         window.scrollTo(0, 0);
         localStorage.setItem("isScrolled", JSON.stringify(false));
     }, []);
+    console.log("blogdata",blogdata);
+    
     return (
 
         <div className="text-black">
@@ -39,7 +41,7 @@ export default function HomePage({ data }: any) {
                 <OurImpact />
                 <NetsuiteSection />
                 <IntegrationSection />
-                <BlogSection />
+                <BlogSection blogPosts={blogdata} />
                 <TrustedPartner />
                 <CaseStudy />
                 <div className="w-full px-4 lg:px-0 bg-cover bg-[url('/images/faq-bg.svg')] ">

@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 async function verifyRecaptcha(token: string) {
   const secretKey = "6LddUQMrAAAAAPJR5nuFNPrA87q1W1BlA27SrbUB";
 
-  console.log("🔍 Verifying reCAPTCHA...");
+  // console.log("🔍 Verifying reCAPTCHA...");
 
   const response = await fetch("https://www.google.com/recaptcha/api/siteverify", {
     method: "POST",
@@ -16,17 +16,17 @@ async function verifyRecaptcha(token: string) {
   });
 
   const data = await response.json();
-  console.log("✅ reCAPTCHA response:", data);
+  // console.log("✅ reCAPTCHA response:", data);
 
   return data;
 }
 
 export async function POST(req: Request) {
   try {
-    console.log("📩 Incoming request...");
+    // console.log("📩 Incoming request...");
 
     const body = await req.json();
-    console.log("📝 Parsed request body:", body);
+    // console.log("📝 Parsed request body:", body);
 
     const { name, email, phone, query, lookingFor, token } = body;
 
@@ -36,7 +36,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "All fields are required" }, { status: 400 });
     }
 
-    console.log("✅ Required fields are present.");
+    // console.log("✅ Required fields are present.");
 
     // Verify reCAPTCHA token
     if (!token) {
@@ -52,12 +52,12 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "reCAPTCHA verification failed. Please try again." }, { status: 400 });
     }
 
-    console.log("✅ reCAPTCHA verification successful with score:", recaptchaResult.score);
+    // console.log("✅ reCAPTCHA verification successful with score:", recaptchaResult.score);
 
     // Check environment variables for SMTP credentials
-    console.log("🔍 Checking SMTP credentials...");
-    console.log("📧 EMAIL_USER:", process.env.EMAIL_USER);
-    console.log("🔒 EMAIL_PASS:", process.env.EMAIL_PASS ? "Exists" : "Not Set");
+    // console.log("🔍 Checking SMTP credentials...");
+    // console.log("📧 EMAIL_USER:", process.env.EMAIL_USER);
+    // console.log("🔒 EMAIL_PASS:", process.env.EMAIL_PASS ? "Exists" : "Not Set");
 
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
       console.error("❌ Missing SMTP credentials");
@@ -65,7 +65,7 @@ export async function POST(req: Request) {
     }
 
     // Create email transporter
-    console.log("📨 Setting up email transporter...");
+    // console.log("📨 Setting up email transporter...");
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 465,
@@ -78,7 +78,7 @@ export async function POST(req: Request) {
       logger: true, // Logs everything
     });
 
-    console.log("✅ Email transporter created successfully.");
+    // console.log("✅ Email transporter created successfully.");
 
     // Email options
     const mailOptions = {
@@ -95,11 +95,11 @@ export async function POST(req: Request) {
       `,
     };
 
-    console.log("✉️ Sending email with options:", mailOptions);
+    // console.log("✉️ Sending email with options:", mailOptions);
 
     try {
       await transporter.sendMail(mailOptions);
-      console.log("✅ Email sent successfully.");
+      // console.log("✅ Email sent successfully.");
       return NextResponse.json({ message: "Message sent successfully" }, { status: 200 });
     } catch (mailError:any) {
       console.error("❌ Email sending failed:", mailError);
