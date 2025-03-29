@@ -16,11 +16,6 @@ import { IoMdMenu } from "react-icons/io"
 import { message } from "antd"
 import { LoadingOutlined, CheckOutlined } from "@ant-design/icons"
 
-declare global {
-  interface Window {
-    grecaptcha: any;
-  }
-}
 
 const validateInput = (name: string, value: string) => {
   switch (name) {
@@ -59,16 +54,18 @@ const QuerySheet = () => {
   const [messageApi, contextHolder] = message.useMessage();
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.RECAPTCHA_SITE_KEY}`;
+    const script = document.createElement('script');
+    script.src = `https://www.google.com/recaptcha/api.js?render=6LddUQMrAAAAAJA8P1JthBlKkvlXVsvGMDywOz72`;
     script.async = true;
-    script.onload = () => console.log("reCAPTCHA script loaded successfully");
-    script.onerror = () => message.error("Failed to load reCAPTCHA script. Please refresh the page.");
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
+    script.onload = () => {
+      // console.log("reCAPTCHA script loaded successfully");
     };
+    script.onerror = () => {
+      message.error("Failed to load reCAPTCHA script. Please refresh the page.");
+    };
+    document.body.appendChild(script);
   }, []);
+
   
   // Options for the "Looking for" checkboxes with icons
   const lookingForOptions = [
@@ -105,11 +102,11 @@ const QuerySheet = () => {
   }
 
   const onSubmitForm = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!window.grecaptcha || !window.grecaptcha.execute) {
-      message.error("reCAPTCHA is not available. Please refresh the page.");
+    e.preventDefault()    
+    if (!window.grecaptcha) {
+      message.error("reCAPTCHA failed to load. Please refresh the page.");
       return;
-    }    
+    }
     // Mark all fields as touched for validation
     const allTouched = Object.keys(fieldLabels).reduce(
       (acc, field) => {
@@ -136,7 +133,19 @@ const QuerySheet = () => {
 
     setLoading(true)
     try {
-      const token = await window.grecaptcha.execute(process.env.RECAPTCHA_SITE_KEY, { action: "submit" });
+      if (!window.grecaptcha) {
+        throw new Error("reCAPTCHA is not loaded. Please refresh the page.")
+      }
+
+      // Wait for grecaptcha to be ready
+      await new Promise<void>((resolve) => {
+        if (window.grecaptcha.ready) {
+          window.grecaptcha.ready(resolve)
+        } else {
+          resolve()
+        }
+      })
+      const token = await window.grecaptcha.execute("6LddUQMrAAAAAJA8P1JthBlKkvlXVsvGMDywOz72", { action: "submit" });
       const response = await fetch("/mail", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
