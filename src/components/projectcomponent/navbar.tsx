@@ -9,7 +9,6 @@ import { getMenuIcon } from "./icons"
 import Image from "next/image"
 import CountrySelector from "./countrySelect"
 import ToolbarSearch from "./search"
-import { BASE_URL } from "@/utils/api"
 // import { BASE_URL } from "@/utils/api"
 
 
@@ -263,7 +262,7 @@ const navItems: MenuItem[] = [
 ]
 
 export default function Navbar({ className = "" ,logo }: NavbarItemsProps) {
-  // console.log(logo);
+  console.log(logo);
   
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
@@ -319,7 +318,9 @@ export default function Navbar({ className = "" ,logo }: NavbarItemsProps) {
           <div className="w-full">
             <Link href="/">
               <Image
-                src={logo ? `${BASE_URL}${logo}` : "/images/logo.svg"}
+                src={
+                  // logo ? `${BASE_URL}${logo}` : 
+                  "/images/logo.svg"}
                 loading="lazy"
                 width={150}
                 height={35}
