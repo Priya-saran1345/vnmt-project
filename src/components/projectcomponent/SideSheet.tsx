@@ -53,20 +53,8 @@ const QuerySheet = () => {
   })
   const [messageApi, contextHolder] = message.useMessage();
 
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = `https://www.google.com/recaptcha/api.js?render=6LfLTAcrAAAAAPO3Mi9us6VmTclabJOn2HQFAQZi`;
-    script.async = true;
-    script.onload = () => {
-      // console.log("reCAPTCHA script loaded successfully");
-    };
-    script.onerror = () => {
-      message.error("Failed to load reCAPTCHA script. Please refresh the page.");
-    };
-    document.body.appendChild(script);
-  }, []);
+  // const siteKey = "6LfLTAcrAAAAAPO3Mi9us6VmTclabJOn2HQFAQZi"; 
 
-  
   // Options for the "Looking for" checkboxes with icons
   const lookingForOptions = [
     { value: "netsuiteConsulting", label: "NetSuite Consulting" },
@@ -240,7 +228,7 @@ const QuerySheet = () => {
         </SheetDescription>
       </SheetHeader>
 
-      <form onSubmit={onSubmitForm} className="space-y-3">
+      <form onSubmit={onSubmitForm} className="space-y-3 " >
         {Object.entries(fieldLabels).map(([field, label]) => (
           <div key={field} className="relative">
             <label htmlFor={field} className="absolute left-3 top-2 text-xs  transition-all peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs ">
@@ -297,6 +285,8 @@ const QuerySheet = () => {
           </div>
         </div>
 
+      <div className="g-recaptcha" data-sitekey="6LfLTAcrAAAAAPO3Mi9us6VmTclabJOn2HQFAQZi"></div>
+
         <div className="pt-3 space-y-2">
           <button type="submit" className={`w-full py-2.5 rounded-md text-sm font-medium transition-all duration-300 
             ${loading ? "bg-darkblue opacity-70 cursor-not-allowed" : "bg-darkblue hover:shadow-lg hover:translate-y-[-1px]"} 
@@ -311,6 +301,8 @@ const QuerySheet = () => {
           </SheetClose>
         </div>
       </form>
+
+
 
           <div className="mt-6 pt-6 border-t border-gray-200">
             <div className="text-xs text-gray-500 text-center">

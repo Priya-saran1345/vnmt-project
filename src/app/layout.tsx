@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Canonical from "@/components/canonical"
 import { fetchData } from "./websitesettings";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -31,6 +32,9 @@ export default async function RootLayout({
         className={`antialiased`}
       >
         {children}
+
+        <Script type="text/javascript" defer async src="https://www.google.com/recaptcha/enterprise.js"></Script>
+        <Script type="text/javascript" defer async src="https://www.google.com/recaptcha/api.js"></Script>
       </body>
     </html>
   );
