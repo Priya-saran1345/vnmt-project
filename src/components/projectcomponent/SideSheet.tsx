@@ -2,7 +2,7 @@
 "use client"
 
 import type React from "react"
-import {  useState } from "react"
+import { useEffect, useState } from "react"
 import {
   Sheet,
   SheetTrigger,
@@ -54,7 +54,27 @@ const QuerySheet = () => {
   const [messageApi, contextHolder] = message.useMessage();
 
   // const siteKey = "6LfLTAcrAAAAAPO3Mi9us6VmTclabJOn2HQFAQZi"; 
+  useEffect(() => {
+  const script = document.createElement("script");
+  script.src = "https://www.google.com/recaptcha/api.js";
+  script.async = true;
+  script.defer = true;
+  script.onload = () => console.log("reCAPTCHA script loaded");
+  script.onerror = () => message.error("Failed to load reCAPTCHA script.");
+  document.body.appendChild(script);
+}, []);
 
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = `https://www.google.com/recaptcha/api.js?render=6LfLTAcrAAAAAPO3Mi9us6VmTclabJOn2HQFAQZi`;
+    script.async = true;
+    script.defer = true;
+    script.onload = () => console.log("reCAPTCHA script loaded");
+    script.onerror = () => message.error("Failed to load reCAPTCHA script.");
+    document.body.appendChild(script);
+  }, []);
+  
+  
   // Options for the "Looking for" checkboxes with icons
   const lookingForOptions = [
     { value: "netsuiteConsulting", label: "NetSuite Consulting" },
