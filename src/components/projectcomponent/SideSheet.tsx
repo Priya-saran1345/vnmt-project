@@ -67,20 +67,25 @@ const QuerySheet = () => {
 
   // const siteKey = "6LfLTAcrAAAAAPO3Mi9us6VmTclabJOn2HQFAQZi";
   useEffect(() => {
-    // Load reCAPTCHA v2 script
-    const script = document.createElement("script")
-    script.src = "https://www.google.com/recaptcha/api.js"
-    script.async = true
-    script.defer = true
-    document.body.appendChild(script)
+    // Only load reCAPTCHA when the sheet is open
+    if (isOpen) {
+      // Check if script is already loaded
+      if (!document.querySelector('script[src="https://www.google.com/recaptcha/api.js"]')) {
+        const script = document.createElement("script")
+        script.src = "https://www.google.com/recaptcha/api.js"
+        script.async = true
+        script.defer = true
+        script.onload = () => console.log("reCAPTCHA script loaded successfully")
+        script.onerror = (e) => console.error("Error loading reCAPTCHA script:", e)
+        document.head.appendChild(script)
+      }
 
-    return () => {
-      // Clean up script when component unmounts
-      document.head
-        .querySelectorAll(`script[src="https://www.google.com/recaptcha/api.js"]`)
-        .forEach((el) => el.remove())
+      // Define callback function for reCAPTCHA
+      window.onRecaptchaSuccess = () => {
+        console.log("reCAPTCHA verified successfully")
+      }
     }
-  }, [])
+  }, [isOpen])
 
   // Options for the "Looking for" checkboxes with icons
   const lookingForOptions = [
@@ -155,6 +160,8 @@ const QuerySheet = () => {
       })
       return
     }
+
+    console.log("reCAPTCHA response token:", recaptchaResponse.substring(0, 20) + "...")
 
     setLoading(true)
     try {
@@ -331,11 +338,15 @@ const QuerySheet = () => {
               </div>
 
               <div className="mt-3 mb-3">
-                <div
-                  className="g-recaptcha"
-                  data-sitekey="6LfLTAcrAAAAAPO3Mi9us6VmTclabJOn2HQFAQZi"
-                  data-callback="onRecaptchaSuccess"
-                ></div>
+                {isOpen && (
+                  <div id="recaptcha-container">
+                    <div
+                      className="g-recaptcha"
+                      data-sitekey="6LfLTAcrAAAAAPO3Mi9us6VmTclabJOn2HQFAQZi"
+                      data-callback="onRecaptchaSuccess"
+                    ></div>
+                  </div>
+                )}
               </div>
 
               <div className="pt-3 space-y-2">
