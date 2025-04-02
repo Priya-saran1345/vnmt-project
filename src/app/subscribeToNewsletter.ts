@@ -37,7 +37,7 @@ export async function subscribeToNewsletter(email: string): Promise<BrevoRespons
       },
       body: JSON.stringify({
         email,
-        listIds: [2], 
+        listIds: [17], 
         updateEnabled: true,
       }),
     })

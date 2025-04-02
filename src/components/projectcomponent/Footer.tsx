@@ -4,7 +4,8 @@
 import Link from "next/link"
 import { useRef } from "react"
 import { FaInstagram, FaYoutube } from "react-icons/fa"
-import { FiFacebook, FiPhoneCall, FiTwitter } from "react-icons/fi"
+import { FiFacebook, FiPhoneCall } from "react-icons/fi"
+import { FaXTwitter } from "react-icons/fa6";
 import { GrLinkedinOption } from "react-icons/gr"
 // import { BiLogoGmail } from "react-icons/bi"
 import { motion, useInView } from "framer-motion"
@@ -55,14 +56,13 @@ const Footer = ({ data }: any) => {
       links: [
         "NetSuite Consulting",
         "NetSuite Implementation",
-        "NetSuite Integration",
         "NetSuite Optimization",
         "NetSuite Support & Maintenance",
         "NetSuite Training",
       ],
     },
     { title: "INTEGRATION",
-      links: ["NetSuite Integration", "Magento NetSuite Integration", "WooCommerce NetSuite Integration", "Shopify NetSuite Integration", "JitterbitNetSuite Integration"],
+      links: ["NetSuite Integration", "Magento NetSuite Integration", "WooCommerce NetSuite Integration", "Shopify NetSuite Integration", "Jitterbit NetSuite Integration"],
     },
     { title: "CELIGO",
       links: [
@@ -80,7 +80,7 @@ const Footer = ({ data }: any) => {
 
   const socialMedia = [
     { key: "facebook_url", icon: <FiFacebook className="text-[22px] text-white group-hover:text-lightblue" />, color: "border-lightblue" },
-    { key: "twitter_url", icon: <FiTwitter className="text-[22px] text-white group-hover:text-lightblue" />, color: "border-lightblue" },
+    { key: "twitter_url", icon: <FaXTwitter  className="text-[22px] text-white group-hover:text-lightblue" />, color: "border-lightblue" },
     { key: "instagram_url", icon: <FaInstagram className="text-[22px] text-white group-hover:text-pink-500" />, color: "border-pink-500" },
     { key: "linkedin_url", icon: <GrLinkedinOption className="text-[22px] text-white group-hover:text-blue" />, color: "border-blue" },
     { key: "youtube_url", icon: <FaYoutube className="text-[22px] text-white group-hover:text-red-500" />, color: "border-red-500" },
@@ -167,7 +167,7 @@ const Footer = ({ data }: any) => {
                         <h3 className=" mb-4 underline-custom text-xl  cursor-pointer font-semibold">CONTACT US</h3>
                         <div className="space-y-4">
                           <p className="flex hover:text-orange cursor-pointer gap-2">
-                            <Image src={'/images/mail.svg'} alt="" height={22} width={22}></Image>
+                            <Image src={'/images/outlook.svg'} alt="" height={26} width={26}></Image>
                             {data?.site_email}
                           </p>
                           <p className="flex hover:text-orange cursor-pointer gap-2">
@@ -208,13 +208,13 @@ const Footer = ({ data }: any) => {
 
           </div>
 
-          <div className="mx-auto container mb-8 w-full">
+          <div className="mx-auto container  w-full">
 
             {/* Footer Logos */}
             <div
               ref={sectionRef}
               className="flex justify-between items-center">
-              <div className=" z-10 mt-4 flex-1 ">
+              <div className=" z-10 flex-1 ">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: isInView ? 1 : 0 }}
@@ -286,6 +286,7 @@ const Footer = ({ data }: any) => {
 
             </div>
           </div>
+
         </div>
       </div>
 
