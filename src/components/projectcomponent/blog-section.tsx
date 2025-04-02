@@ -13,6 +13,8 @@ import Button from "./button";
 import { BASE_URL } from "@/utils/api";
 
 export function BlogSection({blogPosts}:any) {
+  // console.log(blogPosts);
+  
   // Create a reference to the slider
   const sliderRef = useRef<Slider>(null)
   
@@ -89,7 +91,7 @@ export function BlogSection({blogPosts}:any) {
 
         <div className="relative w-full overflow-hidden">
           <Slider ref={sliderRef} {...slickSettings}>
-            {blogPosts.map((post:any, index:any) => {
+            {blogPosts?.map((post:any, index:any) => {
               return (
                 <div key={index} className="flex-none border-orange div-container group min-h-[435px] !w-[363px] px-4 transition-all duration-500">
                   <div className="upper-half"></div>

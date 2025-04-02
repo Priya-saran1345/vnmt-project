@@ -3,6 +3,7 @@ import HomePage from '@/components/homepage'
 import React from 'react'
 import { fetchData } from './websitesettings'
 import { BASE_URL } from '@/utils/api';
+import { fetchMeta } from './meta-data';
 
 const Home = async () => {
   let websiteDetails = null;
@@ -26,13 +27,13 @@ export default Home
 
 export async function generateMetadata() {
   try {
-    const metaData = await fetchData();
-    // console.log(metaData);
+    const metaData = await fetchMeta("/");
+    // console.log("metaData",metaData);
 
     return {
-      title: metaData?.meta_title || '',
-      description: metaData?.meta_description || '',
-      keywords: metaData?.meta_keyword || '',
+      title: metaData?.title || '',
+      description: metaData?.description || '',
+      keywords: metaData?.keywords || '',
 
       openGraph: metaData?.openGraph
         ? {
@@ -52,8 +53,8 @@ export async function generateMetadata() {
         : undefined,
 
       robots: {
-        index: metaData?.index ?? false,
-        follow: metaData?.follow ?? false,
+        index: metaData?.robots?.index ?? false,
+        follow: metaData?.robots?.follow ?? false,
       },
 
       icons: metaData?.schema?.[0]?.logo

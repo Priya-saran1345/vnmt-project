@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
@@ -10,7 +11,7 @@ export function NetsuiteSection() {
 
   const containerRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
-  console.log(isDragging);
+  // console.log(isDragging);
 
   const [containerHeight, setContainerHeight] = useState(0);
 

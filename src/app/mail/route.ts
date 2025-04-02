@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 
 async function verifyRecaptcha(token: string) {
-  const secretKey = "6LddUQMrAAAAAPJR5nuFNPrA87q1W1BlA27SrbUB";
+  const secretKey = "6LfLTAcrAAAAANlXDrv7EMeALUdwiD7Bnh0_qqL7";
 
   // console.log("🔍 Verifying reCAPTCHA...");
 
@@ -16,7 +16,7 @@ async function verifyRecaptcha(token: string) {
   });
 
   const data = await response.json();
-  // console.log("✅ reCAPTCHA response:", data);
+  console.log("✅ reCAPTCHA response:", data);
 
   return data;
 }

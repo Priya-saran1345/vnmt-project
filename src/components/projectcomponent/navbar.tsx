@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
@@ -46,153 +47,172 @@ const navItems: MenuItem[] = [
           description: "Learn about our company's mission and values",
           path: "/about-us",
           icon: "info",
-          subItems: [
-            {
-              title: "Our Story",
-              description: "How we started and where we're going",
-              icon: "optimization",
-              path: "/about-us/our-story",
-            },
-            {
-              title: "Leadership",
-              description: "Meet our executive team",
-              icon: "team",
-              path: "/about-us/leadership",
-            },
-          ],
         },
         {
-          title: "Our Team",
+          title: "Career",
+          description: "Find our offices around the globe",
+          path: "/career",
+          icon: "career",
+        },
+        {
+          title: "Meet Our Team",
           description: "Meet the experts behind our success",
           path: "/our-team",
           icon: "team",
         },
-        {
-          title: "Locations",
-          description: "Find our offices around the globe",
-          path: "/locations",
-          icon: "location",
-        },
+
       ],
     ],
   },
-  { title: "NetSuite",
-    hasDropdown: true,
-    items: [
+  { "title": "NetSuite",
+    "hasDropdown": true,
+    "items": [
       [
         {
-          title: "NetSuite Consulting",
-          description: "Expert guidance for your NetSuite implementation",
-          path: "/netsuite/consulting",
-          icon: "consulting",
+          "title": "NetSuite Consulting",
+          "description": "Expert guidance for your NetSuite implementation",
+          "path": "/netsuite/consulting",
+          "icon": "consulting"
         },
         {
-          title: "NetSuite Integration",
-          description: "Seamless connection with your existing systems",
-          path: "/netsuite/integration",
-          icon: "integration",
+          "title": "NetSuite Development",
+          "description": "Seamless connection with your existing systems",
+          "path": "/netsuite/development",
+          "icon": "development",
+          "subItems": [
+            {
+              "title": "NetSuite Implementation",
+              "description": "Comprehensive implementation services",
+              "icon": "implementation",
+              "path": "/netsuite/development/implementation"
+            },
+            {
+              "title": "NetSuite Customization",
+              "description": "Tailored solutions for your business needs",
+              "icon": "customization",
+              "path": "/netsuite/development/customization"
+            },
+            {
+              "title": "NetSuite Optimization",
+              "description": "Enhance your NetSuite performance",
+              "icon": "optimization",
+              "path": "/netsuite/development/optimization"
+            },
+            {
+              "title": "NetSuite Migration",
+              "description": "Seamless data migration services",
+              "icon": "migration",
+              "path": "/netsuite/development/migration"
+            },
+            {
+              "title": "NetSuite Administration",
+              "description": "Manage and maintain your NetSuite environment",
+              "icon": "administration",
+              "path": "/netsuite/development/administration"
+            }
+          ]
         },
         {
-          title: "NetSuite Support",
-          description: "24/7 support for your NetSuite environment",
-          path: "/netsuite/support",
-          icon: "support",
+          "title": "NetSuite eCommerce",
+          "description": "E-commerce solutions for NetSuite",
+          "path": "/netsuite/ecommerce",
+          "icon": "ecommerce",
+          "subItems": [
+            {
+              "title": "NetSuite SuiteCommerce",
+              "description": "Powerful eCommerce platform",
+              "icon": "suitecommerce",
+              "path": "/netsuite/ecommerce/suitecommerce"
+            },
+            {
+              "title": "NetSuite SuiteCommerce Advanced",
+              "description": "Advanced features for SuiteCommerce",
+              "icon": "suitecommerce-advanced",
+              "path": "/netsuite/ecommerce/suitecommerce-advanced"
+            },
+            {
+              "title": "NetSuite SuiteSuccess",
+              "description": "Industry-specific solutions for rapid growth",
+              "icon": "suitesuccess",
+              "path": "/netsuite/ecommerce/suitesuccess"
+            }
+          ]
         },
+        {
+          "title": "NetSuite Support & Maintenance",
+          "description": "24/7 support for your NetSuite environment",
+          "path": "/netsuite/support",
+          "icon": "support"
+        }
       ],
       [
         {
-          title: "NetSuite Training",
-          description: "Comprehensive training programs for your team",
-          path: "/netsuite/training",
-          icon: "training",
-        },
-        {
-          title: "NetSuite Optimization",
-          description: "Enhance your NetSuite performance",
-          path: "/netsuite/optimization",
-          icon: "optimization",
-        },
-      ],
-    ],
+          "title": "NetSuite Training",
+          "description": "Comprehensive training programs for your team",
+          "path": "/netsuite/training",
+          "icon": "training"
+        }
+      ]
+    ]
   },
-  { title: "Celigo",
-    hasDropdown: true,
-    items: [
+  { "title": "Celigo",
+    "hasDropdown": true,
+    "items": [
       [
         {
-          title: "Celigo iPaaS",
-          description: "Integration Platform as a Service solutions",
-          path: "/celigo/ipaas",
-          icon: "ipaas",
+          "title": "Celigo Customization",
+          "description": "Tailor Celigo to fit your business needs",
+          "path": "/celigo/customization",
+          "icon": "customization"
         },
         {
-          title: "Celigo Integrations",
-          description: "Pre-built and custom integration solutions",
-          path: "/celigo/integrations",
-          icon: "integrations",
+          "title": "Celigo Support",
+          "description": "Expert support for your Celigo platform",
+          "path": "/celigo/support",
+          "icon": "support"
         },
         {
-          title: "Celigo Support",
-          description: "Expert support for your Celigo platform",
-          path: "/celigo/support",
-          icon: "support",
-        },
+          "title": "Celigo Optimization",
+          "description": "Enhance the performance of Celigo solutions",
+          "path": "/celigo/optimization",
+          "icon": "optimization"
+        }
       ],
       [
         {
-          title: "Celigo Training",
-          description: "Learn to master Celigo integrations",
-          path: "/celigo/training",
-          icon: "training",
+          "title": "Celigo Implementation",
+          "description": "Seamless implementation of Celigo solutions",
+          "path": "/celigo/implementation",
+          "icon": "implementation"
         },
         {
-          title: "Celigo Consulting",
-          description: "Strategic guidance for integration success",
-          path: "/celigo/consulting",
-          icon: "consulting",
-        },
-      ],
-    ],
-  },
-  { title: "Products",
-    hasDropdown: true,
-    items: [
+          "title": "Integration Using Celigo Platform",
+          "description": "Effortless integrations with Celigo",
+          "path": "/celigo/integration-platform",
+          "icon": "integration"
+        }
+      ]
+    ]
+  },  
+  { "title": "Products",
+    "hasDropdown": true,
+    "items": [
       [
         {
-          title: "Cloud Solutions",
-          description: "Enterprise-grade cloud computing solutions",
-          path: "/products/cloud",
-          icon: "cloud",
+          "title": "NetSuite WooCommerce Integrator",
+          "description": "Seamlessly integrate NetSuite with WooCommerce",
+          "path": "/products/netsuite-woocommerce",
+          "icon": "woocommerce"
         },
         {
-          title: "Custom Software",
-          description: "Tailored software development services",
-          path: "/products/custom-software",
-          icon: "software",
-        },
-        {
-          title: "Mobile Apps",
-          description: "Native and cross-platform mobile applications",
-          path: "/products/mobile-apps",
-          icon: "mobile",
-        },
-      ],
-      [
-        {
-          title: "Analytics Tools",
-          description: "Business intelligence and analytics solutions",
-          path: "/products/analytics",
-          icon: "analytics",
-        },
-        {
-          title: "Security Products",
-          description: "Enterprise security and compliance tools",
-          path: "/products/security",
-          icon: "security",
-        },
-      ],
-    ],
-  },
+          "title": "NetSuite Shopify Loop Integrator",
+          "description": "Integrate NetSuite with Shopify for streamlined operations",
+          "path": "/products/netsuite-shopify",
+          "icon": "shopify"
+        }
+      ]
+    ]
+  },  
   { title: "Industries",
     hasDropdown: true,
     items: [
@@ -262,7 +282,7 @@ const navItems: MenuItem[] = [
 ]
 
 export default function Navbar({ className = "" ,logo }: NavbarItemsProps) {
-  console.log(logo);
+  // console.log(logo);
   
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
@@ -303,6 +323,7 @@ export default function Navbar({ className = "" ,logo }: NavbarItemsProps) {
     }
   }
 
+
   return (
     <motion.header
       onMouseLeave={() => {
@@ -331,123 +352,128 @@ export default function Navbar({ className = "" ,logo }: NavbarItemsProps) {
           </div>
 
           {/* Desktop Navigation */}
-          <nav
-            className="hidden lg:flex items-center gap-1 lg:gap-3 xl:gap-4 2xl:gap-5 w-full justify-center">
-            {navItems.map((item) => (
-              <div
-                key={item.title}
-                className="relative "
-                ref={(el: any) => (dropdownRefs.current[item.title] = el)}
+          <nav className="hidden lg:flex items-center justify-center w-full gap-3 xl:gap-4 2xl:gap-6">
+      {navItems.map((item) => (
+        <div key={item.title} className="relative" ref={(el:any) => (dropdownRefs.current[item.title] = el)}>
+          {item.path ? (
+            <Link
+              href={item.path}
+              className="text-black hover:text-orange font-semibold transition-colors duration-200"
+            >
+              {item.title}
+            </Link>
+          ) : (
+            <button
+              onClick={() => toggleDropdown(item.title)}
+              onMouseEnter={() => toggleDropdown(item.title)}
+              className={`flex items-center text-black hover:text-orange font-semibold transition-colors duration-200 ${
+                activeDropdown === item.title ? "text-gray-900" : ""
+              }`}
+            >
+              {item.title}
+              {item.hasDropdown && (
+                <ChevronDown
+                  className={`ml-1 h-4 w-4 transition-transform duration-200 ${
+                    activeDropdown === item.title ? "rotate-180" : ""
+                  }`}
+                />
+              )}
+            </button>
+          )}
+
+          {/* Dropdown Menu */}
+          <AnimatePresence>
+            {item.hasDropdown && activeDropdown === item.title && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ duration: 0.2 }}
+                className="absolute left-0 mt-5 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
+                style={{
+                  width: "clamp(250px, 20vw, 350px)", // Responsive width
+                }}
               >
-                {item.path ? (
-                  <Link
-                    href={item.path}
-                    className="text-black hover:text-orange  font-semibold transition-colors duration-200"
-                  >
-                    {item.title}
-                  </Link>
-                ) : (
-                  <button
-                    onClick={() => toggleDropdown(item.title)}
-                    onMouseEnter={() => toggleDropdown(item.title)}
-                    className={`flex items-center text-black hover:text-orange  font-semibold transition-colors duration-200 ${activeDropdown === item.title ? "text-gray-900" : ""
-                      }`}
-                  >
-                    {item.title}
-                    {item.hasDropdown && (
-                      <ChevronDown
-                        className={`ml-1 h-4 w-4 transition-transform duration-200 ${activeDropdown === item.title ? "rotate-180" : ""
-                          }`}
-                      />
-                    )}
-                  </button>
-                )}
-
-                {/* Dropdown Menu */}
-                <AnimatePresence>
-                  {item.hasDropdown && activeDropdown === item.title && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute left-0 mt-7 bg-white rounded-md shadow-lg  border border-gray-100 z-50"
-                      style={{ width: "auto", minWidth: "250px" }}
-                    >
-                      <div className="py-1">
-                        {item.items?.flat().map((subItem) => (
-                          <div key={subItem.title} className="relative ">
-                            {subItem.subItems ? (
-                              <button
-                                onClick={(e) => toggleSubmenu(subItem.title, e)}
-                                onMouseEnter={(e) => toggleSubmenu(subItem.title, e)}
-                                className="w-full text-left"
-                              >
-                                <div className="flex items-start p-3 hover:bg-gray-50 transition-colors group">
-                                  <div className={`flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full group-hover:text-orange text-blue `}>
-                                    {getMenuIcon(subItem.icon || "default")}
-                                  </div>
-                                  <div className="ml-3 flex-1">
-                                    <p className="text-base font-semibold text-blue group-hover:text-orange">{subItem.title}</p>
-                                    <p className="text-xs text-gray-500">{subItem.description}</p>
-                                  </div>
-                                  <ChevronRight className="h-4 w-4 text-gray-400 self-center ml-2" />
-                                </div>
-                              </button>
-                            ) : (
-                              <Link href={subItem.path}>
-                                <div className="flex items-start p-3 hover:bg-gray-50 transition-colors group">
-                                  <div className={`flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full group-hover:text-orange text-blue  `}>
-                                    {getMenuIcon(subItem.icon || "default")}
-                                  </div>
-                                  <div className="ml-3">
-                                    <p className="text-base font-semibold group-hover:text-orange text-blue">{subItem.title}</p>
-                                    <p className="text-xs text-gray-500">{subItem.description}</p>
-                                  </div>
-                                </div>
-                              </Link>
-                            )}
-
-                            {/* Submenu */}
-                            <AnimatePresence>
-                              {subItem.subItems && activeSubmenu === subItem.title && (
-                                // console.log("Rendering submenu:", subItem.title),
-                                <motion.div
-                                  initial={{ opacity: 0, x: -10 }}
-                                  animate={{ opacity: 1, x: 0 }}
-                                  exit={{ opacity: 0, x: -10 }}
-                                  transition={{ duration: 0.2 }}
-                                  className="absolute -top-1 left-60  bg-white rounded-md shadow-lg overflow-hidden border border-gray-100 z-50"
-                                  style={{ width: "auto", minWidth: "240px" }}
-                                >
-                                  <div className="py-1">
-                                    {subItem.subItems.map((subSubItem) => (
-                                      <Link
-                                        key={subSubItem.title}
-                                        href={subSubItem.path}
-                                        className=" p-3 hover:bg-gray-50 group flex items-start transition-colors group"
-                                      >
-                                                                          <div className={`flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full group-hover:text-orange text-blue  `}>
-                                    {getMenuIcon(subSubItem.icon || "default")}
-                                  </div>
-                                          <div className="ml-3">
-                                        <p className="text-base font-semibold group-hover:text-orange text-blue">{subSubItem.title}</p>
-                                        <p className="text-xs text-gray-500">{subSubItem.description}</p></div>
-                                      </Link>
-                                    ))}
-                                  </div>
-                                </motion.div>
-                              )}
-                            </AnimatePresence>
+                <div className="py-2">
+                  {item.items?.flat().map((subItem) => (
+                    <div key={subItem.title} className="relative">
+                      {subItem.subItems ? (
+                        <button
+                          onClick={(e) => toggleSubmenu(subItem.title, e)}
+                          onMouseEnter={(e) => toggleSubmenu(subItem.title, e)}
+                          className="w-full text-left"
+                        >
+                          <div className="flex items-center p-3 hover:bg-gray-100 transition-colors group">
+                            <div className="w-8 h-8 flex items-center justify-center rounded-full group-hover:text-orange text-blue">
+                              {getMenuIcon(subItem.icon || "default")}
+                            </div>
+                            <div className="ml-3 flex-1">
+                              <p className="text-base font-semibold text-blue group-hover:text-orange">
+                                {subItem.title}
+                              </p>
+                              <p className="text-xs text-gray-500">{subItem.description}</p>
+                            </div>
+                            <ChevronRight className="h-4 w-4 text-gray-400 self-center ml-2" />
                           </div>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
-          </nav>
+                        </button>
+                      ) : (
+                        <Link href={subItem.path}>
+                          <div className="flex items-center p-3 hover:bg-gray-100 transition-colors group">
+                            <div className="w-8 h-8 flex items-center justify-center rounded-full group-hover:text-orange text-blue">
+                              {getMenuIcon(subItem.icon || "default")}
+                            </div>
+                            <div className="ml-3">
+                              <p className="text-base font-semibold group-hover:text-orange text-blue">
+                                {subItem.title}
+                              </p>
+                              <p className="text-xs text-gray-500">{subItem.description}</p>
+                            </div>
+                          </div>
+                        </Link>
+                      )}
+
+                      {/* Submenu */}
+                      <AnimatePresence>
+                        {subItem.subItems && activeSubmenu === subItem.title && (
+                          <motion.div
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -10 }}
+                            transition={{ duration: 0.2 }}
+                            className="absolute left-full top-0 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
+                            style={{
+                              width: "clamp(250px, 20vw, 350px)", // Responsive width
+                            }}
+                          >
+                            <div className="py-2">
+                              {subItem.subItems.map((subSubItem) => (
+                                <Link key={subSubItem.title} href={subSubItem.path}>
+                                  <div className="flex items-center p-3 hover:bg-gray-100 transition-colors group">
+                                    <div className="w-8 h-8 flex items-center justify-center rounded-full group-hover:text-orange text-blue">
+                                      {getMenuIcon(subSubItem.icon || "default")}
+                                    </div>
+                                    <div className="ml-3">
+                                      <p className="text-base font-semibold group-hover:text-orange text-blue">
+                                        {subSubItem.title}
+                                      </p>
+                                      <p className="text-xs text-gray-500">{subSubItem.description}</p>
+                                    </div>
+                                  </div>
+                                </Link>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      ))}
+    </nav>
 
           <div className="flex w-full gap-2 items-center mt-2 lg:mt-0 flex-col lg:flex-row justify-end">
             <div className=" lg:flex gap-2 items-center hidden">

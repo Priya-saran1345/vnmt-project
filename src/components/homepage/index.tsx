@@ -22,7 +22,7 @@ export default function HomePage({ data ,blogdata}: any) {
         window.scrollTo(0, 0);
         localStorage.setItem("isScrolled", JSON.stringify(false));
     }, []);
-    console.log("blogdata",blogdata);
+    // console.log("blogdata",blogdata);
     
     return (
 

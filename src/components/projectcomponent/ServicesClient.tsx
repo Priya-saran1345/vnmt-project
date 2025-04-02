@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
@@ -9,9 +10,9 @@ import { services } from "@/components/data/services"
 export function ServicesClient() {
     const containerRef = useRef<HTMLDivElement>(null)
     const [isDragging, setIsDragging] = useState(false)
-    console.log(isDragging);
+    // console.log(isDragging);
     const [containerHeight, setContainerHeight] = useState(0)
-    console.log(containerHeight);
+    // console.log(containerHeight);
 
     useEffect(() => {
         if (containerRef.current) {

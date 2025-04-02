@@ -126,9 +126,9 @@ const Footer = ({ data }: any) => {
               </div>
 
               {footerSections.map((section, index) => (
-                <div key={index} className={` px-4 lg:px-2 xl:px-5 2xl:px-6  ${section.title === 'ABOUT COMPANY' ? 'border-none' : 'border-blue border-r-2'}  py-3`}>
+                <div key={index} className={` px-4 lg:px-2 xl:px-5 2xl:px-6  ${section.title === 'ABOUT COMPANY' ? 'border-none ' : 'border-blue border-r-2'}  py-3`}>
                   <h3 className=" mb-4 underline-custom text-xl font-semibold cursor-pointer">{section.title}</h3>
-                  <ul className={`grid mb-4 ${section.title === "NETSUITE" || "CELIGO" ? " grid-cols-1" : "xl:grid-cols-2 grid-cols-1 "}  gap-y-4  items-start ${section.title === "ABOUT COMPANY" ? " gap-x-4" : " "}`}>
+                  <ul className={`grid  mb-4 ${section.title === "ABOUT COMPANY" ? " xl:grid-cols-2 " : "grid-cols-1 "}  gap-y-4  items-start ${section.title === "ABOUT COMPANY" ? " gap-x-4" : " "}`}>
                     {section.links.map((link, linkIndex) => (
                       <li key={linkIndex}>
                         <Link href="#" className="text-white  text-sm hover:text-orange text-[15px]">
@@ -153,7 +153,7 @@ const Footer = ({ data }: any) => {
                       </div>
                       
                       <h3 className=" mb-4 mt-4 underline-custom text-xl font-semibold ">
-                        GET IN TOUCH
+                        SUBSCRIBE US
                       </h3>
                       <NewsletterForm />
                       <p className="text-[14px] mt-4 flex gap-1"><span className="text-white hover:text-orange cursor-pointer">

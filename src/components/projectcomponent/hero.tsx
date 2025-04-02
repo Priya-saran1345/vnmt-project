@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 import { useState } from "react"
@@ -10,9 +11,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MdChevronRight } from "react-icons/md";
 
 const bgImages = [
-  { id: 1, image: "/images/bgbanner1.svg" },
+  { id: 1, image: "/images/bgbanner1.png" },
   { id: 2, image: "/images/bgbanner2.png" },
-  { id: 3, image: "/images/bgbanner3.svg" },
+  { id: 3, image: "/images/bgbanner3.png" },
 ]
 
 // Custom arrow components
@@ -42,7 +43,7 @@ const NextArrow = (props: any) => {
 
 export function Hero() {
   const [currentBg, setCurrentBg] = useState(bgImages[0].image)
-  console.log(currentBg);
+  // console.log(currentBg);
 
   const settings = {
     dots: false,
