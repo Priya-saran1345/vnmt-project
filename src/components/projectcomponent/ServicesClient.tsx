@@ -52,6 +52,7 @@ export function ServicesClient() {
 
             <div className="md:w-full relative overflow-hidden ">
                 <div className="relative flex overflow-y-hidden  w-full">
+                    
                     <div ref={containerRef} className="h-[450px]  pr-8 space-y-4 scrollbar-none overflow-x-hidden">
                         {services.map((service) => (
                             <div
@@ -93,6 +94,7 @@ export function ServicesClient() {
                             <div className="absolute -right-0.5 w-[180%] border border-orange h-full bg-[#fff] rounded-full" />
                         </motion.div>
                     </div>
+
                 </div>
             </div>
 

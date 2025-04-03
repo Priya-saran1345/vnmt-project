@@ -232,10 +232,11 @@ const Footer = ({ data }: any) => {
                       >
                         <Image
                           src={`/images/footer${elem}.svg`}
-                          height={50}
-                          width={90}
+                width={110}
+                          quality={100}
                           alt={`Footer logo ${elem}`}
-                          className="hover:scale-110"
+                height={35}
+                          unoptimized
                         />
                       </motion.div>
                     ))}

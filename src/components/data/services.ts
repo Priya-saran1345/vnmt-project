@@ -29,7 +29,7 @@ export const services = [
       title: "NetSuite Training",
       description:
         "VNMT is the leading NetSuite certification and training service provider to help enterprises develop the ERP management, integration, customization, and migration skills of their employees.",
-        icon: "/images/service4.svg",    },
+        icon: "/images/service5.svg",    },
   ]
   
   
