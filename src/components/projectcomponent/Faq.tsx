@@ -33,7 +33,7 @@ const faq = () => {
         </div>
       </div>
 
-      <div className="hidden   bg-[url('/images/footer-banner.svg')] -mt-20 max-w-[1246px]  items-end pb-12 md:flex justify-start px-12
+      <div className="hidden   bg-[url('/images/footer-banner.svg')] -mt-20 max-w-[1246px]  items-end pb-12 md:flex justify-start px-12 z-10
      z-8 relative bg-no-repeat  mx-auto h-[350px] gap-12   rounded-3xl text-white py-4 ">
         <div className='w-[45%] '>
           <h2 className="heading font-bold heading-calisto ">Ready to Get Started ?</h2>

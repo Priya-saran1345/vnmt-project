@@ -23,6 +23,7 @@ export default function HomePage({ data ,blogdata}: any) {
         localStorage.setItem("isScrolled", JSON.stringify(false));
     }, []);
     // console.log("blogdata",blogdata);
+    // console.log("blogdata",data);
     
     return (
 

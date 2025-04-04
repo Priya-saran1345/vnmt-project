@@ -21,7 +21,7 @@ const PrevArrow = (props: any) => {
   const { onClick } = props
   return (
     <div
-      className="hidden xl:flex absolute left-10 top-1/2 -translate-y-1/2 z-20  items-center justify-center w-12 h-12 rounded-full bg-white text-orange cursor-pointer hover:bg-white/30 transition-all"
+      className="hidden xl:flex absolute left-10 top-1/2 -translate-y-1/2 z-10  items-center justify-center w-12 h-12 rounded-full bg-white text-orange cursor-pointer hover:bg-white/30 transition-all"
       onClick={onClick}
     >
       <FaArrowLeft className="text-2xl" />
@@ -33,7 +33,7 @@ const NextArrow = (props: any) => {
   const { onClick } = props
   return (
     <div
-      className="hidden xl:flex absolute right-10 top-1/2 -translate-y-1/2 z-20  items-center justify-center w-12 h-12 rounded-full bg-white text-orange cursor-pointer hover:bg-white/30 transition-all"
+      className="hidden xl:flex absolute right-10 top-1/2 -translate-y-1/2 z-10  items-center justify-center w-12 h-12 rounded-full bg-white text-orange cursor-pointer hover:bg-white/30 transition-all"
       onClick={onClick}
     >
       <FaArrowRight className="text-2xl" />

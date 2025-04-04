@@ -33,14 +33,14 @@ const items = [
     },
 ];
 
-export default function SearchPopover() {
-    const [isOpen, setIsOpen] = useState(false);
+export default function SearchPopover({setIsOpen}:any) {
+    const [is_Open, setIs_Open] = useState(false);
     const [searchText, setSearchText] = useState('');
     const containerRef: any = useRef(null);
     const router = useRouter();
 
     useClickOutside(containerRef, () => {
-        setIsOpen(false);
+        setIs_Open(false);
     });
 
     const filteredItems = items.filter((item) =>
@@ -52,12 +52,15 @@ export default function SearchPopover() {
             <div className='relative' ref={containerRef}>
                 <button
                     className='flex items-center justify-center rounded-lg p-2 text-orange hover:bg-orange-100 focus:outline-none'
-                    onClick={() => setIsOpen((prev) => !prev)}
+                    onClick={() => setIs_Open((prev) => !prev)}
+                    onMouseEnter={() => {
+                        setIsOpen(false)
+                      }}
                     aria-label='Search'
                 >
                     <IoMdSearch className='text-2xl' />
                 </button>
-                {isOpen && (
+                {is_Open && (
                     <motion.div
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}

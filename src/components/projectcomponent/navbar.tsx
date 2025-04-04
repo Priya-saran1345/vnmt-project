@@ -38,7 +38,8 @@ interface MenuItem {
 }
 
 const navItems: MenuItem[] = [
-  { title: "Company",
+  {
+    title: "Company",
     hasDropdown: true,
     items: [
       [
@@ -64,7 +65,8 @@ const navItems: MenuItem[] = [
       ],
     ],
   },
-  { "title": "NetSuite",
+  {
+    "title": "NetSuite",
     "hasDropdown": true,
     "items": [
       [
@@ -113,6 +115,18 @@ const navItems: MenuItem[] = [
           ]
         },
         {
+          "title": "NetSuite Support & Maintenance",
+          "description": "24/7 support for your NetSuite environment",
+          "path": "/netsuite/support",
+          "icon": "support"
+        },
+        {
+          "title": "NetSuite Training",
+          "description": "Comprehensive training programs for your team",
+          "path": "/netsuite/training",
+          "icon": "training"
+        },
+        {
           "title": "NetSuite eCommerce",
           "description": "E-commerce solutions for NetSuite",
           "path": "/netsuite/ecommerce",
@@ -137,25 +151,13 @@ const navItems: MenuItem[] = [
               "path": "/netsuite/ecommerce/suitesuccess"
             }
           ]
-        },
-        {
-          "title": "NetSuite Support & Maintenance",
-          "description": "24/7 support for your NetSuite environment",
-          "path": "/netsuite/support",
-          "icon": "support"
         }
-      ],
-      [
-        {
-          "title": "NetSuite Training",
-          "description": "Comprehensive training programs for your team",
-          "path": "/netsuite/training",
-          "icon": "training"
-        }
+
       ]
     ]
   },
-  { "title": "Celigo",
+  {
+    "title": "Celigo",
     "hasDropdown": true,
     "items": [
       [
@@ -193,8 +195,9 @@ const navItems: MenuItem[] = [
         }
       ]
     ]
-  },  
-  { "title": "Products",
+  },
+  {
+    "title": "Products",
     "hasDropdown": true,
     "items": [
       [
@@ -212,8 +215,9 @@ const navItems: MenuItem[] = [
         }
       ]
     ]
-  },  
-  { title: "Industries",
+  },
+  {
+    title: "Industries",
     hasDropdown: true,
     items: [
       [
@@ -254,10 +258,11 @@ const navItems: MenuItem[] = [
           "icon": "finance"
         }
       ]
-         
+
     ],
   },
-  { title: "Resources",
+  {
+    title: "Resources",
     hasDropdown: true,
     items: [
       [
@@ -276,14 +281,15 @@ const navItems: MenuItem[] = [
       ],
     ],
   },
-  { title: "Careers",
+  {
+    title: "Careers",
     path: "/careers",
   },
 ]
 
-export default function Navbar({ className = "" ,logo }: NavbarItemsProps) {
+export default function Navbar({ className = "", logo }: NavbarItemsProps) {
   // console.log(logo);
-  
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null)
@@ -332,8 +338,8 @@ export default function Navbar({ className = "" ,logo }: NavbarItemsProps) {
       }
       }
 
-      className={`w-full bg-white border-b border-gray-200 sticky top-0 z-[9] shadow-xl ${className}`}>
-      <div className="w-full  mx-auto container px-5 ">
+      className={`w-full bg-white border-b border-gray-200 sticky top-0 z-20 shadow-xl ${className}`}>
+      <div className="w-full  lg:w-[95%] 2xl:w-[77%] mx-auto px-5 ">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="w-full">
@@ -352,134 +358,145 @@ export default function Navbar({ className = "" ,logo }: NavbarItemsProps) {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center justify-center w-full gap-3 xl:gap-4 2xl:gap-6">
-      {navItems.map((item) => (
-        <div key={item.title} className="relative" ref={(el:any) => (dropdownRefs.current[item.title] = el)}>
-          {item.path ? (
-            <Link
-              href={item.path}
-              className="text-black hover:text-orange font-semibold transition-colors duration-200"
-            >
-              {item.title}
-            </Link>
-          ) : (
-            <button
-              onClick={() => toggleDropdown(item.title)}
-              onMouseEnter={() => toggleDropdown(item.title)}
-              className={`flex items-center text-black hover:text-orange font-semibold transition-colors duration-200 ${
-                activeDropdown === item.title ? "text-gray-900" : ""
-              }`}
-            >
-              {item.title}
-              {item.hasDropdown && (
-                <ChevronDown
-                  className={`ml-1 h-4 w-4 transition-transform duration-200 ${
-                    activeDropdown === item.title ? "rotate-180" : ""
-                  }`}
-                />
-              )}
-            </button>
-          )}
-
-          {/* Dropdown Menu */}
-          <AnimatePresence>
-            {item.hasDropdown && activeDropdown === item.title && (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                transition={{ duration: 0.2 }}
-                className="absolute left-0 mt-5 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
-                style={{
-                  width: "clamp(250px, 20vw, 350px)", // Responsive width
-                }}
-              >
-                <div className="py-2">
-                  {item.items?.flat().map((subItem) => (
-                    <div key={subItem.title} className="relative">
-                      {subItem.subItems ? (
-                        <button
-                          onClick={(e) => toggleSubmenu(subItem.title, e)}
-                          onMouseEnter={(e) => toggleSubmenu(subItem.title, e)}
-                          className="w-full text-left"
-                        >
-                          <div className="flex items-center p-3 hover:bg-gray-100 transition-colors group">
-                            <div className="w-8 h-8 flex items-center justify-center rounded-full group-hover:text-orange text-blue">
-                              {getMenuIcon(subItem.icon || "default")}
-                            </div>
-                            <div className="ml-3 flex-1">
-                              <p className="text-base font-semibold text-blue group-hover:text-orange">
-                                {subItem.title}
-                              </p>
-                              <p className="text-xs text-gray-500">{subItem.description}</p>
-                            </div>
-                            <ChevronRight className="h-4 w-4 text-gray-400 self-center ml-2" />
-                          </div>
-                        </button>
-                      ) : (
-                        <Link href={subItem.path}>
-                          <div className="flex items-center p-3 hover:bg-gray-100 transition-colors group">
-                            <div className="w-8 h-8 flex items-center justify-center rounded-full group-hover:text-orange text-blue">
-                              {getMenuIcon(subItem.icon || "default")}
-                            </div>
-                            <div className="ml-3">
-                              <p className="text-base font-semibold group-hover:text-orange text-blue">
-                                {subItem.title}
-                              </p>
-                              <p className="text-xs text-gray-500">{subItem.description}</p>
-                            </div>
-                          </div>
-                        </Link>
-                      )}
-
-                      {/* Submenu */}
-                      <AnimatePresence>
-                        {subItem.subItems && activeSubmenu === subItem.title && (
-                          <motion.div
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -10 }}
-                            transition={{ duration: 0.2 }}
-                            className="absolute left-full top-0 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
-                            style={{
-                              width: "clamp(250px, 20vw, 350px)", // Responsive width
-                            }}
-                          >
-                            <div className="py-2">
-                              {subItem.subItems.map((subSubItem) => (
-                                <Link key={subSubItem.title} href={subSubItem.path}>
-                                  <div className="flex items-center p-3 hover:bg-gray-100 transition-colors group">
-                                    <div className="w-8 h-8 flex items-center justify-center rounded-full group-hover:text-orange text-blue">
-                                      {getMenuIcon(subSubItem.icon || "default")}
-                                    </div>
-                                    <div className="ml-3">
-                                      <p className="text-base font-semibold group-hover:text-orange text-blue">
-                                        {subSubItem.title}
-                                      </p>
-                                      <p className="text-xs text-gray-500">{subSubItem.description}</p>
-                                    </div>
+          <nav
+            onMouseEnter={() => {
+              setIsOpen(false)
+            }}
+            className="hidden lg:flex items-center justify-center w-full gap-3 xl:gap-4 2xl:gap-6">
+            {navItems.map((item) => (
+              <div key={item.title} className="relative" ref={(el: any) => (dropdownRefs.current[item.title] = el)}>
+                {item.path ? (
+                  <Link
+                    href={item.path}
+                    onMouseEnter={() => {
+                      setActiveDropdown(null)
+                      setActiveSubmenu(null)
+                    }
+                    }
+                    className="text-black hover:text-orange font-semibold transition-colors duration-200"
+                  >
+                    {item.title}
+                  </Link>
+                ) : (
+                  <button
+                    onClick={() => toggleDropdown(item.title)}
+                    onMouseEnter={() => toggleDropdown(item.title)}
+                    className={`flex items-center text-black hover:text-orange font-semibold transition-colors duration-200 ${activeDropdown === item.title ? "text-gray-900" : ""
+                      }`}
+                  >
+                    {item.title}
+                    {item.hasDropdown && (
+                      <ChevronDown
+                        className={`ml-1 h-4 w-4 transition-transform duration-200 ${activeDropdown === item.title ? "rotate-180" : ""
+                          }`}
+                      />
+                    )}
+                  </button>
+                )}
+                {/* Dropdown Menu */}
+                <AnimatePresence>
+                  {item.hasDropdown && activeDropdown === item.title && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute left-0 mt-5 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
+                      style={{
+                        width: "clamp(250px, 20vw, 350px)", // Responsive width
+                      }}
+                    >
+                      <div className="py-2">
+                        {item.items?.flat().map((subItem) => (
+                          <div key={subItem.title} className="relative">
+                            {subItem.subItems ? (
+                              <button
+                                onClick={(e) => toggleSubmenu(subItem.title, e)}
+                                onMouseEnter={(e) => toggleSubmenu(subItem.title, e)}
+                                className="w-full text-left"
+                              >
+                                <div className="flex items-center p-3 hover:bg-gray-100 transition-colors group">
+                                  <div className="w-8 h-8 flex items-center justify-center rounded-full group-hover:text-orange text-blue">
+                                    {getMenuIcon(subItem.icon || "default")}
                                   </div>
-                                </Link>
-                              ))}
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      ))}
-    </nav>
+                                  <div className="ml-3 flex-1">
+                                    <p className="text-base font-semibold text-blue group-hover:text-orange">
+                                      {subItem.title}
+                                    </p>
+                                    <p className="text-xs text-gray-500">{subItem.description}</p>
+                                  </div>
+                                  <ChevronRight className="h-4 w-4 text-gray-400 self-center ml-2" />
+                                </div>
+                              </button>
+                            ) : (
+                              <Link href={subItem.path} onMouseEnter={() => setActiveSubmenu(null)}>
+                                <div className="flex items-center p-3 hover:bg-gray-100 transition-colors group">
+                                  <div className="w-8 h-8 flex items-center justify-center rounded-full group-hover:text-orange text-blue">
+                                    {getMenuIcon(subItem.icon || "default")}
+                                  </div>
+                                  <div className="ml-3">
+                                    <p className="text-base font-semibold group-hover:text-orange text-blue">
+                                      {subItem.title}
+                                    </p>
+                                    <p className="text-xs text-gray-500">{subItem.description}</p>
+                                  </div>
+                                </div>
+                              </Link>
+                            )}
 
-          <div className="flex w-full gap-2 items-center mt-2 lg:mt-0 flex-col lg:flex-row justify-end">
+                            {/* Submenu */}
+                            <AnimatePresence>
+                              {subItem.subItems && activeSubmenu === subItem.title && (
+                                <motion.div
+                                  initial={{ opacity: 0, x: -10 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  exit={{ opacity: 0, x: -10 }}
+                                  transition={{ duration: 0.2 }}
+                                  className="absolute left-full top-0 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
+                                  style={{
+                                    width: "clamp(250px, 20vw, 350px)", // Responsive width
+                                  }}
+                                >
+                                  <div className="py-2">
+                                    {subItem.subItems.map((subSubItem) => (
+                                      <Link key={subSubItem.title} href={subSubItem.path}>
+                                        <div className="flex items-center p-3 hover:bg-gray-100 transition-colors group">
+                                          <div className="w-8 h-8 flex items-center justify-center rounded-full group-hover:text-orange text-blue">
+                                            {getMenuIcon(subSubItem.icon || "default")}
+                                          </div>
+                                          <div className="ml-3">
+                                            <p className="text-base font-semibold group-hover:text-orange text-blue">
+                                              {subSubItem.title}
+                                            </p>
+                                            <p className="text-xs text-gray-500">{subSubItem.description}</p>
+                                          </div>
+                                        </div>
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </nav>
+
+          <div
+            onMouseEnter={() => {
+              setActiveDropdown(null)
+              setActiveSubmenu(null)
+            }}
+            className="flex w-full gap-2 items-center mt-2 lg:mt-0 flex-col lg:flex-row justify-end">
             <div className=" lg:flex gap-2 items-center hidden">
               <CountrySelector isOpen={isOpen} setIsOpen={setIsOpen} />
               {/* <IoMdSearch className="text-2xl text-orange" /> */}
-              <ToolbarSearch />
+              <ToolbarSearch isOpen={isOpen} setIsOpen={setIsOpen} />
               <button className="uppercase px-2 py-0.5 font-medium bg-orange text-white rounded-lg border-2 border-orange hover:bg-transparent hover:text-orange smooth3"> Contact US </button>
             </div>
             <button
@@ -494,6 +511,7 @@ export default function Navbar({ className = "" ,logo }: NavbarItemsProps) {
               )}
             </button>
           </div>
+
         </div>
 
         {/* Mobile Menu */}

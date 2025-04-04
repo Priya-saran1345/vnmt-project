@@ -683,21 +683,13 @@ body {
 .infinite-scroll-container {
 	display: flex;
 	overflow-x: auto;
-	/* Allows horizontal scrolling */
 	scroll-snap-type: x mandatory;
-	/* Enforces snap scrolling */
 	gap: 10px;
-	/* Spacing between images */
 	width: 100%;
-	/* Ensure it takes the full width of the parent */
 	padding: 10px 0;
-	/* Optional padding */
 	scroll-behavior: smooth;
-	/* Smooth scrolling */
 	box-sizing: border-box;
-	/* Prevents overflow */
 	position: relative;
-	/* Ensures it's properly positioned */
 }
 
 /* Child container: keeps images in a row */
@@ -714,9 +706,7 @@ body {
 .infinite-scroll img {
 	object-fit: contain;
 	transition: transform 0.3s ease;
-	/* Smooth hover effect */
 	scroll-snap-align: center;
-	/* Ensure each item snaps to the center */
 }
 
 .infinite-scroll img:hover {

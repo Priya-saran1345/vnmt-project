@@ -46,8 +46,8 @@ const validateInput = (name: string, value: string) => {
 
 const fieldLabels = {
   name: "Full Name",
-  email: "Email Address",
   phone: "Phone Number",
+  email: "Email Address",
   query: "Your Query",
 }
 
@@ -253,7 +253,7 @@ const QuerySheet = () => {
             </SheetTrigger>
           )}
 
-          <SheetContent className="bg-white p-6 rounded-l-xl shadow-xl overflow-y-auto max-w-sm w-full h-screen">
+          <SheetContent className="bg-white p-6 rounded-l-xl shadow-xl overflow-y-auto xl:min-w-[450px] lg:min-w-[400px]  w-full max-h-screen">
             <SheetHeader className="mb-4">
               <SheetTitle className="text-xl font-semibold text-darkblue">
                 <span className="relative inline-block">
@@ -266,9 +266,10 @@ const QuerySheet = () => {
               </SheetDescription>
             </SheetHeader>
 
-            <form onSubmit={onSubmitForm} className="space-y-3 ">
+            <form onSubmit={onSubmitForm} className="space-y-3  ">
+              <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
               {Object.entries(fieldLabels).map(([field, label]) => (
-                <div key={field} className="relative">
+                <div key={field} className={`relative ${field === "query" || field === "email"  ? "md:col-span-2" : ""}`}>
                   <label
                     htmlFor={field}
                     className="absolute left-3 top-2 text-xs  transition-all peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs "
@@ -295,20 +296,15 @@ const QuerySheet = () => {
                       value={formData[field]}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      className={`${getInputClass(field)} peer pt-5 pb-2`}
+                      className={`${getInputClass(field)} peer pt-6 pb-2 `}
                       required
                     />
                   )}
                   {formData?.errors[field] && (
                     <div className="text-xs text-red-500 mt-1">{formData?.errors[field]}</div>
                   )}
-                  {touched[field] && !formData.errors[field] && (
-                    <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-lightblue">
-                      <CheckOutlined />
-                    </div>
-                  )}
                 </div>
-              ))}
+              ))}</div>
 
               <div className="space-y-2">
                 <label className="text-sm font-medium text-darkblue">What are you looking for?</label>
