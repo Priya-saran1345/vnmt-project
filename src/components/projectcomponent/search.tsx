@@ -51,7 +51,7 @@ export default function SearchPopover({setIsOpen}:any) {
         <MotionConfig transition={transition}>
             <div className='relative' ref={containerRef}>
                 <button
-                    className='flex items-center justify-center rounded-lg p-2 text-orange hover:bg-orange-100 focus:outline-none'
+                    className='flex items-center justify-center rounded-lg pr-2 text-orange hover:bg-orange-100 focus:outline-none'
                     onClick={() => setIs_Open((prev) => !prev)}
                     onMouseEnter={() => {
                         setIsOpen(false)
@@ -65,7 +65,7 @@ export default function SearchPopover({setIsOpen}:any) {
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
-                        className='absolute -left-14 2xl:left-0 top-full mt-2 w-60 rounded-lg bg-white p-2 shadow-lg border border-gray-200'
+                        className='absolute -left-14 2xl:left-0 top-full mt-2 w-40 2xl:w-60 rounded-lg bg-white p-2 shadow-lg border border-gray-200'
                     >
                         <input
                             type='text'

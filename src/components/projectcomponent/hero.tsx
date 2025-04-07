@@ -70,7 +70,7 @@ export function Hero() {
         {bgImages.map((bg) => (
           <div key={bg.id} className="relative h-[80vh] w-full flex items-center justify-center ">
             {/* Background Image */}
-            <Image src={bg.image} alt={`Background ${bg.id}`} className="object-cover w-full h-full" width={10000} height={10000} />
+            <Image src={bg.image} alt={`Background ${bg.id}`} className="object-cover object-left w-full h-full" width={10000} height={10000} />
 
             {/* Content Overlay */}
             <div className="absolute inset-0 flex items-center justify-center">

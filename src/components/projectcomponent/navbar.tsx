@@ -339,7 +339,7 @@ export default function Navbar({ className = "", logo }: NavbarItemsProps) {
       }
 
       className={`w-full bg-white border-b border-gray-200 sticky top-0 z-20 shadow-xl ${className}`}>
-      <div className="w-full  lg:w-[95%] 2xl:w-[77%] mx-auto px-5 ">
+      <div className="w-full  lg:w-[100%] 2xl:w-[80%] mx-auto px-5 ">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="w-full">
@@ -492,8 +492,8 @@ export default function Navbar({ className = "", logo }: NavbarItemsProps) {
               setActiveDropdown(null)
               setActiveSubmenu(null)
             }}
-            className="flex w-full gap-2 items-center mt-2 lg:mt-0 flex-col lg:flex-row justify-end">
-            <div className=" lg:flex gap-2 items-center hidden">
+            className="flex w-full  items-center mt-2 lg:mt-0 flex-col lg:flex-row justify-end">
+            <div className=" lg:flex items-center hidden">
               <CountrySelector isOpen={isOpen} setIsOpen={setIsOpen} />
               {/* <IoMdSearch className="text-2xl text-orange" /> */}
               <ToolbarSearch isOpen={isOpen} setIsOpen={setIsOpen} />

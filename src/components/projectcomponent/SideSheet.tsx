@@ -141,7 +141,7 @@ const QuerySheet = () => {
     const errors = {
       name: validateInput("name", name),
       email: validateInput("email", email),
-      phone: validateInput("phone", phone),
+      // phone: validateInput("phone", phone),
       query: validateInput("query", query),
     }
 
@@ -274,7 +274,7 @@ const QuerySheet = () => {
                     htmlFor={field}
                     className="absolute left-3 top-2 text-xs  transition-all peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs "
                   >
-                    {label} {field !== "lookingFor" && <span className="text-textred">*</span>}
+                    {label} {( field !== "phone" && field !== "lookingFor")   && <span className="text-textred">*</span>}
                   </label>
                   {field === "query" ? (
                     <textarea
@@ -297,7 +297,7 @@ const QuerySheet = () => {
                       onChange={handleChange}
                       onBlur={handleBlur}
                       className={`${getInputClass(field)} peer pt-6 pb-2 `}
-                      required
+                      required={field === "phone" ? false : true}
                     />
                   )}
                   {formData?.errors[field] && (
