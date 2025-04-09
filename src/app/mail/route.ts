@@ -83,7 +83,7 @@ export async function POST(req: Request) {
     // Email options
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: "abhishek.sharma1@digranknow.com",
+      to: "sales@vnmtsolutions.com",
       subject: "Message from VNMT Website",
       text: `HOMEPAGE CONTACT FORM DETAILS: \n 
       Username: ${name}
@@ -91,7 +91,6 @@ export async function POST(req: Request) {
       Email: ${email}
       Message: ${query}
       Looking For: ${lookingFor ? lookingFor.join(", ") : "Not specified"}
-      reCAPTCHA score: ${recaptchaResult.score}
       `,
     };
 
