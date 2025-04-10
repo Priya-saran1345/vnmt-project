@@ -71,7 +71,7 @@ export function ServicesClient() {
                                 </div>
                                 <div>
                                     <h3 className="bulletheading font-semibold mb-2 navitem cursor-default">{service.title}</h3>
-                                    <p className="parahraph text-[#818181] cursor-default">{service.description}</p>
+                                    <p className="text-base text-[#818181] cursor-default">{service.description}</p>
                                 </div>
                             </div>
                         ))}

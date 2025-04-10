@@ -54,6 +54,60 @@ export const caseStudies = [
       image: "/images/case-study-2.svg",
       description: "Accessible anywhere, anytime",
     },
+    {
+      id: 7,
+      title: "Digital Transformation",
+      image: "/images/case-study-1.svg",
+      description: "Empowering businesses through digital solutions",
+    },
+    {
+      id: 8,
+      title: "Business Analytics",
+      image: "/images/case-study-2.svg",
+      description: "Data-driven decision making",
+    },
+    {
+      id: 9,
+      title: "Signal Brands",
+      image: "/images/case-study-3.svg",
+      description: "NetSuite's cloud-based platform that drives your business operations",
+    },
+    {
+      id: 10,
+      title: "Team Collaboration",
+      image: "/images/case-study-4.svg",
+      description: "Enhanced workflow solutions cloud-based platform that drives your business operations",
+    },
+    {
+      id: 11,
+      title: "Social Integration",
+      image: "/images/case-study-1.svg",
+      description: "Connected digital experiences",
+    },
+    {
+      id: 12,
+      title: "Mobile Solutions",
+      image: "/images/case-study-2.svg",
+      description: "Accessible anywhere, anytime",
+    },
+    {
+      id: 13,
+      title: "Team Collaboration",
+      image: "/images/case-study-3.svg",
+      description: "Enhanced workflow solutions cloud-based platform that drives your business operations",
+    },
+    {
+      id: 14,
+      title: "Social Integration",
+      image: "/images/case-study-4.svg",
+      description: "Connected digital experiences",
+    },
+    {
+      id: 15,
+      title: "Mobile Solutions",
+      image: "/images/case-study-2.svg",
+      description: "Accessible anywhere, anytime",
+    },
   ]
   
   

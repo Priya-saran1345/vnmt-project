@@ -1,23 +1,33 @@
+import { BiCustomize } from "react-icons/bi";
 import {
-  FaInfoCircle,
-  FaUsers,
-  FaLightbulb,
-  FaPuzzlePiece,
-  FaHeadset,
-  FaUniversity,
-  FaRocket,
-  FaCode,
-  FaSitemap,
   FaBlog,
-  FaFileAlt,
   FaBriefcase,
-  FaShoppingCart,
-  FaIndustry,
   FaCogs,
+  FaFileAlt,
   FaHandshake,
-  FaUtensils,
+  FaHeadset,
+  FaIndustry,
+  FaInfoCircle,
+  FaLightbulb,
   FaPiggyBank,
+  FaPuzzlePiece,
+  FaShopify,
+  FaShoppingCart,
+  FaSitemap,
+  FaUniversity,
+  FaUsers,
+  FaUtensils
 } from "react-icons/fa";
+import { GrOptimize } from "react-icons/gr";
+import { MdDeveloperMode } from "react-icons/md";
+import { RiAdminLine } from "react-icons/ri";
+import { ImMakeGroup } from "react-icons/im";
+import { LuReplace } from "react-icons/lu";
+import Image from "next/image";
+
+
+
+
 
 export const getMenuIcon = (icon: string) => {
   switch (icon) {
@@ -36,21 +46,26 @@ export const getMenuIcon = (icon: string) => {
     case "training":
       return <FaUniversity size={20} />;
     case "optimization":
-      return <FaRocket size={20} />;
+      return <GrOptimize size={20} />;
     case "development":
+      return <MdDeveloperMode size={20} />;
     case "implementation":
+      return <ImMakeGroup size={20} />;
     case "customization":
+      return <BiCustomize size={20} />;
     case "migration":
+      return <LuReplace size={20} />;
     case "administration":
-      return <FaCode size={20} />;
+      return <RiAdminLine size={20} />;
     case "ecommerce":
     case "suitecommerce":
     case "suitecommerce-advanced":
     case "suitesuccess":
-      return <FaShoppingCart size={20} />;
+      return <Image src={"/images/netsuiteicon.svg"} width={150} height={150} alt="netsuiteicon" />;
     case "woocommerce":
-    case "shopify":
       return <FaShoppingCart size={20} />;
+    case "shopify":
+      return <FaShopify size={20} />;
     case "retail":
       return <FaIndustry size={20} />;
     case "wholesale":

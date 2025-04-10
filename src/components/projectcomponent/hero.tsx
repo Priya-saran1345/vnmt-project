@@ -70,7 +70,7 @@ export function Hero() {
         {bgImages.map((bg) => (
           <div key={bg.id} className="relative h-[80vh] w-full flex items-center justify-center ">
             {/* Background Image */}
-            <Image src={bg.image} alt={`Background ${bg.id}`} className="object-cover object-left w-full h-full" width={10000} height={10000} />
+            <Image src={bg.image} alt={`Background ${bg.id}`} className="object-cover object-center w-full h-full" width={10000} height={10000} />
 
             {/* Content Overlay */}
             <div className="absolute inset-0 flex items-center justify-center">
@@ -84,7 +84,7 @@ export function Hero() {
                       Reliably guiding your business to success
                     </h1>
                     <p className="text-lg text-gray-200 max-w-lg">
-                      We ensure a smooth ERP implementation to your business needs, setup to go-live
+                      We ensure a smooth ERP implementation to your <br /> business needs, setup to go-live
                     </p>
                     <motion.button
                       className="bg-orange hover:bg-white hover:text-orange transition-colors text-white font-semibold px-6 py-2 border-2 border-orange rounded flex items-center justify-center relative overflow-hidden"
