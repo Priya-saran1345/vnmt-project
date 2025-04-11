@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import nodemailer from "nodemailer"
-import { NextResponse } from "next/server"
+import nodemailer from "nodemailer";
+import { NextResponse } from "next/server";
 
 async function verifyRecaptcha(token: string) {
-  const secretKey = ""
+  const secretKey = "6LfLTAcrAAAAANlXDrv7EMeALUdwiD7Bnh0_qqL7";
+
+  // console.log("🔍 Verifying reCAPTCHA...");
 
   const response = await fetch("https://www.google.com/recaptcha/api/siteverify", {
     method: "POST",
@@ -11,41 +13,41 @@ async function verifyRecaptcha(token: string) {
       "Content-Type": "application/x-www-form-urlencoded",
     },
     body: `secret=${secretKey}&response=${token}`,
-  })
+  });
 
-  const data = await response.json()
-  console.log("✅ reCAPTCHA response:", data)
+  const data = await response.json();
+  console.log("✅ reCAPTCHA response:", data);
 
-  return data
+  return data;
 }
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json()
-    const { name, email, phone, query, lookingFor, token } = body
 
+    const body = await req.json();
+    const { name, email, phone, query, lookingFor, token } = body;
     if (!email || !query || !name || !phone) {
-      console.error("❌ Missing required fields")
-      return NextResponse.json({ error: "All fields are required" }, { status: 400 })
+      console.error("❌ Missing required fields");
+      return NextResponse.json({ error: "All fields are required" }, { status: 400 });
     }
     if (!token) {
-      console.error("❌ reCAPTCHA token missing")
-      return NextResponse.json({ error: "reCAPTCHA verification failed" }, { status: 400 })
+      console.error("❌ reCAPTCHA token missing");
+      return NextResponse.json({ error: "reCAPTCHA verification failed" }, { status: 400 });
     }
 
-    const recaptchaResult = await verifyRecaptcha(token)
+    const recaptchaResult = await verifyRecaptcha(token);
 
     if (!recaptchaResult.success || recaptchaResult.score < 0.5) {
-      console.error("❌ reCAPTCHA failed. Score:", recaptchaResult.score)
-      return NextResponse.json({ error: "reCAPTCHA verification failed. Please try again." }, { status: 400 })
+      console.error("❌ reCAPTCHA failed. Score:", recaptchaResult.score);
+      return NextResponse.json({ error: "reCAPTCHA verification failed. Please try again." }, { status: 400 });
     }
+
 
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      console.error("❌ Missing SMTP credentials")
-      return NextResponse.json({ error: "SMTP credentials are missing" }, { status: 500 })
+      console.error("❌ Missing SMTP credentials");
+      return NextResponse.json({ error: "SMTP credentials are missing" }, { status: 500 });
     }
 
-    // Improved email configuration to avoid spam filters
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 465,
@@ -54,16 +56,17 @@ export async function POST(req: Request) {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
-      debug: false, // Set to false in production
-      logger: false, // Set to false in production
-    })
+      debug: true, 
+      logger: true,
+    });
+
 
     const mailOptions = {
       from: {
         name: "VNMT Website Contact",
         address: process.env.EMAIL_USER,
       },
-      to: "abhishek.sharma1@digranknow.com",
+      to: "sales@vnmtsolutions.com",
       subject: "New Inquiry from VNMT Website",
       text: `HOMEPAGE CONTACT FORM DETAILS: \n 
       Username: ${name}
@@ -102,7 +105,7 @@ export async function POST(req: Request) {
         </div>
       `,
       headers: {
-        "X-Priority": "1", // High priority
+        "X-Priority": "1", 
         "X-MSMail-Priority": "High",
         Importance: "High",
         "X-Mailer": "VNMT Website Mailer",
@@ -110,14 +113,14 @@ export async function POST(req: Request) {
     }
 
     try {
-      await transporter.sendMail(mailOptions)
-      return NextResponse.json({ message: "Message sent successfully" }, { status: 200 })
-    } catch (mailError: any) {
-      console.error("❌ Email sending failed:", mailError)
-      return NextResponse.json({ error: "Failed to send email", details: mailError.message }, { status: 500 })
+      await transporter.sendMail(mailOptions);
+      return NextResponse.json({ message: "Message sent successfully" }, { status: 200 });
+    } catch (mailError:any) {
+      console.error("❌ Email sending failed:", mailError);
+      return NextResponse.json({ error: "Failed to send email", details: mailError.message }, { status: 500 });
     }
-  } catch (error: any) {
-    console.error("❌ Unexpected error:", error)
-    return NextResponse.json({ error: "Failed to send message", details: error.message }, { status: 500 })
+  } catch (error:any) {
+    console.error("❌ Unexpected error:", error);
+    return NextResponse.json({ error: "Failed to send message", details: error.message }, { status: 500 });
   }
 }
