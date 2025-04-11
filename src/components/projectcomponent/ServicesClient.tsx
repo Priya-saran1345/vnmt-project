@@ -25,7 +25,7 @@ export function ServicesClient() {
 
     // Smooth spring animation for the scrollbar thumb
     // const springConfig = { damping: 25, stiffness: 100 }
-    const y =   useTransform(scrollYProgress, [0, 1], [0, containerRef.current ? containerRef.current.clientHeight - 100 : 0])
+    const y =   useTransform(scrollYProgress, [0, 1], [0, containerRef.current ? containerRef.current.clientHeight - 120 : 0])
 
     // Handle drag to scroll
     const handleDrag = (_: any, info: { delta: { y: number } }) => {
@@ -36,24 +36,20 @@ export function ServicesClient() {
     }
 
     return (
-        <div className="flex  items-start gap-4 lg:flex-row flex-col-reverse ">
+        <div className="flex  items-center  gap-4 lg:flex-row flex-col-reverse ">
 
-            <div className="md:w-full  ">
-                <div className="relative rounded-2xl overflow-hidden">
                     <Image
                         src="/images/bgservices.svg"
                         alt="NetSuite Services"
-                        width={1000}
-                        height={1000}
-                        className="object-contain shadow-lg rounded-2xl "
+                        width={1}
+                        height={1}
+                        className=" h-auto  flex-1 "
                     />
-                </div>
-            </div>
 
-            <div className="md:w-full relative overflow-hidden ">
+            <div className="md:w-full relative overflow-hidden flex-[1] ">
                 <div className="relative flex overflow-y-hidden  w-full">
                     
-                    <div ref={containerRef} className="h-[450px]  pr-8 space-y-4 scrollbar-none overflow-x-hidden">
+                    <div ref={containerRef} className="max-h-[440px]  pr-8 space-y-4 scrollbar-none overflow-x-hidden">
                         {services.map((service) => (
                             <div
                                 key={service.id}

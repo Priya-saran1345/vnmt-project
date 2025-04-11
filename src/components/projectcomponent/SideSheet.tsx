@@ -115,12 +115,19 @@ const QuerySheet = () => {
 
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = e.target
-    setFormData((prev: any) => {
-      const updatedLookingFor = checked
-        ? [...prev.lookingFor, value]
-        : prev.lookingFor.filter((item: any) => item !== value)
-      return { ...prev, lookingFor: updatedLookingFor }
-    })
+    if (checked) {
+      // If checked, set only this value (replacing any previous selection)
+      setFormData((prev: any) => ({
+        ...prev,
+        lookingFor: [value],
+      }))
+    } else {
+      // If unchecked, remove this value
+      setFormData((prev: any) => ({
+        ...prev,
+        lookingFor: prev.lookingFor.filter((item: any) => item !== value),
+      }))
+    }
   }
 
   const onSubmitForm = async (e: React.FormEvent) => {
@@ -267,44 +274,48 @@ const QuerySheet = () => {
             </SheetHeader>
 
             <form onSubmit={onSubmitForm} className="space-y-3  ">
-              <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-              {Object.entries(fieldLabels).map(([field, label]) => (
-                <div key={field} className={`relative ${field === "query" || field === "email"  ? "md:col-span-2" : ""}`}>
-                  <label
-                    htmlFor={field}
-                    className="absolute left-3 top-2 text-xs  transition-all peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs "
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {Object.entries(fieldLabels).map(([field, label]) => (
+                  <div
+                    key={field}
+                    className={`relative ${field === "query" || field === "email" ? "md:col-span-2" : ""}`}
                   >
-                    {label} {( field !== "phone" && field !== "lookingFor")   && <span className="text-textred">*</span>}
-                  </label>
-                  {field === "query" ? (
-                    <textarea
-                      id={field}
-                      name={field}
-                      placeholder=" "
-                      value={formData[field]}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      className={`${getInputClass(field)} peer pt-5 pb-2 h-20 resize-none`}
-                      required
-                    />
-                  ) : (
-                    <input
-                      id={field}
-                      type={field === "email" ? "email" : field === "phone" ? "tel" : "text"}
-                      name={field}
-                      placeholder=" "
-                      value={formData[field]}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      className={`${getInputClass(field)} peer pt-6 pb-2 `}
-                      required={field === "phone" ? false : true}
-                    />
-                  )}
-                  {formData?.errors[field] && (
-                    <div className="text-xs text-red-500 mt-1">{formData?.errors[field]}</div>
-                  )}
-                </div>
-              ))}</div>
+                    <label
+                      htmlFor={field}
+                      className="absolute left-3 top-2 text-xs  transition-all peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs "
+                    >
+                      {label} {field !== "phone" && field !== "lookingFor" && <span className="text-textred">*</span>}
+                    </label>
+                    {field === "query" ? (
+                      <textarea
+                        id={field}
+                        name={field}
+                        placeholder=" "
+                        value={formData[field]}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        className={`${getInputClass(field)} peer pt-5 pb-2 h-20 resize-none`}
+                        required
+                      />
+                    ) : (
+                      <input
+                        id={field}
+                        type={field === "email" ? "email" : field === "phone" ? "tel" : "text"}
+                        name={field}
+                        placeholder=" "
+                        value={formData[field]}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        className={`${getInputClass(field)} peer pt-6 pb-2 `}
+                        required={field === "phone" ? false : true}
+                      />
+                    )}
+                    {formData?.errors[field] && (
+                      <div className="text-xs text-red-500 mt-1">{formData?.errors[field]}</div>
+                    )}
+                  </div>
+                ))}
+              </div>
 
               <div className="space-y-2">
                 <label className="text-sm font-medium text-darkblue">What are you looking for?</label>
@@ -313,17 +324,24 @@ const QuerySheet = () => {
                     <label
                       key={option.value}
                       className={`flex items-center p-2 rounded-md border transition-all duration-200 text-sm 
-                ${formData.lookingFor.includes(option.value) ? "border-orange bg-orange bg-opacity-10 text-darkblue" : "border-gray-300 hover:border-lightorange hover:bg-orange hover:bg-opacity-5"}`}
+                ${
+                  formData.lookingFor.includes(option.value)
+                    ? "border-orange bg-orange bg-opacity-10 text-darkblue"
+                    : "border-gray-300 hover:border-lightorange hover:bg-orange hover:bg-opacity-5"
+                }`}
                     >
                       <input
-                        type="checkbox"
+                        type="radio"
+                        name="lookingFor"
                         value={option.value}
                         checked={formData.lookingFor.includes(option.value)}
                         onChange={handleCheckboxChange}
                         className="sr-only"
                       />
                       <div
-                        className={`w-3.5 h-3.5 mr-1 flex items-center justify-center rounded border ${formData.lookingFor.includes(option.value) ? "bg-orange border-orange" : "border-gray-400"}`}
+                        className={`w-3.5 h-3.5 mr-1 flex items-center justify-center rounded border ${
+                          formData.lookingFor.includes(option.value) ? "bg-orange border-orange" : "border-gray-400"
+                        }`}
                       >
                         {formData.lookingFor.includes(option.value) && <CheckOutlined className="text-white text-xs" />}
                       </div>
@@ -386,4 +404,3 @@ const QuerySheet = () => {
 }
 
 export default QuerySheet
-
