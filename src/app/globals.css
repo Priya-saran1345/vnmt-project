@@ -144,7 +144,9 @@ body {
 .smooth3 {
 	transition: all 0.3s ease-in-out;
 }
-
+.smooth2 {
+	transition: all 0.2s ease-in-out;
+}
 .smooth1 {
 	transition: all 0.1s ease-in-out;
 }
