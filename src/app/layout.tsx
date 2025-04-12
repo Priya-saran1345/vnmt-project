@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Canonical from "@/components/canonical"
 import { fetchData } from "./websitesettings";
+import Navbar from "@/components/projectcomponent/navbar";
+import Footer from "@/components/projectcomponent/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -30,7 +32,9 @@ export default async function RootLayout({
       suppressHydrationWarning={true}
         className={`antialiased`}
       >
+                        <Navbar logo={websiteDetails?.site_logo} />
         {children}
+                        <Footer data={websiteDetails} />
       </body>
     </html>
   );

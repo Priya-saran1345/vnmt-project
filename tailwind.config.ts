@@ -17,8 +17,8 @@ export default {
         darkblue: "#0F2373",
         textred: "#E84A54",
         heartred: "#FE0707",
-		lightblue:'#79A5F7',
-		lightorange:'#FF874F',
+        lightblue: '#79A5F7',
+        lightorange: '#FF874F',
 
 
         card: {
@@ -64,11 +64,11 @@ export default {
         medium: "500",
         semibold: "600",
       },
-    //   borderRadius: {
-    //     lg: "var(--radius)",
-    //     md: "calc(var(--radius) - 2px)",
-    //     sm: "calc(var(--radius) - 4px)",
-    //   },
+      //   borderRadius: {
+      //     lg: "var(--radius)",
+      //     md: "calc(var(--radius) - 2px)",
+      //     sm: "calc(var(--radius) - 4px)",
+      //   },
       keyframes: {
         "accordion-down": {
           from: {

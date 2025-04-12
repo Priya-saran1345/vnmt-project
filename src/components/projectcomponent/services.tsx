@@ -15,7 +15,7 @@ export function Services() {
               <p className="font-medium parahraph mb-6 text-[#818181]">Your Trusted Partner for NetSuite Success</p>
             </div> 
             <div className="flex justify-end mb-4 ">
-            <Button content= 'View All'></Button>
+            <Button content= 'View All' href="/netsuite-services"></Button>
             </div>
           </div>
           <ServicesClient />

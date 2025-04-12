@@ -1,29 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import HomePage from '@/components/homepage'
 import React from 'react'
-import { BASE_URL } from '@/utils/api';
-import { fetchMeta } from './meta-data';
+import { fetchMeta } from '../meta-data';
+import NetsuiteServiceMain from '@/components/netsuiteservices';
 
-const Home = async () => {
-  let blogData = null;
-
-  try {
-      const response = await fetch(`${BASE_URL}/api/blog`);
-     blogData = await response.json();
-  } catch (error) {
-    console.error("Failed to fetch website details:", error);
-  }
+const NetsuiteService = () => {
   return (
-    <HomePage blogdata={blogData} />
-  )
+<>
+    <NetsuiteServiceMain  />
+</>  )
 }
 
-export default Home
-
+export default NetsuiteService
 
 export async function generateMetadata() {
   try {
-    const metaData = await fetchMeta("/");
+    const metaData = await fetchMeta("netsuite-services");
     // console.log("metaData",metaData);
 
     return {

@@ -2,15 +2,16 @@
 
 import React from 'react';
 
-const Button = ({ content }:any) => {
+const Button = ({ content, href }: any) => {
 
 
   return (
-    <button
-     className='_button'
+    <a
+      className='_button'
+      href={href ? href : "/"}
     >
       {content}
-    </button>
+    </a>
   );
 };
 

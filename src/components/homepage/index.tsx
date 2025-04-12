@@ -1,23 +1,21 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
+import { BlogSection } from '@/components/projectcomponent/blog-section';
 import { CaseStudy } from '@/components/projectcomponent/Case-studies';
 import Faq from '@/components/projectcomponent/Faq';
-import Footer from '@/components/projectcomponent/Footer';
-import { Testimonials } from '@/components/projectcomponent/Testimonials';
-import { useEffect } from "react";
-import { IndustriesSection } from '@/components/projectcomponent/industries-section';
-import { NetsuiteSection } from '@/components/projectcomponent/netsuite-section';
-import SideSheet from '@/components/projectcomponent/SideSheet';
-import { BlogSection } from '@/components/projectcomponent/blog-section';
 import { Hero } from '@/components/projectcomponent/hero';
+import { IndustriesSection } from '@/components/projectcomponent/industries-section';
 import IntegrationSection from '@/components/projectcomponent/integration-section';
-import Navbar from '@/components/projectcomponent/navbar';
+import { NetsuiteSection } from '@/components/projectcomponent/netsuite-section';
 import { Partners } from '@/components/projectcomponent/partners';
 import { Services } from '@/components/projectcomponent/services';
+import SideSheet from '@/components/projectcomponent/SideSheet';
+import { Testimonials } from '@/components/projectcomponent/Testimonials';
 import { TrustedPartner } from '@/components/projectcomponent/trusted-partner';
+import { useEffect } from "react";
 import OurImpact from "../projectcomponent/ourImpact";
 
-export default function HomePage({ data ,blogdata}: any) {
+export default function HomePage({blogdata}: any) {
     useEffect(() => {
         window.scrollTo(0, 0);
         localStorage.setItem("isScrolled", JSON.stringify(false));
@@ -30,7 +28,6 @@ export default function HomePage({ data ,blogdata}: any) {
         <div className="text-black">
             <div className=" w-full relative">
                 {/* <Header /> */}
-                <Navbar logo={data?.site_logo} />
                 <div className='bg_banner'>
                 <Hero />
                 <Services />
@@ -49,7 +46,6 @@ export default function HomePage({ data ,blogdata}: any) {
                 <Testimonials />
                 <Faq />
                 </div>
-                <Footer data={data} />
             </div> 
         </div>
     )
