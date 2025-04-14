@@ -21,20 +21,20 @@ export default async function RootLayout({
     websiteDetails = await fetchData();
   } catch (error) {
     console.error("Failed to fetch website details:", error);
-  }  return (
+  } return (
     <html lang="en">
       <head>
-      <Canonical />
-      <link rel="icon" href={`http://192.168.211.32:8000${websiteDetails?.favicon}`} />
-      <link rel="apple-touch-icon" href={`http://192.168.211.32:8000${websiteDetails?.favicon}`} />
+        <Canonical />
+        <link rel="icon" href={`http://192.168.211.32:8000${websiteDetails?.favicon}`} />
+        <link rel="apple-touch-icon" href={`http://192.168.211.32:8000${websiteDetails?.favicon}`} />
       </head>
-      <body  
-      suppressHydrationWarning={true}
+      <body
+        suppressHydrationWarning={true}
         className={`antialiased`}
       >
-                        <Navbar logo={websiteDetails?.site_logo} />
+        <Navbar logo={websiteDetails?.site_logo} />
         {children}
-                        <Footer data={websiteDetails} />
+        <Footer data={websiteDetails} />
       </body>
     </html>
   );

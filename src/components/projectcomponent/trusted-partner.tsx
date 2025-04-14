@@ -8,7 +8,7 @@ import { partners } from "@/components/data/partners"
 
 const SCROLL_SPEED = 0.05
 
-function PartnersRow({ partners, direction }: { partners: any ; direction: 1 | -1 }) {
+export function PartnersRow({ partners, direction }: { partners: any ; direction: 1 | -1 }) {
   const [hovering, setHovering] = useState(false)
   const baseX = useMotionValue(0)
   const scrollX = useSpring(baseX, {

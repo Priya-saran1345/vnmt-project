@@ -33,22 +33,7 @@ const faq = () => {
         </div>
       </div>
 
-      <div className="hidden   bg-[url('/images/footer-banner.svg')] -mt-20 max-w-[1246px]  items-end pb-12 md:flex justify-start px-12 z-10
-     z-8 relative bg-no-repeat  mx-auto h-[350px] gap-12   rounded-3xl text-white py-4 ">
-        <div className='w-[45%] '>
-          <h2 className="heading font-bold heading-calisto ">Ready to Get Started ?</h2>
-          <p className='paragraph'>
-            Let&apos;s transform your business with our expert solutions.
-            Contact us today to begin your journey toward succe</p>
-        </div>
-        <div className='mb-9 ml-4'>
-          <button
-            className='_button1 popup-effect'
-          >
-            Book Consultant Now
-          </button>
-        </div>
-      </div>
+
 
     </div>
   )

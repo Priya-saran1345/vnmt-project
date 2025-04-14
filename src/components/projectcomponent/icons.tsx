@@ -58,10 +58,13 @@ export const getMenuIcon = (icon: string) => {
     case "administration":
       return <RiAdminLine size={20} />;
     case "ecommerce":
+      return <Image src={"/images/netsuiteicon.svg"} width={150} height={150}  alt="netsuiteicon" />;
     case "suitecommerce":
+      return <Image src={"/images/download 1.svg"} width={150} height={150}  alt="download 1" />;
     case "suitecommerce-advanced":
+      return <Image src={"/images/download 2.svg"} width={150} height={150}  alt="netsuiteicon" />;
     case "suitesuccess":
-      return <Image src={"/images/netsuiteicon.svg"} width={150} height={150} alt="netsuiteicon" />;
+      return <Image src={"/images/download 3.svg"} width={150} height={150}  alt="netsuiteicon" />;
     case "woocommerce":
       return <FaShoppingCart size={20} />;
     case "shopify":
