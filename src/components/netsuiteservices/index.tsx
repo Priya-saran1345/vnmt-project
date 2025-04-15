@@ -273,31 +273,30 @@ const NetsuiteServiceMain = () => {
       </section>
 
       {/* Resources Section */}
-      <section className="pt-20 px-4">
+      <section className="pt-20 pb-10 px-4">
       <div className="container mx-auto">
         <h2 className="text-3xl font-serif text-center mb-16 heading heading-calisto font-bold">Resources</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto relative">
           {/* Left Navigation */}
           <div className="space-y-2">
             {Object.keys(resourcesData).map((item) => (
               <motion.button
                 key={item}
                 onClick={() => setActiveResource(item)}
-                className={`w-full text-left px-4 py-3 rounded flex items-center gap-3 transition-colors ${
+                className={`w-full text-left px-4 py-3 rounded flex items-center gap-3 transition-colors font-semibold text-xl ${
                   activeResource === item ? "bg-blue text-white" : "hover:bg-gray-100"
                 }`}
                 whileHover={{ x: 4 }}
                 whileTap={{ scale: 0.98 }}
               >
-                {resourcesData[item].icon}
                 {item}
               </motion.button>
             ))}
           </div>
 
           {/* Right Content */}
-          <div className="md:col-span-2 relative min-h-[500px] border border-orange rounded-xl ">
+          <div className="md:col-span-2 relative min-h-[500px] border border-orange rounded-xl shadow-xl ">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeResource}
@@ -309,15 +308,15 @@ const NetsuiteServiceMain = () => {
                   stiffness: 300,
                   damping: 30,
                 }}
-                className="bg-white rounded-xl p-6 h-full"
+                className="bg-white rounded-xl  p-6 h-full"
               >
-                <div className="flex flex-col md:flex-row gap-6">
+                <div className="flex flex-col md:flex-row gap-6 relative">
                   {/* Left side - Image */}
-                  <div className="md:w-1/2">
+                  <div className="md:w-1/2 z-[5]">
                     <motion.img
                       src={resourcesData[activeResource].image}
                       alt={activeResource}
-                      className="w-full h-auto object-cover rounded-lg"
+                      className="w-full h-auto object-cover rounded-lg "
                       initial={{ scale: 0.8 }}
                       animate={{ scale: 1 }}
                       transition={{ delay: 0.2 }}
@@ -360,14 +359,17 @@ const NetsuiteServiceMain = () => {
                     </div>
 
                     <motion.button
-                      className="mt-6 bg-orange hover:bg-lightorange text-white px-6 py-2 rounded-full transition-colors"
+                      className="mt-6 bg-orange hover:bg-lightorange text-white px-4 font-semibold py-1 rounded-lg transition-colors"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
                       VIEW ALL
                     </motion.button>
                   </div>
+
                 </div>
+
+                <div className='h-[60%] absolute bottom-0 left-24 bg-gray-200 rounded-b-xl w-56  -z-0'></div>
               </motion.div>
             </AnimatePresence>
           </div>
