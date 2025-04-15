@@ -66,7 +66,7 @@ export async function POST(req: Request) {
         name: "VNMT Website Contact",
         address: process.env.EMAIL_USER,
       },
-      to: "abhishek.sharma1@digranknow.com",
+      to: "sales@vnmtsolutions.com",
       subject: "New Inquiry from VNMT Website",
       text: `HOMEPAGE CONTACT FORM DETAILS: \n 
       Username: ${name}
