@@ -6,7 +6,7 @@ const faq = () => {
     <div className=' mx-auto  ' id='faq'>
       <h1 className="
       heading font-bold text-center heading-calisto mb-4">FAQs</h1>
-      <div className="grid w-full mx-auto lg:w-[85%] xl:w-[70%] 2xl:w-[55%] md:grid-cols-2 gap-0 md:gap-4 lg:gap-16 mb-4">
+      <div className="grid w-full mx-auto lg:w-[85%] xl:w-[70%] 2xl:w-[55%] md:grid-cols-2 gap-0 md:gap-4 lg:gap-16 mb-4 p-2">
         <div className="space-y-4">
           <Accordion type="single" collapsible>
             {[1, 2, 3, 4].map((item) => (

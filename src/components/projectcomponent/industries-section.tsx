@@ -96,7 +96,7 @@ export function IndustriesSection() {
           Want to know more about our industries? {" "}
           <a className="text-blue hover:text-orange smooth1 hover:scale-105 cursor-pointer underline">
             {" "}
-            Click here to Read{" "}
+            Click here{" "}
           </a>
         </span>
       </div>

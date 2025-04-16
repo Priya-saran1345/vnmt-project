@@ -206,7 +206,7 @@ const NetsuiteServiceMain = () => {
                 key={service.title}
                 className="bg-white p-8 rounded-lg hover:shadow-netsuiteService smooth2 text-center relative"
               >
-                <div className="w-20 h-20  rounded-full border-4 border-orange flex items-center justify-center text-3xl absolute -top-10 left-1/3">
+                <div className="w-20 h-20  rounded-full border-4 border-orange flex items-center justify-center text-3xl absolute -top-10 left-1/2 transform -translate-x-1/2">
                   <Image
                     src={service.icon}
                     width={50}
@@ -242,13 +242,13 @@ const NetsuiteServiceMain = () => {
 
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <h2 className="heading heading-calisto font-bold text-center mb-4">Our NetSuite Expertise</h2>
-          <p className="text-center mb-16 text-base">
+          <h2 className="heading heading-calisto font-bold text-center mb-4 text-3xl md:text-4xl lg:text-5xl ">Our NetSuite Expertise</h2>
+          <p className="text-center mb-8 md:mb-16 text-base md:text-lg">
             It&apos;s not about the numbers that speak our growth,<br />
             but our expertise that has helped a number of businesses.
           </p>
 
-          <div className="flex  max-w-6xl mx-auto items-center justify-around">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-8 max-w-6xl mx-auto">
             {[
               { number: "950+", label: "Project Completed" },
               { number: "10+", label: "Experienced Engineers" },
@@ -260,12 +260,12 @@ const NetsuiteServiceMain = () => {
                 initial={{ opacity: 0, scale: 0.5 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex flex-col"
+                className="flex flex-col items-center text-center p-4"
               >
-                <div className="text-4xl md:text-5xl lg:text-6xl  font-bold text-white mb-2">
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
                   {stat.number}
                 </div>
-                <div className="text-base">{stat.label}</div>
+                <div className="text-sm sm:text-base">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -273,9 +273,9 @@ const NetsuiteServiceMain = () => {
       </section>
 
       {/* Resources Section */}
-      <section className="pt-20 pb-10 px-4">
+      <section className="md:pt-20 pt-10 pb-10 px-4">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-serif text-center mb-16 heading heading-calisto font-bold">Resources</h2>
+        <h2 className="text-2xl sm:text-3xl  font-serif text-center mb-16 heading heading-calisto font-bold">Resources</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto relative">
           {/* Left Navigation */}
@@ -369,7 +369,7 @@ const NetsuiteServiceMain = () => {
 
                 </div>
 
-                <div className='h-[60%] absolute bottom-0 left-24 bg-gray-200 rounded-b-xl w-56  -z-0'></div>
+                <div className='h-[60%] absolute bottom-0 left-24 bg-gray-200 rounded-b-xl w-56  -z-0 md:block hidden'></div>
               </motion.div>
             </AnimatePresence>
           </div>

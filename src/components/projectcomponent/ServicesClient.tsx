@@ -43,10 +43,10 @@ export function ServicesClient() {
                         alt="NetSuite Services"
                         width={1}
                         height={1}
-                        className=" h-auto  flex-1 "
+                        className="h-auto flex-1 w-full md:w-auto"
                     />
 
-            <div className="md:w-full relative overflow-hidden flex-[1] ">
+            <div className="w-full md:w-full relative overflow-hidden flex-[1]">
                 <div className="relative flex overflow-y-hidden  w-full">
                     
                     <div ref={containerRef} className="max-h-[440px]  pr-8 space-y-4 scrollbar-none overflow-x-hidden">
@@ -56,7 +56,7 @@ export function ServicesClient() {
                                 data-id={service.id}
                                 className="service-item group flex gap-4 p-4 pb-1 transition-all duration-300 hover:scale-105 navitemup shadowop"
                             >
-                                <div className="flex-shrink-0 rounded-tl-[45%] rounded-[5%] group-hover:border-orange/50 bg-blue group-hover:bg-white group-hover:border-[2px] h-[90px] w-[90px] flex items-center justify-center smooth3">
+                                <div className="flex-shrink-0 rounded-tl-[45%] rounded-[5%] group-hover:border-orange/50 bg-blue group-hover:bg-white group-hover:border-[2px] md:h-[90px] md:w-[90px] w-[50px] h-[50px] flex items-center justify-center smooth3">
                                     <Image
                                         src={service.icon || "/placeholder.svg"}
                                         className="group-hover:filter-none smoot3 invert brightness-0"
@@ -67,14 +67,14 @@ export function ServicesClient() {
                                 </div>
                                 <div>
                                     <h3 className="bulletheading font-semibold mb-2 navitem cursor-default">{service.title}</h3>
-                                    <p className="text-base text-[#818181] cursor-default">{service.description}</p>
+                                    <p className=" text-sm md:text-base text-[#818181] cursor-default">{service.description}</p>
                                 </div>
                             </div>
                         ))}
                     </div>
 
                     {/* Custom Scrollbar */}
-                    <div className="absolute right-1 top-0 h-full rounded-full w-2 bg-orange ">
+                    <div className="  absolute right-1 top-0 h-full rounded-full w-2 bg-orange ">
                         <motion.div
                             drag="y"
                             dragConstraints={{
