@@ -69,7 +69,7 @@ const NetsuiteServiceMain = () => {
   return (
     <div className=" ">
       {/* Hero Section */}
-      <section className="relative text-white py-10 bg-cover bg-center" style={{ backgroundImage: "url('/netsuiteServices/01 (1).png')" }}>
+      <section className="relative text-white py-10 bg-cover bg-right bg-no-repeat" style={{ backgroundImage: "url('/netsuiteServices/01 (1).png')" }}>
         <div className="container mx-auto flex  px-4 py-2 text-base items-center">
           <Link href="/" className="text-orange hover:text-lightorange transition-colors flex gap-1 items-center ">
             <House size={19} className="-mt-1" />
