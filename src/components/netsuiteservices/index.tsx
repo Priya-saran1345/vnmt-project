@@ -69,7 +69,7 @@ const NetsuiteServiceMain = () => {
   return (
     <div className=" ">
       {/* Hero Section */}
-      <section className="relative bg-blue text-white py-10">
+      <section className="relative text-white py-10 bg-cover bg-center" style={{ backgroundImage: "url('/netsuiteServices/01 (1).png')" }}>
         <div className="container mx-auto flex  px-4 py-2 text-base items-center">
           <Link href="/" className="text-orange hover:text-lightorange transition-colors flex gap-1 items-center ">
             <House size={19} className="-mt-1" />
@@ -106,19 +106,6 @@ const NetsuiteServiceMain = () => {
               GET STARTED
             </motion.button>
           </motion.div>
-        </div>
-
-        <div className="absolute top-0 right-0 w-full md:w-1/2 h-full animate-fade-in-right">
-          <div className="relative w-full h-full">
-            <Image
-              src="/netsuiteServices/01.png"
-              alt="Oracle NetSuite Services"
-              width={1000}
-              height={1000}
-              quality={100}
-              className="object-cover object-center w-full h-full"
-            />
-          </div>
         </div>
       </section>
 
