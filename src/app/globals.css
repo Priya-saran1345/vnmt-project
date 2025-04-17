@@ -950,3 +950,9 @@ body {
 	background: linear-gradient(to right, #0F2373 40%, transparent 80%, transparent 100%);
   }
   
+  .bg_num{
+	background-image: url('/netsuiteServices/bg.png'); 
+	background-size: cover;
+	background-position: right;
+	background-repeat: no-repeat; 
+  }
