@@ -287,7 +287,7 @@ const navItems: MenuItem[] = [
   },
 ]
 
-export default function Navbar({ className = "", logo }: NavbarItemsProps) {
+export default function Navbar({  logo }: NavbarItemsProps) {
   // console.log(logo);
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -337,9 +337,9 @@ export default function Navbar({ className = "", logo }: NavbarItemsProps) {
         setIsOpen(false)
       }
       }
-
-      className={`w-full bg-white border-b border-gray-200 sticky top-0 z-20 shadow-xl ${className}`}>
-      <div className="w-full  lg:w-[100%] 2xl:w-[80%] mx-auto px-5 ">
+      className={`w-full bg-white border-b border-gray-200 sticky top-0 z-20 shadow-xl `}>
+      <div className="  w-full max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-full xl:max-w-[1280px] 2xl:max-w-[1450px] px-4 md:px-6 lg:px-8 mx-auto
+   ">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="w-full">

@@ -3,7 +3,8 @@ import Image from "next/image";
 export function Partners() {
   return (
     <div className="bg-blue-600 bg-[url('/images/bgpartner.svg')]  text-white overflow-hidden">
-      <div className="w-full lg:w-[95%] 2xl:w-[77%] mx-auto px-4">
+      <div className="w-full w-full max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-full xl:max-w-[1280px] 2xl:max-w-[1450px] px-4 md:px-6 lg:px-8 mx-auto
+">
         <div className="flex flex-col md:flex-row items-start justify-between gap-12">
           <div className=" flex flex-col gap-2 mt-10 ">
             <h2 className="heading font-bold heading-calisto tracking-none leading-none">Our <br/> Partner</h2>

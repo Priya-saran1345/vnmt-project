@@ -76,7 +76,8 @@ const services = [
 export function IndustriesSection() {
   return (
     <section className="pt-20 pb-10 bg_industry flex flex-col gap-4">
-      <div className="container px-4 mx-auto">
+      <div className="w-full max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-full  xl:max-w-[1280px] 2xl:max-w-[1450px] px-4 md:px-6 lg:px-8 mx-auto
+">
         <div className="text-center max-w-2xl mx-auto mb-10 flex flex-col items-center justify-center gap-4">
           <h2 className="mt-3 text-4xl font-bold text-gray-900 heading-calisto heading ">Our Industries</h2>
           <span className="text-sm font-medium text-[#818181] parahraph">

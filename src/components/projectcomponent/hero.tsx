@@ -61,7 +61,7 @@ export function Hero() {
 
   return (
     <div
-      className="relative w-full flex flex-col bg-contain bg-right mx-auto bg-no-repeat h-[76vh] transition-all duration-500"
+      className="relative w-full flex flex-col bg-contain bg-right  bg-no-repeat h-[76vh] transition-all duration-500"
     >
       <div className="absolute inset-0 banner-gradient pointer-events-none " aria-hidden="true" />
 
@@ -74,7 +74,8 @@ export function Hero() {
 
             {/* Content Overlay */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-full lg:w-[95%] 2xl:w-[77%] mx-auto px-5 text-left">
+              <div className="w-full max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-full xl:max-w-[1280px] 2xl:max-w-[1450px] px-4 md:px-6 lg:px-8 mx-auto
+text-left">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-16">
                   <div className="space-y-6 ">
                     <p className="font-semibold tracking-wide text-orange flex items-center gap-1">

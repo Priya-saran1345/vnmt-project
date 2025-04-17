@@ -50,7 +50,8 @@ export function Testimonials() {
 
   return (
     <section className="pb-16 overflow-hidden">
-      <div className="w-full lg:w-[95%] 2xl:w-[77%] max-w-screen-2xl mx-auto px-4">
+      <div className="w-full max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-full  xl:max-w-[1280px] 2xl:max-w-[1450px] px-4 md:px-6 lg:px-8 mx-auto
+">
         <div className="text-center mb-12">
           <h2 className="heading heading-calisto font-bold ">Testimonials</h2>
           <p className="text-xl text-black parahraph">Hear What Our Clients Say</p>

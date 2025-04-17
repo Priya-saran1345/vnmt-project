@@ -59,7 +59,8 @@ export function BlogSection({blogPosts}:any) {
 
   return (
     <section className="py-16">
-      <div className="w-full lg:w-[95%] 2xl:w-[77%] mx-auto px-4">
+      <div className="w-full max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-full  xl:max-w-[1280px] 2xl:max-w-[1450px] px-4 md:px-6 lg:px-8 mx-auto
+">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-3">
           <div className="w-2/3">
             <h2 className="heading heading-calisto font-bold mb-2 leading-tight">

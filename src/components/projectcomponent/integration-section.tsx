@@ -56,7 +56,8 @@ export default function IntegrationSection() {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
   return (
     <div className="bg_integration bg-blue">
-      <div className="w-full lg:w-[95%] 2xl:w-[77%] mx-auto px-5  py-10 relative">
+      <div className="w-full max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-full  xl:max-w-[1280px] 2xl:max-w-[1450px] px-4 md:px-6 lg:px-8 mx-auto
+  py-10 relative">
         <motion.h1
           className="font-bold text-white text-center mb-32 mx-auto heading-calisto heading leading-tight"
           initial={{ opacity: 0, y: 20 }}
