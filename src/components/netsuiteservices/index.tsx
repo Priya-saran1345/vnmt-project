@@ -16,6 +16,7 @@ import { useState } from 'react';
 import { PartnersRow } from '../projectcomponent/trusted-partner';
 import Faq from '@/components/projectcomponent/Faq';
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Counter } from "../projectcomponent/ourImpact";
 // import Button from "../projectcomponent/button";
 
 const resourcesData: any = {
@@ -23,7 +24,7 @@ const resourcesData: any = {
     icon: <BookOpen className="w-6 h-6" />,
     title: 'Latest Case Studies',
     image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-    desc:"Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever since the 1500s.",
+    desc: "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever since the 1500s.",
     items: [
       'How Company X Increased Efficiency by 200%',
       'Manufacturing Giant Streamlines Operations',
@@ -34,7 +35,7 @@ const resourcesData: any = {
     icon: <FileText className="w-6 h-6" />,
     title: 'Recent Blog Posts',
     image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-    desc:"Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever since the 1500s.",
+    desc: "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever since the 1500s.",
     items: [
       'Top 10 NetSuite Features for 2024',
       'Maximizing ROI with NetSuite Implementation',
@@ -45,7 +46,7 @@ const resourcesData: any = {
     icon: <Users2 className="w-6 h-6" />,
     title: 'Customer Success Stories',
     image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-    desc:"Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever since the 1500s.",
+    desc: "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever since the 1500s.",
     items: [
       'From Startup to Enterprise with NetSuite',
       'Global Expansion Success Story',
@@ -56,7 +57,7 @@ const resourcesData: any = {
     icon: <Package className="w-6 h-6" />,
     title: 'Featured Products',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-    desc:"Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever since the 1500s.",
+    desc: "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever since the 1500s.",
     items: [
       'NetSuite ERP Solutions Overview',
       'SuiteCommerce Advanced Features',
@@ -97,43 +98,43 @@ const NetsuiteServiceMain = () => {
       {/* Hero Section */}
       <section className=" text-white py-10 bg_num">
         <div className='w-full max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-full  xl:max-w-[1280px] 2xl:max-w-[1450px] px-4 md:px-6 lg:px-8 mx-auto'>
-        <div className="flex   py-2 text-base items-center">
-          <Link href="/" className="hover:text-orange text-white transition-colors flex gap-1 items-center ">
-            <House size={19} className="-mt-1" />
-            Home
-          </Link>
-          <ChevronRight className="w-4 h-4 ml-1" />
-          <span>NetSuite Services</span>
-        </div>
+          <div className="flex   py-2 text-base items-center">
+            <Link href="/" className="hover:text-orange text-white transition-colors flex gap-1 items-center ">
+              <House size={19} className="-mt-1" />
+              Home
+            </Link>
+            <ChevronRight className="w-4 h-4 ml-1" />
+            <span>NetSuite Services</span>
+          </div>
 
-        <div className=" py-12 md:py-16 flex flex-col md:flex-row justify-between items-center">
-          <motion.div
-            className="text-white max-w-xl mb-8 md:mb-0"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h1 className="text-3xl md:text-4xl font-bold mb-3">
-              Empowering Your Business
-              <br />
-              with Expert NetSuite
-              <br />
-              solutions
-            </h1>
-            <p className="text-base mb-6">
-              Streamline, Automate, & Scale with VNMT Solutions&apos;
-              <br />
-              Comprehensive NetSuite Services
-            </p>
+          <div className=" py-12 md:py-16 flex flex-col md:flex-row justify-between items-center">
+            <motion.div
+              className="text-white max-w-xl mb-8 md:mb-0"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h1 className="text-3xl md:text-4xl font-bold mb-3">
+                Empowering Your Business
+                <br />
+                with Expert NetSuite
+                <br />
+                solutions
+              </h1>
+              <p className="text-base mb-6">
+                Streamline, Automate, & Scale with VNMT Solutions&apos;
+                <br />
+                Comprehensive NetSuite Services
+              </p>
 
               {/* <Button content= 'GET STARTED' href="/netsuite-services"></Button> */}
               <button
-     className='_button1'
-    >
-     GET STARTED
-    </button>
-          </motion.div>
-        </div>
+                className='_button1'
+              >
+                GET STARTED
+              </button>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -175,81 +176,81 @@ const NetsuiteServiceMain = () => {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-20 max-w-6xl items-start justify-center mx-auto">
-            {services.map((service, index) => (
-        <div
-          key={service.title}
-          className="bg-white p-8 rounded-lg hover:shadow-netsuiteService smooth2 text-center relative w-full group hover:scale-105"
-          onMouseEnter={() => setHoveredCard(index)}
-          onMouseLeave={() => setHoveredCard(null)}
-        >
-          <div className="w-20 h-20 rounded-full border-4 border-orange flex items-center justify-center text-3xl absolute -top-10 left-1/3">
-            <Image src={service.icon} width={50} height={50} alt={service.alt} />
-          </div>
-          <h3 className="text-2xl font-semibold mb-4 mt-6">{service.title}</h3>
-          <p className="text-gray-700 font-medium mb-4">
-            Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry&apos;s standard dummy text ever since the 1500s.
-          </p>
-          <motion.button
-            className="text-orange hover:text-lightorange font-medium text-lg flex items-center gap-2 justify-center w-full group"
-          >
-            Read More
-            <AnimatePresence>
-              {hoveredCard === index && (
-                <motion.span
-                  key="arrow"
-                  initial={{ x: -10, opacity: 0 }}
-                  animate={{ x: 5, opacity: 1 }}
-                  exit={{ x: -10, opacity: 0 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="inline-block"
+              {services.map((service, index) => (
+                <div
+                  key={service.title}
+                  className="bg-white p-8 rounded-lg hover:shadow-netsuiteService smooth2 text-center relative w-full group hover:scale-105"
+                  onMouseEnter={() => setHoveredCard(index)}
+                  onMouseLeave={() => setHoveredCard(null)}
                 >
-                  <FaArrowRightLong />
-                </motion.span>
-              )}
-            </AnimatePresence>
-          </motion.button>
-        </div>
-      ))}
+                  <div className="w-20 h-20 rounded-full border-4 border-orange flex items-center justify-center text-3xl absolute -top-10 left-1/3">
+                    <Image src={service.icon} width={50} height={50} alt={service.alt} />
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-4 mt-6">{service.title}</h3>
+                  <p className="text-gray-700 font-medium mb-4">
+                    Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry&apos;s standard dummy text ever since the 1500s.
+                  </p>
+                  <motion.button
+                    className="text-orange hover:text-lightorange font-medium text-lg flex items-center gap-2 justify-center w-full group"
+                  >
+                    Read More
+                    <AnimatePresence>
+                      {hoveredCard === index && (
+                        <motion.span
+                          key="arrow"
+                          initial={{ x: -10, opacity: 0 }}
+                          animate={{ x: 5, opacity: 1 }}
+                          exit={{ x: -10, opacity: 0 }}
+                          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                          className="inline-block"
+                        >
+                          <FaArrowRightLong />
+                        </motion.span>
+                      )}
+                    </AnimatePresence>
+                  </motion.button>
+                </div>
+              ))}
 
-  {/* Centered last row with 2 items */}
-  <div className="md:col-span-3 flex justify-center gap-20">
-    {services2.map((service, index) => (
-      <div
-        key={service.title}
-        className="bg-white p-8 rounded-lg hover:shadow-netsuiteService smooth2 text-center relative w-full max-w-[300px] group hover:scale-105"
-        onMouseEnter={() => setHoveredCard(index)}
-        onMouseLeave={() => setHoveredCard(null)}
-      >
-        <div className="w-20 h-20 rounded-full border-4 border-orange flex items-center justify-center text-3xl absolute -top-10 left-1/3">
-          <Image src={service.icon} width={50} height={50} alt={service.alt} />
-        </div>
-        <h3 className="text-2xl font-semibold mb-4 mt-6">{service.title}</h3>
-        <p className="text-gray-700 font-medium mb-4">
-        Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry&apos;s standard dummy text ever since the 1500s.
-        </p>
-        <motion.button
-            className="text-orange hover:text-lightorange font-medium text-lg flex items-center gap-2 justify-center w-full group"
-          >
-            Read More
-            <AnimatePresence>
-              {hoveredCard === index && (
-                <motion.span
-                  key="arrow"
-                  initial={{ x: -10, opacity: 0 }}
-                  animate={{ x: 5, opacity: 1 }}
-                  exit={{ x: -10, opacity: 0 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="inline-block"
-                >
-                  <FaArrowRightLong />
-                </motion.span>
-              )}
-            </AnimatePresence>
-          </motion.button>
-      </div>
-    ))}
-  </div>
-</div>
+              {/* Centered last row with 2 items */}
+              <div className="md:col-span-3 flex justify-center gap-20">
+                {services2.map((service, index) => (
+                  <div
+                    key={service.title}
+                    className="bg-white p-8 rounded-lg hover:shadow-netsuiteService smooth2 text-center relative w-full max-w-[300px] group hover:scale-105"
+                    onMouseEnter={() => setHoveredCard(index)}
+                    onMouseLeave={() => setHoveredCard(null)}
+                  >
+                    <div className="w-20 h-20 rounded-full border-4 border-orange flex items-center justify-center text-3xl absolute -top-10 left-1/3">
+                      <Image src={service.icon} width={50} height={50} alt={service.alt} />
+                    </div>
+                    <h3 className="text-2xl font-semibold mb-4 mt-6">{service.title}</h3>
+                    <p className="text-gray-700 font-medium mb-4">
+                      Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry&apos;s standard dummy text ever since the 1500s.
+                    </p>
+                    <motion.button
+                      className="text-orange hover:text-lightorange font-medium text-lg flex items-center gap-2 justify-center w-full group"
+                    >
+                      Read More
+                      <AnimatePresence>
+                        {hoveredCard === index && (
+                          <motion.span
+                            key="arrow"
+                            initial={{ x: -10, opacity: 0 }}
+                            animate={{ x: 5, opacity: 1 }}
+                            exit={{ x: -10, opacity: 0 }}
+                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                            className="inline-block"
+                          >
+                            <FaArrowRightLong />
+                          </motion.span>
+                        )}
+                      </AnimatePresence>
+                    </motion.button>
+                  </div>
+                ))}
+              </div>
+            </div>
 
           </div>
         </section>
@@ -289,7 +290,7 @@ const NetsuiteServiceMain = () => {
                   className="flex flex-col"
                 >
                   <div className="text-4xl md:text-5xl lg:text-6xl  font-bold text-white mb-2">
-                    {stat.number}
+              <Counter targetValue={stat.number} />
                   </div>
                   <div className="text-base">{stat.label}</div>
                 </motion.div>
@@ -304,7 +305,7 @@ const NetsuiteServiceMain = () => {
 ">
             <h2 className="font-serif text-center mb-16 heading heading-calisto font-bold">Resources</h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-6 gap-8 max-w-7xl mx-auto relative min-h-[550px]"> 
+            <div className="grid grid-cols-1 md:grid-cols-6 gap-8 max-w-7xl mx-auto relative min-h-[550px]">
               {/* Left Navigation */}
               <div className="md:col-span-2 space-y-2 z-10">
                 {Object.keys(resourcesData).map((item) => (

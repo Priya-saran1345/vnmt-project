@@ -5,7 +5,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { impactStats, impactContent } from "../data/impact";
 
-const Counter = ({ targetValue }:any) => {
+export const Counter = ({ targetValue }: any) => {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -13,8 +13,8 @@ const Counter = ({ targetValue }:any) => {
   useEffect(() => {
     if (isInView) {
       let start = 0;
-      const duration = 1500; 
-      const stepTime = 16; 
+      const duration = 1500;
+      const stepTime = 16;
       const steps = duration / stepTime;
       const increment = parseFloat(targetValue) / steps;
 
@@ -32,7 +32,7 @@ const Counter = ({ targetValue }:any) => {
     }
   }, [isInView, targetValue]);
 
-  return <span ref={ref}>{count}               {targetValue === "30" && "+"} {targetValue === "500" && "+"} {targetValue === "95" && "%"}</span>;
+  return <span className="" ref={ref}>{count}{targetValue === "950+" && "+"} {targetValue === "10+" && "+"}{targetValue === "30" && "+"} {targetValue === "30+" && "+"} {targetValue === "500" && "+"} {targetValue === "95" && "%"} {targetValue === "10K+" && "K+"}</span>;
 };
 
 const OurImpact = () => {
