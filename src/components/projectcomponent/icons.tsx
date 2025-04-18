@@ -9,8 +9,10 @@ import {
   FaIndustry,
   FaInfoCircle,
   FaLightbulb,
+  FaLuggageCart,
   FaPiggyBank,
   FaPuzzlePiece,
+  FaRegHandshake,
   FaShopify,
   FaShoppingCart,
   FaSitemap,
@@ -19,11 +21,12 @@ import {
   FaUtensils
 } from "react-icons/fa";
 import { GrOptimize } from "react-icons/gr";
-import { MdDeveloperMode } from "react-icons/md";
-import { RiAdminLine } from "react-icons/ri";
+import { HiMiniShoppingBag } from "react-icons/hi2";
 import { ImMakeGroup } from "react-icons/im";
 import { LuReplace } from "react-icons/lu";
-import Image from "next/image";
+import { MdDeveloperMode } from "react-icons/md";
+import { RiAdminLine } from "react-icons/ri";
+import { FiShoppingCart } from "react-icons/fi";
 
 
 
@@ -58,13 +61,13 @@ export const getMenuIcon = (icon: string) => {
     case "administration":
       return <RiAdminLine size={20} />;
     case "ecommerce":
-      return <Image src={"/images/netsuiteicon.svg"} width={150} height={150}  alt="netsuiteicon" />;
+      return <HiMiniShoppingBag   size={20} />;
     case "suitecommerce":
-      return <Image src={"/images/download 1.svg"} width={150} height={150}  alt="download 1" />;
+      return <FiShoppingCart  size={20} />;
     case "suitecommerce-advanced":
-      return <Image src={"/images/download 2.svg"} width={150} height={150}  alt="netsuiteicon" />;
+      return <FaLuggageCart  size={20} />;
     case "suitesuccess":
-      return <Image src={"/images/download 3.svg"} width={150} height={150}  alt="netsuiteicon" />;
+      return <FaRegHandshake  size={20} />;
     case "woocommerce":
       return <FaShoppingCart size={20} />;
     case "shopify":
