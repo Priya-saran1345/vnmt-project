@@ -29,7 +29,8 @@ const resourcesData: any = {
       'How Company X Increased Efficiency by 200%',
       'Manufacturing Giant Streamlines Operations',
       'E-commerce Success Story with NetSuite'
-    ]
+    ],
+    button: true
   },
   'Blogs': {
     icon: <FileText className="w-6 h-6" />,
@@ -40,7 +41,8 @@ const resourcesData: any = {
       'Top 10 NetSuite Features for 2024',
       'Maximizing ROI with NetSuite Implementation',
       'Cloud ERP Best Practices'
-    ]
+    ],
+    button: true
   },
   'Customer Stories': {
     icon: <Users2 className="w-6 h-6" />,
@@ -51,7 +53,8 @@ const resourcesData: any = {
       'From Startup to Enterprise with NetSuite',
       'Global Expansion Success Story',
       'Digital Transformation Journey'
-    ]
+    ],
+    button: false
   },
   'Products': {
     icon: <Package className="w-6 h-6" />,
@@ -62,7 +65,8 @@ const resourcesData: any = {
       'NetSuite ERP Solutions Overview',
       'SuiteCommerce Advanced Features',
       'Financial Management Suite'
-    ]
+    ],
+    button: false
   }
 };
 
@@ -385,14 +389,15 @@ const NetsuiteServiceMain = () => {
                             </motion.div>
                           ))}
                         </div>
-<div className='flex items-center justify-center'>
-                        <motion.button
-                          className="mt-6 bg-orange hover:bg-lightorange text-white px-4 font-semibold py-1 rounded-lg transition-colors "
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          VIEW ALL
-                        </motion.button></div>
+                        {resourcesData[activeResource].button &&
+                          <div className='flex items-center justify-center'>
+                            <motion.button
+                              className="mt-6 bg-orange hover:bg-lightorange text-white px-4 font-semibold py-1 rounded-lg transition-colors "
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                            >
+                              VIEW ALL
+                            </motion.button></div>}
                       </div>
 
                     </div>
