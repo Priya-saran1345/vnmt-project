@@ -98,14 +98,16 @@ const NetsuiteServiceMain = () => {
       {/* Hero Section */}
       <section className=" text-white py-10 bg_num">
         <div className='w-full max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-full  xl:max-w-[1280px] 2xl:max-w-[1450px] px-4 md:px-6 lg:px-8 mx-auto'>
-          <div className="flex   py-2 text-base items-center">
-            <Link href="/" className="hover:text-orange text-white transition-colors flex gap-1 items-center ">
-              <House size={19} className="-mt-1" />
+          <div className="flex items-center text-base text-white py-2 ">
+            <Link href="/" className="flex items-center gap-1 hover:text-orange transition-colors font-medium text-white">
+              <House size={18} className="-mt-1" />
               Home
             </Link>
-            <ChevronRight className="w-4 h-4 ml-1" />
-            <span>NetSuite Services</span>
+            <ChevronRight className="w-4 h-4 " />
+            <ChevronRight className="w-4 h-4 " />
+            <span className="font-medium text-white">NetSuite Services</span>
           </div>
+
 
           <div className=" py-12 md:py-16 flex flex-col md:flex-row justify-between items-center">
             <motion.div
@@ -139,7 +141,7 @@ const NetsuiteServiceMain = () => {
       </section>
 
       {/* Clients Section */}
-      <section className="bg-white py-6 border-b">
+      <section className="bg-white  border-b-[6px] border-b-blue">
         <div className="w-full max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-full  xl:max-w-[1280px] 2xl:max-w-[1450px] px-4 md:px-6 lg:px-8 mx-auto ">
           <div className="flex flex-col md:flex-row items-center gap-4 overflow-hidden">
             <span className="text-white text-center font-semibold bg-orange px-4 py-2 rounded-md text-lg w-full md:w-auto">
@@ -154,7 +156,7 @@ const NetsuiteServiceMain = () => {
       </section>
 
       {/* Why Choose Section */}
-      <section className="py-16 ">
+      <section className="py-14 ">
         <div className="w-full max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-full  xl:max-w-[1280px] 2xl:max-w-[1450px] px-4 md:px-6 lg:px-8 mx-auto ">
           <h2 className="heading font-bold mb-6 heading-calisto">Why Choose Oracle NetSuite?</h2>
           <p className="text-gray-600 mb-4 parahraph">
@@ -168,7 +170,7 @@ const NetsuiteServiceMain = () => {
 
       <div className="bg-cover bg-[url('/images/faq-bg.svg')]">
         {/* Services Section */}
-        <section className="py-16 ">
+        <section className="py-14 ">
           <div className="w-full max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-full  xl:max-w-[1280px] 2xl:max-w-[1450px] px-4 md:px-6 lg:px-8 mx-auto">
             <h2 className="heading font-bold heading-calisto text-center mb-4">Our NetSuite Services</h2>
             <p className="text-center text-gray-600 mb-16 parahraph" >
@@ -179,11 +181,11 @@ const NetsuiteServiceMain = () => {
               {services.map((service, index) => (
                 <div
                   key={service.title}
-                  className="bg-white p-8 rounded-lg hover:shadow-netsuiteService smooth2 text-center relative w-full group hover:scale-105"
+                  className="bg-white border p-8 rounded-lg hover:shadow-netsuiteService smooth2 text-center relative w-full group hover:scale-105"
                   onMouseEnter={() => setHoveredCard(index)}
                   onMouseLeave={() => setHoveredCard(null)}
                 >
-                  <div className="w-20 h-20 rounded-full border-4 border-orange flex items-center justify-center text-3xl absolute -top-10 left-1/3">
+                  <div className="w-20 h-20 rounded-full border-4 border-orange flex items-center justify-center text-3xl absolute -top-10 left-[38%]">
                     <Image src={service.icon} width={50} height={50} alt={service.alt} />
                   </div>
                   <h3 className="text-2xl font-semibold mb-4 mt-6">{service.title}</h3>
@@ -217,11 +219,11 @@ const NetsuiteServiceMain = () => {
                 {services2.map((service, index) => (
                   <div
                     key={service.title}
-                    className="bg-white p-8 rounded-lg hover:shadow-netsuiteService smooth2 text-center relative w-full max-w-[300px] group hover:scale-105"
+                    className="bg-white p-8 rounded-lg hover:shadow-netsuiteService smooth2 text-center relative w-full max-w-[350px] group hover:scale-105 border"
                     onMouseEnter={() => setHoveredCard(index)}
                     onMouseLeave={() => setHoveredCard(null)}
                   >
-                    <div className="w-20 h-20 rounded-full border-4 border-orange flex items-center justify-center text-3xl absolute -top-10 left-1/3">
+                    <div className="w-20 h-20 rounded-full border-4 border-orange flex items-center justify-center text-3xl absolute -top-10 left-[38%]">
                       <Image src={service.icon} width={50} height={50} alt={service.alt} />
                     </div>
                     <h3 className="text-2xl font-semibold mb-4 mt-6">{service.title}</h3>
@@ -290,7 +292,7 @@ const NetsuiteServiceMain = () => {
                   className="flex flex-col"
                 >
                   <div className="text-4xl md:text-5xl lg:text-6xl  font-bold text-white mb-2">
-              <Counter targetValue={stat.number} />
+                    <Counter targetValue={stat.number} />
                   </div>
                   <div className="text-base">{stat.label}</div>
                 </motion.div>
@@ -305,9 +307,9 @@ const NetsuiteServiceMain = () => {
 ">
             <h2 className="font-serif text-center mb-16 heading heading-calisto font-bold">Resources</h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-6 gap-8 max-w-7xl mx-auto relative min-h-[550px]">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 max-w-6xl mx-auto relative min-h-[550px]">
               {/* Left Navigation */}
-              <div className="md:col-span-2 space-y-2 z-10">
+              <div className="md:col-span-3 space-y-2 z-10">
                 {Object.keys(resourcesData).map((item) => (
                   <motion.button
                     key={item}
@@ -323,7 +325,7 @@ const NetsuiteServiceMain = () => {
               </div>
 
               {/* Right Content */}
-              <div className="md:col-span-4 z-0 relative min-h-full border border-orange rounded-xl shadow-xl -inset-9 -ml-6   ">
+              <div className="md:col-span-9 z-0 relative min-h-full border border-orange rounded-xl shadow-xl md:-inset-9 md:-ml-6   ">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeResource}
@@ -383,14 +385,14 @@ const NetsuiteServiceMain = () => {
                             </motion.div>
                           ))}
                         </div>
-
+<div className='flex items-center justify-center'>
                         <motion.button
-                          className="mt-6 bg-orange hover:bg-lightorange text-white px-4 font-semibold py-1 rounded-lg transition-colors"
+                          className="mt-6 bg-orange hover:bg-lightorange text-white px-4 font-semibold py-1 rounded-lg transition-colors "
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                         >
                           VIEW ALL
-                        </motion.button>
+                        </motion.button></div>
                       </div>
 
                     </div>

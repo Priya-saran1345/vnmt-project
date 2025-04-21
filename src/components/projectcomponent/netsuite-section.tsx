@@ -73,10 +73,9 @@ export function NetsuiteSection() {
                 </motion.div>
               </div>
             </div>
-            <Button content='LEARN MORE'></Button>
-            {/* <div className="bg-blue text-white border-darkblue ctabtn hover:scale-105 smooth3 p-2 px-4 rounded-full w-fit hover:bg-blue-700">
-              {netsuiteContent.ctaText} →
-            </div> */}
+                <div className='min-h-6  flex items-center'>
+            <Button content='LEARN MORE'></Button></div>
+
           </div>
 
           <div className=" flex-1  rounded-l-[100px] " >

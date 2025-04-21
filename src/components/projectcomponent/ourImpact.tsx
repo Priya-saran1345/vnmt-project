@@ -5,10 +5,26 @@ import React, { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { impactStats, impactContent } from "../data/impact";
 
-export const Counter = ({ targetValue }: any) => {
+type CounterProps = {
+  targetValue: string;
+};
+
+const parseValue = (val: string) => {
+  const match = val.match(/^(\d+)(K?)(\+?)(%?)$/i);
+  if (!match) return { number: 0, suffix: "" };
+
+  const [, numStr, k, plus, percent] = match;
+  const number = parseInt(numStr);
+  const suffix = `${k}${plus}${percent}`;
+  return { number, suffix };
+};
+
+export const Counter = ({ targetValue }: CounterProps) => {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const { number, suffix } = parseValue(targetValue);
 
   useEffect(() => {
     if (isInView) {
@@ -16,12 +32,12 @@ export const Counter = ({ targetValue }: any) => {
       const duration = 1500;
       const stepTime = 16;
       const steps = duration / stepTime;
-      const increment = parseFloat(targetValue) / steps;
+      const increment = number / steps;
 
       const animate = () => {
         start += increment;
-        if (start >= parseFloat(targetValue)) {
-          setCount(parseFloat(targetValue));
+        if (start >= number) {
+          setCount(number);
         } else {
           setCount(Math.floor(start));
           requestAnimationFrame(animate);
@@ -30,9 +46,14 @@ export const Counter = ({ targetValue }: any) => {
 
       animate();
     }
-  }, [isInView, targetValue]);
+  }, [isInView, number]);
 
-  return <span className="" ref={ref}>{count}{targetValue === "950+" && "+"} {targetValue === "10+" && "+"}{targetValue === "30" && "+"} {targetValue === "30+" && "+"} {targetValue === "500" && "+"} {targetValue === "95" && "%"} {targetValue === "10K+" && "K+"}</span>;
+  return (
+    <span ref={ref}>
+      {count}
+      {suffix}
+    </span>
+  );
 };
 
 const OurImpact = () => {
@@ -51,7 +72,7 @@ const OurImpact = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
-                <Counter targetValue={stat.number.replace(/\D/g, "")} />
+                <Counter targetValue={stat.number} />
 
               </motion.div>
               <div className="font-bold text-xl ">{stat.label}</div>
