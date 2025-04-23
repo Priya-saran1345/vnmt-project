@@ -72,7 +72,7 @@ const resourcesData: any = {
 
 const NetsuiteServiceMain = () => {
   const [activeResource, setActiveResource] = useState('Case Studies');
-  const firstHalf = partners.slice(0, Math.floor(partners.length / 2));
+  // const firstHalf = partners.slice(0, Math.floor(partners.length / 2));
 
   const [hoveredCard, setHoveredCard] = useState<any>(null);
 
@@ -108,7 +108,7 @@ const NetsuiteServiceMain = () => {
               Home
             </Link>
             <ChevronRight className="w-4 h-4 " />
-            <ChevronRight className="w-4 h-4 " />
+            <ChevronRight className="w-4 h-4 -ml-2 " />
             <span className="font-medium text-white">NetSuite Services</span>
           </div>
 
@@ -152,7 +152,7 @@ const NetsuiteServiceMain = () => {
               OUR CLIENTS
             </span>
             <div className="flex-1 overflow-hidden">
-              <PartnersRow partners={firstHalf} direction={-1} />
+              <PartnersRow partners={partners} direction={-1} />
             </div>
           </div>
 
@@ -276,7 +276,7 @@ const NetsuiteServiceMain = () => {
           </div>
           <div className="container mx-auto px-4 relative z-10">
             <h2 className="heading heading-calisto font-bold text-center mb-4">Our NetSuite Expertise</h2>
-            <p className="text-center mb-16 text-base">
+            <p className="text-center mb-16 text-lg">
               It&apos;s not about the numbers that speak our growth,<br />
               but our expertise that has helped a number of businesses.
             </p>
@@ -295,10 +295,10 @@ const NetsuiteServiceMain = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="flex flex-col"
                 >
-                  <div className="text-4xl md:text-5xl lg:text-6xl  font-bold text-white mb-2">
+                  <div className="text-4xl md:text-5xl font-bold text-white mb-2">
                     <Counter targetValue={stat.number} />
                   </div>
-                  <div className="text-base">{stat.label}</div>
+                  <div className="text-xl">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
