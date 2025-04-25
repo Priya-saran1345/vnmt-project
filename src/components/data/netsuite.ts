@@ -1,5 +1,5 @@
 export const netsuiteContent = {
-    title: "What is NetSuite ?",
+    title: "What is Oracle NetSuite ?",
     subtitle: "Unlock the Power of Unified Business Management",
     description: [
       "NetSuite is a cloud-based platform that unifies your business operations, from financials to customer relationships.",

@@ -29,7 +29,7 @@ const Footer = ({ data }: any) => {
 
   const footerSections = [
     {
-      title: "NETSUITE",
+      title: "ORACLE NETSUITE",
       links: [
         "NetSuite Consulting",
         "NetSuite Implementation",
@@ -39,7 +39,7 @@ const Footer = ({ data }: any) => {
       ],
     },
     {
-      title: "INTEGRATION",
+      title: "ADD-ON SOLUTIONS",
       links: ["NetSuite Integration", "Magento NetSuite Integration", "WooCommerce NetSuite Integration", "Shopify NetSuite Integration", "Jitterbit NetSuite Integration"],
     },
     {
@@ -59,11 +59,11 @@ const Footer = ({ data }: any) => {
   ]
 
   const socialMedia = [
-    { key: "facebook_url", icon: <FiFacebook className="text-[22px] text-white group-hover:text-lightblue" />, color: "border-lightblue" },
-    { key: "twitter_url", icon: <FaXTwitter className="text-[22px] text-white group-hover:text-lightblue" />, color: "border-lightblue" },
-    { key: "instagram_url", icon: <FaInstagram className="text-[22px] text-white group-hover:text-pink-500" />, color: "border-pink-500" },
     { key: "linkedin_url", icon: <GrLinkedinOption className="text-[22px] text-white group-hover:text-blue" />, color: "border-blue" },
     { key: "youtube_url", icon: <FaYoutube className="text-[22px] text-white group-hover:text-red-500" />, color: "border-red-500" },
+    { key: "instagram_url", icon: <FaInstagram className="text-[22px] text-white group-hover:text-pink-500" />, color: "border-pink-500" },
+    { key: "twitter_url", icon: <FaXTwitter className="text-[22px] text-white group-hover:text-lightblue" />, color: "border-lightblue" },
+    { key: "facebook_url", icon: <FiFacebook className="text-[22px] text-white group-hover:text-lightblue" />, color: "border-lightblue" },
   ];
 
   return (
@@ -84,7 +84,7 @@ const Footer = ({ data }: any) => {
           </button>
         </div>
       </div>
-      
+
       <div className="pb-0 md:bg-black  ">
 
         {/* Footer */}
