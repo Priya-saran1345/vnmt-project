@@ -17,6 +17,9 @@ import { PartnersRow } from '../projectcomponent/trusted-partner';
 import Faq from '@/components/projectcomponent/Faq';
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Counter } from "../projectcomponent/ourImpact";
+import { CgEditBlackPoint } from "react-icons/cg";
+import { Testimonials } from "../projectcomponent/Testimonials";
+
 // import Button from "../projectcomponent/button";
 
 const resourcesData: any = {
@@ -306,7 +309,7 @@ const NetsuiteServiceMain = () => {
         </section>
 
         {/* Resources Section */}
-        <section className=" mt-10">
+        <section className=" my-10">
           <div className="w-full max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-full  xl:max-w-[1280px] 2xl:max-w-[1450px] px-4 md:px-6 lg:px-8 mx-auto
 ">
             <h2 className="font-serif text-center mb-16 heading heading-calisto font-bold">Resources</h2>
@@ -383,9 +386,10 @@ const NetsuiteServiceMain = () => {
                               initial={{ opacity: 0, y: 20 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ delay: 0.4 + index * 0.1 }}
-                              className="border-b border-gray-200 pb-4 last:border-0"
-                            >
-                              <a href="" className="text-gray-700 mb-2 hover:text-orange">{item}</a>
+                              className="border-b border-gray-200 pb-4 last:border-0 flex items-center gap-2 text-orange hover:underline mb-2 "
+                            ><CgEditBlackPoint />
+
+                              <a href="" className="text-orange font-medium ">{item}</a>
                             </motion.div>
                           ))}
                         </div>
@@ -411,6 +415,9 @@ const NetsuiteServiceMain = () => {
 
           </div>
         </section>
+
+
+                        <Testimonials />
 
         <Faq />
       </div>
