@@ -23,16 +23,6 @@ export async function getCountryCode(): Promise<string> {
       clientIP = realIp
     }
 
-    // Skip API call for localhost/private IPs
-    if (
-      clientIP === "127.0.0.1" ||
-      clientIP === "::1" ||
-      clientIP.startsWith("192.168.") ||
-      clientIP.startsWith("10.")
-    ) {
-      return "US" // Default for local development
-    }
-
     // Call the free IP geolocation API
     const response = await fetch(`https://ipapi.co/${clientIP}/country/`)
 
